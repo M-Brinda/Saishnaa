@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Briefcase, MapPin, Code, Send, CheckCircle, FileText } from 'lucide-react';
+import { Search, Briefcase, MapPin, Code, Send, CheckCircle, FileText, MessageCircle } from 'lucide-react';
 
 export default function Careers() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -241,14 +241,41 @@ export default function Careers() {
               
               
               {formSubmitted ? (
-                <div className="text-center py-5 d-flex flex-column align-items-center justify-content-center" style={{ animation: 'pageFadeIn 0.4s ease' }}>
-                  <CheckCircle size={72} className="text-success mb-3 animate__animated animate__bounceIn" />
+                <div className="text-center py-4 d-flex flex-column align-items-center justify-content-center" style={{ animation: 'pageFadeIn 0.4s ease' }}>
+                  <CheckCircle size={64} className="text-success mb-3 animate__animated animate__bounceIn" />
                   <h4 className="fw-bold mb-2" style={{ color: 'var(--main-color)', fontFamily: 'Outfit, sans-serif' }}>
-                    Application Submitted!
+                    Application Registered!
                   </h4>
-                  <p className="text-muted px-4">
-                    Thank you for applying for the **{appliedJob.title}** role. Our talent acquisition team will review your credentials and reach back within 2 business days.
+                  <p className="text-muted px-3 small mb-4" style={{ lineHeight: '1.6' }}>
+                    Your application details for the **{appliedJob.title}** position have been logged. To complete your application, please tap one of the buttons below to send your PDF resume to our hiring managers:
                   </p>
+                  
+                  <div className="d-flex flex-column gap-2.5 w-100 px-3">
+                    <a 
+                      href={`https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20I'm%20applying%20for%20the%20*${encodeURIComponent(appliedJob.title)}*%20position.%0A%0A*Name*%3A%20${encodeURIComponent(formData.name)}%0A*Phone*%3A%20${encodeURIComponent(formData.phone)}%0A*Email*%3A%20${encodeURIComponent(formData.email)}%0A*Cover%20Letter*%3A%20${encodeURIComponent(formData.cover)}%0A%0AI%20am%20sending%20my%20resume%20for%20reference.`}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn text-white w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold shadow-sm"
+                      style={{ backgroundColor: '#25D366', border: 'none', transition: 'all 0.3s', fontSize: '0.95rem' }}
+                    >
+                      <MessageCircle size={18} /> Apply via WhatsApp
+                    </a>
+                    <a 
+                      href={`mailto:saishnaa@gmail.com?subject=Job%20Application%3A%20${encodeURIComponent(appliedJob.title)}%20-%20${encodeURIComponent(formData.name)}&body=Hi%20Saishnaa%20Hiring%20Team%2C%0A%0AI%20would%20like%20to%20apply%20for%20the%20${encodeURIComponent(appliedJob.title)}%20position.%0A%0AMy%20details%3A%0A*Name*%3A%20${encodeURIComponent(formData.name)}%0A*Phone*%3A%20${encodeURIComponent(formData.phone)}%0A*Email*%3A%20${encodeURIComponent(formData.email)}%0A%0A*Cover%20Letter*%3A%0A${encodeURIComponent(formData.cover)}%0A%0A[PLEASE%20ATTACH%20YOUR%20RESUME%20PDF%20HERE]%0A%0AThank%20you.`}
+                      className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold text-white shadow-sm"
+                      style={{ fontSize: '0.95rem' }}
+                    >
+                      <Mail size={18} /> Apply via Email Resume
+                    </a>
+                  </div>
+                  
+                  <button 
+                    type="button" 
+                    className="btn btn-link btn-sm text-secondary w-100 mt-4 text-decoration-none small fw-semibold" 
+                    onClick={() => { setAppliedJob(null); setFormSubmitted(false); }}
+                  >
+                    Close Window
+                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit}>
@@ -314,8 +341,8 @@ export default function Careers() {
                   <div className="mb-4 p-3 rounded-3 bg-light d-flex align-items-center gap-2" style={{ border: '1px dashed rgba(77, 30, 163, 0.2)' }}>
                     <FileText size={20} className="text-secondary" />
                     <div className="text-start">
-                      <h6 className="mb-0 small fw-bold text-muted">Resume Upload Field</h6>
-                      <small className="text-muted" style={{ fontSize: '0.75rem' }}>Send your PDF resume directly to saishnaateam@gmail.com</small>
+                      <h6 className="mb-0 small fw-bold text-muted">Resume Submission</h6>
+                      <small className="text-muted" style={{ fontSize: '0.75rem' }}>Send to saishnaa@gmail.com or WhatsApp +91 9790155384</small>
                     </div>
                   </div>
 

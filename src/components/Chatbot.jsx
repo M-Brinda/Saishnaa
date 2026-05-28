@@ -110,7 +110,7 @@ export default function Chatbot() {
         addMessage('bot', botReply);
       } 
       else if (text.includes('career') || text.includes('job') || text.includes('hire') || text.includes('hiring') || text.includes('work')) {
-        botReply = "Yes, we are actively hiring! We have remote and on-site openings for Software Developers, UI/UX Designers, Marketing Managers, and DevOps Engineers. We offer competitive salaries, flexible hours, and health insurance!";
+        botReply = "Yes, we are actively hiring! We have remote and on-site openings for Software Developers, UI/UX Designers, Marketing Managers, and DevOps Engineers. To apply, please email your resume to saishnaa@gmail.com or send a WhatsApp message with your resume to +91 9790155384!";
         addMessage('bot', botReply);
       } 
       else if (text.includes('consultation') || text.includes('book') || text.includes('contact') || text.includes('meet') || text.includes('call')) {
@@ -123,7 +123,7 @@ export default function Chatbot() {
         addMessage('bot', botReply);
       } 
       else {
-        botReply = "Thank you for reaching out! I've logged your query. To speak directly with our strategic consultants or get a customized quote, please type 'Book Consultation' or email us at saishnaa@gmail.com!";
+        botReply = "Thank you for reaching out! I've logged your query. To speak directly with our strategic consultants or get a customized quote, please type 'Book Consultation', email us at saishnaa@gmail.com, or message us on WhatsApp at +91 9790155384!";
         addMessage('bot', botReply);
       }
     }, 1200);

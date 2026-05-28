@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader, MessageCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState({ loading: false, success: false, message: '' });
+  const [lastSubmittedData, setLastSubmittedData] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -14,7 +15,7 @@ export default function Contact() {
     if (formData.name && formData.email && formData.subject && formData.message) {
       setStatus({ loading: true, success: false, message: '' });
 
-      // Save inquiry
+      // Save inquiry locally in dashboard cache
       const inquiries = JSON.parse(localStorage.getItem('saishnaa_inquiries') || '[]');
       inquiries.push({
         inquiry: formData,
@@ -22,20 +23,18 @@ export default function Contact() {
       });
       localStorage.setItem('saishnaa_inquiries', JSON.stringify(inquiries));
 
-      // Simulate network request
+      // Cache current inputs for direct redirect triggers
+      setLastSubmittedData({ ...formData });
+
+      // Simulate mock API latency
       setTimeout(() => {
         setStatus({
           loading: false,
           success: true,
-          message: "Your message has been sent successfully! Our strategic consultants will contact you shortly."
+          message: "Inquiry successfully logged in our local system!"
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
-
-        // Reset success notification after 6s
-        setTimeout(() => {
-          setStatus(prev => ({ ...prev, success: false }));
-        }, 6000);
-      }, 1500);
+      }, 1200);
     }
   };
 
@@ -79,79 +78,109 @@ export default function Contact() {
                   <div className="glass-panel p-4 rounded-4 shadow-sm" style={{ border: '1px solid rgba(77,30,163,0.06)' }}>
                     <h5 className="fw-bold mb-4" style={{ color: 'var(--main-color)', fontFamily: 'Outfit, sans-serif' }}>Send Us a Message</h5>
                     
-                    {status.success && (
-                      <div className="alert alert-success d-flex align-items-start gap-2 mb-4 animate__animated animate__fadeIn">
-                        <CheckCircle className="flex-shrink-0 text-success mt-1" size={18} />
-                        <span style={{ fontSize: '0.88rem' }}>{status.message}</span>
+                    {status.success && lastSubmittedData ? (
+                      <div className="p-2 rounded-3 animate__animated animate__fadeIn">
+                        <div className="d-flex align-items-center gap-2 mb-3">
+                          <CheckCircle className="text-success" size={24} />
+                          <h6 className="fw-bold mb-0" style={{ color: 'var(--main-color)', fontSize: '1.1rem' }}>Inquiry Saved Locally!</h6>
+                        </div>
+                        <p className="small text-muted mb-4" style={{ lineHeight: '1.6' }}>
+                          For instant delivery to our executive consultants, please tap one of the buttons below to send your query directly via WhatsApp or Email:
+                        </p>
+                        <div className="d-flex flex-column gap-3">
+                          <a 
+                            href={`https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20my%20name%20is%20${encodeURIComponent(lastSubmittedData.name)}.%20Here%20is%20my%20query%3A%0A%0A*Subject*%3A%20${encodeURIComponent(lastSubmittedData.subject)}%0A*Email*%3A%20${encodeURIComponent(lastSubmittedData.email)}%0A*Message*%3A%20${encodeURIComponent(lastSubmittedData.message)}`}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="btn text-white w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold shadow-sm"
+                            style={{ backgroundColor: '#25D366', border: 'none', transition: 'all 0.3s', fontSize: '0.95rem' }}
+                          >
+                            <MessageCircle size={18} /> Send via WhatsApp
+                          </a>
+                          <a 
+                            href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(lastSubmittedData.subject)}&body=Hi%20Saishnaa%20Team%2C%0A%0AMy%20name%20is%20${encodeURIComponent(lastSubmittedData.name)}%20(Email%3A%20${encodeURIComponent(lastSubmittedData.email)}).%0A%0AQuery%3A%0A${encodeURIComponent(lastSubmittedData.message)}`}
+                            className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold text-white shadow-sm"
+                            style={{ fontSize: '0.95rem' }}
+                          >
+                            <Mail size={18} /> Send via Email
+                          </a>
+                        </div>
+                        <button 
+                          type="button" 
+                          className="btn btn-link btn-sm text-secondary w-100 mt-4 text-decoration-none small fw-semibold" 
+                          onClick={() => { setLastSubmittedData(null); setStatus({ loading: false, success: false, message: '' }); }}
+                        >
+                          ← Submit Another Inquiry
+                        </button>
                       </div>
+                    ) : (
+                      <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                          <label htmlFor="name" className="form-label small fw-semibold text-muted">Your Name</label>
+                          <input 
+                            type="text" 
+                            className="form-control py-2.5" 
+                            id="name" 
+                            placeholder="John Doe" 
+                            required
+                            value={formData.name}
+                            onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                          />
+                        </div>
+                        <div className="mb-3">
+                          <label htmlFor="email" className="form-label small fw-semibold text-muted">Email Address</label>
+                          <input 
+                            type="email" 
+                            className="form-control py-2.5" 
+                            id="email" 
+                            placeholder="john@example.com" 
+                            required
+                            value={formData.email}
+                            onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                          />
+                        </div>
+                        <div className="mb-3">
+                          <label htmlFor="subject" className="form-label small fw-semibold text-muted">Subject</label>
+                          <input 
+                            type="text" 
+                            className="form-control py-2.5" 
+                            id="subject" 
+                            placeholder="Project Inquiry / Tech consultation" 
+                            required
+                            value={formData.subject}
+                            onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                          />
+                        </div>
+                        <div className="mb-4">
+                          <label htmlFor="message" className="form-label small fw-semibold text-muted">Your Message</label>
+                          <textarea 
+                            className="form-control" 
+                            id="message" 
+                            rows="5" 
+                            placeholder="Describe your project, software goals, or requested timeline..." 
+                            required
+                            value={formData.message}
+                            onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                          ></textarea>
+                        </div>
+                        
+                        <button 
+                          type="submit" 
+                          className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2"
+                          disabled={status.loading}
+                        >
+                          {status.loading ? (
+                            <>
+                              <Loader size={16} className="animate-spin" style={{ animation: 'spin 1s linear infinite' }} /> Processing...
+                            </>
+                          ) : (
+                            <>
+                              <Send size={16} /> Send Message
+                            </>
+                          )}
+                        </button>
+                      </form>
                     )}
-
-                    <form onSubmit={handleSubmit}>
-                      <div className="mb-3">
-                        <label htmlFor="name" className="form-label small fw-semibold text-muted">Your Name</label>
-                        <input 
-                          type="text" 
-                          className="form-control py-2.5" 
-                          id="name" 
-                          placeholder="John Doe" 
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label htmlFor="email" className="form-label small fw-semibold text-muted">Email Address</label>
-                        <input 
-                          type="email" 
-                          className="form-control py-2.5" 
-                          id="email" 
-                          placeholder="john@example.com" 
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label htmlFor="subject" className="form-label small fw-semibold text-muted">Subject</label>
-                        <input 
-                          type="text" 
-                          className="form-control py-2.5" 
-                          id="subject" 
-                          placeholder="Project Inquiry / Tech consultation" 
-                          required
-                          value={formData.subject}
-                          onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
-                        />
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="message" className="form-label small fw-semibold text-muted">Your Message</label>
-                        <textarea 
-                          className="form-control" 
-                          id="message" 
-                          rows="5" 
-                          placeholder="Describe your project, software goals, or requested timeline..." 
-                          required
-                          value={formData.message}
-                          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                        ></textarea>
-                      </div>
-                      
-                      <button 
-                        type="submit" 
-                        className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2"
-                        disabled={status.loading}
-                      >
-                        {status.loading ? (
-                          <>
-                            <Loader size={16} className="animate-spin" style={{ animation: 'spin 1s linear infinite' }} /> Processing...
-                          </>
-                        ) : (
-                          <>
-                            <Send size={16} /> Send Message
-                          </>
-                        )}
-                      </button>
-                    </form>
                   </div>
                 </div>
 
@@ -170,11 +199,21 @@ export default function Contact() {
                       </p>
                       <p className="mb-0 d-flex align-items-center gap-2">
                         <Phone size={18} className="text-warning flex-shrink-0" />
-                        <span>+91 9363643763</span>
+                        <a href="tel:+919363643763" className="text-decoration-none text-secondary" style={{ transition: 'color 0.25s' }}>
+                          +91 9363643763 (Office)
+                        </a>
+                      </p>
+                      <p className="mb-0 d-flex align-items-center gap-2">
+                        <MessageCircle size={18} className="text-warning flex-shrink-0" />
+                        <a href="https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20I%20have%20an%20inquiry%20regarding%20your%20IT%20services..." target="_blank" rel="noopener noreferrer" className="text-decoration-none text-secondary" style={{ transition: 'color 0.25s' }}>
+                          +91 9790155384 (WhatsApp Support)
+                        </a>
                       </p>
                       <p className="mb-0 d-flex align-items-center gap-2">
                         <Mail size={18} className="text-warning flex-shrink-0" />
-                        <span>saishnaa@gmail.com</span>
+                        <a href="mailto:saishnaa@gmail.com?subject=Saishnaa%20IT%20Solutions%20Inquiry" className="text-decoration-none text-secondary" style={{ transition: 'color 0.25s' }}>
+                          saishnaa@gmail.com
+                        </a>
                       </p>
                       <p className="mb-0 d-flex align-items-start gap-2">
                         <Clock size={18} className="text-warning flex-shrink-0 mt-1" />
