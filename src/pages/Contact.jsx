@@ -38,6 +38,39 @@ export default function Contact() {
     }
   };
 
+  const contactWaText = lastSubmittedData ? `Hi Saishnaa Team, my name is ${lastSubmittedData.name}. I would like to make an inquiry.
+
+==================================================
+💬 NEW INQUIRY - SAISHNAA IT SOLUTIONS
+==================================================
+👤 SENDER DETAILS:
+--------------------------------------------------
+• Full Name: ${lastSubmittedData.name}
+• Contact Email: ${lastSubmittedData.email}
+• Subject: ${lastSubmittedData.subject}
+💬 Detailed Query:
+--------------------------------------------------
+${lastSubmittedData.message}
+==================================================
+Sent via Saishnaa Web Portal.` : '';
+
+  const contactEmailSubject = lastSubmittedData ? lastSubmittedData.subject : '';
+
+  const contactEmailBody = lastSubmittedData ? `==================================================
+📩 NEW INQUIRY - SAISHNAA IT SOLUTIONS
+==================================================
+👤 Sender Details:
+--------------------------------------------------
+• Full Name: ${lastSubmittedData.name}
+• Contact Email: ${lastSubmittedData.email}
+• Subject: ${lastSubmittedData.subject}
+💬 Detailed Query:
+--------------------------------------------------
+${lastSubmittedData.message}
+==================================================
+Sent via Saishnaa Web Portal.
+==================================================` : '';
+
   return (
     <div className="page-fade-in">
       
@@ -89,7 +122,7 @@ export default function Contact() {
                         </p>
                         <div className="d-flex flex-column gap-3">
                           <a 
-                            href={`https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20my%20name%20is%20${encodeURIComponent(lastSubmittedData.name)}.%20Here%20is%20my%20query%3A%0A%0A*Subject*%3A%20${encodeURIComponent(lastSubmittedData.subject)}%0A*Email*%3A%20${encodeURIComponent(lastSubmittedData.email)}%0A*Message*%3A%20${encodeURIComponent(lastSubmittedData.message)}`}
+                            href={`https://wa.me/919790155384?text=${encodeURIComponent(contactWaText)}`}
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="btn text-white w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold shadow-sm"
@@ -98,7 +131,7 @@ export default function Contact() {
                             <MessageCircle size={18} /> Send via WhatsApp
                           </a>
                           <a 
-                            href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(lastSubmittedData.subject)}&body=Hi%20Saishnaa%20Team%2C%0A%0AMy%20name%20is%20${encodeURIComponent(lastSubmittedData.name)}%20(Email%3A%20${encodeURIComponent(lastSubmittedData.email)}).%0A%0AQuery%3A%0A${encodeURIComponent(lastSubmittedData.message)}`}
+                            href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(contactEmailSubject)}&body=${encodeURIComponent(contactEmailBody)}`}
                             className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold text-white shadow-sm"
                             style={{ fontSize: '0.95rem' }}
                           >

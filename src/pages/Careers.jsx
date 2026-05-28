@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Briefcase, MapPin, Code, Send, CheckCircle, FileText, MessageCircle } from 'lucide-react';
+import { Search, Briefcase, MapPin, Code, Send, CheckCircle, FileText, MessageCircle, Mail } from 'lucide-react';
 
 export default function Careers() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -95,6 +95,41 @@ export default function Careers() {
       }, 3500);
     }
   };
+
+  const careerWaText = appliedJob && formData ? `Hi Saishnaa Team, I am applying for the *${appliedJob.title}* position.
+
+==================================================
+💼 POSITION: ${appliedJob.title}
+==================================================
+👤 APPLICANT DETAILS:
+--------------------------------------------------
+• Full Name: ${formData.name}
+• Contact Phone: ${formData.phone}
+• Contact Email: ${formData.email}
+📝 Cover Letter / Brief Bio:
+--------------------------------------------------
+${formData.cover || 'N/A'}
+==================================================
+Please find my Resume attached below.` : '';
+
+  const careerEmailSubject = appliedJob && formData ? `Job Application: ${appliedJob.title} - ${formData.name}` : '';
+
+  const careerEmailBody = appliedJob && formData ? `==================================================
+📩 NEW JOB APPLICATION - SAISHNAA ACADEMY
+==================================================
+💼 Position Applied: ${appliedJob.title}
+👤 Applicant Details:
+--------------------------------------------------
+• Full Name: ${formData.name}
+• Contact Phone: ${formData.phone}
+• Contact Email: ${formData.email}
+📝 Cover Letter / Brief Bio:
+--------------------------------------------------
+${formData.cover || 'N/A'}
+==================================================
+📌 IMPORTANT NOTE:
+Please attach your PDF Resume to this draft before sending.
+==================================================` : '';
 
   return (
     <div className="page-fade-in">
@@ -232,9 +267,10 @@ export default function Careers() {
           animation: 'pageFadeIn 0.3s ease'
         }} onClick={() => setAppliedJob(null)}>
 
-          <div className="modal-dialog modal-dialog-centered glass-panel p-4" style={{
+          <div className="modal-dialog glass-panel p-4" style={{
             maxWidth: '520px', width: '90%', borderRadius: '20px', backgroundColor: 'white', border: 'none',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.25)', animation: 'chatbotOpen 0.4s var(--cubic-bezier)'
+            boxShadow: '0 20px 50px rgba(0,0,0,0.25)', animation: 'chatbotOpen 0.4s var(--cubic-bezier)',
+            maxHeight: '85vh', overflowY: 'auto'
           }} onClick={(e) => e.stopPropagation()}>
 
             <div className="modal-content border-0 bg-transparent text-start">
@@ -252,7 +288,7 @@ export default function Careers() {
                   
                   <div className="d-flex flex-column gap-2.5 w-100 px-3">
                     <a 
-                      href={`https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20I'm%20applying%20for%20the%20*${encodeURIComponent(appliedJob.title)}*%20position.%0A%0A*Name*%3A%20${encodeURIComponent(formData.name)}%0A*Phone*%3A%20${encodeURIComponent(formData.phone)}%0A*Email*%3A%20${encodeURIComponent(formData.email)}%0A*Cover%20Letter*%3A%20${encodeURIComponent(formData.cover)}%0A%0AI%20am%20sending%20my%20resume%20for%20reference.`}
+                      href={`https://wa.me/919790155384?text=${encodeURIComponent(careerWaText)}`}
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="btn text-white w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold shadow-sm"
@@ -261,7 +297,7 @@ export default function Careers() {
                       <MessageCircle size={18} /> Apply via WhatsApp
                     </a>
                     <a 
-                      href={`mailto:saishnaa@gmail.com?subject=Job%20Application%3A%20${encodeURIComponent(appliedJob.title)}%20-%20${encodeURIComponent(formData.name)}&body=Hi%20Saishnaa%20Hiring%20Team%2C%0A%0AI%20would%20like%20to%20apply%20for%20the%20${encodeURIComponent(appliedJob.title)}%20position.%0A%0AMy%20details%3A%0A*Name*%3A%20${encodeURIComponent(formData.name)}%0A*Phone*%3A%20${encodeURIComponent(formData.phone)}%0A*Email*%3A%20${encodeURIComponent(formData.email)}%0A%0A*Cover%20Letter*%3A%0A${encodeURIComponent(formData.cover)}%0A%0A[PLEASE%20ATTACH%20YOUR%20RESUME%20PDF%20HERE]%0A%0AThank%20you.`}
+                      href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(careerEmailSubject)}&body=${encodeURIComponent(careerEmailBody)}`}
                       className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold text-white shadow-sm"
                       style={{ fontSize: '0.95rem' }}
                     >

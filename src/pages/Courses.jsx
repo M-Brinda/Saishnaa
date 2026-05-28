@@ -43,6 +43,82 @@ export default function Courses() {
     return matchesSearch && matchesCategory;
   });
 
+  const scratchWaText = `Hi Saishnaa Team, I want to enroll my child in the Scratch Coding for Kids course. Please send me the class schedule!
+
+==================================================
+🎓 COURSE ENROLLMENT - KIDS SCRATCH CODING
+==================================================
+🏫 Academy: Saishnaa Software & Kids Coding Academy
+👶 Course: Scratch Programming for Kids (Ages 6-15)
+--------------------------------------------------
+👤 PARENT & STUDENT DETAILS:
+• Parent Name: [Enter Parent Name]
+• Student Name: [Enter Student Name]
+• Student Age: [Enter Age, e.g. 10]
+• Contact Phone: [Enter Phone]
+• Preferred Batch: [ ] Weekend  [ ] Weekday
+==================================================
+Please guide us through the enrollment process.`;
+
+  const scratchEmailSubject = "Kids Scratch Coding Course Admission Inquiry";
+  const scratchEmailBody = `==================================================
+🎓 COURSE ADMISSION INQUIRY - KIDS SCRATCH CODING
+==================================================
+🏫 Academy: Saishnaa Software & Kids Coding Academy
+👶 Course: Scratch Programming for Kids (Ages 6-15)
+--------------------------------------------------
+👤 Parent/Guardian Details (Please fill in below):
+• Parent Name: 
+• Student Name: 
+• Student Age: 
+• Contact Phone: 
+• Preferred Batch: [ ] Weekend  [ ] Weekday
+💬 Additional Queries/Notes:
+--------------------------------------------------
+
+==================================================
+Sent via Saishnaa Learning Academy.
+==================================================`;
+
+  const getCourseWaText = (course) => `Hi Saishnaa Team, I am interested in joining the ${course.title} certificate course.
+
+==================================================
+🎓 COURSE INQUIRY - SAISHNAA ACADEMY
+==================================================
+🏫 Academy: Saishnaa Software & Academy
+📘 Course Name: ${course.title}
+📁 Category: ${course.category}
+⏱ Duration: ${course.duration}
+--------------------------------------------------
+👤 Student Details:
+• Full Name: [Enter Your Name]
+• Contact Phone: [Enter Your Phone]
+• Contact Email: [Enter Your Email]
+==================================================
+Please share the schedule and admission requirements!`;
+
+  const getCourseEmailSubject = (course) => `Inquiry: ${course.title} Certificate Course`;
+
+  const getCourseEmailBody = (course) => `==================================================
+🎓 COURSE INQUIRY - SAISHNAA ACADEMY
+==================================================
+🏫 Academy: Saishnaa Software & Academy
+📘 Course Name: ${course.title}
+📁 Category: ${course.category}
+⏱ Duration: ${course.duration}
+--------------------------------------------------
+👤 Student Details (Please fill in below):
+• Full Name: 
+• Contact Phone: 
+• Contact Email: 
+• Current Occupation/Education: 
+💬 Queries / Preferred Commencement Date:
+--------------------------------------------------
+
+==================================================
+Sent via Saishnaa Learning Academy.
+==================================================`;
+
   return (
     <div className="page-fade-in">
       
@@ -110,7 +186,7 @@ export default function Courses() {
 
                 <div className="d-flex flex-wrap gap-3">
                   <a 
-                    href="https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20I%20want%20to%20enroll%20my%20child%20in%20the%20Scratch%20Coding%20for%20Kids%20course.%20Please%20send%20me%20the%20class%20schedule!"
+                    href={`https://wa.me/919790155384?text=${encodeURIComponent(scratchWaText)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn text-white px-4 py-3 rounded-pill d-flex align-items-center gap-2 fw-bold"
@@ -119,7 +195,7 @@ export default function Courses() {
                     <MessageCircle size={18} /> Enroll via WhatsApp
                   </a>
                   <a 
-                    href="mailto:saishnaa@gmail.com?subject=Kids%20Scratch%20Coding%20Course%20Admission"
+                    href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(scratchEmailSubject)}&body=${encodeURIComponent(scratchEmailBody)}`}
                     className="btn btn-purple px-4 py-3 rounded-pill d-flex align-items-center gap-2 fw-bold text-white"
                   >
                     <Mail size={18} /> Email for Admissions
@@ -236,7 +312,7 @@ export default function Courses() {
                     <span className="text-muted small fw-medium">Duration: <strong>{course.duration}</strong></span>
                     <div className="d-flex gap-2">
                       <a 
-                        href={`https://wa.me/919790155384?text=Hi%20Saishnaa%20Team%2C%20I%20am%20interested%20in%20joining%20the%20${encodeURIComponent(course.title)}%20certificate%20course.%20Please%20share%20the%20details!`}
+                        href={`https://wa.me/919790155384?text=${encodeURIComponent(getCourseWaText(course))}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-sm text-white"
@@ -246,7 +322,7 @@ export default function Courses() {
                         <MessageCircle size={16} />
                       </a>
                       <a 
-                        href={`mailto:saishnaa@gmail.com?subject=Inquiry:%20${encodeURIComponent(course.title)}%20Certificate%20Course`}
+                        href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(getCourseEmailSubject(course))}&body=${encodeURIComponent(getCourseEmailBody(course))}`}
                         className="btn btn-sm btn-purple"
                         style={{ borderRadius: '50%', width: '32px', height: '32px', padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         title="Inquire via Email"

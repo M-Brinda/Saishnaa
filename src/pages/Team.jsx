@@ -169,9 +169,10 @@ export default function Team() {
           animation: 'pageFadeIn 0.3s ease'
         }} onClick={() => setSelectedMember(null)}>
           
-          <div className="modal-dialog modal-dialog-centered glass-panel p-4" style={{
+          <div className="modal-dialog glass-panel p-4" style={{
             maxWidth: '550px', width: '90%', borderRadius: '20px', backgroundColor: 'white', border: 'none',
-            boxShadow: '0 20px 50px rgba(0,0,0,0.25)', animation: 'chatbotOpen 0.4s var(--cubic-bezier)'
+            boxShadow: '0 20px 50px rgba(0,0,0,0.25)', animation: 'chatbotOpen 0.4s var(--cubic-bezier)',
+            maxHeight: '85vh', overflowY: 'auto'
           }} onClick={(e) => e.stopPropagation()}>
             
             <div className="modal-content border-0 bg-transparent text-start">
