@@ -35,6 +35,12 @@ export default function Journals() {
       frequency: "Bi-Monthly",
       editorInChief: "Dr. Anand Kumar, Ph.D. (IIT Madras)",
       impactFactor: "4.82",
+      reviewTime: "14-Day Rapid Review",
+      acceptanceRate: "18%",
+      popularTopic: "LLMs & Generative AI",
+      specialIssue: "Neuromorphic AI & LLM Alignments",
+      citations: "1,840+",
+      marketingTag: "Top Ranked in India & Asia-Pac",
       description: "IJ CSE is a premier international venue dedicated to publishing state-of-the-art research articles, reviews, and surveys in the broader domain of Computer Science, Software Engineering, and AI systems.",
       indexing: ["Scopus Indexed", "Google Scholar", "CrossRef (DOI)", "DBLP", "Index Copernicus", "EBSCO"],
       scope: [
@@ -60,6 +66,12 @@ export default function Journals() {
       frequency: "Quarterly",
       editorInChief: "Dr. Priya Sharma, Ph.D. (IISc Bangalore)",
       impactFactor: "4.15",
+      reviewTime: "21-Day Peer Decision",
+      acceptanceRate: "24%",
+      popularTopic: "Zero-Trust Cybersecurity",
+      specialIssue: "Secure Cloud Scrapers & Edge Threat Audits",
+      citations: "1,250+",
+      marketingTag: "Fast-Track Digital Transformation Publication",
       description: "IJ IT focuses on advanced information systems, network architectures, security frameworks, and custom digital transformation policies tailored for modern enterprise applications.",
       indexing: ["Scopus Indexed", "Google Scholar", "CrossRef (DOI)", "ProQuest", "EBSCO", "DOAJ"],
       scope: [
@@ -85,6 +97,12 @@ export default function Journals() {
       frequency: "Bi-Monthly",
       editorInChief: "Dr. Rajesh Varma, Ph.D. (NIT Trichy)",
       impactFactor: "4.56",
+      reviewTime: "18-Day Quick Feedback",
+      acceptanceRate: "21%",
+      popularTopic: "Solid-State Batteries & EV Powertrains",
+      specialIssue: "Smart Micro-Grids & Solid-State EV Charging",
+      citations: "1,520+",
+      marketingTag: "Industry 4.0 Standard Research",
       description: "IJ EEE covers standard breakthroughs in electronic circuit integrations, power grid architectures, renewable green energy systems, and microelectronics fabrication.",
       indexing: ["Scopus Indexed", "Google Scholar", "Inspec", "CrossRef (DOI)", "DOAJ", "Ulrich's Periodical Directory"],
       scope: [
@@ -110,6 +128,12 @@ export default function Journals() {
       frequency: "Quarterly",
       editorInChief: "Dr. Sanjay Mehta, Ph.D. (BITS Pilani)",
       impactFactor: "3.98",
+      reviewTime: "25-Day In-depth Review",
+      acceptanceRate: "19%",
+      popularTopic: "Computational Fluid Dynamics (CFD)",
+      specialIssue: "Additive Manufacturing & Aerodynamic Design",
+      citations: "980+",
+      marketingTag: "High-Impact Material Science Studies",
       description: "IJ ME publishes high-quality peer-reviewed articles focusing on fluid dynamics, thermodynamic layouts, robotics automation, material science, and mechanical structural configurations.",
       indexing: ["Scopus Indexed", "Google Scholar", "Ei Compendex", "CrossRef (DOI)", "EBSCO"],
       scope: [
@@ -314,7 +338,17 @@ export default function Journals() {
                   </div>
 
                   {/* Journal Title & Codes */}
-                  <div className="mb-3">
+                  <div className="mb-2">
+                    <span className="text-gradient fw-bold mb-1 d-block" style={{ 
+                      fontSize: '0.75rem', 
+                      letterSpacing: '0.5px', 
+                      textTransform: 'uppercase',
+                      background: 'linear-gradient(45deg, var(--main-color), var(--secondary-color))',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}>
+                      ✨ {journal.marketingTag}
+                    </span>
                     <h5 className="fw-bold mb-1" style={{ color: 'var(--main-color)', fontFamily: 'Outfit, sans-serif' }}>
                       {journal.code}
                     </h5>
@@ -323,25 +357,53 @@ export default function Journals() {
                     </h6>
                   </div>
 
-                  <p className="text-muted small mb-4 flex-grow-1" style={{ lineHeight: '1.7' }}>
+                  {/* Hot Topics & Rapid Review Indicator */}
+                  <div className="mb-3 d-flex align-items-center gap-1.5 flex-wrap">
+                    <span className="badge rounded-pill bg-danger-subtle text-danger border border-danger-subtle" style={{ fontSize: '0.68rem', padding: '4px 10px' }}>
+                      🔥 Hot Topic: {journal.popularTopic}
+                    </span>
+                    <span className="badge rounded-pill bg-info-subtle text-info border border-info-subtle" style={{ fontSize: '0.68rem', padding: '4px 10px', color: '#0dcaf0' }}>
+                      ⚡ {journal.reviewTime}
+                    </span>
+                  </div>
+
+                  <p className="text-muted small mb-3 flex-grow-1" style={{ lineHeight: '1.7' }}>
                     {journal.description}
                   </p>
 
-                  {/* Highlight Metrics */}
-                  <div className="row g-2 mb-4 p-3 bg-light rounded-3 text-center">
-                    <div className="col-6 border-end">
-                      <small className="text-muted d-block" style={{ fontSize: '0.75rem' }}>Frequency</small>
-                      <strong className="text-dark small">{journal.frequency}</strong>
+                  {/* Active Call strip */}
+                  <div className="p-2.5 rounded-3 mb-3 border text-start" style={{ 
+                    backgroundColor: 'rgba(255, 193, 7, 0.05)', 
+                    borderColor: 'rgba(255, 193, 7, 0.25)',
+                    fontSize: '0.75rem'
+                  }}>
+                    <span className="fw-bold text-dark d-block mb-0.5">📢 Active Call for Special Issue:</span>
+                    <span className="text-secondary">"{journal.specialIssue}" — Fast-track reviewing.</span>
+                  </div>
+
+                  {/* Highlight Metrics Grid */}
+                  <div className="row g-1 mb-3 p-2 bg-light rounded-3 text-center" style={{ fontSize: '0.78rem' }}>
+                    <div className="col-3 border-end">
+                      <small className="text-muted d-block" style={{ fontSize: '0.62rem', textTransform: 'uppercase' }}>Frequency</small>
+                      <strong className="text-dark">{journal.frequency}</strong>
                     </div>
-                    <div className="col-6">
-                      <small className="text-muted d-block" style={{ fontSize: '0.75rem' }}>Impact Factor</small>
-                      <strong className="text-dark small text-success">{journal.impactFactor}</strong>
+                    <div className="col-3 border-end">
+                      <small className="text-muted d-block" style={{ fontSize: '0.62rem', textTransform: 'uppercase' }}>Impact</small>
+                      <strong className="text-success">{journal.impactFactor}</strong>
+                    </div>
+                    <div className="col-3 border-end">
+                      <small className="text-muted d-block" style={{ fontSize: '0.62rem', textTransform: 'uppercase' }}>Accept Rate</small>
+                      <strong className="text-primary">{journal.acceptanceRate}</strong>
+                    </div>
+                    <div className="col-3">
+                      <small className="text-muted d-block" style={{ fontSize: '0.62rem', textTransform: 'uppercase' }}>Citations</small>
+                      <strong className="text-warning">{journal.citations}</strong>
                     </div>
                   </div>
 
                   {/* Indexing Badges */}
                   <div className="mb-4">
-                    <h6 className="fw-semibold text-muted small mb-2"><Award size={14} className="me-1 text-warning" /> Key Indexing Details:</h6>
+                    <h6 className="fw-semibold text-muted small mb-2"><Award size={14} className="me-1 text-warning" /> Indexing & Archives:</h6>
                     <div className="d-flex flex-wrap gap-1.5">
                       {journal.indexing.slice(0, 3).map((ind, iIdx) => (
                         <span key={iIdx} className="badge bg-white text-secondary border border-secondary-subtle" style={{
@@ -453,19 +515,38 @@ export default function Journals() {
                     </ul>
                   </div>
 
-                  {/* Indexing List & Board Info */}
+                   {/* Indexing List & Board Info */}
                   <div className="col-md-5 text-start">
+                    <div className="p-3 rounded-4 mb-3" style={{ backgroundColor: 'rgba(255, 193, 7, 0.04)', border: '1px solid rgba(255, 193, 7, 0.2)' }}>
+                      <h6 className="fw-bold mb-1.5 small text-dark d-flex align-items-center gap-1">
+                        📢 Active Special Issue Call:
+                      </h6>
+                      <p className="text-dark mb-1 fw-bold" style={{ fontSize: '0.78rem' }}>
+                        "{viewScopeJournal.specialIssue}"
+                      </p>
+                      <small className="text-muted d-block" style={{ fontSize: '0.7rem', lineHeight: '1.4' }}>
+                        Now accepting high-impact manuscripts. Fast-track peer reviewing applies globally.
+                      </small>
+                    </div>
+
                     <div className="p-3 rounded-4 mb-3" style={{ backgroundColor: 'rgba(77,30,163,0.04)', border: '1px solid rgba(77,30,163,0.08)' }}>
                       <h6 className="fw-bold mb-2 small text-dark d-flex align-items-center gap-1">
-                        <Shield size={14} className="text-primary" /> Global Databases Indexing:
+                        <Shield size={14} className="text-primary" /> Journal Performance:
                       </h6>
-                      <div className="d-flex flex-wrap gap-1.5">
-                        {viewScopeJournal.indexing.map((ind, iIdx) => (
-                          <span key={iIdx} className="badge bg-white text-dark border border-secondary-subtle" style={{ fontSize: '0.68rem', padding: '4px 8px' }}>
-                            {ind}
-                          </span>
-                        ))}
-                      </div>
+                      <ul className="list-unstyled mb-0 text-secondary" style={{ fontSize: '0.75rem', lineHeight: '1.6' }}>
+                        <li className="d-flex justify-content-between mb-1">
+                          <span>Acceptance Rate:</span>
+                          <strong className="text-dark">{viewScopeJournal.acceptanceRate}</strong>
+                        </li>
+                        <li className="d-flex justify-content-between mb-1">
+                          <span>Review Decision:</span>
+                          <strong className="text-dark">{viewScopeJournal.reviewTime}</strong>
+                        </li>
+                        <li className="d-flex justify-content-between">
+                          <span>Citations Strength:</span>
+                          <strong className="text-dark">{viewScopeJournal.citations} Citations</strong>
+                        </li>
+                      </ul>
                     </div>
 
                     <div className="p-3 rounded-4" style={{ backgroundColor: 'rgba(255,107,107,0.04)', border: '1px solid rgba(255,107,107,0.08)' }}>
