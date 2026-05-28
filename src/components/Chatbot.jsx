@@ -96,34 +96,40 @@ export default function Chatbot() {
         return;
       }
 
-      // Default Q&A mappings
+      // Premium LLM-styled Q&A mappings
       if (text.includes('service') || text.includes('what do you do') || text.includes('offer')) {
-        botReply = "Saishnaa Software Solutions offers full-cycle Technology Consulting, custom Web & Mobile App Development, Artificial Intelligence integration, Cloud Migration, Cybersecurity audit, and UI/UX design. We specialize in building fast, scalable systems.";
+        botReply = "Saishnaa Software Solutions provides premium, full-cycle technology consulting. Our key offerings encompass bespoke Enterprise Web Platforms, high-performance Mobile Applications (iOS & Android), custom Artificial Intelligence & Machine Learning deployments, secure Cloud Migration, comprehensive Cybersecurity audits, and pixel-perfect UI/UX engineering. We specialize in building fast, scalable systems.";
         addMessage('bot', botReply);
-        // Delay a tiny bit to offer navigate action
         setTimeout(() => {
           addMessage('bot', "Would you like me to take you to our full Services catalog? Click below!");
         }, 600);
       } 
       else if (text.includes('pricing') || text.includes('cost') || text.includes('plan')) {
-        botReply = "We offer clear, transparent pricing packages starting at ₹5,000 for the Starter Plan, ₹10,000 for the Professional Plan (includes auto-invoice & wallets), and ₹15,000 for the Premium Plan (with payment gateways & advanced analytics).";
+        botReply = "Our pricing structures are engineered to offer maximum clarity and exceptional value. We offer tiered engineering packages starting at ₹5,000 for the Starter Plan (informational frameworks), ₹10,000 for the Professional Plan (incorporating automatic invoicing, multi-wallet integration, and dynamic workflows), and ₹15,000 for the Premium Plan (fully loaded with integrated payment gateways, robust dashboards, and real-time user analytics).";
         addMessage('bot', botReply);
       } 
       else if (text.includes('career') || text.includes('job') || text.includes('hire') || text.includes('hiring') || text.includes('work')) {
-        botReply = "Yes, we are actively hiring! We have remote and on-site openings for Software Developers, UI/UX Designers, Marketing Managers, and DevOps Engineers. To apply, please email your resume to saishnaa@gmail.com or send a WhatsApp message with your resume to +91 9790155384!";
+        botReply = "Saishnaa is a hub of technological innovation, and we are actively seeking exceptional talent to join our team. We currently have active openings for Software Engineers (React, Node, Python), UI/UX Experience Designers, Agile Product Leads, and DevOps specialists. To apply for a role, please email your credentials and resume to saishnaa@gmail.com, or send a message directly to our talent acquisition team via WhatsApp at +91 9790155384!";
         addMessage('bot', botReply);
       } 
+      else if (text.includes('journal') || text.includes('paper') || text.includes('research') || text.includes('publication') || text.includes('article')) {
+        botReply = "At Saishnaa, we actively contribute to state-of-the-art technological progress. Our dedicated R&D division regularly publishes academic papers, technical journals, and architectural whitepapers focusing on AI models, high-concurrency cloud systems, and responsive web paradigms.";
+        addMessage('bot', botReply);
+        setTimeout(() => {
+          addMessage('bot', "Would you like to browse our latest academic research and publications?");
+        }, 600);
+      }
       else if (text.includes('consultation') || text.includes('book') || text.includes('contact') || text.includes('meet') || text.includes('call')) {
-        botReply = "I'd be glad to help you book a free technical consultation with our engineering team! 🗓️ Could you please enter your email address below?";
+        botReply = "I would be absolutely delighted to help secure a technical consultation for your project with our lead software engineers and architects. 🗓️ To initiate this scheduling, could you please share your professional email address below?";
         addMessage('bot', botReply);
         setChatState('asking_email');
       } 
       else if (text.includes('hello') || text.includes('hi') || text.includes('hey')) {
-        botReply = "Hello there! How can I assist you with your digital journey today?";
+        botReply = "Greetings! Welcome to Saishnaa Software Solutions. I am Sai, your dedicated Technology Consultant. How may I assist you with your digital transformation, custom software architecture, or career goals today?";
         addMessage('bot', botReply);
       } 
       else {
-        botReply = "Thank you for reaching out! I've logged your query. To speak directly with our strategic consultants or get a customized quote, please type 'Book Consultation', email us at saishnaa@gmail.com, or message us on WhatsApp at +91 9790155384!";
+        botReply = "Thank you for sharing your message. I have successfully logged your query in our local database. To speak directly with our executive consultants or secure a customized quote, please type 'Book Consultation', email us at saishnaa@gmail.com, or send an instant WhatsApp query to +91 9790155384!";
         addMessage('bot', botReply);
       }
     }, 1200);
@@ -189,6 +195,11 @@ export default function Chatbot() {
                 {msg.text.includes("full Services catalog?") && (
                   <button onClick={() => { setIsOpen(false); navigate('/services'); }} className="btn btn-sm btn-purple mt-2 text-white w-100" style={{ fontSize: '0.75rem', padding: '6px' }}>
                     Go to Services
+                  </button>
+                )}
+                {msg.text.includes("latest academic research and publications?") && (
+                  <button onClick={() => { setIsOpen(false); navigate('/journals'); }} className="btn btn-sm btn-purple mt-2 text-white w-100" style={{ fontSize: '0.75rem', padding: '6px' }}>
+                    Go to Journals
                   </button>
                 )}
               </div>

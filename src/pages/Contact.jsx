@@ -217,7 +217,7 @@ export default function Contact() {
                       </p>
                       <p className="mb-0 d-flex align-items-start gap-2">
                         <Clock size={18} className="text-warning flex-shrink-0 mt-1" />
-                        <span>Mon - Sat: 9:30 AM to 5:30 PM</span>
+                        <span>Mon - Sat: 9:40 AM to 5:40 PM</span>
                       </p>
                     </div>
 

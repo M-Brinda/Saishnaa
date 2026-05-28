@@ -113,7 +113,7 @@ export default function Footer() {
               </li>
               <li className="d-flex align-items-start gap-2">
                 <i className="fas fa-clock mt-1 text-warning"></i>
-                <span>Mon-Sat: 9:30AM - 5:30PM</span>
+                <span>Mon-Sat: 9:40AM - 5:40PM</span>
               </li>
             </ul>
           </div>
