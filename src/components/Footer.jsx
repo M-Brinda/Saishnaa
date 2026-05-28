@@ -83,6 +83,7 @@ export default function Footer() {
             <ul className="list-unstyled opacity-75 d-flex flex-column gap-2" style={{ fontSize: '0.95rem' }}>
               <li><Link to="/" className="text-white nav-link-hover">About Us</Link></li>
               <li><Link to="/services" className="text-white nav-link-hover">Services</Link></li>
+              <li><Link to="/courses" className="text-white nav-link-hover">Courses & Academy</Link></li>
               <li><Link to="/projects" className="text-white nav-link-hover">Projects</Link></li>
               <li><Link to="/journals" className="text-white nav-link-hover">Academic Journals</Link></li>
               <li><Link to="/pricing" className="text-white nav-link-hover">Pricing</Link></li>

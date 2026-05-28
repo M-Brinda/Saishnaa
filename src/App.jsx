@@ -16,6 +16,7 @@ import Careers from './pages/Careers';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Journals from './pages/Journals';
+import Courses from './pages/Courses';
 
 // High-performance SEO, AIO, and SIO Page-Specific Configuration
 const SEO_CONFIG = {
@@ -38,6 +39,11 @@ const SEO_CONFIG = {
     title: 'Tech Journals, Whitepapers & Research | Saishnaa Software Solutions',
     description: 'Read our technical research, software engineering blogs, and scholarly publications on AI, cloud scalability, and advanced web technologies.',
     keywords: 'IT journals, technology research, software whitepapers, AI journals Erode'
+  },
+  '/courses': {
+    title: 'Professional Certificate Courses & Kids Coding Academy | Saishnaa',
+    description: 'Browse our 23 professional certification courses (Tally, Java, Photoshop, C/C++) and our creative Kids Coding Academy Scratch classes in Erode.',
+    keywords: 'kids coding Erode, Scratch course, tally training Thindal, java classes Erode, graphic design course'
   },
   '/pricing': {
     title: 'Transparent & Cost-Effective Pricing Plans | Saishnaa Software Solutions',
@@ -177,6 +183,7 @@ function App() {
           <Routes>
             <Route path="/" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/courses" element={<Courses />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/team" element={<Team />} />
