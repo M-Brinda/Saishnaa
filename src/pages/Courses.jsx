@@ -90,7 +90,6 @@ Sent via Saishnaa Learning Academy.
 🏫 Academy: Saishnaa Software & Academy
 📘 Course Name: ${course.title}
 📁 Category: ${course.category}
-⏱ Duration: ${course.duration}
 --------------------------------------------------
 👤 Student Details:
 • Full Name: [Enter Your Name]
@@ -107,7 +106,6 @@ Please share the schedule and admission requirements!`;
 🏫 Academy: Saishnaa Software & Academy
 📘 Course Name: ${course.title}
 📁 Category: ${course.category}
-⏱ Duration: ${course.duration}
 --------------------------------------------------
 👤 Student Details (Please fill in below):
 • Full Name: 
@@ -216,10 +214,6 @@ Sent via Saishnaa Learning Academy.
                   <hr />
                   <div className="d-flex justify-content-around text-center mt-3">
                     <div>
-                      <h6 className="fw-bold mb-1 text-secondary">Duration</h6>
-                      <span className="badge bg-light text-dark py-2 px-3 border rounded-pill">4 Weeks</span>
-                    </div>
-                    <div>
                       <h6 className="fw-bold mb-1 text-secondary">Level</h6>
                       <span className="badge bg-light text-dark py-2 px-3 border rounded-pill">Beginner</span>
                     </div>
@@ -254,7 +248,6 @@ Sent via Saishnaa Learning Academy.
                   <span className="badge bg-danger text-white px-2.5 py-1.5" style={{ fontSize: '0.7rem', borderRadius: '15px' }}>
                     🔥 Placement Focused
                   </span>
-                  <span className="text-muted small fw-bold">12 Weeks</span>
                 </div>
                 <h5 className="fw-bold text-dark mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
                   Full Stack Web Development (MERN Stack)
@@ -299,7 +292,6 @@ Sent via Saishnaa Learning Academy.
                   <span className="badge bg-info text-dark px-2.5 py-1.5" style={{ fontSize: '0.7rem', borderRadius: '15px', backgroundColor: '#e0fcfc' }}>
                     📈 Trending Course
                   </span>
-                  <span className="text-muted small fw-bold">8 Weeks</span>
                 </div>
                 <h5 className="fw-bold text-dark mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
                   Python Programming & AI Foundation
@@ -344,7 +336,6 @@ Sent via Saishnaa Learning Academy.
                   <span className="badge bg-primary text-white px-2.5 py-1.5" style={{ fontSize: '0.7rem', borderRadius: '15px' }}>
                     💻 Highly Requested
                   </span>
-                  <span className="text-muted small fw-bold">8 Weeks</span>
                 </div>
                 <h5 className="fw-bold text-dark mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
                   Advanced Java & Enterprise MVC Systems
@@ -460,8 +451,7 @@ Sent via Saishnaa Learning Academy.
                     <p className="text-secondary small mb-0 fw-medium" style={{ lineHeight: '1.5' }}>{course.skills}</p>
                   </div>
 
-                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
-                    <span className="text-muted small fw-medium">Duration: <strong>{course.duration}</strong></span>
+                  <div className="d-flex justify-content-end align-items-center border-top pt-3 mt-auto">
                     <div className="d-flex gap-2">
                       <a 
                         href={`https://wa.me/919790155384?text=${encodeURIComponent(getCourseWaText(course))}`}
