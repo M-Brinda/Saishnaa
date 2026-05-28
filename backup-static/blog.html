@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saishnaa IT Solutions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        :root {
+            
+            --main-color: #4d1ea3;
+            --bg-light: #153e68;
+            --transition-speed: 0.3s;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            background-color: var(--main-color);
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: rgba(111, 66, 193, 0.95);
+        }
+        .navbar-brand, .nav-link, .navbar-toggler-icon {
+            color: white !important;
+            transition: all var(--transition-speed) ease;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+        .hero {
+  background: linear-gradient(rgba(181, 157, 230, 0.945), rgba(152, 241, 182, 0.8)), url('img/1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 150px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+        .hero h1 {
+            animation: fadeInDown 1s both;
+        }
+        .hero p {
+            animation: fadeInUp 1s 0.3s both;
+        }
+        .hero .btn {
+            animation: fadeIn 1s 0.6s both;
+        }
+        .section-title {
+            color: var(--main-color);
+            font-weight: bold;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            text-align:justify;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--main-color);
+            bottom: -10px;
+            left: 25%;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.5s ease;
+        }
+        .section-title:hover::after {
+            transform: scaleX(1);
+        }
+        .footer {
+            background-color: var(--main-color);
+            color: white;
+            padding: 30px 0;
+            transition: all var(--transition-speed) ease;
+        }
+        .footer:hover {
+            background-color: #5a2db1;
+        }
+        .btn-purple {
+            background-color: var(--main-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 15px rgba(111, 66, 193, 0.4);
+        }
+        .btn-purple:hover {
+            background-color: #5936a6;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(111, 66, 193, 0.6);
+        }
+        .service-card {
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(111, 66, 193, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(111, 66, 193, 0.1);
+            border-color: rgba(111, 66, 193, 0.3);
+        }
+        .service-card h5 {
+            color: var(--main-color);
+            transition: all var(--transition-speed) ease;
+        }
+        .service-card:hover h5 {
+            transform: scale(1.05);
+        }
+        .project-card {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  background: white;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+.project-card p {
+  padding: 15px;
+  font-weight: 500;
+  color: var(--main-color);
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+        .navbar-brand img {
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+        
+        /* Keyframe animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(20px);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #6acae7;">
+  <div class="container-fluid">
+    <!-- BRAND LEFT -->
+    <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3" href="index.html" style="white-space: nowrap;">
+      <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto;" />
+      <span class="fw-bold fs-5" style="color: #f1f1f1;">Saishnaa</span>
+
+
+    </a>
+
+    <!-- TOGGLER FOR MOBILE -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="home.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <section class="hero">
+        <h1 class="animate__animated animate__fadeInDown">Saishnaa Software Solutions</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Empowering Digital Futures with Innovative Tech</p>
+        <a href="#services" class="btn btn-purple mt-4 animate__animated animate__fadeIn animate__delay-2s">Explore Services</a>
+    </section>
+
+  <footer class="footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0 reveal">
+                    <h4 class="mb-4">Saishnaa IT Solutions</h4>
+                    <p>Innovative technology solutions tailored to your business needs. Let's build the future together.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61577296040956" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/saishnaa83696" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/saishnaa_software/" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 reveal animate-delay-1">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="service.html" class="text-white">Services</a></li>
+                        <li class="mb-2"><a href="team.html" class="text-white">Team</a></li>
+                        <li class="mb-2"><a href="career.html" class="text-white">Careers</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 reveal animate-delay-2">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Tech Park, Bangalore, India</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9876543210</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>saishnaateam@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+           <div class="col-lg-3">
+    <h5 class="mb-4">Newsletter</h5>
+    <p>Subscribe to our newsletter for the latest updates and career opportunities.</p>
+    <form id="newsletter-form" class="mt-3">
+        <div class="input-group mb-3">
+            <input type="email" id="newsletter-email" class="form-control" placeholder="Your Email" aria-label="Your Email" required>
+            <button class="btn btn-light" type="submit">Subscribe</button>
+        </div>
+        <small id="form-message" class="text-success d-none">Thank you for subscribing!</small>
+    </form>
+</div>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form from refreshing the page
+
+        const email = document.getElementById('newsletter-email').value;
+        const message = document.getElementById('form-message');
+
+        // Simple email validation
+        if (email && email.includes('@')) {
+            // You can send `email` to your backend or a Google Sheet or Mailchimp here
+
+            message.classList.remove('d-none');
+            message.classList.add('text-success');
+            message.textContent = 'Thank you for subscribing!';
+            this.reset(); // Clear the form
+        } else {
+            message.classList.remove('d-none');
+            message.classList.remove('text-success');
+            message.classList.add('text-danger');
+            message.textContent = 'Please enter a valid email address.';
+        }
+    });
+</script>
+
+            </div>
+            <hr class="my-4 bg-white opacity-25">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start reveal">
+                    <p class="mb-0">&copy; 2025 Saishnaa IT Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end reveal animate-delay-1">
+                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="team_s.html" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Scroll animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+        
+        fadeElements.forEach(fadeElement => {
+            appearOnScroll.observe(fadeElement);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

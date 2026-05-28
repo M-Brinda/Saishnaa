@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saishnaa IT Solutions - Our Team</title>
+    <link rel="icon" type="image/x-icon" href="img/sai.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --main-color: #4d1ea3;
+            --secondary-color: #6f42c1;
+            --accent-color: #ff6b6b;
+            --bg-light: #f5f5f5;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --transition-speed: 0.4s;
+            --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fafafa;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Enhanced Navbar with gradient and shadow */
+        .navbar {
+            background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%);
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        
+        .navbar-brand, .nav-link, .navbar-toggler-icon {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 8px;
+            padding: 8px 12px !important;
+            border-radius: 4px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 70%;
+            left: 15%;
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255,255,255,0.2);
+            font-weight: 600;
+        }
+        
+        /* Hero Section with Parallax Effect */
+        .hero {
+            background: linear-gradient(rgba(77, 30, 163, 0.85), rgba(77, 30, 163, 0.6)), url('img/team-banner.jpg') center/cover fixed;
+            color: white;
+            text-align: center;
+            padding: 180px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Section Title with Decorative Elements */
+        .section-title {
+            color: var(--main-color);
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::before, .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .section-title::before {
+            left: -70px;
+        }
+        
+        .section-title::after {
+            right: -70px;
+        }
+        
+        /* Team Section with Enhanced Cards */
+        .team-section {
+            background-color: var(--bg-light);
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/dot-pattern.png') repeat;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            padding: 40px 25px;
+            margin-bottom: 30px;
+            transition: all var(--transition-speed) var(--cubic-bezier);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+            transition: height 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .team-member:hover::before {
+            height: 10px;
+        }
+        
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.5s var(--cubic-bezier);
+        }
+        
+        .team-member:hover img {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .team-member h5 {
+            font-weight: 700;
+            color: var(--main-color);
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+            transition: color 0.3s ease;
+        }
+        
+        .team-member:hover h5 {
+            color: var(--secondary-color);
+        }
+        
+        .team-member p.position {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .team-member p.description {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .team-member .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .team-member .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 8px;
+            color: white;
+            background-color: var(--main-color);
+            transition: all 0.3s var(--cubic-bezier);
+        }
+        
+        .team-member .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(111, 66, 193, 0.4);
+        }
+        
+        /* Footer with Wave Design */
+        .footer {
+            background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f5f5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f5f5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f5f5"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.1; }
+            100% { transform: scale(1.2); opacity: 0.2; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 150px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title::before, .section-title::after {
+                width: 30px;
+            }
+            
+            .section-title::before {
+                left: -50px;
+            }
+            
+            .section-title::after {
+                right: -50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title::before, .section-title::after {
+                display: none;
+            }
+            
+            .team-member {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px;" class="floating" />
+            <span class="fw-bold fs-5">Saishnaa</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="home.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Projects</a></li>
+                <li class="nav-item"><a class="nav-link active" href="team.html">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h1 class="animate__animated animate__fadeInDown">Meet Our Team</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">The brilliant minds shaping digital transformation at Saishnaa</p>
+        <div class="animate__animated animate__fadeInUp animate__delay-2s" style="margin-top: 30px;">
+            <a href="#team" class="btn btn-light btn-lg px-4 py-2 rounded-pill shadow-sm" style="background-color: rgba(255,255,255,0.2); border: 2px solid white; color: white; transition: all 0.3s ease;">
+                Explore Our Team <i class="fas fa-chevron-down ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="team-section" id="team">
+    <div class="container">
+        <h2 class="section-title animate__animated animate__fadeIn">Our Expert Team</h2>
+        <div class="row">
+            <div class="col-md-4 animate__animated animate__fadeInLeft delay-1">
+                <div class="team-member">
+                    <img src="img/team1.jpg" alt="CEO" />
+                    <h5>Raj Kumar</h5>
+                    <p class="position">Chief Executive Officer</p>
+                    <p class="description">Visionary leader with 15+ years in enterprise transformation and product strategy. Drives company vision and strategic partnerships.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInUp delay-2">
+                <div class="team-member">
+                    <img src="img/girl1.jpg" alt="CTO" />
+                    <h5>Priya Sharma</h5>
+                    <p class="position">Chief Technology Officer</p>
+                    <p class="description">Heads innovation in AI and cloud with a decade of software architecture experience. Passionate about scalable, cutting-edge solutions.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInRight delay-3">
+                <div class="team-member">
+                    <img src="img/gril2.jpg" alt="Designer" />
+                    <h5>Vikram Patel</h5>
+                    <p class="position">Lead UI/UX Designer</p>
+                    <p class="description">Specializes in user-first design and cross-platform digital experiences. Creates intuitive interfaces that delight users.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fas fa-palette"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Team Members -->
+            <div class="col-md-4 animate__animated animate__fadeInLeft delay-2">
+                <div class="team-member">
+                    <img src="img/grils3.jpg" alt="Developer" />
+                    <h5>Ananya Singh</h5>
+                    <p class="position">Senior Full-Stack Developer</p>
+                    <p class="description">Builds robust web applications with expertise in React, Node.js, and cloud architecture. Loves solving complex problems.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fas fa-laptop-code"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInUp delay-3">
+                <div class="team-member">
+                    <img src="img/team5.jpg" alt="Marketer" />
+                    <h5>Neha Gupta</h5>
+                    <p class="position">Digital Marketing Director</p>
+                    <p class="description">Strategist driving brand growth through data-driven campaigns and customer engagement initiatives.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-chart-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate__animated animate__fadeInRight delay-2">
+                <div class="team-member">
+                    <img src="img/team6.jpg" alt="HR" />
+                    <h5>Arjun Mehta</h5>
+                    <p class="position">HR & Talent Acquisition</p>
+                    <p class="description">Builds our exceptional team culture and finds top talent to drive our mission forward.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fas fa-users"></i></a>
+                        <a href="#"><i class="fas fa-handshake"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0 reveal">
+                    <h4 class="mb-4">Saishnaa IT Solutions</h4>
+                    <p>Innovative technology solutions tailored to your business needs. Let's build the future together.</p>
+                   <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61577296040956" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/saishnaa83696" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/saishnaa_software/" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 reveal animate-delay-1">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="service.html" class="text-white">Services</a></li>
+                        <li class="mb-2"><a href="team.html" class="text-white">Team</a></li>
+                        <li class="mb-2"><a href="career.html" class="text-white">Careers</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 reveal animate-delay-2">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Tech Park, Bangalore, India</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9876543210</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>saishnaateam@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+    <h5 class="mb-4">Newsletter</h5>
+    <p>Subscribe to our newsletter for the latest updates and career opportunities.</p>
+    <form id="newsletter-form" class="mt-3">
+        <div class="input-group mb-3">
+            <input type="email" id="newsletter-email" class="form-control" placeholder="Your Email" aria-label="Your Email" required>
+            <button class="btn btn-light" type="submit">Subscribe</button>
+        </div>
+        <small id="form-message" class="text-success d-none">Thank you for subscribing!</small>
+    </form>
+</div>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form from refreshing the page
+
+        const email = document.getElementById('newsletter-email').value;
+        const message = document.getElementById('form-message');
+
+        // Simple email validation
+        if (email && email.includes('@')) {
+            // You can send `email` to your backend or a Google Sheet or Mailchimp here
+
+            message.classList.remove('d-none');
+            message.classList.add('text-success');
+            message.textContent = 'Thank you for subscribing!';
+            this.reset(); // Clear the form
+        } else {
+            message.classList.remove('d-none');
+            message.classList.remove('text-success');
+            message.classList.add('text-danger');
+            message.textContent = 'Please enter a valid email address.';
+        }
+    });
+</script>
+
+            </div>
+            <hr class="my-4 bg-white opacity-25">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start reveal">
+                    <p class="mb-0">&copy; 2025 Saishnaa IT Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end reveal animate-delay-1">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const teamMembers = document.querySelectorAll('.team-member');
+        
+        teamMembers.forEach((member, index) => {
+            member.style.transitionDelay = `${index * 0.1}s`;
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.animate__animated');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList.contains('animate__fadeIn') ? 'animate__fadeIn' : 
+                                         element.classList.contains('animate__fadeInLeft') ? 'animate__fadeInLeft' :
+                                         element.classList.contains('animate__fadeInRight') ? 'animate__fadeInRight' :
+                                         element.classList.contains('animate__fadeInUp') ? 'animate__fadeInUp' : '';
+                    
+                    if (animationClass) {
+                        element.style.opacity = 1;
+                        element.classList.add(animationClass);
+                    }
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Trigger once on load
+    });
+</script>
+</body>
+</html>

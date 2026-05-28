@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers - Saishnaa IT Solutions</title>
+    <link rel="icon" type="image/x-icon" href="img/sai.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --main-color: #4d1ea3;
+            --secondary-color: #7645fc;
+            --accent-color: #9c6bff;
+            --text-light: #f8f9fa;
+            --text-dark: #212529;
+            --bg-light: #f5f7ff;
+            --bg-gradient: linear-gradient(135deg, rgba(181, 157, 230, 0.945), rgba(152, 241, 182, 0.8));
+            --transition-speed: 0.4s;
+            --card-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Navbar Enhancements */
+        .navbar {
+            transition: all 0.5s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(82, 30, 223, 0.95) !important;
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--main-color);
+            transition: width var(--transition-speed) ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section Enhancements */
+        .hero {
+            background: var(--bg-gradient), url('img/1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 180px 20px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 0;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1s both, pulse 2s infinite 2s;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s 0.3s both;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            color: var(--main-color);
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 2.2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+            bottom: -15px;
+            left: 20%;
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .section-title.animated::after {
+            transform: scaleX(1);
+        }
+        
+        /* Position Cards Enhancements */
+        .open-positions .position-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+            margin-bottom: 30px;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .position-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: linear-gradient(to bottom, var(--main-color), var(--secondary-color));
+            transition: height var(--transition-speed) ease;
+        }
+        
+        .position-card:hover::before {
+            height: 100%;
+        }
+        
+        .position-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.25);
+        }
+        
+        .position-card h5 {
+            color: var(--main-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            transition: color var(--transition-speed) ease;
+        }
+        
+        .position-card:hover h5 {
+            color: var(--accent-color);
+        }
+        
+        .position-card p {
+            margin-bottom: 15px;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .position-card:hover p {
+            color: var(--text-dark);
+        }
+        
+        /* Why Work With Us Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+            position: relative;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            padding: 100px 0;
+        }
+        
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="%234d1ea3" stroke-width="0.5" opacity="0.1"><circle cx="50" cy="50" r="40"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) ease;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--main-color);
+            margin-bottom: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .benefit-item:hover .benefit-icon {
+            transform: scale(1.2);
+            color: var(--accent-color);
+        }
+        
+        /* Footer Enhancements */
+        .footer {
+            background: linear-gradient(135deg, var(--main-color), var(--bg-light));
+            color: white;
+            padding: 50px 0 20px;
+            position: relative;
+           
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #6e3dc4;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Button Enhancements */
+        .btn-purple {
+            background-color: var(--main-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 15px rgba(77, 30, 163, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-purple::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--main-color), var(--accent-color));
+            z-index: -1;
+            transition: opacity var(--transition-speed) ease;
+            opacity: 0;
+        }
+        
+        .btn-purple:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(77, 30, 163, 0.6);
+            color: white;
+        }
+        
+        .btn-purple:hover::after {
+            opacity: 1;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .animate-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .animate-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .benefits-section {
+                clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+                padding: 80px 0;
+            }
+            
+            .footer {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            position: relative;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #9540f7;">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3" href="index.html" style="white-space: nowrap;">
+                <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto;" class="animate-float" />
+                <span class="fw-bold fs-5" style="color: #f1f1f1;">Saishnaa</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="home.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                   <!-- <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>-->
+                    <li class="nav-item"><a class="nav-link active" href="career.html">Careers</a></li>
+                  <!--  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>-->
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Join Our Team at Saishnaa</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Discover the incredible opportunities awaiting you at Saishnaa IT Solutions!</p>
+            <!--<a href="#openPositions" class="btn btn-purple mt-4 animate__animated animate__fadeIn animate__delay-2s animate-float">-->
+            <!--    View Open Positions <i class="fas fa-arrow-down ms-2"></i>-->
+            <!--</a>-->
+        </div>
+    </section>
+
+    <!-- Career Introduction -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title reveal">Careers at Saishnaa</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="reveal" style="text-align: center; font-size: 1.1rem; line-height: 1.8;">At Saishnaa, we believe in empowering individuals to reach their full potential. Our dynamic and inclusive work culture offers numerous opportunities to grow and innovate. We are always looking for passionate professionals to join our team and help us shape the future of technology.</p>
+                    <p class="reveal" style="text-align: center; font-size: 1.1rem; line-height: 1.8;">We provide an environment where creativity, collaboration, and innovation thrive. If you're looking to work in a company that values talent, hard work, and continuous learning, Saishnaa is the place for you!</p>
+                </div>
+            </div>
+            <div class="mt-5 reveal">
+                <img src="img/team.jpg" alt="Team working together" class="img-fluid rounded-4 shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <!--<section id="openPositions" class="section bg-light">-->
+    <!--    <div class="container">-->
+    <!--        <h2 class="section-title text-center reveal">Open Positions</h2>-->
+    <!--        <div class="row">-->
+                <!-- Position 1: Software Developer -->
+    <!--            <div class="col-md-4 reveal">-->
+    <!--                <div class="position-card">-->
+    <!--                    <div class="d-flex align-items-center mb-3">-->
+    <!--                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">-->
+    <!--                            <i class="fas fa-laptop-code text-primary fs-4"></i>-->
+    <!--                        </div>-->
+    <!--                        <h5 class="mb-0">Software Developer</h5>-->
+    <!--                    </div>-->
+    <!--                    <p><strong><i class="fas fa-map-marker-alt me-2"></i>Location:</strong> Remote / On-site</p>-->
+    <!--                    <p><strong><i class="fas fa-tasks me-2"></i>Responsibilities:</strong> Develop and maintain web and mobile applications, collaborate with product teams, and implement best practices in coding.</p>-->
+    <!--                    <p><strong><i class="fas fa-code me-2"></i>Skills:</strong> JavaScript, Python, Node.js, React</p>-->
+    <!--                    <div class="text-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-purple">Apply Now <i class="fas fa-paper-plane ms-2"></i></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- Position 2: Marketing Manager -->
+    <!--            <div class="col-md-4 reveal animate-delay-1">-->
+    <!--                <div class="position-card">-->
+    <!--                    <div class="d-flex align-items-center mb-3">-->
+    <!--                        <div class="bg-success bg-opacity-10 p-3 rounded-circle me-3">-->
+    <!--                            <i class="fas fa-bullhorn text-success fs-4"></i>-->
+    <!--                        </div>-->
+    <!--                        <h5 class="mb-0">Marketing Manager</h5>-->
+    <!--                    </div>-->
+    <!--                    <p><strong><i class="fas fa-map-marker-alt me-2"></i>Location:</strong> Remote / On-site</p>-->
+    <!--                    <p><strong><i class="fas fa-tasks me-2"></i>Responsibilities:</strong> Oversee marketing campaigns, social media management, and SEO strategies to drive engagement and business growth.</p>-->
+    <!--                    <p><strong><i class="fas fa-code me-2"></i>Skills:</strong> Digital Marketing, SEO, Content Creation</p>-->
+    <!--                    <div class="text-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-purple">Apply Now <i class="fas fa-paper-plane ms-2"></i></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- Position 3: UI/UX Designer -->
+    <!--            <div class="col-md-4 reveal animate-delay-2">-->
+    <!--                <div class="position-card">-->
+    <!--                    <div class="d-flex align-items-center mb-3">-->
+    <!--                        <div class="bg-warning bg-opacity-10 p-3 rounded-circle me-3">-->
+    <!--                            <i class="fas fa-paint-brush text-warning fs-4"></i>-->
+    <!--                        </div>-->
+    <!--                        <h5 class="mb-0">UI/UX Designer</h5>-->
+    <!--                    </div>-->
+    <!--                    <p><strong><i class="fas fa-map-marker-alt me-2"></i>Location:</strong> Remote / On-site</p>-->
+    <!--                    <p><strong><i class="fas fa-tasks me-2"></i>Responsibilities:</strong> Design user interfaces for web and mobile apps, ensuring a seamless and intuitive experience for users.</p>-->
+    <!--                    <p><strong><i class="fas fa-code me-2"></i>Skills:</strong> Figma, Adobe XD, HTML, CSS</p>-->
+    <!--                    <div class="text-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-purple">Apply Now <i class="fas fa-paper-plane ms-2"></i></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+            
+            <!-- Additional Positions Row -->
+    <!--        <div class="row mt-4">-->
+                <!-- Position 4: Data Scientist -->
+    <!--            <div class="col-md-4 reveal">-->
+    <!--                <div class="position-card">-->
+    <!--                    <div class="d-flex align-items-center mb-3">-->
+    <!--                        <div class="bg-info bg-opacity-10 p-3 rounded-circle me-3">-->
+    <!--                            <i class="fas fa-chart-line text-info fs-4"></i>-->
+    <!--                        </div>-->
+    <!--                        <h5 class="mb-0">Data Scientist</h5>-->
+    <!--                    </div>-->
+    <!--                    <p><strong><i class="fas fa-map-marker-alt me-2"></i>Location:</strong> Remote / On-site</p>-->
+    <!--                    <p><strong><i class="fas fa-tasks me-2"></i>Responsibilities:</strong> Analyze complex data sets, develop machine learning models, and provide data-driven insights.</p>-->
+    <!--                    <p><strong><i class="fas fa-code me-2"></i>Skills:</strong> Python, R, SQL, Machine Learning</p>-->
+    <!--                    <div class="text-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-purple">Apply Now <i class="fas fa-paper-plane ms-2"></i></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- Position 5: DevOps Engineer -->
+    <!--            <div class="col-md-4 reveal animate-delay-1">-->
+    <!--                <div class="position-card">-->
+    <!--                    <div class="d-flex align-items-center mb-3">-->
+    <!--                        <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-3">-->
+    <!--                            <i class="fas fa-server text-danger fs-4"></i>-->
+    <!--                        </div>-->
+    <!--                        <h5 class="mb-0">DevOps Engineer</h5>-->
+    <!--                    </div>-->
+    <!--                    <p><strong><i class="fas fa-map-marker-alt me-2"></i>Location:</strong> Remote / On-site</p>-->
+    <!--                    <p><strong><i class="fas fa-tasks me-2"></i>Responsibilities:</strong> Implement CI/CD pipelines, manage cloud infrastructure, and ensure system reliability.</p>-->
+    <!--                    <p><strong><i class="fas fa-code me-2"></i>Skills:</strong> Docker, Kubernetes, AWS, Terraform</p>-->
+    <!--                    <div class="text-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-purple">Apply Now <i class="fas fa-paper-plane ms-2"></i></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- Position 6: Product Manager -->
+    <!--            <div class="col-md-4 reveal animate-delay-2">-->
+    <!--                <div class="position-card">-->
+    <!--                    <div class="d-flex align-items-center mb-3">-->
+    <!--                        <div class="bg-purple bg-opacity-10 p-3 rounded-circle me-3">-->
+    <!--                            <i class="fas fa-tasks text-purple fs-4"></i>-->
+    <!--                        </div>-->
+    <!--                        <h5 class="mb-0">Product Manager</h5>-->
+    <!--                    </div>-->
+    <!--                    <p><strong><i class="fas fa-map-marker-alt me-2"></i>Location:</strong> Remote / On-site</p>-->
+    <!--                    <p><strong><i class="fas fa-tasks me-2"></i>Responsibilities:</strong> Define product vision, gather requirements, and work with cross-functional teams to deliver products.</p>-->
+    <!--                    <p><strong><i class="fas fa-code me-2"></i>Skills:</strong> Agile, Product Strategy, User Research</p>-->
+    <!--                    <div class="text-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-purple">Apply Now <i class="fas fa-paper-plane ms-2"></i></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
+    <!-- Why Work With Us -->
+    <section class="benefits-section">
+        <div class="container text-center">
+            <h2 class="section-title reveal">Why Work With Us?</h2>
+            <p class="reveal" style="max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; line-height: 1.8;">
+                At Saishnaa, we believe in nurturing talent and offering opportunities for growth. As a part of our team, you will be encouraged to continuously learn, develop your skills, and take on exciting projects that will shape the future of technology.
+            </p>
+            
+            <div class="row">
+                <div class="col-md-3 col-sm-6 reveal">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>Competitive Salary</h4>
+                        <p>We offer industry-leading compensation packages with regular performance bonuses.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 reveal animate-delay-1">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Work-Life Balance</h4>
+                        <p>Flexible hours, remote work options, and generous vacation policies.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 reveal animate-delay-2">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Learning & Growth</h4>
+                        <p>Annual training budgets, conference sponsorships, and mentorship programs.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 reveal animate-delay-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Inclusive Culture</h4>
+                        <p>A diverse, collaborative environment where everyone's voice is valued.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-3 col-sm-6 reveal">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h4>Career Advancement</h4>
+                        <p>Clear promotion paths and opportunities to take on leadership roles.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 reveal animate-delay-1">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Health & Wellness</h4>
+                        <p>Comprehensive health insurance and wellness programs.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 reveal animate-delay-2">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Innovation Time</h4>
+                        <p>Dedicated time to work on passion projects and innovative ideas.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-6 reveal animate-delay-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                        <h4>Fun Environment</h4>
+                        <p>Team outings, game nights, and company retreats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title text-center reveal">What Our Customer Says</h2>
+            <div class="row">
+                <div class="col-lg-4 reveal">
+                    <div class="position-card h-100">
+                       <!-- <div class="d-flex align-items-center mb-3">
+                               <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Team member" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">Client</small>
+                            </div
+                        </div>-->
+                        <p class="fst-italic">"Partnering with Saishnaa has significantly accelerated our project timelines. Their team is highly professional, communicative, and delivers quality results beyond expectations."</p>
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 reveal animate-delay-1">
+                    <div class="position-card h-100">
+                      <!--  <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Team member" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <small class="text-muted">Client</small>
+                            </div>
+                        </div>-->
+                        <p class="fst-italic">"What stands out about Saishnaa is their commitment to understanding our needs. They brought innovative solutions and creative thinking to every stage of the process."</p>
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 reveal animate-delay-2">
+                    <div class="position-card h-100">
+                       <!-- <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team member" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                            <div>
+                                <h5 class="mb-0">Priya Patel</h5>
+                                <small class="text-muted">Client</small>
+                            </div>
+                        </div>-->
+                        <p class="fst-italic">"In just a few months of collaboration, Saishnaa has added more value than some firms we worked with for years. Their dedication to excellence and client satisfaction is rare and refreshing."
+
+</p>
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-primary text-white" style="background: linear-gradient(135deg, var(--main-color), #6e3dc4);">
+        <div class="container text-center">
+            <h2 class="reveal" style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Join Our Team?</h2>
+            <p class="reveal animate-delay-1" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">We're always looking for talented individuals to join our growing team. Even if you don't see the perfect role listed, we'd love to hear from you!</p>
+            <div class="reveal animate-delay-2">
+                <a href="#openPositions" class="btn btn-light btn-lg me-3" style="border-radius: 50px; padding: 12px 30px;">
+                    View Openings <i class="fas fa-external-link-alt ms-2"></i>
+                </a>
+                <a href="mailto:saishnaateam@gmail.com" class="btn btn-outline-light btn-lg" style="border-radius: 50px; padding: 12px 30px;">
+                    Contact Us <i class="fas fa-envelope ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0 reveal">
+                    <h4 class="mb-4">Saishnaa IT Solutions</h4>
+                    <p>Innovative technology solutions tailored to your business needs. Let's build the future together.</p>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61577296040956" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/saishnaa83696" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/saishnaa_software/" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 reveal animate-delay-1">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="service.html" class="text-white">Services</a></li>
+                          <li class="mb-2"><a href="pricing.html" class="text-white">Pricing</a></li>
+                        <!--<li class="mb-2"><a href="team.html" class="text-white">Team</a></li>-->
+                        <li class="mb-2"><a href="career.html" class="text-white">Careers</a></li>
+                        <!--<li><a href="blog.html" class="text-white">Blog</a></li>-->
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 reveal animate-delay-2">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Sakthi nagar , Thindal,Erode-638012</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9363643763</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>saishnaa@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Sat: 9:30AM - 5:30PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+    <h5 class="mb-4">Newsletter</h5>
+    <p>Subscribe to our newsletter for the latest updates and career opportunities.</p>
+    <form id="newsletter-form" class="mt-3">
+        <div class="input-group mb-3">
+            <input type="email" id="newsletter-email" class="form-control" placeholder="Your Email" aria-label="Your Email" required>
+            <button class="btn btn-light" type="submit">Subscribe</button>
+        </div>
+        <small id="form-message" class="text-success d-none">Thank you for subscribing!</small>
+    </form>
+</div>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form from refreshing the page
+
+        const email = document.getElementById('newsletter-email').value;
+        const message = document.getElementById('form-message');
+
+        // Simple email validation
+        if (email && email.includes('@')) {
+            // You can send `email` to your backend or a Google Sheet or Mailchimp here
+
+            message.classList.remove('d-none');
+            message.classList.add('text-success');
+            message.textContent = 'Thank you for subscribing!';
+            this.reset(); // Clear the form
+        } else {
+            message.classList.remove('d-none');
+            message.classList.remove('text-success');
+            message.classList.add('text-danger');
+            message.textContent = 'Please enter a valid email address.';
+        }
+    });
+</script>
+
+            </div>
+            <hr class="my-4 bg-white opacity-25">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start reveal">
+                    <p class="mb-0">&copy; 2025 Saishnaa IT Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end reveal animate-delay-1">
+                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="team_s.html" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Section title animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionTitles = document.querySelectorAll('.section-title');
+            
+            // Intersection Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        if (entry.target.classList.contains('reveal')) {
+                            entry.target.classList.add('active');
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observe all reveal elements
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Observe section titles
+            sectionTitles.forEach(title => {
+                observer.observe(title);
+            });
+            
+            // Add active class to current nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saishnaa Pricing Plans</title>
+  <link rel="icon" type="image/x-icon" href="img/sai.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --main-color: #4d1ea3;
+      --secondary-color:  #7645fc;
+      --accent-color: #9c6bff;
+      --bg-light: #f9f9f9;
+      --text-dark: #333;
+      --transition-speed: 0.4s;
+      --success-color: #00cc88;
+      --warning-color: #ffcc00;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fafafa;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Navbar Animation */
+    .navbar {
+      background: linear-gradient(135deg, var(--accent-color) 0%, #a161cc 100%);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      transition: all 0.5s ease;
+      transform: translateY(0);
+    }
+    .navbar.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      background-color: rgba(255,255,255,0.15);
+      border-radius: 4px;
+      transform: translateY(-2px);
+    }
+    .nav-link.active {
+      background-color: rgba(255,255,255,0.2);
+      font-weight: bold;
+      position: relative;
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 3px;
+      background: var(--warning-color);
+      border-radius: 3px;
+      animation: pulse 2s infinite;
+    }
+
+    /* Pricing Section Animation */
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 120px 20px 80px;
+      perspective: 1000px;
+    }
+    .plan {
+      background: linear-gradient(to bottom, #6d17bd, #7f45c2);
+      color: white;
+      width: 320px;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .plan:nth-child(1) { animation-delay: 0.2s; }
+    .plan:nth-child(2) { animation-delay: 0.4s; }
+    .plan:nth-child(3) { animation-delay: 0.6s; }
+    
+    .plan::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--warning-color);
+      transition: all 0.3s ease;
+    }
+    .plan:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .plan:hover::before {
+      height: 100%;
+      opacity: 0.1;
+    }
+    .plan h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    .plan h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--warning-color);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    .plan:hover h3::after {
+      width: 80px;
+    }
+    .price {
+  font-size: 28px;
+  margin: 15px 0;
+  font-weight: bold;
+  display: flex;        /* puts ₹ and number on the same line */
+  align-items: center;  /* vertical centering */
+  justify-content: center; /* optional: centers in the div */
+  gap: 5px;             /* spacing between ₹ and number */
+}
+.price span {
+  font-size: 28px;      /* make ₹ same size as number */
+}
+
+    .limited-offer {
+      background: var(--warning-color);
+      color: #000;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      display: inline-block;
+      font-weight: 600;
+      animation: pulse 2s infinite;
+    }
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+      text-align: left;
+    }
+    .plan ul li {
+      margin: 12px 0;
+      font-size: 15px;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 25px;
+    }
+    .plan ul li:hover {
+      transform: translateX(10px);
+      color: var(--warning-color);
+    }
+    .plan ul li::before {
+      content: "✓";
+      color: var(--success-color);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .plan ul li:hover::before {
+      transform: scale(1.3);
+    }
+    .btn {
+      display: inline-block;
+      background: var(--warning-color);
+      color: #000;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 5px 15px rgba(255,204,0,0.3);
+    }
+    .btn:hover {
+      background: #ffaa00;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,204,0,0.4);
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.5s;
+    }
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Footer Animation */
+    .footer {
+      background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 80px 0 40px;
+      margin-top: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, var(--warning-color), var(--success-color), var(--warning-color));
+      animation: gradientBG 5s ease infinite;
+      background-size: 400% 400%;
+    }
+    .footer h4, .footer h5 {
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+    }
+    .footer h5::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--warning-color);
+      border-radius: 3px;
+    }
+    .footer a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .footer a:hover {
+      color: var(--warning-color);
+      text-decoration: none;
+      transform: translateX(5px);
+    }
+    .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    .social-icons a:hover {
+      background: var(--warning-color);
+      color: #000;
+      transform: translateY(-5px) rotate(10deg);
+    }
+    .input-group .btn {
+      padding: 10px 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .pricing-container {
+        padding: 100px 20px 60px;
+      }
+      .plan {
+        width: 300px;
+      }
+    }
+    @media (max-width: 768px) {
+      .pricing-container {
+        gap: 20px;
+        padding: 80px 15px 40px;
+      }
+      .plan {
+        width: 100%;
+        max-width: 350px;
+      }
+      .footer {
+        padding: 60px 0 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3" href="index.html">
+        <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto;" class="hover-float" />
+        <span class="fw-bold fs-5 text-white">Saishnaa</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="home.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="service.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="project.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active text-white" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="career.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Pricing Section -->
+  <div class="pricing-container">
+    <!-- Starter Plan -->
+    <div class="plan">
+      <h3>Starter Plan</h3>
+      <div class="limited-offer">Limited Time Offer</div>
+      <div class="price"> ₹ 5,000</div>
+      <ul>
+        <li>100% Responsive Website</li>
+        <li>Live Chat Integration</li>
+        <li>Social Media Integration</li>
+        <li>Inquiry Form</li>
+        <li>Basic Ecommerce Features</li>
+        <li>1 Year Free Technical Support</li>
+        <li>Annual Hosting Renewal ₹4,000</li>
+      </ul>
+      <a href="tel:+919876543210" class="btn">Call Now</a>
+    </div>
+
+    <!-- Professional Plan -->
+    <div class="plan">
+      <h3>Professional Plan</h3>
+      <div class="price"> ₹ 10,000</div>
+      <ul>
+        <li>Everything in Starter Plan</li>
+        <li>Email Configuration</li>
+        <li>Product Variation Options</li>
+        <li>Auto Invoice Bill Generator</li>
+        <li>Wallet System Features</li>
+        <li>OTP Verification Features</li>
+        <li>1 Year Free Technical Support</li>
+        <li>Annual Hosting Renewal ₹4,000</li>
+      </ul>
+      <a href="tel:+919876543210" class="btn">Call Now</a>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="plan">
+      <h3>Premium Plan</h3>
+      <div class="price"> ₹ 15,000</div>
+      <ul>
+        <li>Everything in Professional Plan</li>
+        <li>Multi-Level Ecommerce Features</li>
+        <li>Advanced Analytics Dashboard</li>
+        <li>Order Notification Features</li>
+        <li>Payment Gateway Integration</li>
+        <li>Priority Support & Maintenance</li>
+        <li>Custom Features on Request</li>
+        <li>1 Year Free Technical Support</li>
+        <li>Annual Hosting Renewal ₹4,000</li>
+      </ul>
+      <a href="tel:+919876543210" class="btn">Call Now</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4>Saishnaa IT Solutions</h4>
+          <p>Innovative technology solutions tailored to your business needs. Let's build the future together.</p>
+          <div class="social-icons mt-3">
+            <a href="https://www.facebook.com/profile.php?id=61577296040956"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/saishnaa83696"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/saishnaa_software/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="career.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-map-marker-alt me-2"></i> Sakthi Nagar, Thindal, Erode-638012</li>
+            <li><i class="fas fa-phone me-2"></i> +91 9363643763</li>
+            <li><i class="fas fa-envelope me-2"></i> saishnaa@gmail.com</li>
+            <li><i class="fas fa-clock me-2"></i> Mon-Sat: 9:30AM - 5:30PM</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Newsletter</h5>
+          <p>Subscribe for the latest updates and career opportunities.</p>
+          <form>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+              <button class="btn btn-light" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="my-4 bg-white opacity-25">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p>&copy; 2025 Saishnaa IT Solutions. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="privacy.html">Privacy Policy</a> | 
+          <a href="team_s.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Plan hover effect enhancement
+    document.querySelectorAll('.plan').forEach(plan => {
+      plan.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px) scale(1.03)';
+      });
+      plan.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.plan');
+      elements.forEach(el => {
+        const elementPosition = el.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if (elementPosition < screenPosition) {
+          el.style.animation = 'fadeInUp 0.8s forwards';
+        }
+      });
+    }
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initialize
+  </script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Saishnaa IT Solutions</title>
+    <link rel="icon" type="image/x-icon" href="img/sai.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --main-color: #4d1ea3;
+            --secondary-color: #6f42c1;
+            --accent-color: #754aec;
+            --bg-light: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --transition-speed: 0.4s;
+            --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: #fafafa;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Enhanced Navbar with Gradient and Animation */
+        .navbar {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #a161cc 100%);
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        
+        .navbar-brand, .nav-link, .navbar-toggler-icon {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link {
+            position: relative;
+            margin: 0 8px;
+            padding: 8px 12px !important;
+            border-radius: 4px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 70%;
+            left: 15%;
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255,255,255,0.2);
+            font-weight: 600;
+        }
+        
+        /* Hero Section with Parallax and Animated Elements */
+        .hero {
+            background: linear-gradient(rgba(181, 157, 230, 0.945), rgba(152, 241, 182, 0.8)), url('img/1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 180px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Section Title with Decorative Elements */
+        .section-title {
+            color: var(--main-color);
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::before, .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .section-title::before {
+            left: -70px;
+        }
+        
+        .section-title::after {
+            right: -70px;
+        }
+        
+        /* Project Cards with Enhanced Animations */
+        .project-section {
+            padding: 100px 0;
+            position: relative;
+            background-color: var(--bg-light);
+        }
+        
+        .project-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="%234d1ea3" opacity="0.1"/></svg>') repeat;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .project-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all var(--transition-speed) var(--cubic-bezier);
+            height: 100%;
+            position: relative;
+            background: white;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            transition: height 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .project-card:hover::before {
+            height: 10px;
+        }
+        
+        .project-card img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-title {
+            color: var(--main-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            transition: color 0.3s ease;
+        }
+        
+        .project-card:hover .card-title {
+            color: var(--secondary-color);
+        }
+        
+        .card-text {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Project Tags */
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .project-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        /* View Project Button */
+        .view-project {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(106, 202, 231, 0.3);
+        }
+        
+        .view-project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(106, 202, 231, 0.4);
+            color: white;
+        }
+        
+        /* Project Hover Overlay */
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(77, 30, 163, 0.1), rgba(77, 30, 163, 0.7));
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .overlay-content {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .overlay-content {
+            transform: translateY(0);
+        }
+        
+        /* Footer with Wave Design */
+        .footer {
+            background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f9f9f9" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f9f9f9" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f9f9f9"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            margin: 0 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.1; }
+            100% { transform: scale(1.2); opacity: 0.2; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 150px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title::before, .section-title::after {
+                width: 30px;
+            }
+            
+            .section-title::before {
+                left: -50px;
+            }
+            
+            .section-title::after {
+                right: -50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 20px;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title::before, .section-title::after {
+                display: none;
+            }
+            
+            .project-card {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3" href="index.html">
+                <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto;" class="floating" />
+                <span class="fw-bold fs-5 text-white">Saishnaa</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="home.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="service.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" href="project.html">Projects</a></li>
+                      <li class="nav-item"><a class="nav-link text-white" href="pricing.html">Pricing</a></li>
+                   <!-- <li class="nav-item"><a class="nav-link text-white" href="team.html">Team</a></li>-->
+                    <li class="nav-item"><a class="nav-link text-white" href="career.html">Careers</a></li>
+                  <!--  <li class="nav-item"><a class="nav-link text-white" href="blog.html">Blog</a></li>-->
+                    <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInDown">Our Projects</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Showcasing innovation, creativity, and digital transformation</p>
+            <div class="animate__animated animate__fadeInUp animate__delay-2s" style="margin-top: 30px;">
+                <a href="#projects" class="btn btn-light btn-lg px-4 py-2 rounded-pill shadow-sm" style="background-color: rgba(255,255,255,0.2); border: 2px solid white; color: white; transition: all 0.3s ease;">
+                    View Our Work <i class="fas fa-chevron-down ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="project-section" id="projects">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Featured Projects</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft delay-1">
+                    <div class="project-card">
+                    <!--    <img src="img/project1.jpg" alt="Project 1" class="card-img-top">-->
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Retail AI Analytics</h3>
+                                <p>Advanced predictive analytics for retail optimization</p>
+                                <!--<a href="#" class="view-project">View Project</a>-->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Retail AI Analytics</h5>
+                            <p class="card-text">An intelligent retail forecasting system using AI and ML algorithms for demand prediction and inventory optimization.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">AI/ML</span>
+                                <span class="project-tag">Data Analytics</span>
+                                <span class="project-tag">Retail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-4 mb-4 animate__animated animate__fadeInUp delay-2">
+                    <div class="project-card">
+                      <!--  <img src="img/project2.jpg" alt="Project 2" class="card-img-top">-->
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Smart Healthcare App</h3>
+                                <p>Revolutionizing patient-doctor interactions</p>
+                               <!-- <a href="#" class="view-project">View Project</a>-->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Healthcare App</h5>
+                            <p class="card-text">A mobile platform enabling remote monitoring and seamless doctor-patient interactions with real-time health tracking.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Mobile</span>
+                                <span class="project-tag">Healthcare</span>
+                                <span class="project-tag">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-4 mb-4 animate__animated animate__fadeInRight delay-3">
+                    <div class="project-card">
+                      <!--  <img src="img/project3.jpg" alt="Project 3" class="card-img-top">-->
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Finance Cloud Migration</h3>
+                                <p>Secure financial infrastructure modernization</p>
+                               <!-- <a href="#" class="view-project">View Project</a>-->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Finance Cloud Migration</h5>
+                            <p class="card-text">Transitioned a finance firm's legacy infrastructure to a secure and scalable cloud platform with zero downtime.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Cloud</span>
+                                <span class="project-tag">Security</span>
+                                <span class="project-tag">Finance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft delay-2">
+                    <div class="project-card">
+                       <!-- <img src="img/project4.jpg" alt="Project 4" class="card-img-top">-->
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>E-commerce Platform</h3>
+                                <p>Scalable online shopping solution</p>
+                               <!-- <a href="#" class="view-project">View Project</a>-->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">E-commerce Platform</h5>
+                            <p class="card-text">Built a high-performance e-commerce platform handling 10,000+ concurrent users with personalized recommendations.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">E-commerce</span>
+                                <span class="project-tag">Scalability</span>
+                                <span class="project-tag">Personalization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="col-md-4 mb-4 animate__animated animate__fadeInUp delay-3">
+                    <div class="project-card">
+                      <!--  <img src="img/project5.jpg" alt="Project 5" class="card-img-top">-->
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Smart City Dashboard</h3>
+                                <p>Real-time urban analytics platform</p>
+                                <!-- <a href="#" class="view-project">View Project</a>-->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Smart City Dashboard</h5>
+                            <p class="card-text">Interactive dashboard aggregating IoT sensor data from across the city for optimized urban planning and management.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">IoT</span>
+                                <span class="project-tag">Data Visualization</span>
+                                <span class="project-tag">Smart Cities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="col-md-4 mb-4 animate__animated animate__fadeInRight delay-2">
+                    <div class="project-card">
+                       <!-- <img src="img/Data1.png" alt="Project 6" class="card-img-top">-->
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <h3>Blockchain Supply Chain</h3>
+                                <p>Transparent logistics tracking</p>
+                                <!-- <a href="#" class="view-project">View Project</a>-->       
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Blockchain Supply Chain</h5>
+                            <p class="card-text">Implemented blockchain technology for end-to-end supply chain transparency and fraud prevention.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Blockchain</span>
+                                <span class="project-tag">Logistics</span>
+                                <span class="project-tag">Security</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0 reveal">
+                    <h4 class="mb-4">Saishnaa IT Solutions</h4>
+                    <p>Innovative technology solutions tailored to your business needs. Let's build the future together.</p>
+                   <div class="social-icons mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61577296040956" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/saishnaa83696" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/saishnaa_software/" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0 reveal animate-delay-1">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="home.html" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="service.html" class="text-white">Services</a></li>
+                         <li class="mb-2"><a href="pricing.html" class="text-white">Pricing</a></li>
+                       <!-- <li class="mb-2"><a href="team.html" class="text-white">Team</a></li>-->
+                        <li class="mb-2"><a href="career.html" class="text-white">Careers</a></li>
+                       <!-- <li><a href="blog.html" class="text-white">Blog</a></li>-->
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0 reveal animate-delay-2">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Sakthi nagar , Thindal,Erode-638012</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +91 9363643763</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>saishnaa@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Sat: 9:30AM - 5:30PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+    <h5 class="mb-4">Newsletter</h5>
+    <p>Subscribe to our newsletter for the latest updates and career opportunities.</p>
+    <form id="newsletter-form" class="mt-3">
+        <div class="input-group mb-3">
+            <input type="email" id="newsletter-email" class="form-control" placeholder="Your Email" aria-label="Your Email" required>
+            <button class="btn btn-light" type="submit">Subscribe</button>
+        </div>
+        <small id="form-message" class="text-success d-none">Thank you for subscribing!</small>
+    </form>
+</div>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form from refreshing the page
+
+        const email = document.getElementById('newsletter-email').value;
+        const message = document.getElementById('form-message');
+
+        // Simple email validation
+        if (email && email.includes('@')) {
+            // You can send `email` to your backend or a Google Sheet or Mailchimp here
+
+            message.classList.remove('d-none');
+            message.classList.add('text-success');
+            message.textContent = 'Thank you for subscribing!';
+            this.reset(); // Clear the form
+        } else {
+            message.classList.remove('d-none');
+            message.classList.remove('text-success');
+            message.classList.add('text-danger');
+            message.textContent = 'Please enter a valid email address.';
+        }
+    });
+</script>
+
+            </div>
+            <hr class="my-4 bg-white opacity-25">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start reveal">
+                    <p class="mb-0">&copy; 2025 Saishnaa IT Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end reveal animate-delay-1">
+                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
+                    <a href="team_s.html" class="text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Animate elements when they come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.animate__animated');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        const animationClass = element.classList.contains('animate__fadeIn') ? 'animate__fadeIn' : 
+                                             element.classList.contains('animate__fadeInLeft') ? 'animate__fadeInLeft' :
+                                             element.classList.contains('animate__fadeInRight') ? 'animate__fadeInRight' :
+                                             element.classList.contains('animate__fadeInUp') ? 'animate__fadeInUp' : '';
+                        
+                        if (animationClass) {
+                            element.style.opacity = 1;
+                            element.classList.add(animationClass);
+                        }
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Trigger once on load
+        });
+    </script>
+</body>
+</html>

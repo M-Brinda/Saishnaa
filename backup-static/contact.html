@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Saishnaa IT Solutions</title>
+  <link rel="icon" type="image/x-icon" href="img/sai.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #4d1ea3;
+      --secondary-color: #6c4dcc;
+      --accent-color: #9c7bff;
+      --bg-light: #f7f9fc;
+      --text-dark: #364255;
+      --text-light: #718096;
+      --transition-speed: 0.4s;
+      --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      color: var(--text-dark);
+      background-color: #fafafa;
+      overflow-x: hidden;
+    }
+    
+    /* Navbar Styling */
+    .navbar {
+      transition: all 0.5s ease;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar.scrolled {
+      padding: 10px 0;
+      background-color: rgba(33, 37, 41, 0.95) !important;
+      backdrop-filter: blur(10px);
+    }
+    
+    .nav-link {
+      position: relative;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: all var(--transition-speed) ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-color);
+      transition: width var(--transition-speed) var(--cubic-bezier);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, rgba(77, 30, 163, 0.9) 0%, rgba(129, 106, 199, 0.9) 100%), url('img/1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      padding: 180px 20px 150px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(156, 123, 255, 0.3), transparent 70%);
+      animation: pulse 15s infinite alternate;
+    }
+    
+    .hero h1 {
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
+    
+    /* Section Styling */
+    .section-title {
+      color: var(--main-color);
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      font-size: 2.2rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    /* Button Styling */
+    .btn-purple {
+      background-color: var(--main-color);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-speed) var(--cubic-bezier);
+      box-shadow: 0 4px 15px rgba(77, 30, 163, 0.3);
+    }
+    
+    .btn-purple:hover {
+      background-color: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(77, 30, 163, 0.4);
+    }
+    
+    .btn-purple:active {
+      transform: translateY(1px);
+    }
+    
+    .btn-purple::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .btn-purple:hover::before {
+      left: 100%;
+    }
+    
+    /* Form Styling */
+    .form-control {
+      border-radius: 8px;
+      padding: 12px 15px;
+      border: 1px solid #e2e8f0;
+      transition: all var(--transition-speed) ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 0.25rem rgba(108, 77, 204, 0.25);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Contact Info Card */
+    .contact-info-card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .contact-info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(108, 77, 204, 0.15);
+    }
+    
+    .contact-info-card h5 {
+      color: var(--main-color);
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .contact-info-card h5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+      border-radius: 3px;
+    }
+    
+    .contact-info-card p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .contact-info-card i {
+      margin-right: 12px;
+      color: var(--accent-color);
+      font-size: 1.1rem;
+      margin-top: 3px;
+    }
+    
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #f3f3f3;
+      color: var(--main-color);
+      transition: all var(--transition-speed) var(--cubic-bezier);
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--main-color);
+      color: white;
+      transform: translateY(-3px) scale(1.1);
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--main-color);
+      color: white;
+      padding: 30px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .animate-delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .animate-delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .animate-delay-3 {
+      animation-delay: 0.6s;
+    }
+    
+    /* Fade-in Animation */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(30px);
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Floating Elements */
+    .floating-shape {
+      position: absolute;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .shape-1 {
+      top: 20%;
+      left: 5%;
+      width: 100px;
+      height: 100px;
+      background: var(--accent-color);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .shape-2 {
+      bottom: 10%;
+      right: 5%;
+      width: 150px;
+      height: 150px;
+      background: var(--main-color);
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 120px 20px 100px;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .contact-info-card {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: var(--main-color);">
+
+    <div class="container">
+     <a class="navbar-brand d-flex align-items-center" href="index.html">
+  <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; margin-right: 10px;" />
+  <span style="font-weight: 700; font-size: 1.5rem; color: white;">Saishnaa</span>
+</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+         <!-- <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>  -->
+          <li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+               <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>                   
+        <!--  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>  -->
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">Contact Saishnaa IT Solutions</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">We'd love to hear from you. Reach out with any questions or project ideas.</p>
+      <div class="animate__animated animate__fadeInUp animate__delay-2s">
+        <a href="#contact-form" class="btn btn-purple btn-lg animate-float">
+          <i class="fas fa-paper-plane me-2"></i> Send Us a Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container py-5 my-5 fade-in" id="contact-form">
+    <h2 class="section-title animate__animated animate__fadeIn">Get in Touch</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="row g-4">
+          <div class="col-md-6 mb-4">
+            <form class="animate__animated animate__fadeInLeft">
+              <div class="mb-4">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="John Doe">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="john@example.com">
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="How can we help?">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-purple w-100">
+                <i class="fas fa-paper-plane me-2"></i> Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="col-md-6">
+            <div class="contact-info-card animate__animated animate__fadeInRight">
+              <h5>Contact Information</h5>
+              <p><i class="fas fa-map-marker-alt"></i>Sakthi nagar , Thindal,Erode-638012</p>
+              <p><i class="fas fa-phone"></i>+91 9363643763</p>
+              <p><i class="fas fa-envelope"></i>saishnaa@gmail.com</p>
+              <p><i class="fas fa-clock"></i>Mon - Sat: 9:30 AM to 5:30 PM</p>
+              
+              <h5 class="mt-5">Visit Our Office</h5>
+              <div class="ratio ratio-16x9 mt-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.1604952738758!2d77.68256627570776!3d11.32297724887344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f002388afbd%3A0x9785512e87acfb9c!2sTCDS%20Computer%20Education%20(%20Sakthi%20Nagar%2C%20Thindal%20)!5e0!3m2!1sen!2sin!4v1739613918280!5m2!1sen!2sin" 
+                  style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+              
+              <h6 class="mt-4">Follow Us</h6>
+              <div class="social-icons">
+                
+                        <a href="https://www.facebook.com/profile.php?id=61577296040956" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/saishnaa83696" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/saishnaa_software/" class="text-white"><i class="fab fa-instagram"></i></a>
+                    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p class="mb-3">&copy; 2025 Saishnaa IT Solutions. All rights reserved.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="privacy.html" class="text-white">Privacy Policy</a>
+            <a href="team_s.html" class="text-white">Terms of Service</a>
+            <!--<a href="#" class="text-white">Sitemap</a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Intersection Observer for fade-in elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(el => observer.observe(el));
+    
+    // Form submission animation
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = this.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission
+        setTimeout(() => {
+          submitBtn.innerHTML = '<i class="fas fa-check me-2"></i> Message Sent!';
+          setTimeout(() => {
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> Send Message';
+            submitBtn.disabled = false;
+            form.reset();
+            
+            // Show success message
+            const alert = document.createElement('div');
+            alert.className = 'alert alert-success mt-3 animate__animated animate__fadeIn';
+            alert.innerHTML = '<i class="fas fa-check-circle me-2"></i> Your message has been sent successfully! We\'ll get back to you soon.';
+            form.appendChild(alert);
+            
+            setTimeout(() => {
+              alert.classList.add('animate__fadeOut');
+              setTimeout(() => alert.remove(), 500);
+            }, 5000);
+          }, 2000);
+        }, 1500);
+      });
+    }
+    
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.btn-purple');
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 1000);
+      });
+    });
+  </script>
+</body>
+</html>
