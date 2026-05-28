@@ -154,6 +154,7 @@ export default function Chatbot() {
     { label: "🛠️ Services Catalog", text: "What services do you offer?" },
     { label: "💰 Pricing Tiers", text: "What are your pricing plans?" },
     { label: "💼 Career Openings", text: "Are there career openings?" },
+    { label: "📚 Journals Portal", text: "Can I view your journals?" },
     { label: "📞 Book Free Consultation", text: "Book a consultation" }
   ];
 
