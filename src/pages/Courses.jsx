@@ -9,7 +9,7 @@ export default function Courses() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Standard 23 Certificate Courses from the brochure
+  // Standard Certificate Courses from the brochure
   const certificateCourses = [
     { id: 1, number: 1, title: "Fundamentals, Windows, Internet", category: "Office Systems", skills: "Operating Systems, Web Browsing, Digital Literacy", duration: "4 Weeks" },
     { id: 2, number: 2, title: "Fundamentals, Windows, Internet, HTML", category: "Programming & Web", skills: "OS Basics, Web Browsing, Web Page Creation", duration: "6 Weeks" },
@@ -19,7 +19,7 @@ export default function Courses() {
     { id: 6, number: 6, title: "C & C++ Programming", category: "Programming & Web", skills: "Pointers, Memory Ops, OOP Paradigms", duration: "8 Weeks" },
     { id: 7, number: 7, title: "Visual Basic", category: "Programming & Web", skills: "GUI App Design, Event Handling, Visual Studio", duration: "6 Weeks" },
     { id: 8, number: 8, title: "Oracle Database", category: "Databases & ERP", skills: "SQL, DBMS Schemas, PL/SQL, Indexes", duration: "8 Weeks" },
-    { id: 9, number: 9, title: "Java Programming", category: "Programming & Web", skills: "JDK, Core Java, Multi-threading, OOP Concepts", duration: "8 Weeks" },
+    { id: 9, number: 9, title: "Java Programming & Enterprise MVC Systems", category: "Programming & Web", skills: "JDK, Core Java, Multi-threading, OOP, Spring Boot, Microservices", duration: "8 Weeks" },
     { id: 10, number: 10, title: "PageMaker, CorelDraw", category: "Design & Animation", skills: "Vector Art, Desktop Publishing, Print Layouts", duration: "8 Weeks" },
     { id: 11, number: 11, title: "Photo Shop Mastery", category: "Design & Animation", skills: "Photo Editing, Layers, Retouching, Digital Art", duration: "6 Weeks" },
     { id: 12, number: 12, title: "HTML5 Web Design", category: "Programming & Web", skills: "Semantic HTML5, CSS Styling, Responsive Design", duration: "4 Weeks" },
@@ -33,7 +33,9 @@ export default function Courses() {
     { id: 20, number: 20, title: "Visual Basic Script (VBScript)", category: "Programming & Web", skills: "Windows Script Host, Automations, Server Scripts", duration: "4 Weeks" },
     { id: 21, number: 21, title: "Java Script (ES6+)", category: "Programming & Web", skills: "DOM, Dynamic Operations, Async APIs, AJAX", duration: "6 Weeks" },
     { id: 22, number: 22, title: "Macromedia Director", category: "Design & Animation", skills: "Interactive CD-ROM Publishing, Lingo Scripts", duration: "8 Weeks" },
-    { id: 23, number: 23, title: "Maya (3D Animation & Modeling)", category: "Design & Animation", skills: "3D Polygons, Rigging, Textures, Render Engine", duration: "12 Weeks" }
+    { id: 23, number: 23, title: "Maya (3D Animation & Modeling)", category: "Design & Animation", skills: "3D Polygons, Rigging, Textures, Render Engine", duration: "12 Weeks" },
+    { id: 24, number: 24, title: "Python Programming & AI Foundation", category: "Programming & Web", skills: "Python Syntax, Data Structures, Web Scrapers, Pandas, NumPy, OpenAI API Integration", duration: "8 Weeks" },
+    { id: 25, number: 25, title: "Full Stack Web Development (MERN Stack)", category: "Programming & Web", skills: "React.js, Node.js, Express.js, MongoDB, REST APIs, Git, Vercel Hosting", duration: "12 Weeks" }
   ];
 
   const filteredCourses = certificateCourses.filter(course => {
@@ -226,6 +228,156 @@ Sent via Saishnaa Learning Academy.
                       <span className="badge bg-light text-dark py-2 px-3 border rounded-pill">Practical / Lab</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured: Professional Career Bootcamps */}
+      <section className="py-5 animate__animated animate__fadeIn" style={{ backgroundColor: '#f9fafb', borderTop: '1px solid rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge bg-purple px-3 py-2 text-white mb-2" style={{ backgroundColor: 'var(--main-color)', borderRadius: '30px', fontSize: '0.8rem' }}>
+              🚀 JOB READY CERTIFICATIONS
+            </span>
+            <h2 className="section-title mb-2">Professional Career Bootcamps</h2>
+            <p className="text-muted small">Accelerated industry-aligned paths for engineers, college graduates, and working professionals.</p>
+          </div>
+
+          <div className="row g-4 justify-content-center">
+            {/* Bootcamp 1: Full Stack Web Development */}
+            <div className="col-lg-4 col-md-6 d-flex animate__animated animate__zoomIn" style={{ animationDelay: '0.1s' }}>
+              <div className="interactive-card p-4 d-flex flex-column text-start w-100 bg-white" style={{ borderTop: '4px solid #ff4081' }}>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <span className="badge bg-danger text-white px-2.5 py-1.5" style={{ fontSize: '0.7rem', borderRadius: '15px' }}>
+                    🔥 Placement Focused
+                  </span>
+                  <span className="text-muted small fw-bold">12 Weeks</span>
+                </div>
+                <h5 className="fw-bold text-dark mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  Full Stack Web Development (MERN Stack)
+                </h5>
+                <p className="text-muted small mb-4 flex-grow-1" style={{ lineHeight: '1.6' }}>
+                  Master modern web engineering. Design scalable user interfaces in React, configure RESTful backends in Node & Express, and manage document databases with MongoDB.
+                </p>
+                <div className="p-3 bg-light rounded-3 mb-4" style={{ fontSize: '0.82rem' }}>
+                  <span className="fw-bold text-secondary d-block mb-1.5">⚡ Curriculum Highlights:</span>
+                  <ul className="list-unstyled mb-0 text-muted d-flex flex-column gap-1">
+                    <li>• React Hooks, Router, and Redux</li>
+                    <li>• REST APIs, Express Routing & JWT</li>
+                    <li>• MongoDB Indexing & Mongoose schemas</li>
+                    <li>• Vercel/Render hosting & Git DevOps</li>
+                  </ul>
+                </div>
+                <div className="d-flex gap-2 mt-auto">
+                  <a 
+                    href={`https://wa.me/919790155384?text=${encodeURIComponent("Hi Saishnaa Team, I want to enroll in the Full Stack Web Development (MERN) Bootcamp. Please send me the fee structure and schedule!")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-sm text-white flex-grow-1 py-2.5 rounded-pill d-flex align-items-center justify-content-center gap-1 fw-bold shadow-sm"
+                    style={{ backgroundColor: '#25D366', border: 'none', fontSize: '0.85rem' }}
+                  >
+                    <MessageCircle size={15} /> WhatsApp
+                  </a>
+                  <a 
+                    href={`mailto:saishnaa@gmail.com?subject=Full%20Stack%20Web%20Development%20Bootcamp%20Enrollment&body=${encodeURIComponent("Hi Saishnaa Team,\n\nI am interested in joining the Full Stack Web Development (MERN) Career Bootcamp. Please share the pricing plans, start dates, and curriculum details.\n\nThank you.")}`}
+                    className="btn btn-sm btn-purple px-3 py-2.5 rounded-pill"
+                    title="Inquire via Email"
+                  >
+                    <Mail size={15} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Bootcamp 2: Python Programming & AI Foundation */}
+            <div className="col-lg-4 col-md-6 d-flex animate__animated animate__zoomIn" style={{ animationDelay: '0.2s' }}>
+              <div className="interactive-card p-4 d-flex flex-column text-start w-100 bg-white" style={{ borderTop: '4px solid #00f0ff' }}>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <span className="badge bg-info text-dark px-2.5 py-1.5" style={{ fontSize: '0.7rem', borderRadius: '15px', backgroundColor: '#e0fcfc' }}>
+                    📈 Trending Course
+                  </span>
+                  <span className="text-muted small fw-bold">8 Weeks</span>
+                </div>
+                <h5 className="fw-bold text-dark mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  Python Programming & AI Foundation
+                </h5>
+                <p className="text-muted small mb-4 flex-grow-1" style={{ lineHeight: '1.6' }}>
+                  Learn the world's most versatile language. From core coding syntax and lists to writing automated scrapers and integrating open AI models.
+                </p>
+                <div className="p-3 bg-light rounded-3 mb-4" style={{ fontSize: '0.82rem' }}>
+                  <span className="fw-bold text-secondary d-block mb-1.5">⚡ Curriculum Highlights:</span>
+                  <ul className="list-unstyled mb-0 text-muted d-flex flex-column gap-1">
+                    <li>• Python Syntax, OOP & File Handlers</li>
+                    <li>• Data Analysis with Pandas & NumPy</li>
+                    <li>• Automated Web Scrapers & API links</li>
+                    <li>• Introduction to OpenAI APIs & PyTorch</li>
+                  </ul>
+                </div>
+                <div className="d-flex gap-2 mt-auto">
+                  <a 
+                    href={`https://wa.me/919790155384?text=${encodeURIComponent("Hi Saishnaa Team, I want to enroll in the Python Programming & AI Foundation Bootcamp. Please send me the details!")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-sm text-white flex-grow-1 py-2.5 rounded-pill d-flex align-items-center justify-content-center gap-1 fw-bold shadow-sm"
+                    style={{ backgroundColor: '#25D366', border: 'none', fontSize: '0.85rem' }}
+                  >
+                    <MessageCircle size={15} /> WhatsApp
+                  </a>
+                  <a 
+                    href={`mailto:saishnaa@gmail.com?subject=Python%20and%20AI%20Foundation%20Bootcamp%20Enrollment&body=${encodeURIComponent("Hi Saishnaa Team,\n\nI am interested in joining the Python Programming & AI Foundation Bootcamp. Please share the details.\n\nThank you.")}`}
+                    className="btn btn-sm btn-purple px-3 py-2.5 rounded-pill"
+                    title="Inquire via Email"
+                  >
+                    <Mail size={15} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Bootcamp 3: Advanced Java Enterprise Edition */}
+            <div className="col-lg-4 col-md-6 d-flex animate__animated animate__zoomIn" style={{ animationDelay: '0.3s' }}>
+              <div className="interactive-card p-4 d-flex flex-column text-start w-100 bg-white" style={{ borderTop: '4px solid var(--main-color)' }}>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <span className="badge bg-primary text-white px-2.5 py-1.5" style={{ fontSize: '0.7rem', borderRadius: '15px' }}>
+                    💻 Highly Requested
+                  </span>
+                  <span className="text-muted small fw-bold">8 Weeks</span>
+                </div>
+                <h5 className="fw-bold text-dark mb-2" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                  Advanced Java & Enterprise MVC Systems
+                </h5>
+                <p className="text-muted small mb-4 flex-grow-1" style={{ lineHeight: '1.6' }}>
+                  Develop secure enterprise backend services. Build robust OOP infrastructures, handle databases through Hibernate & JDBC, and configure Spring Boot microservices.
+                </p>
+                <div className="p-3 bg-light rounded-3 mb-4" style={{ fontSize: '0.82rem' }}>
+                  <span className="fw-bold text-secondary d-block mb-1.5">⚡ Curriculum Highlights:</span>
+                  <ul className="list-unstyled mb-0 text-muted d-flex flex-column gap-1">
+                    <li>• Core Java Collections & Threads</li>
+                    <li>• Relational Database Links & JDBC/SQL</li>
+                    <li>• Spring MVC Framework & Rest Controllers</li>
+                    <li>• Building Microservices with Spring Boot</li>
+                  </ul>
+                </div>
+                <div className="d-flex gap-2 mt-auto">
+                  <a 
+                    href={`https://wa.me/919790155384?text=${encodeURIComponent("Hi Saishnaa Team, I want to enroll in the Advanced Java & Enterprise Bootcamp. Please send me the details!")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-sm text-white flex-grow-1 py-2.5 rounded-pill d-flex align-items-center justify-content-center gap-1 fw-bold shadow-sm"
+                    style={{ backgroundColor: '#25D366', border: 'none', fontSize: '0.85rem' }}
+                  >
+                    <MessageCircle size={15} /> WhatsApp
+                  </a>
+                  <a 
+                    href={`mailto:saishnaa@gmail.com?subject=Advanced%20Java%20Bootcamp%20Enrollment&body=${encodeURIComponent("Hi Saishnaa Team,\n\nI am interested in joining the Advanced Java Enterprise Bootcamp. Please share the details.\n\nThank you.")}`}
+                    className="btn btn-sm btn-purple px-3 py-2.5 rounded-pill"
+                    title="Inquire via Email"
+                  >
+                    <Mail size={15} />
+                  </a>
                 </div>
               </div>
             </div>
