@@ -87,9 +87,7 @@ export default function Footer() {
               <li><Link to="/projects" className="text-white nav-link-hover">Projects</Link></li>
               <li><Link to="/journals" className="text-white nav-link-hover">Academic Journals</Link></li>
               <li><Link to="/pricing" className="text-white nav-link-hover">Pricing</Link></li>
-              <li><Link to="/team" className="text-white nav-link-hover">Our Team</Link></li>
               <li><Link to="/careers" className="text-white nav-link-hover">Careers</Link></li>
-              <li><Link to="/blog" className="text-white nav-link-hover">Blog</Link></li>
             </ul>
           </div>
 

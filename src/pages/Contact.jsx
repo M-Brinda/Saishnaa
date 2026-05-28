@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader, MessageCircle } from 'lucide-react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '', channel: 'WhatsApp' });
   const [status, setStatus] = useState({ loading: false, success: false, message: '' });
   const [lastSubmittedData, setLastSubmittedData] = useState(null);
 
@@ -18,7 +18,13 @@ export default function Contact() {
       // Save inquiry locally in dashboard cache
       const inquiries = JSON.parse(localStorage.getItem('saishnaa_inquiries') || '[]');
       inquiries.push({
-        inquiry: formData,
+        inquiry: {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          channel: formData.channel
+        },
         date: new Date().toLocaleString()
       });
       localStorage.setItem('saishnaa_inquiries', JSON.stringify(inquiries));
@@ -26,14 +32,71 @@ export default function Contact() {
       // Cache current inputs for direct redirect triggers
       setLastSubmittedData({ ...formData });
 
-      // Simulate mock API latency
+      const contactWaText = `Hi Saishnaa Team, my name is ${formData.name}. I would like to make an inquiry.
+
+==================================================
+💬 NEW INQUIRY - SAISHNAA IT SOLUTIONS
+==================================================
+👤 SENDER DETAILS:
+--------------------------------------------------
+• Full Name: ${formData.name}
+• Contact Email: ${formData.email}
+• Subject: ${formData.subject}
+💬 Detailed Query:
+--------------------------------------------------
+${formData.message}
+==================================================
+Sent via Saishnaa Web Portal.`;
+
+      const contactEmailSubject = formData.subject;
+
+      const contactEmailBody = `==================================================
+📩 NEW INQUIRY - SAISHNAA IT SOLUTIONS
+==================================================
+👤 Sender Details:
+--------------------------------------------------
+• Full Name: ${formData.name}
+• Contact Email: ${formData.email}
+• Subject: ${formData.subject}
+💬 Detailed Query:
+--------------------------------------------------
+${formData.message}
+==================================================
+Sent via Saishnaa Web Portal.
+==================================================`;
+
+      // Copy template directly to clipboard as backup for cross-platform robustness
+      const copyContent = formData.channel === 'WhatsApp' ? contactWaText : contactEmailBody;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(copyContent).catch(() => {});
+      }
+
+      // Synchronously open a blank window before async timeout to bypass aggressive desktop & mobile popup blockers
+      let newTab = null;
+      if (formData.channel === 'WhatsApp') {
+        newTab = window.open('', '_blank');
+      }
+
+      // Simulate mock API latency and trigger direct communication client instantly
       setTimeout(() => {
         setStatus({
           loading: false,
           success: true,
           message: "Inquiry successfully logged in our local system!"
         });
-        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        // EXECUTION-BASED INSTANT DELIVERY
+        if (formData.channel === 'WhatsApp') {
+          if (newTab) {
+            newTab.location.href = `https://wa.me/919790155384?text=${encodeURIComponent(contactWaText)}`;
+          } else {
+            window.open(`https://wa.me/919790155384?text=${encodeURIComponent(contactWaText)}`, '_blank');
+          }
+        } else if (formData.channel === 'Email') {
+          window.location.href = `mailto:saishnaa@gmail.com?subject=${encodeURIComponent(contactEmailSubject)}&body=${encodeURIComponent(contactEmailBody)}`;
+        }
+
+        setFormData({ name: '', email: '', subject: '', message: '', channel: 'WhatsApp' });
       }, 1200);
     }
   };
@@ -115,28 +178,34 @@ Sent via Saishnaa Web Portal.
                       <div className="p-2 rounded-3 animate__animated animate__fadeIn">
                         <div className="d-flex align-items-center gap-2 mb-3">
                           <CheckCircle className="text-success" size={24} />
-                          <h6 className="fw-bold mb-0" style={{ color: 'var(--main-color)', fontSize: '1.1rem' }}>Inquiry Saved Locally!</h6>
+                          <h6 className="fw-bold mb-0" style={{ color: 'var(--main-color)', fontSize: '1.1rem' }}>Inquiry Dispatched Instantly!</h6>
                         </div>
                         <p className="small text-muted mb-4" style={{ lineHeight: '1.6' }}>
-                          For instant delivery to our executive consultants, please tap one of the buttons below to send your query directly via WhatsApp or Email:
+                          Your inquiry details have been saved locally. We have automatically launched your preferred client (<strong>{lastSubmittedData.channel}</strong>) to send your message.
+                        </p>
+                        <p className="small text-muted mb-4">
+                          If your browser blocked the popup redirection, you can click the manual button below:
                         </p>
                         <div className="d-flex flex-column gap-3">
-                          <a 
-                            href={`https://wa.me/919790155384?text=${encodeURIComponent(contactWaText)}`}
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="btn text-white w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold shadow-sm"
-                            style={{ backgroundColor: '#25D366', border: 'none', transition: 'all 0.3s', fontSize: '0.95rem' }}
-                          >
-                            <MessageCircle size={18} /> Send via WhatsApp
-                          </a>
-                          <a 
-                            href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(contactEmailSubject)}&body=${encodeURIComponent(contactEmailBody)}`}
-                            className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold text-white shadow-sm"
-                            style={{ fontSize: '0.95rem' }}
-                          >
-                            <Mail size={18} /> Send via Email
-                          </a>
+                          {lastSubmittedData.channel === 'WhatsApp' ? (
+                            <a 
+                              href={`https://wa.me/919790155384?text=${encodeURIComponent(contactWaText)}`}
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="btn text-white w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold shadow-sm"
+                              style={{ backgroundColor: '#25D366', border: 'none', transition: 'all 0.3s', fontSize: '0.95rem' }}
+                            >
+                              <MessageCircle size={18} /> Launch WhatsApp Manually
+                            </a>
+                          ) : (
+                            <a 
+                              href={`mailto:saishnaa@gmail.com?subject=${encodeURIComponent(contactEmailSubject)}&body=${encodeURIComponent(contactEmailBody)}`}
+                              className="btn btn-purple w-100 py-3 rounded-pill d-flex align-items-center justify-content-center gap-2 fw-bold text-white shadow-sm"
+                              style={{ fontSize: '0.95rem' }}
+                            >
+                              <Mail size={18} /> Open Mail Client Manually
+                            </a>
+                          )}
                         </div>
                         <button 
                           type="button" 
@@ -154,7 +223,6 @@ Sent via Saishnaa Web Portal.
                             type="text" 
                             className="form-control py-2.5" 
                             id="name" 
-                            placeholder="John Doe" 
                             required
                             value={formData.name}
                             onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
@@ -166,7 +234,6 @@ Sent via Saishnaa Web Portal.
                             type="email" 
                             className="form-control py-2.5" 
                             id="email" 
-                            placeholder="john@example.com" 
                             required
                             value={formData.email}
                             onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
@@ -178,23 +245,55 @@ Sent via Saishnaa Web Portal.
                             type="text" 
                             className="form-control py-2.5" 
                             id="subject" 
-                            placeholder="Project Inquiry / Tech consultation" 
                             required
                             value={formData.subject}
                             onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
                           />
                         </div>
-                        <div className="mb-4">
+                        <div className="mb-3">
                           <label htmlFor="message" className="form-label small fw-semibold text-muted">Your Message</label>
                           <textarea 
                             className="form-control" 
                             id="message" 
                             rows="5" 
-                            placeholder="Describe your project, software goals, or requested timeline..." 
                             required
                             value={formData.message}
                             onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                           ></textarea>
+                        </div>
+                        
+                        <div className="mb-4 text-start">
+                          <label className="form-label small fw-semibold text-muted d-block mb-2">Preferred Delivery Channel (Instant Direct Execution)</label>
+                          <div className="d-flex gap-4">
+                            <div className="form-check">
+                              <input 
+                                className="form-check-input" 
+                                type="radio" 
+                                name="contactChannel" 
+                                id="contactWa" 
+                                value="WhatsApp" 
+                                checked={formData.channel === 'WhatsApp'}
+                                onChange={() => setFormData(prev => ({ ...prev, channel: 'WhatsApp' }))}
+                              />
+                              <label className="form-check-label small fw-semibold text-secondary" htmlFor="contactWa">
+                                WhatsApp Support
+                              </label>
+                            </div>
+                            <div className="form-check">
+                              <input 
+                                className="form-check-input" 
+                                type="radio" 
+                                name="contactChannel" 
+                                id="contactMail" 
+                                value="Email" 
+                                checked={formData.channel === 'Email'}
+                                onChange={() => setFormData(prev => ({ ...prev, channel: 'Email' }))}
+                              />
+                              <label className="form-check-label small fw-semibold text-secondary" htmlFor="contactMail">
+                                Email Dispatcher
+                              </label>
+                            </div>
+                          </div>
                         </div>
                         
                         <button 

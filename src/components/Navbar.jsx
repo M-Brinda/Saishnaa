@@ -104,29 +104,11 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink 
-                to="/team" 
-                className={({ isActive }) => `nav-link text-white ${isActive ? 'activefw fw-bold border-bottom border-2' : ''}`}
-                style={{ margin: '0 8px', padding: '8px 12px', transition: 'all 0.3s' }}
-              >
-                Team
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink 
                 to="/careers" 
                 className={({ isActive }) => `nav-link text-white ${isActive ? 'activefw fw-bold border-bottom border-2' : ''}`}
                 style={{ margin: '0 8px', padding: '8px 12px', transition: 'all 0.3s' }}
               >
                 Careers
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink 
-                to="/blog" 
-                className={({ isActive }) => `nav-link text-white ${isActive ? 'activefw fw-bold border-bottom border-2' : ''}`}
-                style={{ margin: '0 8px', padding: '8px 12px', transition: 'all 0.3s' }}
-              >
-                Blog
               </NavLink>
             </li>
             <li className="nav-item">

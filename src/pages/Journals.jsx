@@ -666,7 +666,6 @@ export default function Journals() {
                       <input 
                         type="text" 
                         className="form-control" 
-                        placeholder="Dr. Jane Doe" 
                         required 
                         value={formData.authorName}
                         onChange={(e) => setFormData(prev => ({ ...prev, authorName: e.target.value }))}
@@ -679,7 +678,6 @@ export default function Journals() {
                       <input 
                         type="email" 
                         className="form-control" 
-                        placeholder="jane.doe@university.edu" 
                         required 
                         value={formData.authorEmail}
                         onChange={(e) => setFormData(prev => ({ ...prev, authorEmail: e.target.value }))}
@@ -693,7 +691,6 @@ export default function Journals() {
                     <input 
                       type="text" 
                       className="form-control" 
-                      placeholder="Department of CS, Massachusetts Institute of Technology" 
                       required 
                       value={formData.authorInstitution}
                       onChange={(e) => setFormData(prev => ({ ...prev, authorInstitution: e.target.value }))}
@@ -706,7 +703,6 @@ export default function Journals() {
                     <input 
                       type="text" 
                       className="form-control" 
-                      placeholder="An Optimized Deep Learning Framework for Edge-Cloud Database Systems" 
                       required 
                       value={formData.paperTitle}
                       onChange={(e) => setFormData(prev => ({ ...prev, paperTitle: e.target.value }))}
@@ -725,7 +721,6 @@ export default function Journals() {
                       className="form-control" 
                       rows="4" 
                       maxLength="2000"
-                      placeholder="Enter the comprehensive abstract of your research paper. The abstract must describe the core methodology, experimental findings, and contribution metrics..."
                       required
                       value={formData.paperAbstract}
                       onChange={(e) => setFormData(prev => ({ ...prev, paperAbstract: e.target.value }))}

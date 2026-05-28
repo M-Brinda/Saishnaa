@@ -11,9 +11,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Pricing from './pages/Pricing';
-import Team from './pages/Team';
 import Careers from './pages/Careers';
-import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Journals from './pages/Journals';
 import Courses from './pages/Courses';
@@ -50,20 +48,10 @@ const SEO_CONFIG = {
     description: 'Choose from Starter, Professional, and Premium bespoke software development pricing tiers. High-performance, secure, and scalable solutions for every business.',
     keywords: 'software pricing Erode, app development cost, IT consulting packages'
   },
-  '/team': {
-    title: 'Meet Our Expert Engineers & Strategists | Saishnaa Software Solutions',
-    description: 'Get to know the highly skilled engineering leaders, UX designers, and technical consultants behind Saishnaa\'s digital success stories.',
-    keywords: 'Saishnaa team, software engineers Erode, technology leaders Thindal'
-  },
   '/careers': {
     title: 'Join Our Dynamic Engineering Team | Careers at Saishnaa',
     description: 'Build the future of technology with us. Explore remote and on-site job openings for React developers, Python engineers, and cloud specialists.',
     keywords: 'IT jobs Erode, software developer vacancies, hire React developers Erode'
-  },
-  '/blog': {
-    title: 'Latest Tech Insights, News & Digital Trends | Saishnaa Blog',
-    description: 'Stay ahead with articles on AI innovation, web development best practices, cybersecurity trends, and digital transformation tips from Saishnaa engineers.',
-    keywords: 'software blog, IT news Erode, React tutorials, technology trends'
   },
   '/contact': {
     title: 'Contact Us for Free Consultation | Saishnaa Software Solutions',
@@ -186,9 +174,7 @@ function App() {
             <Route path="/courses" element={<Courses />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/team" element={<Team />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/journals" element={<Journals />} />
             <Route path="/privacy" element={<Privacy />} />
