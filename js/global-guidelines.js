@@ -1,4 +1,4 @@
-// SSRG Academic Journals Global Guidelines Database
+// SSSL Academic Journals Global Guidelines Database
 const globalGuidelinesData = {
   "ethics": [
     {
@@ -7,7 +7,7 @@ const globalGuidelinesData = {
     },
     {
       "heading": "Plagiarism",
-      "content": "SSRG is committed to publishing only original material, i.e., material that has neither been published elsewhere, nor is under review elsewhere. The group uses Turnitin™ similarity check software to detect instances of overlapping and similar text in submitted manuscripts. Manuscripts that are found to have been plagiarized from a manuscript by other authors, whether published or unpublished, will incur plagiarism sanctions."
+      "content": "SSSL is committed to publishing only original material, i.e., material that has neither been published elsewhere, nor is under review elsewhere. The group uses Turnitin™ similarity check software to detect instances of overlapping and similar text in submitted manuscripts. Manuscripts that are found to have been plagiarized from a manuscript by other authors, whether published or unpublished, will incur plagiarism sanctions."
     },
     {
       "heading": "Duplicate Submission",
@@ -47,7 +47,7 @@ const globalGuidelinesData = {
     },
     {
       "heading": "Sanctions",
-      "content": "In the event that there are documented violations of any of the above mentioned policies in any journal, regardless of whether or not the violations occurred in a journal published by SSRG, the following sanctions will be applied:\n\n• Immediate rejection of the infringing manuscript.\n• Immediate rejection of every other manuscript submitted to any journal published by SSRG by any of the authors of the infringing manuscript.\n• Prohibition against all of the authors for any new submissions to any journal published by SSRG, either individually or in combination with other authors of the infringing manuscript. This prohibition will be imposed for a minimum of 36 months.\n• Prohibition against all of the authors from serving on the Editorial Board of any journal published by SSRG."
+      "content": "In the event that there are documented violations of any of the above mentioned policies in any journal, regardless of whether or not the violations occurred in a journal published by SSSL, the following sanctions will be applied:\n\n• Immediate rejection of the infringing manuscript.\n• Immediate rejection of every other manuscript submitted to any journal published by SSSL by any of the authors of the infringing manuscript.\n• Prohibition against all of the authors for any new submissions to any journal published by SSSL, either individually or in combination with other authors of the infringing manuscript. This prohibition will be imposed for a minimum of 36 months.\n• Prohibition against all of the authors from serving on the Editorial Board of any journal published by SSSL."
     },
     {
       "heading": "Research Documentation",
@@ -81,7 +81,7 @@ const globalGuidelinesData = {
   "authorGuidelines": [
     {
       "heading": "Manuscript Submission",
-      "content": "Submission of a manuscript implies: that the work described has not been published before; that it is not under consideration for publication anywhere else; that its publication has been approved by all co-authors, if any, as well as by the responsible authorities – tacitly or explicitly – at the institute where the work has been carried out. The publisher will not be held legally responsible should there be any claims for compensation.\n\n<b>Permissions:</b> Authors wishing to include figures, tables, or text passages that have already been published elsewhere are required to obtain permission from the copyright owner(s) for both the print and online format and to include evidence that such permission has been granted when submitting their papers. Any material received without such evidence will be assumed to originate from the authors.\n\n<b>Important Notes:</b>\n• In case authors are encouraged to resubmit a revised version of their manuscript, they are required to mark all changes (e.g. using the track changes functionality of their word processing program or by colored text) and the revised version must be accompanied by a cover letter including an itemized response to the reviewer's comments.\n• A submission to SSRG generally implies that materials described in the manuscript (e.g. seeds, genetic stocks, vectors, antibodies) should be freely available to any researcher wishing to use them for non-commercial purposes. Authors are expected to comply with requests for materials within 60 days after receipt of the request. Where appropriate, requestors should be prepared to cover reasonable costs of the request."
+      "content": "Submission of a manuscript implies: that the work described has not been published before; that it is not under consideration for publication anywhere else; that its publication has been approved by all co-authors, if any, as well as by the responsible authorities – tacitly or explicitly – at the institute where the work has been carried out. The publisher will not be held legally responsible should there be any claims for compensation.\n\n<b>Permissions:</b> Authors wishing to include figures, tables, or text passages that have already been published elsewhere are required to obtain permission from the copyright owner(s) for both the print and online format and to include evidence that such permission has been granted when submitting their papers. Any material received without such evidence will be assumed to originate from the authors.\n\n<b>Important Notes:</b>\n• In case authors are encouraged to resubmit a revised version of their manuscript, they are required to mark all changes (e.g. using the track changes functionality of their word processing program or by colored text) and the revised version must be accompanied by a cover letter including an itemized response to the reviewer's comments.\n• A submission to SSSL generally implies that materials described in the manuscript (e.g. seeds, genetic stocks, vectors, antibodies) should be freely available to any researcher wishing to use them for non-commercial purposes. Authors are expected to comply with requests for materials within 60 days after receipt of the request. Where appropriate, requestors should be prepared to cover reasonable costs of the request."
     },
     {
       "heading": "Author Contribution Statement",
