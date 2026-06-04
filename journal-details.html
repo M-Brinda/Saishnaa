@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="img/sai.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags (Dynamically updated via JS) -->
+    <title>Journal Details | Saishnaa Software Solutions</title>
+    <meta name="description" content="Detailed guidelines, scope, and editorial board for SSRG academic journals." />
+
+    <!-- CDNs & Web Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+
+    <style>
+      /* Layout structure */
+      .details-wrapper {
+        min-height: 100vh;
+        background-color: #f7f9fc;
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+      
+      /* Sidebar Menu - Compacted for 14 items */
+      .sidebar-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(77, 30, 163, 0.04);
+        border: 1px solid rgba(77, 30, 163, 0.08);
+        padding: 15px 10px;
+        position: sticky;
+        top: 100px;
+        max-height: 85vh;
+        overflow-y: auto;
+      }
+      /* Custom thin scrollbar for sidebar */
+      .sidebar-card::-webkit-scrollbar {
+        width: 4px;
+      }
+      .sidebar-card::-webkit-scrollbar-thumb {
+        background: rgba(77, 30, 163, 0.2);
+        border-radius: 4px;
+      }
+      .sidebar-title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #1a1a2e;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(77, 30, 163, 0.1);
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .sidebar-item a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 10px;
+        color: #555;
+        font-weight: 600;
+        font-size: 0.82rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .sidebar-item a:hover {
+        background-color: rgba(77, 30, 163, 0.05);
+        color: var(--main-color);
+        transform: translateX(3px);
+      }
+      .sidebar-item.active a {
+        background: linear-gradient(135deg, var(--main-color), #7645fc);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(77, 30, 163, 0.2);
+      }
+
+      /* Content blocks */
+      .content-card {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(77, 30, 163, 0.05);
+        padding: 40px;
+        margin-bottom: 30px;
+        display: none;
+        animation: cardFadeIn 0.4s ease forwards;
+      }
+      .content-card.active {
+        display: block;
+      }
+      @keyframes cardFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Stats rings & metrics grid */
+      .metric-box {
+        background: linear-gradient(135deg, #ffffff 0%, #fbfaff 100%);
+        border: 1px solid rgba(77, 30, 163, 0.06);
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      }
+      .metric-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(77, 30, 163, 0.08);
+        border-color: rgba(77, 30, 163, 0.15);
+      }
+      .metric-val {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--main-color);
+        margin-bottom: 4px;
+      }
+      .metric-lbl {
+        font-size: 0.78rem;
+        color: #777;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Editor in chief styling */
+      .eic-card {
+        background: linear-gradient(135deg, #fbfaff 0%, #f4f0ff 100%);
+        border: 1.5px solid rgba(77, 30, 163, 0.15);
+        border-radius: 20px;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 35px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .eic-avatar-wrap {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--main-color), #6acae7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 2rem;
+        box-shadow: 0 6px 16px rgba(77, 30, 163, 0.25);
+        flex-shrink: 0;
+      }
+      .eic-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--main-color);
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 4px 14px;
+        border-radius: 20px;
+        letter-spacing: 1px;
+      }
+
+      /* Board members filter search */
+      .editors-search-wrap {
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .editors-search-wrap input {
+        width: 100%;
+        border-radius: 50px;
+        padding: 12px 24px 12px 50px;
+        border: 1px solid rgba(77, 30, 163, 0.15);
+        outline: none;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        transition: border-color 0.2s;
+      }
+      .editors-search-wrap input:focus {
+        border-color: var(--main-color);
+      }
+      .editors-search-wrap i {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+      }
+
+      .board-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .board-card {
+        background: #fff;
+        border: 1px solid rgba(0,0,0,0.06);
+        border-radius: 14px;
+        padding: 20px;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+      }
+      .board-card:hover {
+        border-color: rgba(77, 30, 163, 0.15);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(77, 30, 163, 0.06);
+      }
+      .board-card-name {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1a1a2e;
+        margin-bottom: 6px;
+      }
+      .board-card-aff {
+        font-size: 0.8rem;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      /* Guidelines submission box */
+      .submission-box {
+        background: linear-gradient(135deg, #153e68 0%, #0d2847 100%);
+        border-radius: 20px;
+        color: #fff;
+        padding: 35px;
+        margin-bottom: 35px;
+        box-shadow: 0 10px 30px rgba(13, 40, 71, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+      .submission-box::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 80% 20%, rgba(106, 202, 231, 0.15) 0%, rgba(106, 202, 231, 0) 60%);
+        pointer-events: none;
+      }
+      .guideline-item {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 16px;
+        align-items: flex-start;
+      }
+      .guideline-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: rgba(106, 202, 231, 0.15);
+        color: #6acae7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .guideline-text {
+        font-size: 0.92rem;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      /* File Downloads list */
+      .download-card {
+        border: 1px solid rgba(77, 30, 163, 0.1);
+        background-color: #fbfaff;
+        border-radius: 12px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        transition: border-color 0.2s;
+      }
+      .download-card:hover {
+        border-color: var(--main-color);
+      }
+
+      /* Indexing grid */
+      .badge-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .badge-card {
+        background: #fff;
+        border: 1.5px dashed rgba(77, 30, 163, 0.15);
+        border-radius: 14px;
+        padding: 24px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 110px;
+        transition: all 0.3s;
+      }
+      .badge-card:hover {
+        border-style: solid;
+        border-color: var(--main-color);
+        background: #fbfaff;
+        transform: scale(1.03);
+      }
+      .badge-card span {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #4d1ea3;
+      }
+
+      /* Navigation details headers */
+      .section-heading-inner {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .btn-copy {
+        background: rgba(255,255,255,0.15);
+        border: 1px dashed rgba(255,255,255,0.3);
+        color: #fff;
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn-copy:hover {
+        background: #fff;
+        color: #153e68;
+      }
+
+      /* Editorial timeline step formatting */
+      .editorial-timeline {
+        position: relative;
+        padding-left: 30px;
+        margin-top: 20px;
+      }
+      .editorial-timeline::before {
+        content: '';
+        position: absolute;
+        left: 9px;
+        top: 5px;
+        bottom: 5px;
+        width: 2px;
+        background: rgba(77, 30, 163, 0.15);
+      }
+      .timeline-step {
+        position: relative;
+        margin-bottom: 25px;
+      }
+      .timeline-step::before {
+        content: attr(data-step);
+        position: absolute;
+        left: -30px;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--main-color), #7645fc);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(77, 30, 163, 0.2);
+      }
+      .timeline-step-title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1a1a2e;
+        margin-bottom: 4px;
+      }
+      .timeline-step-desc {
+        font-size: 0.88rem;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      /* Paper card styling for current issue */
+      .paper-card {
+        background: #fff;
+        border: 1px solid rgba(77, 30, 163, 0.08);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+      }
+      .paper-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(77, 30, 163, 0.06);
+        border-color: rgba(77, 30, 163, 0.18);
+      }
+      .paper-title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #1a1a2e;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+      .paper-authors {
+        font-size: 0.88rem;
+        color: #666;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .paper-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+
+      /* Custom styles for premium buttons */
+      .btn-purple {
+        background: linear-gradient(135deg, var(--main-color), #7645fc);
+        color: white;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn-purple:hover {
+        background: linear-gradient(135deg, #3c1485, var(--main-color));
+        color: white;
+        box-shadow: 0 4px 15px rgba(77, 30, 163, 0.3);
+      }
+
+      /* Accordion Custom Styling */
+      .accordion-item {
+        border: 1px solid rgba(77, 30, 163, 0.08) !important;
+        border-radius: 12px !important;
+        margin-bottom: 10px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .accordion-button {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        color: #1a1a2e;
+        background-color: #fff;
+        padding: 16px 20px;
+      }
+      .accordion-button:not(.collapsed) {
+        color: var(--main-color);
+        background-color: rgba(77, 30, 163, 0.03);
+        box-shadow: none;
+      }
+      .accordion-button::after {
+        background-size: 1rem;
+      }
+      .accordion-body {
+        padding: 20px;
+        color: #555;
+        line-height: 1.6;
+        font-size: 0.92rem;
+      }
+
+      /* Mobile layouts */
+      @media (max-width: 991px) {
+        .sidebar-card {
+          position: relative;
+          top: 0;
+          margin-bottom: 30px;
+          max-height: none;
+        }
+        .details-wrapper {
+          padding-top: 90px;
+        }
+        .eic-card {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Wrapper -->
+    <main class="details-wrapper">
+      <div class="container page-fade-in">
+        
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb" class="mb-4">
+          <ol class="breadcrumb" style="font-size: 0.88rem; font-weight: 500;">
+            <li class="breadcrumb-item"><a href="index.html" style="color: var(--main-color);">Home</a></li>
+            <li class="breadcrumb-item"><a href="journals.html" style="color: var(--main-color);">Journals</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb-journal-code" aria-current="page">Loading...</li>
+          </ol>
+        </nav>
+
+        <!-- Dynamic Page Hero -->
+        <div class="p-4 p-md-5 mb-5 rounded-4 text-white position-relative overflow-hidden" id="hero-banner-container" style="
+          background: linear-gradient(135deg, rgba(77, 30, 163, 0.95) 0%, rgba(13, 40, 71, 0.95) 100%);
+          box-shadow: 0 10px 30px rgba(77, 30, 163, 0.12);
+        ">
+          <!-- Floating Shapes -->
+          <div class="floating-shapes">
+            <div class="particle" style="width: 10px; height: 10px; top: 10%; left: 5%; animation: float 10s infinite;"></div>
+            <div class="particle" style="width: 15px; height: 15px; top: 60%; left: 90%; animation: float 12s infinite;"></div>
+          </div>
+
+          <div style="position: relative; z-index: 2;">
+            <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-5 mb-3" id="hero-category-badge" style="font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase;">
+              Academic Journal
+            </span>
+            <h1 class="display-5 fw-bold mb-3" id="hero-journal-title" style="font-family: Outfit, sans-serif;">
+              Loading Journal Title...
+            </h1>
+            <p class="fs-5 opacity-90 mb-4" id="hero-journal-subtitle" style="max-width: 800px; line-height: 1.6;">
+              SSRG Peer-Reviewed Open Access Publication
+            </p>
+            
+            <div class="d-flex flex-wrap gap-3">
+              <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 20px; font-size: 0.8rem; font-weight: 600;">
+                <i class="fas fa-fingerprint me-2 text-warning"></i> E-ISSN: <span id="hero-issn-val">N/A</span>
+              </div>
+              <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 20px; font-size: 0.8rem; font-weight: 600;">
+                <i class="fas fa-calendar-alt me-2 text-warning"></i> Frequency: <span id="hero-freq-val">12 Issues/Yr</span>
+              </div>
+              <div id="hero-scopus-tag" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 20px; font-size: 0.8rem; font-weight: 600; display: none;">
+                🎓 Scopus Indexed
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Body Grid -->
+        <div class="row g-4">
+          
+          <!-- Sidebar Navigation -->
+          <div class="col-lg-3">
+            <div class="sidebar-card">
+              <div class="sidebar-title">
+                <i class="fas fa-book-open text-primary"></i>
+                <span id="sidebar-journal-code">JOURNAL</span>
+              </div>
+              <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-tab="aim-scope">
+                  <a href="#aim-scope">
+                    <i class="fas fa-bullseye"></i> Aim & Scope
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="editorial-board">
+                  <a href="#editorial-board">
+                    <i class="fas fa-users-cog"></i> Editorial Board
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="paper-submission">
+                  <a href="#paper-submission">
+                    <i class="fas fa-file-upload"></i> Paper Submission
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="current-issue">
+                  <a href="#current-issue">
+                    <i class="fas fa-newspaper"></i> Current Issue
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="archives">
+                  <a href="#archives">
+                    <i class="fas fa-archive"></i> Archives
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="publication-ethics">
+                  <a href="#publication-ethics">
+                    <i class="fas fa-balance-scale"></i> Publication Ethics
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="guidelines-authors">
+                  <a href="#guidelines-authors">
+                    <i class="fas fa-pen-fancy"></i> Guidelines for Authors
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="guidelines-editors">
+                  <a href="#guidelines-editors">
+                    <i class="fas fa-user-edit"></i> Guidelines for Editors
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="guidelines-reviewer">
+                  <a href="#guidelines-reviewer">
+                    <i class="fas fa-user-check"></i> Guidelines for Reviewer
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="indexing">
+                  <a href="#indexing">
+                    <i class="fas fa-award"></i> Indexing
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="apc">
+                  <a href="#apc">
+                    <i class="fas fa-credit-card"></i> APC
+                  </a>
+                </li>
+                <li class="sidebar-item" data-tab="apc-payment">
+                  <a href="#apc-payment">
+                    <i class="fas fa-money-check-alt"></i> Mode of payment for APC
+                  </a>
+                </li>
+                <li class="sidebar-item border-top mt-2 pt-2">
+                  <a href="#" id="sidebar-copyright-btn" download>
+                    <i class="fas fa-file-signature"></i> Copyright template
+                  </a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="#" id="sidebar-paper-btn" download>
+                    <i class="fas fa-file-word"></i> Paper template
+                  </a>
+                </li>
+                <li class="mt-3 pt-2 border-top">
+                  <a href="journals.html" class="text-danger fw-bold d-flex align-items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Back to Catalog
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Content Panes -->
+          <div class="col-lg-9">
+
+            <!-- 1. AIM & SCOPE -->
+            <div class="content-card active" id="tab-aim-scope">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-bullseye text-primary"></i> Aim & Scope
+              </h3>
+              
+              <!-- Metrics Cards Row -->
+              <div class="row g-3 mb-5" id="journal-metrics-row">
+                <div class="col-6 col-md-3">
+                  <div class="metric-box">
+                    <div class="metric-val" id="metric-rate">N/A</div>
+                    <div class="metric-lbl">Acceptance Rate</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="metric-box">
+                    <div class="metric-val" id="metric-decision">N/A</div>
+                    <div class="metric-lbl">First Decision</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="metric-box">
+                    <div class="metric-val" id="metric-accept">N/A</div>
+                    <div class="metric-lbl">To Acceptance</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="metric-box">
+                    <div class="metric-val" id="metric-pub">N/A</div>
+                    <div class="metric-lbl">To Publication</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scope Description -->
+              <div class="mb-5">
+                <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;">Journal Overview</h5>
+                <div id="journal-scope-description" class="lh-lg" style="color: #444; font-size: 0.95rem;">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+
+              <!-- Solicited Topics Grid -->
+              <div>
+                <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;">Solicited Topics & Scope Area</h5>
+                <p class="text-muted small mb-4">The journal welcomes original research submissions covering, but not limited to, the following domains:</p>
+                <div class="row" id="journal-topics-list">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. EDITORIAL BOARD -->
+            <div class="content-card" id="tab-editorial-board">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-users-cog text-primary"></i> Editorial Board
+              </h3>
+
+              <!-- Editor-in-Chief highlighted -->
+              <div class="eic-card">
+                <span class="eic-badge">Editor-in-Chief</span>
+                <div class="eic-avatar-wrap">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                  <h4 class="fw-bold mb-2 text-primary" style="font-family:'Outfit',sans-serif;" id="eic-name">Dr. Editor Name</h4>
+                  <p class="mb-0 text-muted lh-base" style="font-size: 0.92rem;" id="eic-affiliation">Affiliation Details</p>
+                </div>
+              </div>
+
+              <!-- Other Board Members List -->
+              <div>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+                  <h5 class="fw-bold m-0 text-secondary" style="font-family:'Outfit',sans-serif;">Associate Editors & Editorial Members</h5>
+                  <span class="badge bg-secondary px-3 py-2 rounded-5 fw-bold" style="font-size: 0.72rem;" id="editors-count-badge">0 Members</span>
+                </div>
+
+                <!-- Editors Search -->
+                <div class="editors-search-wrap">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="editors-search-input" placeholder="Search editors by name, institution or country..." />
+                </div>
+
+                <div class="board-grid" id="editors-grid-container">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. PAPER SUBMISSION -->
+            <div class="content-card" id="tab-paper-submission">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-file-upload text-primary"></i> Guidelines for Paper Submission
+              </h3>
+
+              <!-- submission instructions email callout -->
+              <div class="submission-box d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
+                <div>
+                  <h5 class="fw-bold mb-2 text-warning"><i class="fas fa-paper-plane me-2"></i>Submit Your Paper</h5>
+                  <p class="mb-0 opacity-90 small lh-base" style="max-width: 500px;">
+                    Send your manuscript as a Microsoft Word attachment (.doc or .docx) directly to the submission mail box. Please ensure you add this address to your contacts to ensure smooth communication.
+                  </p>
+                </div>
+                <div class="text-md-end flex-shrink-0">
+                  <div class="fw-bold fs-5 mb-2" id="submission-email-text">email@address.org</div>
+                  <div class="d-flex gap-2 justify-content-md-end">
+                    <button class="btn btn-warning fw-bold px-3 py-2 rounded-5 text-dark" id="btn-submit-mail" style="font-size:0.85rem;">
+                      <i class="fas fa-envelope me-1"></i> Send Email
+                    </button>
+                    <button class="btn btn-copy" onclick="copySubmissionEmail()">
+                      <i class="fas fa-copy me-1"></i> Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Preparation Guidelines -->
+              <div class="mb-5">
+                <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;">Manuscript Preparation Guidelines</h5>
+                <div class="bg-light p-4 rounded-4" id="preparation-guidelines-list">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+
+              <!-- Submission Templates -->
+              <div>
+                <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;">Templates & Agreement Forms</h5>
+                <p class="text-muted small mb-4">Please download the required manuscript format and copyright agreement. These forms must be completed and submitted along with your paper.</p>
+                
+                <div class="download-card">
+                  <div class="d-flex align-items-center gap-3">
+                    <div style="background: rgba(77, 30, 163, 0.08); width:45px; height:45px; border-radius:10px; display:flex; align-items:center; justify-content:center; color: var(--main-color);">
+                      <i class="far fa-file-word fs-4"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Paper Submission Template</h6>
+                      <small class="text-muted">Document guidelines and formatting layout (.doc)</small>
+                    </div>
+                  </div>
+                  <a href="#" id="template-paper-btn" class="btn btn-purple py-2 px-4 rounded-5" style="font-size:0.82rem;" download>
+                    <i class="fas fa-download"></i> Download
+                  </a>
+                </div>
+
+                <div class="download-card">
+                  <div class="d-flex align-items-center gap-3">
+                    <div style="background: rgba(77, 30, 163, 0.08); width:45px; height:45px; border-radius:10px; display:flex; align-items:center; justify-content:center; color: var(--main-color);">
+                      <i class="far fa-file-word fs-4"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1" style="font-size: 0.92rem;">Copyright Form template</h6>
+                      <small class="text-muted">Author declaration and copyright assignment agreement (.docx)</small>
+                    </div>
+                  </div>
+                  <a href="#" id="template-copyright-btn" class="btn btn-purple py-2 px-4 rounded-5" style="font-size:0.82rem;" download>
+                    <i class="fas fa-download"></i> Download
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. INDEXING -->
+            <div class="content-card" id="tab-indexing">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-award text-primary"></i> Indexing & Abstracting
+              </h3>
+              <p class="text-muted">This journal is recognized, indexed, and cataloged by the following major international scientific indexing databases, ensuring widespread visibility and global academic impact:</p>
+              
+              <div class="badge-grid" id="indexing-badges-container">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 5. APC -->
+            <div class="content-card" id="tab-apc">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-credit-card text-primary"></i> Article Processing Charges (APC)
+              </h3>
+              
+              <p class="lh-lg mb-4" style="color: #444; font-size:0.95rem;">
+                SSRG International Journals operate under an Open Access model. To provide free, immediate, and permanent access to all articles worldwide, the journal levies an Article Processing Charge (APC) once a manuscript is accepted after peer review. This fee covers typesetting, editing, online hosting, archiving, and indexing administration.
+              </p>
+
+              <div class="table-responsive mb-4">
+                <table class="table table-bordered table-striped align-middle" style="font-size:0.9rem;">
+                  <thead class="table-primary text-white" style="background-color: var(--main-color);">
+                    <tr>
+                      <th class="py-3 px-4" style="background-color: var(--main-color);">Publication Fee Categories</th>
+                      <th class="py-3 px-4 text-center" style="background-color: var(--main-color); width: 220px;">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="py-3 px-4 fw-semibold text-secondary">International Authors (Standard Open Access)</td>
+                      <td class="py-3 px-4 text-center fw-bold text-primary" id="apc-international-val">$120 USD</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 fw-semibold text-secondary">Indian Authors (Standard Open Access)</td>
+                      <td class="py-3 px-4 text-center fw-bold text-primary">₹3000 INR</td>
+                    </tr>
+                    <tr>
+                      <td class="py-3 px-4 fw-semibold text-secondary">Copy / Paper Submission Templates</td>
+                      <td class="py-3 px-4 text-center text-success fw-bold">Free of Charge</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="alert alert-info rounded-4 p-4 border-0" style="background-color: #f0f3ff; color: #3b5998;">
+                <h6 class="fw-bold mb-2"><i class="fas fa-info-circle me-1"></i> Payment Instruction Notes</h6>
+                <p class="mb-0 small lh-base">
+                  Payment instructions, bank accounts, and online billing transfer links will be provided directly by the editorial board members in the official acceptance notification email. Once a paper has been accepted after peer review, withdrawals are strictly prohibited under publication regulations.
+                </p>
+              </div>
+            </div>
+
+            <!-- 6. CURRENT ISSUE -->
+            <div class="content-card" id="tab-current-issue">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-newspaper text-primary"></i> Current Issue
+              </h3>
+              <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h5 class="fw-bold m-0 text-secondary" id="current-issue-volume-title" style="font-family:'Outfit',sans-serif;">Volume 13 Issue 5 (2026)</h5>
+                <span class="badge bg-purple px-3 py-2 rounded-5 fw-bold text-white" id="current-issue-month-badge">May 2026</span>
+              </div>
+              <div class="d-flex flex-column gap-3" id="current-issue-papers-list">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 7. ARCHIVES -->
+            <div class="content-card" id="tab-archives">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-archive text-primary"></i> Archives
+              </h3>
+              <p class="text-muted mb-4">Explore the complete history of published research volumes and issues. Click on any issue to expand and inspect the catalog.</p>
+              <div class="accordion" id="archivesAccordion">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 8. PUBLICATION ETHICS -->
+            <div class="content-card" id="tab-publication-ethics">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-balance-scale text-primary"></i> Publication Ethics
+              </h3>
+              <p class="text-muted mb-4">Ethical standards exist to ensure high-quality scientific publications, public trust, and appropriate credit. The journal adheres strictly to COPE Best Practice Guidelines.</p>
+              <div class="accordion" id="ethicsAccordion">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 9. GUIDELINES FOR AUTHORS -->
+            <div class="content-card" id="tab-guidelines-authors">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-pen-fancy text-primary"></i> Guidelines for Authors
+              </h3>
+              <p class="text-muted mb-4">Step-by-step instruction manual for author submissions, manuscript layout rules, formatting, references styles and figure specifications.</p>
+              <div class="accordion" id="authorsGuidelinesAccordion">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 10. GUIDELINES FOR EDITORS -->
+            <div class="content-card" id="tab-guidelines-editors">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-user-edit text-primary"></i> Guidelines for Editors
+              </h3>
+              <p class="text-muted mb-4">The core 11-step editorial office workflow outlining paper review assignments, EIC evaluations, and AI confidentiality guidelines.</p>
+              <div class="editorial-timeline" id="editorsWorkflowTimeline">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 11. GUIDELINES FOR REVIEWER -->
+            <div class="content-card" id="tab-guidelines-reviewer">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-user-check text-primary"></i> Guidelines for Reviewer
+              </h3>
+              <p class="text-muted mb-4">Detailed technical guide for invited peer-reviewers. Learn how to skim-read, spot major flaws, write section reviews, and format final recommendations.</p>
+              <div class="accordion" id="reviewersGuidelinesAccordion">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+
+            <!-- 12. MODE OF PAYMENT FOR APC -->
+            <div class="content-card" id="tab-apc-payment">
+              <h3 class="section-heading-inner">
+                <i class="fas fa-money-check-alt text-primary"></i> Mode of payment for APC
+              </h3>
+              <p class="text-muted mb-4">Select the appropriate billing channel below to complete your Article Processing Charge (APC). Transaction reference receipts must be emailed to the editorial office.</p>
+              
+              <div class="payment-tabs-container mb-4">
+                <ul class="nav nav-pills nav-fill bg-light p-1 rounded-4" role="tablist">
+                  <li class="nav-item">
+                    <button class="nav-link active rounded-3 py-2 fw-bold text-dark" id="pay-indian-tab" data-bs-toggle="tab" data-bs-target="#pay-indian-pane" type="button" role="tab">Indian Authors (INR)</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link rounded-3 py-2 fw-bold text-dark" id="pay-intl-tab" data-bs-toggle="tab" data-bs-target="#pay-intl-pane" type="button" role="tab">International Authors (USD)</button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="tab-content">
+                <!-- Indian Authors -->
+                <div class="tab-pane fade show active" id="pay-indian-pane" role="tabpanel">
+                  <div class="p-4 bg-light rounded-4 border-0">
+                    <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;"><i class="fas fa-university me-2 text-primary"></i> Bank Wire & Online Portals</h5>
+                    <p class="small text-muted lh-lg mb-4">
+                      Indian authors can transfer charges via bank accounts (details provided in acceptance mail), Net Banking, or State Bank Collect.
+                    </p>
+                    <ul class="d-flex flex-column gap-3 mb-4 text-muted small lh-base" style="list-style: none; padding: 0;">
+                      <li class="d-flex gap-2 align-items-start"><i class="fas fa-check-circle text-primary mt-1"></i> <span>Direct bank transfer (NEFT/IMPS/RTGS) to the account specified in your official acceptance email.</span></li>
+                      <li class="d-flex gap-2 align-items-start"><i class="fas fa-check-circle text-primary mt-1"></i> <span>UPI transfer using the scanned QR code or VPA details included in the billing notification.</span></li>
+                      <li class="d-flex gap-2 align-items-start"><i class="fas fa-check-circle text-primary mt-1"></i> <span>Online State Bank Collect portal using Net Banking, Debit cards, or Credit cards.</span></li>
+                    </ul>
+                    <div class="d-grid mt-4">
+                      <a href="https://internationaljournalssrg.org/IJCSE/sbi-i-collect.html" id="sbi-collect-btn" target="_blank" class="btn btn-purple py-3 rounded-5 fw-bold fs-6">
+                        <i class="fas fa-external-link-alt me-2"></i> Pay via State Bank Collect Portal
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- International Authors -->
+                <div class="tab-pane fade" id="pay-intl-pane" role="tabpanel">
+                  <div class="p-4 bg-light rounded-4 border-0">
+                    <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;"><i class="fab fa-paypal me-2 text-primary"></i> PayPal & Money Transceivers</h5>
+                    <p class="small text-muted lh-lg mb-4">
+                      International authors can complete billing via PayPal secure transfer, Western Union, MoneyGram, or international Swift wire transfers.
+                    </p>
+                    <ul class="d-flex flex-column gap-2 mb-4 text-muted small lh-base" style="list-style: none; padding: 0;">
+                      <li class="d-flex gap-2 align-items-start"><i class="fas fa-check-circle text-primary mt-1"></i> <span>Swift/IBAN wire transfer to our international account (details supplied in acceptance mail).</span></li>
+                      <li class="d-flex gap-2 align-items-start"><i class="fas fa-check-circle text-primary mt-1"></i> <span>MoneyGram or Western Union transfers (please contact editorial desk for details).</span></li>
+                      <li class="d-flex gap-2 align-items-start"><i class="fas fa-check-circle text-primary mt-1"></i> <span>PayPal secure invoice portal below:</span></li>
+                    </ul>
+
+                    <!-- PayPal Widget -->
+                    <div class="bg-white p-4 rounded-4 border" style="max-width: 420px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                      <h6 class="fw-bold mb-3 text-dark text-center"><i class="fab fa-paypal text-primary me-2"></i>PayPal Checkout</h6>
+                      <div class="mb-3">
+                        <label for="paypal-article-id" class="form-label small fw-semibold text-secondary">Article ID</label>
+                        <input type="text" id="paypal-article-id" class="form-control form-control-sm rounded-3" placeholder="e.g. IJCSE-V13I5P101" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="paypal-apc-amount" class="form-label small fw-semibold text-secondary">APC Amount (USD)</label>
+                        <div class="input-group input-group-sm">
+                          <span class="input-group-text">$</span>
+                          <input type="number" id="paypal-apc-amount" class="form-control rounded-end-3" placeholder="120" value="120" readonly>
+                          <span class="input-group-text">USD</span>
+                        </div>
+                      </div>
+                      <div class="d-grid mt-4">
+                        <button type="button" class="btn btn-warning rounded-5 fw-bold text-dark py-2 border-0 shadow-sm" id="paypal-sim-checkout-btn" style="background-color: #ffd140; font-family: 'Outfit', sans-serif;">
+                          <i class="fab fa-paypal me-2"></i>Pay with PayPal
+                        </button>
+                      </div>
+                      <div id="paypal-sim-success-msg" class="alert alert-success mt-3 p-2 rounded-3 text-center small fw-bold" style="display: none;">
+                        <i class="fas fa-check-circle me-1"></i> Simulation Success! Payment processed.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/journal-data.js"></script>
+    <script src="js/global-guidelines.js"></script>
+    
+    <script>
+      // Global journal object
+      let currentJournal = null;
+
+      // Extract journal code from URL query parameter
+      function getJournalCode() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("code") || "IJCSE"; // Default to IJCSE
+      }
+
+      // Generate realistic mock papers based on journal data
+      function generateMockPapers(journal) {
+        if (journal.code === "IJCSE") {
+          return [
+            {
+              id: "IJCSE-V13I5P101",
+              title: "Deep Learning for Melanoma Detection: A Concise Review of Datasets, Architectures, and Clinical Challenges",
+              authors: "Suraj Redekar, Mayuri Patil",
+              section: "Research Article",
+              externalId: "638"
+            },
+            {
+              id: "IJCSE-V13I5P102",
+              title: "Secure Data Aggregation in Cloud-Assisted Internet of Things using Lightweight Cryptographic Frameworks",
+              authors: "Dr. K. V. D. Kiran, Rajasekar M.",
+              section: "Research Article",
+              externalId: "639"
+            },
+            {
+              id: "IJCSE-V13I5P103",
+              title: "A Comprehensive Survey of Consensus Mechanisms in Decentralized Blockchain Technologies",
+              authors: "Damodharan Palaniappan, A. Suresh",
+              section: "Review Paper",
+              externalId: "640"
+            }
+          ];
+        }
+        
+        // Dynamic fallback for other journals
+        const code = journal.code;
+        const topic1 = journal.topics[0] || "Advanced Research Principles";
+        const topic2 = journal.topics[1] || "Experimental Methodologies";
+        const topic3 = journal.topics[2] || "Contemporary Developments";
+        
+        return [
+          {
+            id: `${code}-V13I5P101`,
+            title: `Experimental Studies and Theoretical Foundations in ${topic1}`,
+            authors: `${journal.editorInChief.name.replace("Dr. ", "")}, Sarah Jenkins`,
+            section: "Research Article",
+            externalId: "101"
+          },
+          {
+            id: `${code}-V13I5P102`,
+            title: `A Novel Framework for Optimizing ${topic2} in Commercial Infrastructures`,
+            authors: `${journal.editors[0] ? journal.editors[0].name : "John Doe"}, Chen Wei`,
+            section: "Research Article",
+            externalId: "102"
+          },
+          {
+            id: `${code}-V13I5P103`,
+            title: `Emerging Trends and Strategic Paradigms in ${topic3}: A Systematic Review`,
+            authors: `${journal.editors[1] ? journal.editors[1].name : "Jane Smith"}, M. Al-Farsi`,
+            section: "Review Paper",
+            externalId: "103"
+          }
+        ];
+      }
+
+      // Initialize page content
+      function initPage() {
+        const code = getJournalCode().toUpperCase();
+        
+        // Find journal in database
+        if (!journalData || !journalData[code]) {
+          console.error("Journal not found in database: " + code);
+          alert("Journal details not found. Redirecting to catalog.");
+          window.location.href = "journals.html";
+          return;
+        }
+
+        currentJournal = journalData[code];
+
+        // Update titles, breadcrumbs, tags
+        document.title = `${currentJournal.code} — ${currentJournal.title} | Saishnaa`;
+        document.getElementById("breadcrumb-journal-code").textContent = currentJournal.code;
+        document.getElementById("sidebar-journal-code").textContent = currentJournal.code;
+        document.getElementById("hero-journal-title").textContent = currentJournal.title;
+        document.getElementById("hero-journal-subtitle").textContent = `${currentJournal.code} — Scopus Indexed & Peer-Reviewed Open Access Journal`;
+        document.getElementById("hero-issn-val").textContent = currentJournal.issn;
+        document.getElementById("hero-freq-val").textContent = currentJournal.frequency;
+        document.getElementById("hero-category-badge").textContent = currentJournal.category;
+
+        // Show/hide scopus tag
+        const isScopus = code === "IJCSE" || code === "IJECE" || code === "IJEEE" || code === "IJEMS";
+        if (isScopus) {
+          document.getElementById("hero-scopus-tag").style.display = "block";
+        }
+
+        // 1. AIM & SCOPE
+        document.getElementById("metric-rate").textContent = currentJournal.metrics.acceptanceRate || "19%";
+        document.getElementById("metric-decision").textContent = currentJournal.metrics.firstDecision || "10 Days";
+        document.getElementById("metric-accept").textContent = currentJournal.metrics.acceptanceTime || "27 Days";
+        document.getElementById("metric-pub").textContent = currentJournal.metrics.publicationTime || "32 Days";
+
+        // Description Paragraphs
+        const descContainer = document.getElementById("journal-scope-description");
+        descContainer.innerHTML = "";
+        currentJournal.description.forEach(p => {
+          const para = document.createElement("p");
+          para.className = "mb-3 text-justify";
+          para.textContent = p;
+          descContainer.appendChild(para);
+        });
+
+        // Topics List
+        const topicsList = document.getElementById("journal-topics-list");
+        topicsList.innerHTML = "";
+        
+        const col1 = document.createElement("div");
+        col1.className = "col-md-6";
+        const col2 = document.createElement("div");
+        col2.className = "col-md-6";
+
+        const ul1 = document.createElement("ul");
+        ul1.className = "list-unstyled d-flex flex-column gap-2";
+        const ul2 = document.createElement("ul");
+        ul2.className = "list-unstyled d-flex flex-column gap-2";
+
+        currentJournal.topics.forEach((topic, idx) => {
+          const li = document.createElement("li");
+          li.className = "d-flex align-items-start gap-2 small";
+          li.innerHTML = `<i class="fas fa-check-circle mt-1 text-primary" style="font-size:0.8rem; flex-shrink:0;"></i> <span>${topic}</span>`;
+          if (idx % 2 === 0) {
+            ul1.appendChild(li);
+          } else {
+            ul2.appendChild(li);
+          }
+        });
+
+        col1.appendChild(ul1);
+        col2.appendChild(ul2);
+        topicsList.appendChild(col1);
+        topicsList.appendChild(col2);
+
+        // 2. EDITORIAL BOARD
+        document.getElementById("eic-name").textContent = currentJournal.editorInChief.name;
+        document.getElementById("eic-affiliation").textContent = currentJournal.editorInChief.affiliation;
+        document.getElementById("editors-count-badge").textContent = `${currentJournal.editors.length} Board Members`;
+
+        renderEditorsList(currentJournal.editors);
+
+        // 3. PAPER SUBMISSION
+        document.getElementById("submission-email-text").textContent = currentJournal.email;
+        
+        const guidelines = [
+          "Important Items when submitting a manuscript: Submissions by anyone other than one of the authors will not be accepted. The submitting author takes responsibility for the paper during submission and peer review.",
+          "Manuscripts submitted to this journal will be deemed as they have not been published and are not under consideration for publication elsewhere.",
+          "Submit your paper in Microsoft Word format (.doc or .docx) directly as an email attachment.",
+          "Submitting the paper in multiple journals is an offence. Please do not submit the same paper to more than one journal.",
+          "Once the paper is accepted, it cannot be withdrawn at any cost.",
+          "Please strictly follow publication ethics, regulation and avoid plagiarism or copied materials.",
+          "Strictly follow the official SSRG Journals Paper Template when preparing your final manuscript."
+        ];
+        
+        const guidelinesContainer = document.getElementById("preparation-guidelines-list");
+        guidelinesContainer.innerHTML = "";
+        guidelines.forEach(item => {
+          const wrap = document.createElement("div");
+          wrap.className = "guideline-item";
+          wrap.innerHTML = `
+            <div class="guideline-icon"><i class="fas fa-check"></i></div>
+            <div class="guideline-text">${item}</div>
+          `;
+          guidelinesContainer.appendChild(wrap);
+        });
+
+        // Set downloads URLs
+        const paperUrl = `https://internationaljournalssrg.org/public/assets/images/${currentJournal.code}/${currentJournal.code}_paper.doc`;
+        const copyrightUrl = `https://internationaljournalssrg.org/public/assets/images/${currentJournal.code}/${currentJournal.code}_copyright.docx`;
+        
+        document.getElementById("template-paper-btn").href = paperUrl;
+        document.getElementById("template-copyright-btn").href = copyrightUrl;
+        document.getElementById("sidebar-paper-btn").href = paperUrl;
+        document.getElementById("sidebar-copyright-btn").href = copyrightUrl;
+
+        // Mail button action
+        document.getElementById("btn-submit-mail").addEventListener("click", () => {
+          window.location.href = `mailto:${currentJournal.email}`;
+        });
+
+        // 4. INDEXING
+        const indexingContainer = document.getElementById("indexing-badges-container");
+        indexingContainer.innerHTML = "";
+        
+        const indexList = ["Crossref", "Google Scholar", "Semantic Scholar", "Scilit", "WorldCat", "Turnitin"];
+        if (isScopus) indexList.unshift("Scopus");
+
+        indexList.forEach(item => {
+          const badge = document.createElement("div");
+          badge.className = "badge-card";
+          badge.innerHTML = `
+            <i class="fas fa-award text-warning mb-2 fs-3"></i>
+            <span>${item}</span>
+          `;
+          indexingContainer.appendChild(badge);
+        });
+
+        // 5. APC & FEES
+        if (isScopus) {
+          document.getElementById("apc-international-val").textContent = "$150 USD";
+          document.getElementById("paypal-apc-amount").value = 150;
+        } else {
+          document.getElementById("apc-international-val").textContent = "$120 USD";
+          document.getElementById("paypal-apc-amount").value = 120;
+        }
+
+        // 6. CURRENT ISSUE
+        const papers = generateMockPapers(currentJournal);
+        const currentIssueContainer = document.getElementById("current-issue-papers-list");
+        currentIssueContainer.innerHTML = "";
+        papers.forEach(p => {
+          const pCard = document.createElement("div");
+          pCard.className = "paper-card";
+          pCard.innerHTML = `
+            <div class="paper-title">${p.title}</div>
+            <div class="paper-authors"><i class="fas fa-user-circle text-primary"></i> ${p.authors}</div>
+            <div class="paper-meta">
+              <span class="badge bg-light text-dark border px-3 py-2 rounded-5 fw-bold" style="font-size:0.75rem;"><i class="fas fa-file-alt text-primary me-1"></i> ${p.section}</span>
+              <span class="small text-muted fw-semibold">${p.id}</span>
+              <a href="paper-details.html?code=${currentJournal.code}&id=${p.externalId}" class="btn btn-purple py-2 px-4 rounded-5" style="font-size:0.78rem;">
+                <i class="fas fa-file-alt me-1"></i> View Details
+              </a>
+            </div>
+          `;
+          currentIssueContainer.appendChild(pCard);
+        });
+
+        // 7. ARCHIVES (Volumes 13 to 7)
+        const archivesContainer = document.getElementById("archivesAccordion");
+        archivesContainer.innerHTML = "";
+        const years = [
+          { year: "2026", vol: 13, maxIssue: 5 },
+          { year: "2025", vol: 12, maxIssue: 12 },
+          { year: "2024", vol: 11, maxIssue: 12 },
+          { year: "2023", vol: 10, maxIssue: 12 },
+          { year: "2022", vol: 9, maxIssue: 12 },
+          { year: "2021", vol: 8, maxIssue: 12 },
+          { year: "2020", vol: 7, maxIssue: 12 }
+        ];
+
+        years.forEach((y, idx) => {
+          const aItem = document.createElement("div");
+          aItem.className = "accordion-item";
+          
+          let issuesGrid = `<div class="row g-2">`;
+          for (let i = y.maxIssue; i >= 1; i--) {
+            issuesGrid += `
+              <div class="col-6 col-sm-4 col-md-3">
+                <a href="archive-details.html?code=${currentJournal.code}&page=Volume${y.vol}-Issue${i}-${y.year}" class="btn btn-outline-purple w-100 py-2 rounded-3 text-start small fw-bold" style="font-size:0.8rem; border-color: rgba(77, 30, 163, 0.15); color: var(--main-color);">
+                  <i class="fas fa-book me-1 opacity-75"></i> Vol ${y.vol} Issue ${i}
+                </a>
+              </div>
+            `;
+          }
+          issuesGrid += `</div>`;
+
+          aItem.innerHTML = `
+            <h2 class="accordion-header" id="headingArch-${y.year}">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArch-${y.year}">
+                Calendar Year ${y.year} (Volume ${y.vol})
+              </button>
+            </h2>
+            <div id="collapseArch-${y.year}" class="accordion-collapse collapse" data-bs-parent="#archivesAccordion">
+              <div class="accordion-body">
+                ${issuesGrid}
+              </div>
+            </div>
+          `;
+          archivesContainer.appendChild(aItem);
+        });
+
+        // 8. PUBLICATION ETHICS
+        const ethicsContainer = document.getElementById("ethicsAccordion");
+        ethicsContainer.innerHTML = "";
+        globalGuidelinesData.ethics.forEach((item, idx) => {
+          const aItem = document.createElement("div");
+          aItem.className = "accordion-item";
+          aItem.innerHTML = `
+            <h2 class="accordion-header" id="headingEth-${idx}">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEth-${idx}">
+                ${item.heading}
+              </button>
+            </h2>
+            <div id="collapseEth-${idx}" class="accordion-collapse collapse" data-bs-parent="#ethicsAccordion">
+              <div class="accordion-body text-justify">
+                ${item.content.replace(/current-email/g, currentJournal.email)}
+              </div>
+            </div>
+          `;
+          ethicsContainer.appendChild(aItem);
+        });
+
+        // 9. GUIDELINES FOR AUTHORS
+        const authorGuidelinesContainer = document.getElementById("authorsGuidelinesAccordion");
+        authorGuidelinesContainer.innerHTML = "";
+        globalGuidelinesData.authorGuidelines.forEach((item, idx) => {
+          const aItem = document.createElement("div");
+          aItem.className = "accordion-item";
+          aItem.innerHTML = `
+            <h2 class="accordion-header" id="headingAuth-${idx}">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAuth-${idx}">
+                ${item.heading}
+              </button>
+            </h2>
+            <div id="collapseAuth-${idx}" class="accordion-collapse collapse" data-bs-parent="#authorsGuidelinesAccordion">
+              <div class="accordion-body text-justify">
+                ${item.content}
+              </div>
+            </div>
+          `;
+          authorGuidelinesContainer.appendChild(aItem);
+        });
+
+        // 10. GUIDELINES FOR EDITORS
+        const editorsTimelineContainer = document.getElementById("editorsWorkflowTimeline");
+        editorsTimelineContainer.innerHTML = "";
+        globalGuidelinesData.editorialWorkflow.forEach(item => {
+          const stepDiv = document.createElement("div");
+          stepDiv.className = "timeline-step";
+          stepDiv.setAttribute("data-step", item.step);
+          stepDiv.innerHTML = `
+            <div class="timeline-step-title">${item.title}</div>
+            <div class="timeline-step-desc">${item.description}</div>
+          `;
+          editorsTimelineContainer.appendChild(stepDiv);
+        });
+
+        // 11. GUIDELINES FOR REVIEWER
+        const reviewerGuidelinesContainer = document.getElementById("reviewersGuidelinesAccordion");
+        reviewerGuidelinesContainer.innerHTML = "";
+        globalGuidelinesData.reviewerGuidelines.forEach((item, idx) => {
+          const aItem = document.createElement("div");
+          aItem.className = "accordion-item";
+          aItem.innerHTML = `
+            <h2 class="accordion-header" id="headingRev-${idx}">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRev-${idx}">
+                ${item.heading}
+              </button>
+            </h2>
+            <div id="collapseRev-${idx}" class="accordion-collapse collapse" data-bs-parent="#reviewersGuidelinesAccordion">
+              <div class="accordion-body text-justify">
+                ${item.content}
+              </div>
+            </div>
+          `;
+          reviewerGuidelinesContainer.appendChild(aItem);
+        });
+
+        // 12. MODE OF PAYMENT FOR APC
+        document.getElementById("sbi-collect-btn").href = `https://internationaljournalssrg.org/${currentJournal.code}/sbi-i-collect.html`;
+        
+        // PayPal checkout simulation
+        const payBtn = document.getElementById("paypal-sim-checkout-btn");
+        const successMsg = document.getElementById("paypal-sim-success-msg");
+        const artIdInput = document.getElementById("paypal-article-id");
+        
+        payBtn.addEventListener("click", () => {
+          if (!artIdInput.value.trim()) {
+            alert("Please enter a valid Article ID before checkout.");
+            artIdInput.focus();
+            return;
+          }
+          payBtn.disabled = true;
+          payBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status"></span>Processing...`;
+          setTimeout(() => {
+            payBtn.innerHTML = `<i class="fas fa-check-circle me-1"></i> Paid Successfully`;
+            payBtn.classList.remove("btn-warning");
+            payBtn.classList.add("btn-success");
+            successMsg.style.display = "block";
+            successMsg.innerHTML = `<i class="fas fa-check-circle me-1"></i> Success! Payment processed for Article ID: ${artIdInput.value.trim()}. Transaction Reference receipt sent.`;
+          }, 2000);
+        });
+
+        // Initialize Tab Click Listeners
+        const menuItems = document.querySelectorAll(".sidebar-item");
+        menuItems.forEach(item => {
+          const tabId = item.getAttribute("data-tab");
+          if (tabId === "download-copyright" || tabId === "download-paper") return; // Skip downloads
+          
+          item.addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            // Toggle active menu class
+            menuItems.forEach(i => i.classList.remove("active"));
+            this.classList.add("active");
+
+            // Toggle active content pane
+            const contentCards = document.querySelectorAll(".content-card");
+            contentCards.forEach(card => card.classList.remove("active"));
+            document.getElementById(`tab-${tabId}`).classList.add("active");
+
+            // Update URL hash without causing page reload
+            history.pushState(null, null, '#' + tabId);
+
+            // Scroll to content top on mobile
+            if (window.innerWidth < 992) {
+              document.getElementById(`tab-${tabId}`).scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+
+        // Setup Editors Search filter
+        document.getElementById("editors-search-input").addEventListener("input", function(e) {
+          const query = e.target.value.toLowerCase().trim();
+          const filtered = currentJournal.editors.filter(editor => 
+            editor.name.toLowerCase().includes(query) || 
+            editor.affiliation.toLowerCase().includes(query)
+          );
+          renderEditorsList(filtered);
+        });
+
+        // Deep linking hash navigation on load
+        function handleHashNavigation() {
+          const hash = window.location.hash;
+          if (hash) {
+            const tabId = hash.substring(1);
+            const tabTrigger = document.querySelector(`.sidebar-item[data-tab="${tabId}"]`);
+            if (tabTrigger) {
+              // Wait slightly for bootstrap to initialize
+              setTimeout(() => {
+                tabTrigger.click();
+              }, 100);
+            }
+          }
+        }
+        handleHashNavigation();
+        window.addEventListener("hashchange", handleHashNavigation);
+      }
+
+      function renderEditorsList(list) {
+        const container = document.getElementById("editors-grid-container");
+        container.innerHTML = "";
+        
+        if (list.length === 0) {
+          container.innerHTML = `
+            <div class="col-12 text-center py-5">
+              <i class="fas fa-user-slash text-muted fs-2 mb-3 d-block"></i>
+              <p class="text-muted">No editors match your search criteria.</p>
+            </div>
+          `;
+          return;
+        }
+
+        list.forEach(editor => {
+          const card = document.createElement("div");
+          card.className = "board-card";
+          card.innerHTML = `
+            <div class="board-card-name"><i class="fas fa-user-circle text-primary me-2"></i>${editor.name}</div>
+            <div class="board-card-aff">${editor.affiliation}</div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      function copySubmissionEmail() {
+        if (!currentJournal) return;
+        navigator.clipboard.writeText(currentJournal.email).then(() => {
+          alert("Submission email copied to clipboard: " + currentJournal.email);
+        }).catch(err => {
+          console.error("Failed to copy text: ", err);
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", initPage);
+    </script>
+  </body>
+</html>
