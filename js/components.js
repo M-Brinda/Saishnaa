@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (navbarPlaceholder) {
     const scrolled = window.scrollY > 50;
     navbarPlaceholder.innerHTML = `
-      <nav class="navbar navbar-expand-lg fixed-top ${scrolled ? 'navbar-blur' : ''}" style="background-color: ${scrolled ? 'rgba(77, 30, 163, 0.95)' : 'var(--main-color)'}; transition: all 0.4s ease; box-shadow: 0 4px 18px rgba(0,0,0,0.1); padding: ${scrolled ? '8px 0' : '15px 0'}; z-index: 1100;">
+      <nav class="navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled navbar-blur' : ''}" style="z-index: 1100;">
         <div class="container-fluid px-md-4">
           <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3 text-white" href="index.html" style="white-space: nowrap;">
             <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto; animation: float 4s ease-in-out infinite;" />
@@ -18,28 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
               <li class="nav-item">
-                <a href="index.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">About</a>
+                <a href="index.html" class="nav-link text-white">About</a>
               </li>
               <li class="nav-item">
-                <a href="services.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Services</a>
+                <a href="services.html" class="nav-link text-white">Services</a>
               </li>
               <li class="nav-item">
-                <a href="courses.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Courses</a>
+                <a href="courses.html" class="nav-link text-white">Courses</a>
               </li>
               <li class="nav-item">
-                <a href="projects.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Projects</a>
+                <a href="projects.html" class="nav-link text-white">Projects</a>
               </li>
               <li class="nav-item">
-                <a href="journals.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Journals</a>
+                <a href="journals.html" class="nav-link text-white">Journals</a>
               </li>
               <li class="nav-item">
-                <a href="pricing.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Pricing</a>
+                <a href="pricing.html" class="nav-link text-white">Pricing</a>
               </li>
               <li class="nav-item">
-                <a href="careers.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Careers</a>
+                <a href="careers.html" class="nav-link text-white">Careers</a>
               </li>
               <li class="nav-item">
-                <a href="contact.html" class="nav-link text-white" style="margin: 0 8px; padding: 8px 12px; transition: all 0.3s;">Contact</a>
+                <a href="contact.html" class="nav-link text-white">Contact</a>
               </li>
             </ul>
           </div>
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach(link => {
       const href = link.getAttribute("href");
       if (href === currentPath || (currentPath === "" && href === "index.html")) {
-        link.classList.add("activefw", "fw-bold", "border-bottom", "border-2");
+        link.classList.add("active", "fw-bold");
       }
     });
 
@@ -62,13 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const navbar = navbarPlaceholder.querySelector(".navbar");
       if (navbar) {
         if (window.scrollY > 50) {
-          navbar.classList.add("navbar-blur");
-          navbar.style.backgroundColor = "rgba(77, 30, 163, 0.95)";
-          navbar.style.padding = "8px 0";
+          navbar.classList.add("scrolled", "navbar-blur");
         } else {
-          navbar.classList.remove("navbar-blur");
-          navbar.style.backgroundColor = "var(--main-color)";
-          navbar.style.padding = "15px 0";
+          navbar.classList.remove("scrolled", "navbar-blur");
         }
       }
     });
@@ -78,27 +74,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const footerPlaceholder = document.getElementById("footer-placeholder");
   if (footerPlaceholder) {
     footerPlaceholder.innerHTML = `
-      <footer class="footer" style="background: linear-gradient(135deg, var(--main-color) 0%, var(--secondary-color) 100%); color: white; padding: 70px 0 30px; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, var(--accent-color), var(--success-color), var(--accent-color));"></div>
+      <footer class="footer">
         <div class="container">
           <div class="row g-4">
             
             <div class="col-lg-4 mb-4 mb-lg-0 text-start">
               <h4 class="fw-bold mb-4" style="font-family: Outfit, sans-serif;">Saishnaa IT Solutions</h4>
-              <p class="opacity-75" style="font-size: 0.95rem; lineHeight: 1.7;">
+              <p class="opacity-75" style="font-size: 0.95rem; line-height: 1.7;">
                 Innovative technology solutions tailored to your business needs. Let's build the future together.
               </p>
-              <div class="d-flex gap-3 mt-4">
-                <a href="https://www.facebook.com/profile.php?id=61577296040956" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center justify-content-center text-white social-link-icon" style="width: 42px; height: 42px; borderRadius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s;">
+              <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61577296040956" target="_blank" rel="noopener noreferrer" class="social-link-icon">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://x.com/saishnaa83696" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center justify-content-center text-white social-link-icon" style="width: 42px; height: 42px; borderRadius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s;">
+                <a href="https://x.com/saishnaa83696" target="_blank" rel="noopener noreferrer" class="social-link-icon">
                   <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center justify-content-center text-white social-link-icon" style="width: 42px; height: 42px; borderRadius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s;">
+                <a href="https://www.linkedin.com/in/saishnaa-software-solutions-erode-978b08342/" target="_blank" rel="noopener noreferrer" class="social-link-icon">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/saishnaa_software/" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center justify-content-center text-white social-link-icon" style="width: 42px; height: 42px; borderRadius: 50%; background: rgba(255,255,255,0.1); transition: all 0.3s;">
+                <a href="https://www.instagram.com/saishnaa_software/" target="_blank" rel="noopener noreferrer" class="social-link-icon">
                   <i class="fab fa-instagram"></i>
                 </a>
               </div>
@@ -107,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="col-lg-2 col-md-6 mb-4 mb-md-0 text-start">
               <h5 class="fw-bold mb-4 position-relative pb-2" style="font-family: Outfit, sans-serif;">
                 Quick Links
-                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--warning-color); borderRadius: 2px;"></span>
+                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--accent-color); border-radius: 2px;"></span>
               </h5>
               <ul class="list-unstyled opacity-75 d-flex flex-column gap-2" style="font-size: 0.95rem;">
                 <li><a href="index.html" class="text-white nav-link-hover">About Us</a></li>
@@ -123,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
               <h5 class="fw-bold mb-4 position-relative pb-2" style="font-family: Outfit, sans-serif;">
                 Contact Us
-                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--warning-color); borderRadius: 2px;"></span>
+                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--accent-color); border-radius: 2px;"></span>
               </h5>
               <ul class="list-unstyled opacity-75 d-flex flex-column gap-3" style="font-size: 0.95rem;">
                 <li class="d-flex align-items-start gap-2">
@@ -148,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="col-lg-3 text-start">
               <h5 class="fw-bold mb-4 position-relative pb-2" style="font-family: Outfit, sans-serif;">
                 Newsletter
-                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--warning-color); borderRadius: 2px;"></span>
+                <span style="position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--accent-color); border-radius: 2px;"></span>
               </h5>
               <p class="opacity-75 mb-3" style="font-size: 0.95rem;">
                 Subscribe to our newsletter for the latest tech updates and career opportunities.
@@ -204,16 +199,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-
-    // Add CSS hover classes logic for footer social icons
-    const socialIcons = footerPlaceholder.querySelectorAll(".social-link-icon");
-    socialIcons.forEach(icon => {
-      icon.addEventListener("mouseenter", () => {
-        icon.style.background = "var(--accent-color)";
-      });
-      icon.addEventListener("mouseleave", () => {
-        icon.style.background = "rgba(255,255,255,0.1)";
-      });
-    });
   }
 });

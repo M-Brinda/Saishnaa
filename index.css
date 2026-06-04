@@ -1,15 +1,15 @@
 :root {
   --main-color: #4d1ea3;
-  --secondary-color: #7645fc;
+  --secondary-color: #6acae7;
   --accent-color: #ff6b6b;
   --accent-light: #9c6bff;
-  --bg-light: #f8f9fa;
+  --bg-light: #153e68;    
   --bg-gradient: linear-gradient(
     135deg,
     rgba(181, 157, 230, 0.945),
     rgba(152, 241, 182, 0.8)
   );
-  --text-dark: #212529;
+  --text-dark: #333;
   --text-light: #f8f9fa;
   --transition-speed: 0.4s;
   --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -243,13 +243,349 @@ a {
   background-color: var(--main-color);
 }
 
-/* Navbar Scrolled Blur Effect */
-.navbar-blur {
-  background-color: rgba(77, 30, 163, 0.95) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+/* Enhanced Navbar from live site */
+.navbar {
+  background-color: var(--main-color);
+  transition: all var(--transition-speed) ease;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  padding: 15px 0;
+}
+
+.navbar.scrolled, .navbar-blur {
   padding: 8px 0 !important;
+  background-color: rgba(77, 30, 163, 0.97) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .nav-link, .navbar-toggler-icon {
+  color: white !important;
+  transition: all var(--transition-speed) var(--cubic-bezier);
+}
+
+.nav-link {
+  position: relative;
+  margin: 0 10px;
+  padding: 8px 15px !important;
+  font-weight: 500;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 8px rgba(255,255,255,0.7);
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+  width: 80%;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:focus .navbar-toggler-icon {
+  transform: rotate(90deg);
+}
+
+/* Hero Section Enhancements from live site */
+.hero {
+  background: linear-gradient(135deg, rgba(181, 157, 230, 0.945), rgba(152, 241, 182, 0.8)), url('img/1.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  color: white;
+  text-align: center;
+  padding: 180px 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  z-index: 0;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 0.8s both, pulse 2s infinite 1s;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s 0.3s both;
+}
+
+/* Floating particles effect */
+.particle {
+  position: absolute;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floating 6s ease-in-out infinite;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Service & Project Cards from live site */
+.service-card {
+  padding: 35px 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  transition: all 0.5s var(--cubic-bezier);
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 100%;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(77,30,163,0.1) 0%, rgba(106,202,231,0.1) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(111, 66, 193, 0.15);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card h5 {
+  color: var(--main-color);
+  transition: all 0.4s ease;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.service-card h5::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  transition: width 0.4s ease;
+}
+
+.service-card:hover h5 {
+  transform: scale(1.05);
+}
+
+.service-card:hover h5::after {
+  width: 80px;
+}
+
+.service-card p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover p {
+  color: #555;
+}
+
+.project-card {
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.5s var(--cubic-bezier);
+  background: white;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-card p {
+  padding: 20px;
+  font-weight: 600;
+  color: var(--main-color);
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease;
+  background-color: white;
+}
+
+.project-card:hover p {
+  color: white;
+  background-color: transparent;
+}
+
+/* Footer Enhancements from live site */
+.footer {
+  background: linear-gradient(135deg, var(--main-color), #3a0ca3) !important;
+  color: white !important;
+  padding: 50px 0 30px !important;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+.footer:hover {
+  background: linear-gradient(135deg, #5a2db1, #4a148c) !important;
+}
+
+.footer p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+}
+
+.footer:hover p {
+  transform: scale(1.05);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.social-icon, .social-link-icon {
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  background-color: rgba(255,255,255,0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 10px;
+  color: white !important;
+  font-size: 1.2rem;
+  transition: all 0.4s var(--cubic-bezier) !important;
+}
+
+.social-icon:hover, .social-link-icon:hover {
+  background-color: var(--accent-color) !important;
+  transform: translateY(-5px) rotate(10deg) !important;
+  box-shadow: 0 8px 15px rgba(255,107,107,0.3) !important;
+}
+
+/* Floating animation keyframes */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Chatbot Styles */

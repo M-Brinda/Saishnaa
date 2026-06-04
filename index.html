@@ -78,17 +78,11 @@
       <div class="page-fade-in">
         
         <!-- Hero Section -->
-        <section class="hero d-flex flex-column justify-content-center align-items-center text-center text-white" style="
-          background: linear-gradient(135deg, rgba(77, 30, 163, 0.9) 0%, rgba(118, 171, 212, 0.8) 100%), url('img/1.jpg') center/cover fixed;
-          padding: 180px 20px 140px;
-          min-height: 90vh;
-          position: relative;
-          overflow: hidden;
-        ">
-          <div class="floating-shapes">
-            <div class="shape" style="width: 40px; height: 40px; top: 15%; left: 10%; border-radius: 50%; animation-delay: 0s;"></div>
-            <div class="shape" style="width: 60px; height: 60px; top: 65%; left: 85%; border-radius: 20% 50%; animation-delay: 1s;"></div>
-            <div class="shape" style="width: 50px; height: 50px; top: 35%; left: 50%; border-radius: 50%; animation-delay: 2s;"></div>
+        <section class="hero">
+          <div class="particles" id="particles">
+            <div class="particle" style="width: 5px; height: 5px; top: 20%; left: 10%; animation: floating 8s ease-in-out infinite;"></div>
+            <div class="particle" style="width: 8px; height: 8px; top: 60%; left: 80%; animation: floating 7s ease-in-out infinite 1s;"></div>
+            <div class="particle" style="width: 6px; height: 6px; top: 30%; left: 50%; animation: floating 9s ease-in-out infinite 0.5s;"></div>
           </div>
 
           <div class="container" style="position: relative; z-index: 1;">
@@ -107,8 +101,8 @@
         </section>
 
         <!-- About Us section -->
-        <section class="py-5" style="
-          background: linear-gradient(rgba(225, 231, 168, 0.4), rgba(152, 216, 241, 0.3));
+        <section class="py-5" id="about" style="
+          background: linear-gradient(rgba(225, 231, 168, 0.945), rgba(152, 216, 241, 0.8));
           padding: 100px 0 !important;
         ">
           <div class="container py-4">
