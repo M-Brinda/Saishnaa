@@ -1,24 +1,42 @@
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJCE desc-IJCE">
-  <title id="title-IJCE">SSSL International Journal of Civil Engineering</title>
-  <desc id="desc-IJCE">Title-oriented journal banner for SSSL International Journal of Civil Engineering, without decorative image panel.</desc>
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-ijce_cover.svg desc-ijce_cover.svg">
+  <title id="title-ijce_cover.svg">Civil Engineering topic-oriented journal image</title>
+  <desc id="desc-ijce_cover.svg">Dark technology-style topic image for Civil Engineering journal card.</desc>
   <defs>
-    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5120a1"/><stop offset="48%" stop-color="#263477"/><stop offset="100%" stop-color="#0b2c58"/></linearGradient>
-    <radialGradient id="glow4" cx="10%" cy="8%" r="68%"><stop offset="0%" stop-color="#8d63ff" stop-opacity="0.58"/><stop offset="100%" stop-color="#000000" stop-opacity="0"/></radialGradient>
-    <linearGradient id="gold4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffe76a"/><stop offset="100%" stop-color="#ffc928"/></linearGradient>
-    <linearGradient id="cyan4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#17d1d3"/><stop offset="100%" stop-color="#0ba5bd"/></linearGradient>
-    <pattern id="grid4" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/></pattern>
-    <style>.pill{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-weight:900;font-size:16px;letter-spacing:.2px}.code{font-family:Georgia,'Times New Roman',serif;font-weight:900;font-size:46px;fill:rgba(255,255,255,.72)}.title{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-weight:900;font-size:34px;fill:#fff;letter-spacing:0}.tagline{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-style:italic;font-weight:800;font-size:21px;fill:rgba(255,255,255,.84)}.editor{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-weight:900;font-size:19px;fill:#ffd140}.chip{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-size:14px;font-weight:800;fill:rgba(255,255,255,.92)}.small{font-family:'Poppins','Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;fill:rgba(255,255,255,.58)}</style>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070611"/>
+      <stop offset="48%" stop-color="#1d2556"/>
+      <stop offset="100%" stop-color="#101827"/>
+    </linearGradient>
+    <radialGradient id="core4" cx="50%" cy="48%" r="48%">
+      <stop offset="0%" stop-color="#ffd34f" stop-opacity="0.45"/>
+      <stop offset="42%" stop-color="#ffd34f" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warm4" cx="14%" cy="72%" r="48%">
+      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mesh4" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow4" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width="900" height="400" rx="30" fill="url(#bg4)"/><rect width="900" height="400" rx="30" fill="url(#glow4)"/><rect width="900" height="400" rx="30" fill="url(#grid4)"/>
-  <circle cx="32" cy="34" r="5" fill="#fff" opacity=".7"/>
-  <g opacity=".16" transform="translate(650 64)"><circle cx="100" cy="108" r="90" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><ellipse cx="100" cy="108" rx="90" ry="31" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><ellipse cx="100" cy="108" rx="32" ry="90" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><path d="M10 108h180M100 18v180" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><circle cx="100" cy="18" r="5" fill="#fff"/><circle cx="100" cy="198" r="5" fill="#fff"/><circle cx="10" cy="108" r="5" fill="#fff"/><circle cx="190" cy="108" r="5" fill="#fff"/></g>
-  <text x="54" y="66" class="code">IJCE</text>
-  <g transform="translate(394 36)"><rect x="0" y="0" width="205" height="38" rx="19" fill="url(#gold4)"/><text x="102.5" y="25" text-anchor="middle" class="pill" fill="#1d2440">PEER REVIEWED JOURNAL</text><rect x="220" y="0" width="132" height="38" rx="19" fill="url(#cyan4)"/><text x="286" y="25" text-anchor="middle" class="pill" fill="#fff">OPEN ACCESS</text></g>
-  <text x="54" y="104" class="title">SSSL International Journal of</text>
-  <text x="54" y="140" class="title">Civil Engineering</text>
-  <text x="54" y="184" class="tagline">Constructing Sustainable Infrastructures</text><text x="54" y="222" class="editor">Editor-in-Chief: Dr.P.Sivakumar</text>
-  <g transform="translate(54 260)"><rect x="0" y="0" width="160" height="48" rx="15" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.20)"/><text x="18" y="30" class="chip">Online ISSN: Pending</text><rect x="176" y="0" width="190" height="48" rx="15" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.20)"/><text x="194" y="30" class="chip">Frequency: 12 Issue per Year</text><rect x="382" y="0" width="136" height="48" rx="15" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.20)"/><text x="406" y="30" class="chip">Peer Reviewed</text></g>
-  <g transform="translate(54 330)"><rect x="0" y="0" width="240" height="48" rx="24" fill="url(#gold4)"/><text x="120" y="31" text-anchor="middle" font-family="Outfit,Arial" font-size="16" font-weight="900" fill="#20263f">Submit your manuscripts</text></g>
-  <text x="320" y="360" class="small">Civil | Structural | Construction</text>
-  
+  <rect width="900" height="400" fill="url(#bg4)"/>
+  <rect width="900" height="400" fill="url(#warm4)" opacity="0.75"/>
+  <rect width="900" height="400" fill="url(#core4)"/>
+  <rect width="900" height="400" fill="url(#mesh4)"/>
+  <path d="M0 316c190-58 296-48 450-12 160 38 278 35 450-32v128H0z" fill="#000000" opacity="0.35"/>
+  <g opacity="0.58">
+    <circle cx="96" cy="260" r="9" fill="#ff5b27"/><circle cx="145" cy="234" r="7" fill="#ff7a33"/><circle cx="222" cy="286" r="4" fill="#1cc8ff"/>
+    <circle cx="690" cy="222" r="7" fill="#ff5b27"/><circle cx="782" cy="286" r="5" fill="#19c7ff"/><circle cx="610" cy="306" r="4" fill="#ff7a33"/>
+  </g>
+  <g filter="url(#softGlow4)">
+    <path d="M250 274h400M298 274V174M602 274V174M298 174c84-88 220-88 304 0M250 222h400" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" opacity="0.82"/><path d="M365 274c34-92 82-144 154-174M535 274c-34-92-82-144-154-174" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" opacity="0.58"/>
+  </g>
+  <g opacity="0.38" stroke="#ffd34f" stroke-width="2">
+    <path d="M105 322h690"/><path d="M210 350h480"/><path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
+  </g>
 </svg>

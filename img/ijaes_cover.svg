@@ -1,24 +1,42 @@
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJAES desc-IJAES">
-  <title id="title-IJAES">SSSL International Journal of Agriculture and Environmental Science</title>
-  <desc id="desc-IJAES">Title-oriented journal banner for SSSL International Journal of Agriculture and Environmental Science, without decorative image panel.</desc>
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-ijaes_cover.svg desc-ijaes_cover.svg">
+  <title id="title-ijaes_cover.svg">Agriculture Environment topic-oriented journal image</title>
+  <desc id="desc-ijaes_cover.svg">Dark technology-style topic image for Agriculture Environment journal card.</desc>
   <defs>
-    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#315b83"/><stop offset="48%" stop-color="#2a6f64"/><stop offset="100%" stop-color="#152a58"/></linearGradient>
-    <radialGradient id="glow6" cx="10%" cy="8%" r="68%"><stop offset="0%" stop-color="#8d63ff" stop-opacity="0.58"/><stop offset="100%" stop-color="#000000" stop-opacity="0"/></radialGradient>
-    <linearGradient id="gold6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffe76a"/><stop offset="100%" stop-color="#ffc928"/></linearGradient>
-    <linearGradient id="cyan6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#17d1d3"/><stop offset="100%" stop-color="#0ba5bd"/></linearGradient>
-    <pattern id="grid6" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/></pattern>
-    <style>.pill{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-weight:900;font-size:16px;letter-spacing:.2px}.code{font-family:Georgia,'Times New Roman',serif;font-weight:900;font-size:46px;fill:rgba(255,255,255,.72)}.title{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-weight:900;font-size:34px;fill:#fff;letter-spacing:0}.tagline{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-style:italic;font-weight:800;font-size:21px;fill:rgba(255,255,255,.84)}.editor{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-weight:900;font-size:19px;fill:#ffd140}.chip{font-family:'Outfit','Segoe UI',Arial,sans-serif;font-size:14px;font-weight:800;fill:rgba(255,255,255,.92)}.small{font-family:'Poppins','Segoe UI',Arial,sans-serif;font-size:11px;font-weight:800;fill:rgba(255,255,255,.58)}</style>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07110e"/>
+      <stop offset="48%" stop-color="#194c45"/>
+      <stop offset="100%" stop-color="#0c1f36"/>
+    </linearGradient>
+    <radialGradient id="core6" cx="50%" cy="48%" r="48%">
+      <stop offset="0%" stop-color="#8df06a" stop-opacity="0.45"/>
+      <stop offset="42%" stop-color="#8df06a" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warm6" cx="14%" cy="72%" r="48%">
+      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mesh6" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M34 0H0V34" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow6" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width="900" height="400" rx="30" fill="url(#bg6)"/><rect width="900" height="400" rx="30" fill="url(#glow6)"/><rect width="900" height="400" rx="30" fill="url(#grid6)"/>
-  <circle cx="32" cy="34" r="5" fill="#fff" opacity=".7"/>
-  <g opacity=".16" transform="translate(650 64)"><circle cx="100" cy="108" r="90" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><ellipse cx="100" cy="108" rx="90" ry="31" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><ellipse cx="100" cy="108" rx="32" ry="90" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><path d="M10 108h180M100 18v180" stroke="#fff" stroke-width="1.5" stroke-dasharray="8 9"/><circle cx="100" cy="18" r="5" fill="#fff"/><circle cx="100" cy="198" r="5" fill="#fff"/><circle cx="10" cy="108" r="5" fill="#fff"/><circle cx="190" cy="108" r="5" fill="#fff"/></g>
-  <text x="54" y="66" class="code">IJAES</text>
-  <g transform="translate(394 36)"><rect x="0" y="0" width="205" height="38" rx="19" fill="url(#gold6)"/><text x="102.5" y="25" text-anchor="middle" class="pill" fill="#1d2440">PEER REVIEWED JOURNAL</text><rect x="220" y="0" width="132" height="38" rx="19" fill="url(#cyan6)"/><text x="286" y="25" text-anchor="middle" class="pill" fill="#fff">OPEN ACCESS</text></g>
-  <text x="54" y="104" class="title">SSSL International Journal of Agriculture</text>
-  <text x="54" y="140" class="title">and Environmental Science</text>
-  <text x="54" y="184" class="tagline">Sustainable Science for Global Growth</text><text x="54" y="222" class="editor">Editor-in-Chief: Dr.P.Sivakumar</text>
-  <g transform="translate(54 260)"><rect x="0" y="0" width="160" height="48" rx="15" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.20)"/><text x="18" y="30" class="chip">Online ISSN: Pending</text><rect x="176" y="0" width="190" height="48" rx="15" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.20)"/><text x="194" y="30" class="chip">Frequency: 12 Issue per Year</text><rect x="382" y="0" width="136" height="48" rx="15" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.20)"/><text x="406" y="30" class="chip">Peer Reviewed</text></g>
-  <g transform="translate(54 330)"><rect x="0" y="0" width="240" height="48" rx="24" fill="url(#gold6)"/><text x="120" y="31" text-anchor="middle" font-family="Outfit,Arial" font-size="16" font-weight="900" fill="#20263f">Submit your manuscripts</text></g>
-  <text x="320" y="360" class="small">Agriculture | Environment | Biology</text>
-  
+  <rect width="900" height="400" fill="url(#bg6)"/>
+  <rect width="900" height="400" fill="url(#warm6)" opacity="0.75"/>
+  <rect width="900" height="400" fill="url(#core6)"/>
+  <rect width="900" height="400" fill="url(#mesh6)"/>
+  <path d="M0 316c190-58 296-48 450-12 160 38 278 35 450-32v128H0z" fill="#000000" opacity="0.35"/>
+  <g opacity="0.58">
+    <circle cx="96" cy="260" r="9" fill="#ff5b27"/><circle cx="145" cy="234" r="7" fill="#ff7a33"/><circle cx="222" cy="286" r="4" fill="#1cc8ff"/>
+    <circle cx="690" cy="222" r="7" fill="#ff5b27"/><circle cx="782" cy="286" r="5" fill="#19c7ff"/><circle cx="610" cy="306" r="4" fill="#ff7a33"/>
+  </g>
+  <g filter="url(#softGlow6)">
+    <path d="M274 290c210-20 294-152 328-278-196 24-306 120-328 278z" fill="none" stroke="#8df06a" stroke-linecap="round" stroke-linejoin="round" stroke-width="11" opacity="0.82"/><path d="M274 290c108-104 198-174 328-278M370 250c-28-72-24-126 8-174M488 158c48 8 88 32 114 70" fill="none" stroke="#8df06a" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" opacity="0.58"/>
+  </g>
+  <g opacity="0.38" stroke="#8df06a" stroke-width="2">
+    <path d="M105 322h690"/><path d="M210 350h480"/><path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
+  </g>
 </svg>
