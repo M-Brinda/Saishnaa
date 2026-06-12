@@ -7,8 +7,8 @@
     { "source": "/courses.html", "destination": "/training-courses.html" },
     { "source": "/projects", "destination": "/our-projects.html" },
     { "source": "/projects.html", "destination": "/our-projects.html" },
-    { "source": "/journals", "destination": "/journals.html" },
-    { "source": "/journals.html", "destination": "/journals.html" },
+    { "source": "/journals", "destination": "/academic-journals.html" },
+    { "source": "/journals.html", "destination": "/academic-journals.html" },
     { "source": "/academic-journals", "destination": "/academic-journals.html" },
     { "source": "/contact", "destination": "/contact-us.html" },
     { "source": "/contact.html", "destination": "/contact-us.html" }

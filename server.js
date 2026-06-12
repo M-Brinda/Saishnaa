@@ -214,12 +214,12 @@ const server = http.createServer((req, res) => {
     "./services.html": "./our-services.html",
     "./courses.html": "./training-courses.html",
     "./projects.html": "./our-projects.html",
-    "./journals.html": "./journals.html",
+    "./journals.html": "./academic-journals.html",
     "./contact.html": "./contact-us.html",
     "./services": "./our-services.html",
     "./courses": "./training-courses.html",
     "./projects": "./our-projects.html",
-    "./journals": "./journals.html",
+    "./journals": "./academic-journals.html",
     "./academic-journals": "./academic-journals.html",
     "./contact": "./contact-us.html",
     "./about": "./index.html",
@@ -274,4 +274,3 @@ function startServer(port) {
 }
 
 startServer(PORT);
-
