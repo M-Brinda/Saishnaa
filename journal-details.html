@@ -769,11 +769,15 @@
       <div
         class="p-4 p-md-5 mb-5 rounded-4 text-white position-relative overflow-hidden animate__animated animate__fadeIn"
         id="hero-banner-container" style="
-          background: linear-gradient(135deg, rgba(77, 30, 163, 0.95) 0%, rgba(13, 40, 71, 0.95) 100%);
-          box-shadow: 0 10px 30px rgba(77, 30, 163, 0.12);
+          background: radial-gradient(circle at 12% 15%, rgba(116, 77, 255, 0.55), transparent 28%),
+            linear-gradient(135deg, #5226b4 0%, #1e216f 46%, #0b2b58 100%);
+          box-shadow: 0 18px 45px rgba(22, 20, 86, 0.28);
+          border: 2px solid rgba(255,255,255,0.28);
+          border-radius: 28px !important;
+          min-height: 355px;
         ">
         <!-- Dotted network globe outline on the right side of the card -->
-        <svg class="position-absolute" style="right: -50px; top: 50%; transform: translateY(-50%); width: 350px; height: 350px; opacity: 0.12; z-index: 1; pointer-events: none; color: #fff;" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+        <svg class="position-absolute" style="right: -72px; top: 50%; transform: translateY(-50%); width: 410px; height: 410px; opacity: 0.18; z-index: 1; pointer-events: none; color: #fff;" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <circle cx="50" cy="50" r="45" stroke-width="0.3" stroke-dasharray="1 1"/>
           <ellipse cx="50" cy="50" rx="45" ry="15" stroke-width="0.3" stroke-dasharray="1 1"/>
           <ellipse cx="50" cy="50" rx="45" ry="30" stroke-width="0.3" stroke-dasharray="1 1"/>
@@ -809,7 +813,7 @@
           <!-- Left: Content-Oriented Illustration -->
           <div class="col-md-4 text-center text-md-start">
             <div id="hero-journal-illustration" class="mx-auto animate__animated animate__zoomIn"
-              style="width: 100%; max-width: 280px; height: 190px; border-radius: 16px; overflow: hidden; background-size: cover; background-position: center; box-shadow: 0 8px 25px rgba(0,0,0,0.25); border: 2.5px solid rgba(255,255,255,0.2);">
+              style="width: 100%; max-width: 335px; height: 250px; border-radius: 20px; overflow: hidden; background-size: cover; background-position: center; box-shadow: 0 14px 35px rgba(0,0,0,0.34); border: 3px solid rgba(255,255,255,0.20); outline: 4px solid rgba(255,255,255,0.08);">
             </div>
           </div>
 
@@ -817,38 +821,38 @@
           <div class="col-md-8 text-center text-md-start">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mb-2">
               <span class="badge text-dark fw-bold px-3 py-2 rounded-5" id="hero-category-badge"
-                style="font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase; background-color: #ffd140 !important;">
+                style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #ffe25d, #ffc928) !important; box-shadow: 0 7px 18px rgba(255,209,64,0.25); min-width: 220px;">
                 <i class="fas fa-users me-1"></i> Peer Reviewed Journal
               </span>
               <span class="badge text-white fw-bold px-3 py-2 rounded-5" id="hero-pub-model-badge"
-                style="font-size: 0.72rem; letter-spacing: 0.5px; text-transform: uppercase; background-color: #00adb5 !important;">
+                style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #0fc7ca, #0aa7b7) !important; box-shadow: 0 7px 18px rgba(0,173,181,0.22); min-width: 160px;">
                 <i class="fas fa-unlock me-1"></i> Open Access
               </span>
             </div>
             <h1 class="display-6 fw-bold mb-2" id="hero-journal-title"
-              style="font-family: Outfit, sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,0.3); font-size: 2.1rem; line-height: 1.25;">
+              style="font-family: Outfit, sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,0.34); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.12; letter-spacing: 0;">
               Loading Journal Title...
             </h1>
             <p class="fs-6 opacity-90 mb-2 fw-semibold" id="hero-journal-tagline"
-              style="font-family: Outfit, sans-serif; font-style: italic; color: rgba(255,255,255,0.85); font-size: 1.15rem;">
+              style="font-family: Outfit, sans-serif; font-style: italic; color: rgba(255,255,255,0.86); font-size: clamp(1rem, 2vw, 1.35rem);">
               Loading tagline...
             </p>
             <p class="fs-6 opacity-95 mb-4 fw-bold" id="hero-journal-eic"
-              style="font-family: Outfit, sans-serif; color: #ffd140;">
+              style="font-family: Outfit, sans-serif; color: #ffd140; font-size: clamp(1rem, 2vw, 1.3rem);">
               Editor-in-Chief: Loading...
             </p>
 
             <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mb-4">
               <div
-                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 18px; font-size: 0.82rem; font-weight: 600;">
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
                 <i class="fas fa-brain me-2 text-warning"></i> Online ISSN: <span id="hero-issn-val">Waiting For Approved</span>
               </div>
               <div
-                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 18px; font-size: 0.82rem; font-weight: 600;">
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
                 <i class="fas fa-calendar-alt me-2 text-warning"></i> Frequency: <span id="hero-freq-val">12 Issue per Year</span>
               </div>
               <div
-                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 10px 18px; font-size: 0.82rem; font-weight: 600;">
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
                 <i id="hero-indexing-icon" class="fas fa-graduation-cap me-2 text-warning"></i> <span id="hero-indexing-val">Scopus Indexed</span>
               </div>
             </div>
@@ -856,7 +860,7 @@
             <div>
               <a href="#guidelines-authors" id="hero-submit-btn"
                 class="btn btn-warning fw-bold text-dark px-4 py-2.5 rounded-5 shadow-sm"
-                style="font-size: 0.88rem; transition: all 0.3s; padding: 12px 28px; background-color: #ffd140; border-color: #ffd140;" onmouseover="this.style.transform='translateY(-2px)';"
+                style="font-size: clamp(0.96rem, 1.7vw, 1.12rem); transition: all 0.3s; padding: 16px 42px; background: linear-gradient(135deg, #ffe25d, #ffc928); border-color: #ffd140; box-shadow: 0 12px 24px rgba(255,209,64,0.24);" onmouseover="this.style.transform='translateY(-2px)';"
                 onmouseout="this.style.transform='translateY(0)';"
                 onclick="setTimeout(() => { document.querySelector('[data-tab=&quot;paper-submission&quot;]').click(); }, 100);">
                 <i class="fas fa-paper-plane me-2"></i>Submit your manuscripts
