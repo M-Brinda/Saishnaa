@@ -810,15 +810,8 @@
         </div>
 
         <div class="row align-items-center g-4" style="position: relative; z-index: 2;">
-          <!-- Left: Content-Oriented Illustration -->
-          <div class="col-md-4 text-center text-md-start">
-            <div id="hero-journal-illustration" class="mx-auto animate__animated animate__zoomIn"
-              style="width: 100%; max-width: 335px; height: 250px; border-radius: 20px; overflow: hidden; background-size: cover; background-position: center; box-shadow: 0 14px 35px rgba(0,0,0,0.34); border: 3px solid rgba(255,255,255,0.20); outline: 4px solid rgba(255,255,255,0.08);">
-            </div>
-          </div>
-
-          <!-- Right: Text Info -->
-          <div class="col-md-8 text-center text-md-start">
+          <!-- Journal Info -->
+          <div class="col-12 text-center text-md-start">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mb-2">
               <span class="badge text-dark fw-bold px-3 py-2 rounded-5" id="hero-category-badge"
                 style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #ffe25d, #ffc928) !important; box-shadow: 0 7px 18px rgba(255,209,64,0.25); min-width: 220px;">
@@ -2193,12 +2186,6 @@
       if (indexingEl && indexingIcon) {
         indexingEl.textContent = isScopus ? "Scopus Indexed" : "Peer Reviewed";
         indexingIcon.className = isScopus ? "fas fa-graduation-cap me-2 text-warning" : "fas fa-award me-2 text-warning";
-      }
-
-      // Inject the highly relevant content-oriented SVG dynamically (no network required, 100% offline-friendly)
-      const illustrationEl = document.getElementById("hero-journal-illustration");
-      if (illustrationEl) {
-        illustrationEl.innerHTML = getJournalSvg(code);
       }
 
       // Populate Sidebar Journal Info Block
