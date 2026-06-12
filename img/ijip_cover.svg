@@ -1,37 +1,32 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJIP desc-IJIP">
+<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJIP desc-IJIP">
   <title id="title-IJIP">International Journal of Innovative Publications</title>
-  <desc id="desc-IJIP">Title-oriented cover image for International Journal of Innovative Publications.</desc>
+  <desc id="desc-IJIP">Dark title-oriented journal banner for International Journal of Innovative Publications.</desc>
   <defs>
-    <linearGradient id="coverGrad12" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22265f"/>
-      <stop offset="100%" stop-color="#5752ae"/>
+    <linearGradient id="journalBanner12" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2b73"/>
+      <stop offset="100%" stop-color="#302960"/>
     </linearGradient>
-    <radialGradient id="glow12" cx="82%" cy="20%" r="75%">
-      <stop offset="0%" stop-color="#37b6d8" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid12" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    <pattern id="grid12" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
     </pattern>
     <style>
-      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
-      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
-      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
-      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 31px; font-weight: 800; letter-spacing: 0.7px; fill: rgba(255,255,255,0.62); }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: rgba(255,255,255,0.62); }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.42); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 800; fill: rgba(255,255,255,0.28); letter-spacing: 0.4px; }
     </style>
   </defs>
-  <rect width="400" height="200" rx="0" fill="url(#coverGrad12)"/>
-  <rect width="400" height="200" fill="url(#glow12)"/>
-  <rect width="400" height="200" fill="url(#grid12)"/>
-  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
-  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
-  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
-  <text x="32" y="58" class="code">IJIP</text>
-  <text x="32" y="84" class="title">International Journal of</text>
-    <text x="32" y="105" class="title">Innovative Publications</text>
-  <text x="32" y="140" class="subject">Innovation | Publishing | Multidisciplinary</text>
-  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
-  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
-  <path d="M306 62c-22 0-39 17-39 38 0 14 7 24 17 32 5 4 6 8 6 14h32c0-6 2-10 7-14 10-8 17-18 17-32 0-21-18-38-40-38zM290 158h32M294 146h24" fill="none" stroke="#37b6d8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path d="M294 100l9 10 16-23" stroke="#ffffff" opacity="0.58" stroke-width="3"/>
+  <rect width="400" height="170" fill="url(#journalBanner12)"/>
+  <rect width="400" height="170" fill="url(#grid12)"/>
+  <circle cx="355" cy="30" r="73" fill="#ffffff" opacity="0.055"/>
+  <circle cx="52" cy="156" r="82" fill="#000000" opacity="0.11"/>
+  <rect x="14" y="10" width="372" height="145" rx="19" fill="#ffffff" opacity="0.045"/>
+  <text x="24" y="45" class="code">IJIP</text>
+  <text x="24" y="75" class="title">International Journal of</text>
+  <text x="24" y="96" class="title">Innovative Publications</text>
+  <text x="24" y="123" class="subject">Innovation | Publishing | Multidisciplinary</text>
+  <text x="24" y="145" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="24" y="158" class="meta">VOLUME 1 | ISSUE 1</text>
+  <path d="M310 58c-23 0-40 18-40 39 0 14 7 25 18 33 5 4 6 8 6 15h32c0-7 2-11 7-15 11-8 18-19 18-33 0-21-18-39-41-39zM293 157h34M297 145h26" fill="none" stroke="#23225e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.56"/><path d="M297 100l10 10 17-25" fill="none" stroke="#23225e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.48"/>
   
 </svg>

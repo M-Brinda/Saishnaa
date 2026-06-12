@@ -1,37 +1,32 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJAC desc-IJAC">
+<svg viewBox="0 0 400 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJAC desc-IJAC">
   <title id="title-IJAC">SSSL International Journal of Applied Chemistry</title>
-  <desc id="desc-IJAC">Title-oriented cover image for SSSL International Journal of Applied Chemistry.</desc>
+  <desc id="desc-IJAC">Dark title-oriented journal banner for SSSL International Journal of Applied Chemistry.</desc>
   <defs>
-    <linearGradient id="coverGrad11" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c2557"/>
-      <stop offset="100%" stop-color="#c14485"/>
+    <linearGradient id="journalBanner11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a2f6a"/>
+      <stop offset="100%" stop-color="#602845"/>
     </linearGradient>
-    <radialGradient id="glow11" cx="82%" cy="20%" r="75%">
-      <stop offset="0%" stop-color="#56314d" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid11" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    <pattern id="grid11" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
     </pattern>
     <style>
-      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
-      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
-      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
-      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 31px; font-weight: 800; letter-spacing: 0.7px; fill: rgba(255,255,255,0.62); }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: rgba(255,255,255,0.62); }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.42); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 800; fill: rgba(255,255,255,0.28); letter-spacing: 0.4px; }
     </style>
   </defs>
-  <rect width="400" height="200" rx="0" fill="url(#coverGrad11)"/>
-  <rect width="400" height="200" fill="url(#glow11)"/>
-  <rect width="400" height="200" fill="url(#grid11)"/>
-  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
-  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
-  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
-  <text x="32" y="58" class="code">IJAC</text>
-  <text x="32" y="84" class="title">SSSL International Journal of</text>
-    <text x="32" y="105" class="title">Applied Chemistry</text>
-  <text x="32" y="140" class="subject">Chemistry | Materials | Applied Science</text>
-  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
-  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
-  <path d="M290 64h32M298 64v34l-28 44h80l-28-44V64" fill="none" stroke="#56314d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path d="M284 128h52" fill="none" stroke="#56314d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><circle cx="300" cy="116" r="4" fill="#56314d" opacity="0.14"/><circle cx="320" cy="134" r="5" fill="#56314d" opacity="0.14"/>
+  <rect width="400" height="170" fill="url(#journalBanner11)"/>
+  <rect width="400" height="170" fill="url(#grid11)"/>
+  <circle cx="355" cy="30" r="73" fill="#ffffff" opacity="0.055"/>
+  <circle cx="52" cy="156" r="82" fill="#000000" opacity="0.11"/>
+  <rect x="14" y="10" width="372" height="145" rx="19" fill="#ffffff" opacity="0.045"/>
+  <text x="24" y="45" class="code">IJAC</text>
+  <text x="24" y="75" class="title">SSSL International Journal of</text>
+  <text x="24" y="96" class="title">Applied Chemistry</text>
+  <text x="24" y="123" class="subject">Chemistry | Materials | Applied Science</text>
+  <text x="24" y="145" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="24" y="158" class="meta">VOLUME 1 | ISSUE 1</text>
+  <path d="M291 57h35M300 57v39l-29 48h84l-29-48V57" fill="none" stroke="#5a2445" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.56"/><path d="M284 130h58" fill="none" stroke="#5a2445" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.56"/><circle cx="302" cy="116" r="4" fill="#5a2445" opacity="0.42"/><circle cx="324" cy="134" r="5" fill="#5a2445" opacity="0.42"/>
   
 </svg>
