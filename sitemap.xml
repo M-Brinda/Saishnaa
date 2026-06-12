@@ -5,15 +5,15 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://saishnaa.com/services</loc>
+    <loc>https://saishnaa.com/our-services</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saishnaa.com/courses</loc>
+    <loc>https://saishnaa.com/training-courses</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saishnaa.com/projects</loc>
+    <loc>https://saishnaa.com/our-projects</loc>
     <priority>0.80</priority>
   </url>
   <url>
@@ -25,11 +25,11 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saishnaa.com/contact</loc>
+    <loc>https://saishnaa.com/contact-us</loc>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://saishnaa.com/journals</loc>
+    <loc>https://saishnaa.com/academic-journals</loc>
     <priority>0.80</priority>
   </url>
   <url>

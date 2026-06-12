@@ -1,8 +1,11 @@
+process.chdir(__dirname);
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = 5173;
+
+const PORT = process.env.PORT || 8080;
+
 
 const MIME_TYPES = {
   ".html": "text/html",
@@ -65,7 +68,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify({ error: "Missing parameters" }));
       return;
     }
-    
+
     const targetUrl = `https://internationaljournalssrg.org/${code}/archive_details?page=${page}`;
     fetchHtml(targetUrl, (err, html) => {
       if (err) {
@@ -74,33 +77,33 @@ const server = http.createServer((req, res) => {
         return;
       }
       try {
-        const titleMatch = html.match(/<h1[^>]*class="[^"]*h4[^"]*"[^>]*>([\s\S]*?)<\/h1>/i) || 
-                           html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+        const titleMatch = html.match(/<h1[^>]*class="[^"]*h4[^"]*"[^>]*>([\s\S]*?)<\/h1>/i) ||
+          html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
         let title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
-        
+
         const papers = [];
         const parts = html.split(/<div[^>]*class="card shadow-sm border-1 position-relative w-100/i);
         for (let i = 1; i < parts.length; i++) {
           const cardHtml = parts[i].split(/<div[^>]*class="card shadow-sm border-1 position-relative w-100/i)[0];
-          
-          const idMatch = cardHtml.match(/<strong>([^<]+)<\/strong>/i) || 
-                          cardHtml.match(/itemprop="identifier"[^>]*content="([^"]+)"/i);
+
+          const idMatch = cardHtml.match(/<strong>([^<]+)<\/strong>/i) ||
+            cardHtml.match(/itemprop="identifier"[^>]*content="([^"]+)"/i);
           let id = idMatch ? (idMatch[1].includes("doi.org") ? idMatch[1].split("/").pop() : idMatch[1].trim()) : "";
 
-          const sectionMatch = cardHtml.match(/itemprop="articleSection">([^<]+)<\/span>/i) || 
-                               cardHtml.match(/articleSection">([^<]+)<\/span>/i);
+          const sectionMatch = cardHtml.match(/itemprop="articleSection">([^<]+)<\/span>/i) ||
+            cardHtml.match(/articleSection">([^<]+)<\/span>/i);
           const section = sectionMatch ? sectionMatch[1].trim() : "Research Article";
 
           const linkMatch = cardHtml.match(/href="[^"]*paper-details\?Id=(\d+)"/i);
           const paperId = linkMatch ? linkMatch[1].trim() : "";
 
-          const titleMatchCard = cardHtml.match(/itemprop="headline"[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i) || 
-                                 cardHtml.match(/headline"[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i) ||
-                                 cardHtml.match(/<h2[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i);
+          const titleMatchCard = cardHtml.match(/itemprop="headline"[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i) ||
+            cardHtml.match(/headline"[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i) ||
+            cardHtml.match(/<h2[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/i);
           const paperTitle = titleMatchCard ? titleMatchCard[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
 
-          const authorMatch = cardHtml.match(/itemprop="author">([\s\S]*?)<\/span>/i) || 
-                              cardHtml.match(/author">([\s\S]*?)<\/span>/i);
+          const authorMatch = cardHtml.match(/itemprop="author">([\s\S]*?)<\/span>/i) ||
+            cardHtml.match(/author">([\s\S]*?)<\/span>/i);
           const authors = authorMatch ? authorMatch[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
 
           if (paperTitle && paperId) {
@@ -125,7 +128,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify({ error: "Missing parameters" }));
       return;
     }
-    
+
     const targetUrl = `https://internationaljournalssrg.org/${code}/paper-details?Id=${id}`;
     fetchHtml(targetUrl, (err, html) => {
       if (err) {
@@ -134,25 +137,25 @@ const server = http.createServer((req, res) => {
         return;
       }
       try {
-        const pdfMatch = html.match(/id="articlePdf"[^>]*href="([^"]+)"/i) || 
-                         html.match(/href="([^"]+)"[^>]*id="articlePdf"/i) ||
-                         html.match(/href="([^"]+\.pdf)"/i);
+        const pdfMatch = html.match(/id="articlePdf"[^>]*href="([^"]+)"/i) ||
+          html.match(/href="([^"]+)"[^>]*id="articlePdf"/i) ||
+          html.match(/href="([^"]+\.pdf)"/i);
         let pdfUrl = pdfMatch ? pdfMatch[1].replace(/\s+/g, "").trim() : "";
         if (pdfUrl && !pdfUrl.startsWith("http")) {
           pdfUrl = pdfUrl.replace(/^\/?\.\.\//, "/");
           pdfUrl = "https://internationaljournalssrg.org" + pdfUrl;
         }
 
-        const titleMatch = html.match(/<h1[^>]*class="h3"[^>]*>([\s\S]*?)<\/h1>/i) || 
-                           html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
+        const titleMatch = html.match(/<h1[^>]*class="h3"[^>]*>([\s\S]*?)<\/h1>/i) ||
+          html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
         const title = titleMatch ? titleMatch[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
 
-        const authorsMatch = html.match(/<h2[^>]*class="fw-bold"[^>]*>([\s\S]*?)<\/h2>/i) || 
-                             html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
+        const authorsMatch = html.match(/<h2[^>]*class="fw-bold"[^>]*>([\s\S]*?)<\/h2>/i) ||
+          html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
         const authors = authorsMatch ? authorsMatch[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim() : "";
 
         const citationMatch = html.match(/id="citation"[^>]*>([\s\S]*?)<\/section>/i) ||
-                              html.match(/id="citation"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
+          html.match(/id="citation"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
         let citation = "";
         if (citationMatch) {
           const pMatch = citationMatch[1].match(/<p[^>]*>([\s\S]*?)<\/p>/i);
@@ -161,7 +164,7 @@ const server = http.createServer((req, res) => {
         }
 
         const abstractMatch = html.match(/id="abstract"[^>]*>([\s\S]*?)<\/section>/i) ||
-                              html.match(/id="abstract"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
+          html.match(/id="abstract"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
         let abstract = "";
         if (abstractMatch) {
           const pMatch = abstractMatch[1].match(/<p[^>]*>([\s\S]*?)<\/p>/i);
@@ -170,7 +173,7 @@ const server = http.createServer((req, res) => {
         }
 
         const keywordsMatch = html.match(/id="keywords"[^>]*>([\s\S]*?)<\/section>/i) ||
-                              html.match(/id="keywords"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
+          html.match(/id="keywords"[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>/i);
         let keywords = "";
         if (keywordsMatch) {
           const pMatch = keywordsMatch[1].match(/<p[^>]*>([\s\S]*?)<\/p>/i);
@@ -206,6 +209,26 @@ const server = http.createServer((req, res) => {
 
   filePath = filePath.split("?")[0].split("#")[0];
 
+  // Route rewriting to handle missing/differently named files locally
+  const ROUTE_MAP = {
+    "./services.html": "./our-services.html",
+    "./courses.html": "./training-courses.html",
+    "./projects.html": "./our-projects.html",
+    "./journals.html": "./academic-journals.html",
+    "./contact.html": "./contact-us.html",
+    "./services": "./our-services.html",
+    "./courses": "./training-courses.html",
+    "./projects": "./our-projects.html",
+    "./journals": "./academic-journals.html",
+    "./contact": "./contact-us.html",
+    "./about": "./index.html",
+    "./about.html": "./index.html"
+  };
+
+  if (ROUTE_MAP[filePath]) {
+    filePath = ROUTE_MAP[filePath];
+  }
+
   const extname = String(path.extname(filePath)).toLowerCase();
   const contentType = MIME_TYPES[extname] || "application/octet-stream";
 
@@ -233,7 +256,22 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-  console.log("Press Ctrl+C to stop.");
-});
+function startServer(port) {
+  server.once("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+      console.log(`Port ${port} is already in use. Trying port ${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      console.error("Server error:", err);
+    }
+  });
+
+  server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+    console.log("Press Ctrl+C to stop.");
+  });
+}
+
+startServer(PORT);
+
+

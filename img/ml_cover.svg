@@ -1,0 +1,12 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradML" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#gradML)"/>
+  <text x="200" y="60" font-size="28" font-weight="bold" fill="white" text-anchor="middle" font-family="Outfit">JIML-IEA</text>
+  <text x="200" y="105" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Machine Learning</text>
+  <text x="200" y="125" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">&amp; IoT Enabled Applications</text>
+</svg>

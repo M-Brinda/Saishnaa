@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Inject Google Analytics dynamically
+  const gaTrackingId = "G-XXXXXXXXXX";
+  if (!document.querySelector(`script[src*="googletagmanager.com/gtag/js"]`)) {
+    const gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`;
+    document.head.appendChild(gaScript);
+
+    const gaInitScript = document.createElement("script");
+    gaInitScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${gaTrackingId}');
+    `;
+    document.head.appendChild(gaInitScript);
+  }
+
   // Inject Navbar if placeholder exists
   const navbarPlaceholder = document.getElementById("navbar-placeholder");
   if (navbarPlaceholder) {

@@ -1,11 +1,11 @@
-// SSRG Academic Journals Detail Database
+// SSSL Academic Journals Detail Database
 const journalData = {
   "IJCSE": {
     "code": "IJCSE",
-    "title": "International Journal of Computer Science and Engineering",
-    "category": "Engineering & Technology",
-    "email": "ijcse@internationaljournalssrg.org",
-    "issn": "2348-8387",
+    "title": "SSSL International Journal of Computer Science and Engineering",
+    "category": "Engineering Journals",
+    "email": "saishnaateam@gmail.com",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -15,15 +15,15 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Dr. Shivakumara Palaiahnakote",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Department of Computer System & Technology University of Malaya Malaysia"
     },
     "description": [
-      "The SSRG International Journal of Computer Science and Engineering (SSRG-IJCSE) is a double-blind peer-reviewed, open-access international journal that publishes original, high-quality research in Computer Science and Engineering (CSE) and closely related interdisciplinary domains.",
+      "The SSSL International Journal of Computer Science and Engineering (SSSL-IJCSE) is a double-blind peer-reviewed, open-access international journal that publishes original, high-quality research in Computer Science and Engineering (CSE) and closely related interdisciplinary domains.",
       "The journal aims to advance scientific knowledge by disseminating theoretical foundations, algorithmic innovations, system-level designs, and application-oriented solutions that address contemporary and emerging challenges in computing.",
-      "SSRG-IJCSE provides a platform for research spanning fundamental principles to advanced computational technologies, with emphasis on rigor, reproducibility, and practical relevance. The journal encourages contributions that demonstrate methodological novelty, technical depth, and measurable impact, while fostering collaboration between academia, industry, and interdisciplinary research communities.",
+      "SSSL-IJCSE provides a platform for research spanning fundamental principles to advanced computational technologies, with emphasis on rigor, reproducibility, and practical relevance. The journal encourages contributions that demonstrate methodological novelty, technical depth, and measurable impact, while fostering collaboration between academia, industry, and interdisciplinary research communities.",
       "The scope of the journal encompasses both core computer science disciplines and cross-disciplinary applications where computational methods play a central role. Particular attention is given to emerging technologies, scalable systems, intelligent computing paradigms, and data-driven approaches that contribute to scientific, industrial, and societal advancement.",
-      "SSRG-IJCSE publishes original research articles, systematic reviews, and short communications that provide critical insights, synthesize current research trends, and propose future research directions in computer science and engineering.",
+      "SSSL-IJCSE publishes original research articles, systematic reviews, and short communications that provide critical insights, synthesize current research trends, and propose future research directions in computer science and engineering.",
       "All submissions are subject to a rigorous double-blind peer-review process and are evaluated based on originality, technical soundness, clarity of presentation, and relevance to the journal’s scope.",
       "USA, Nigeria, China, India, Malaysia, Iran, Iraq, Indonesia, Bangladesh, Pakistan, Japan, Germany, Saudi Arabia, United Kingdom, Ghana, Morocco, Côte d'Ivoire, Latvia, Vietnam, etc."
     ],
@@ -280,10 +280,10 @@ const journalData = {
   },
   "IJECE": {
     "code": "IJECE",
-    "title": "International Journal of Electronics and Communication Engineering",
-    "category": "Engineering & Technology",
-    "email": "ijece@internationaljournalssrg.org",
-    "issn": "2348-8549",
+    "title": "SSSL International Journal of Electronics and Communication Engineering",
+    "category": "Engineering Journals",
+    "email": "ijece@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -293,12 +293,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Prof. Dr. Ephraim Suhir",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Department of Electronics and Computer Engineering Portland State University United States of America."
     },
     "description": [
-      "The SSRG International Journal of Electronics and Communication Engineering (SSRG-IJECE) is a double-blind peer-reviewed journal devoted to publishing original scientific articles on research and development in all fields of wired and wireless communications.",
-      "SSRG International Journal of Electronics and Communication Engineering - IJECE is an international scholarly journal that publishes articles on a broad spectrum of theoretical, fundamental, and applied issues of radio engineering, communication, and electron physics. Focusing on the theoretical background and advanced engineering approaches, SSRG-IJECE aims to offer a prime forum for professionals, industrial practitioners scientists, systems engineers, research engineers, controls engineers, communication engineers, electronic engineers, technicians, graduate students and scholars to share their knowledge in this rapidly growing area. This journal covers an extensive scope ranging from mathematical foundations to practical engineering design in the fields of theory & design of circuits, systems & devices for electronics, signal processing, and communication (Wired & Wireless).",
+      "The SSSL International Journal of Electronics and Communication Engineering (SSSL-IJECE) is a double-blind peer-reviewed journal devoted to publishing original scientific articles on research and development in all fields of wired and wireless communications.",
+      "SSSL International Journal of Electronics and Communication Engineering - IJECE is an international scholarly journal that publishes articles on a broad spectrum of theoretical, fundamental, and applied issues of radio engineering, communication, and electron physics. Focusing on the theoretical background and advanced engineering approaches, SSSL-IJECE aims to offer a prime forum for professionals, industrial practitioners scientists, systems engineers, research engineers, controls engineers, communication engineers, electronic engineers, technicians, graduate students and scholars to share their knowledge in this rapidly growing area. This journal covers an extensive scope ranging from mathematical foundations to practical engineering design in the fields of theory & design of circuits, systems & devices for electronics, signal processing, and communication (Wired & Wireless).",
       "The objective of this journal is to communicate recent and projected advances in all the aspects of Electronics & Communication Systems and ardent to publish concepts in research, design, development and testing of the electronic equipment used in various communications systems. The goal of the journal is to host theoretical and practical aspects and reports on experimental activities concerning these technologies and to introduce new and emerging areas of these fields. This is a dedicated source for high quality papers in the electronics and communications, aimed to inform practising professional engineers who were involved in electronics and communications by providing coverage of new developments in a serious technical manner.",
       "All articles are subject to compulsory double-blind peer review. Articles are peer-reviewed by independent subject matter experts. The fundamental criteria of acceptance for all types of papers will be the intellectual and professional worth of the contribution.",
       "USA, China, Dubai, UAE, Zaria, Vietnam, Azerbaijan, Egypt, Malaysia, Japan, Bangladesh, Iran, India, Iraq, Pakistan, Afghanistan,Indonesia, Turkey, Nigeria, Oman, Saudi Arabia, Tunisie, Sri Lanka, Estonia, Ukraine, Sudan, Tanzania, Lebanon, etc."
@@ -582,10 +582,10 @@ const journalData = {
   },
   "IJEEE": {
     "code": "IJEEE",
-    "title": "International Journal of Electrical and Electronics Engineering",
-    "category": "Engineering & Technology",
-    "email": "ijeee@internationaljournalssrg.org",
-    "issn": "2348-8379",
+    "title": "SSSL International Journal of Electrical and Electronics Engineering",
+    "category": "Engineering Journals",
+    "email": "ijeee@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -595,12 +595,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Dr. Zairi Ismae  Rizman Department of Electrical Engineering",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Universiti Teknologi MARA (UiTM) Malaysia."
     },
     "description": [
-      "The SSRG International Journal of Electrical and Electronics Engineering (SSRG-IJEEE) is a Scopus indexed open access, double-blind peer-reviewed journal devoted to publishing original scientific articles on research and development in all fields of Electrical and Electronics.",
-      "The objective of this Journal is to present a forum for discussion and testing of techniques of modelling, calculation, experimental validation and development of new electrical devices and systems with improved technical, economic and environmental performance, as well as expanding the scope of their industrial use. SSRG-IJEEE is a scientific interdisciplinary, application-oriented publication that offers to the researchers, professionals, industrial practitioners scientists, electrical/electronic engineers, technicians, graduate students and scholars the possibility to disseminate their novel and original scientific and research contributions in the field of electrical and electronics engineering.",
+      "The SSSL International Journal of Electrical and Electronics Engineering (SSSL-IJEEE) is a Scopus indexed open access, double-blind peer-reviewed journal devoted to publishing original scientific articles on research and development in all fields of Electrical and Electronics.",
+      "The objective of this Journal is to present a forum for discussion and testing of techniques of modelling, calculation, experimental validation and development of new electrical devices and systems with improved technical, economic and environmental performance, as well as expanding the scope of their industrial use. SSSL-IJEEE is a scientific interdisciplinary, application-oriented publication that offers to the researchers, professionals, industrial practitioners scientists, electrical/electronic engineers, technicians, graduate students and scholars the possibility to disseminate their novel and original scientific and research contributions in the field of electrical and electronics engineering.",
       "All articles are subject to compulsory double-blind peer review. Articles are peer-reviewed by independent subject matter experts. The fundamental criteria of acceptance for all types of papers will be the intellectual and professional worth of the contribution.",
       "China, Ghana, Thailand, Vietnam, Malaysia, India, Nigeria, Japan, Bangladesh, Afghanistan, Iran, Egypt, Iraq, Pakistan, Indonesia, Africa, Spain, UAE, USA, Saudi Arabia, France, etc."
     ],
@@ -876,10 +876,10 @@ const journalData = {
   },
   "IJCE": {
     "code": "IJCE",
-    "title": "International Journal of Civil Engineering",
-    "category": "Engineering & Technology",
-    "email": "ijce@internationaljournalssrg.org",
-    "issn": "2348-8352",
+    "title": "SSSL International Journal of Civil Engineering",
+    "category": "Engineering Journals",
+    "email": "ijce@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -889,12 +889,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Prof. Dr. M S Liew",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "University Technology PETRONAS (UTP) Persiaran UTP Malaysia."
     },
     "description": [
-      "The SSRG International Journal of Civil Engineering (SSRG-IJCE) is a double-blind peer-reviewed journal devoted to publishing original scientific articles on research and development in all fields of civil engineering.",
-      "The SSRG International Journal of Civil Engineering (SSRG IJCE) is devoted to original and interdisciplinary, peer-reviewed papers on research related to the broad spectrum of civil engineering with similar emphasis on all topics. The journal covers all aspects of arts, engineering, science and technology concerned with the whole life cycle of the built environment; from the development, processing, evaluation, applications, and performance of construction materials in civil engineering and with the design phase through to construction, operation, performance, maintenance and its deterioration. SSRG IJCE only publishes papers where significant scientific novelty is demonstrated.",
+      "The SSSL International Journal of Civil Engineering (SSSL-IJCE) is a double-blind peer-reviewed journal devoted to publishing original scientific articles on research and development in all fields of civil engineering.",
+      "The SSSL International Journal of Civil Engineering (SSSL IJCE) is devoted to original and interdisciplinary, peer-reviewed papers on research related to the broad spectrum of civil engineering with similar emphasis on all topics. The journal covers all aspects of arts, engineering, science and technology concerned with the whole life cycle of the built environment; from the development, processing, evaluation, applications, and performance of construction materials in civil engineering and with the design phase through to construction, operation, performance, maintenance and its deterioration. SSSL IJCE only publishes papers where significant scientific novelty is demonstrated.",
       "The journal provides a forum for the International Civil Engineering Community to disseminate the latest original research, achievements, and developments in many civil engineering and management areas. This journal aims to provide a platform for scientists and academicians worldwide to promote, share, and discuss various new issues and developments in different areas of civil engineering. Also, it provides a multidisciplinary forum for researchers, designers, users, and manufacturers involved in civil engineering and management fields to present and discuss matters of major interest, like new developments in civil regulations, the latest advancements in civil engineering, etc.",
       "All articles are subject to compulsory double-blind peer review. Articles are peer-reviewed by independent subject matter experts. The fundamental criteria of acceptance for all types of papers will be the intellectual and professional worth of the contribution.",
       "USA, China, Ireland, Spain, Australia, Sri Lanka, Korea, Senegal, Indonesia, Oman, Malaysia, Iraq, Nigeria, Bangladesh, Saudi Arabia, Europe, Iran, India, New Zealand, Egypt, Pakistan, Afghanistan, Turkey, Africa, Asia, Serbia, Qatar, etc."
@@ -1133,10 +1133,10 @@ const journalData = {
   },
   "IJME": {
     "code": "IJME",
-    "title": "International Journal of Mechanical Engineering",
-    "category": "Engineering & Technology",
-    "email": "ijme@internationaljournalssrg.org",
-    "issn": "2348-8360",
+    "title": "SSSL International Journal of Mechanical Engineering",
+    "category": "Engineering Journals",
+    "email": "ijme@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -1146,12 +1146,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Prof. Dr. Ahmed Kadhim Hussein",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Department of Mechanical Engineering University of Babylon Iraq."
     },
     "description": [
-      "SSRG International Journal of Mechanical Engineering (SSRG-IJME) is a scholarly double-blind peer-reviewed international open-access journal at the forefront of disseminating and communicating scientific knowledge and impactful discoveries of Mechanical Engineering & Science to researchers, engineers and the public worldwide.",
-      "SSRG International Journal of Mechanical Engineering - IJME aims to provide an international forum for publishing and disseminating original work that contributes to the greater scientific understanding of the primary and related disciplines underpinning the mechanical engineering sciences, either empirical or theoretical. This journal aims to capture and bridge the gap among the various areas of research in the Mechanical Engineering field and acts as a vital link for the mechanical engineering community to disseminate their academic pursuits rapidly. The journal aspires to be one of the top-ranking premier sources of research and innovation in the science and practice of mechanical engineering and science in India and around the world and seeks to disseminate high-impact publications that will advance the practice of engineering. The editorial team aims to publish high quality highly applied, and fundamental research and innovation that has the potential to be widely disseminated, taking into consideration the potential economic and social impacts that it could generate. Of note, the journal is keen to disseminate highly disruptive discoveries and technologies and new and emerging sub-disciplines of mechanical engineering.",
+      "SSSL International Journal of Mechanical Engineering (SSSL-IJME) is a scholarly double-blind peer-reviewed international open-access journal at the forefront of disseminating and communicating scientific knowledge and impactful discoveries of Mechanical Engineering & Science to researchers, engineers and the public worldwide.",
+      "SSSL International Journal of Mechanical Engineering - IJME aims to provide an international forum for publishing and disseminating original work that contributes to the greater scientific understanding of the primary and related disciplines underpinning the mechanical engineering sciences, either empirical or theoretical. This journal aims to capture and bridge the gap among the various areas of research in the Mechanical Engineering field and acts as a vital link for the mechanical engineering community to disseminate their academic pursuits rapidly. The journal aspires to be one of the top-ranking premier sources of research and innovation in the science and practice of mechanical engineering and science in India and around the world and seeks to disseminate high-impact publications that will advance the practice of engineering. The editorial team aims to publish high quality highly applied, and fundamental research and innovation that has the potential to be widely disseminated, taking into consideration the potential economic and social impacts that it could generate. Of note, the journal is keen to disseminate highly disruptive discoveries and technologies and new and emerging sub-disciplines of mechanical engineering.",
       "Sweden, Romania, Russia, Taiwan, Mexico, USA, China, Kuwait, Ethiopia, Bulgaria, Turkey, Saudi Arabia, Vietnam, Iran, India, Egypt, Bangladesh, Iraq, Afghanistan, Oman, Nigeria, Senegal, Indonesia, Australia, UK, etc."
     ],
     "topics": [
@@ -1479,10 +1479,10 @@ const journalData = {
   },
   "IJAES": {
     "code": "IJAES",
-    "title": "International Journal of Agriculture & Environmental Science",
+    "title": "SSSL International Journal of Agriculture & Environmental Science",
     "category": "Science & Biology",
-    "email": "ijaes@internationaljournalssrg.org",
-    "issn": "2394-2568",
+    "email": "ijaes@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "6 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -1492,12 +1492,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Dr. Abdel Rahman Abdel Raouf Ahmed",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Agricultural Engineering Research Institute Dokki City Egypt."
     },
     "description": [
-      "SSRG International Journal of Agriculture & Environmental Science ( SSRG - IJAES ) is a scholarly double-blind peer-reviewed research publishing Journal.",
-      "SSRG International Journal of Agriculture & Environmental Science - IJAES an influential double blind peer-reviewed International journal publishing significant new experimental and theoretical results of Agriculture & Environmental Science. The journal aims to foster interdisciplinary communication and promote understanding of significant issues in agriculture and environment. The journal seeks to publish significant and novel research on the fate and behaviour of emerging contaminants, human impact on the environment, human exposure to environmental contaminants and their health effects, and environmental remediation and management. Original research articles, critical reviews, highlights, and perspectives of high quality are published both in print and online. It aims to foster interdisciplinary communication and promote understanding of significant environmental issues.",
+      "SSSL International Journal of Agriculture & Environmental Science ( SSSL - IJAES ) is a scholarly double-blind peer-reviewed research publishing Journal.",
+      "SSSL International Journal of Agriculture & Environmental Science - IJAES an influential double blind peer-reviewed International journal publishing significant new experimental and theoretical results of Agriculture & Environmental Science. The journal aims to foster interdisciplinary communication and promote understanding of significant issues in agriculture and environment. The journal seeks to publish significant and novel research on the fate and behaviour of emerging contaminants, human impact on the environment, human exposure to environmental contaminants and their health effects, and environmental remediation and management. Original research articles, critical reviews, highlights, and perspectives of high quality are published both in print and online. It aims to foster interdisciplinary communication and promote understanding of significant environmental issues.",
       "The journal seeks to publish significant and novel research on the fate and behaviour of emerging contaminants, human impact on the environment, human exposure to environmental contaminants and their health effects, and environmental remediation and management. Original research articles, critical reviews, highlights, and perspectives of high quality are published both in print and online.",
       "Germany, Nigeria, Africa, Syria, India, Ghana, China, Sudan, Indonesia, Italy, USA, Bangladesh, Greece, Kenya, Turkey, Srilanka, Afghanistan, Phillipines, Europe, Portugal, Argentina, Windhoek , Pakistan, Russia, Saudi Arabia, Jordan, etc.,"
     ],
@@ -1580,10 +1580,10 @@ const journalData = {
   },
   "IJMS": {
     "code": "IJMS",
-    "title": "International Journal of Medical Science",
+    "title": "SSSL International Journal of Medical Science",
     "category": "Medical & Health",
-    "email": "ijms@internationaljournalssrg.org",
-    "issn": "2393-9117",
+    "email": "ijms@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "6 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -1593,12 +1593,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Prof. Dr. Nirankar singh neki",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Govt. Medical college Amritsar punjab India."
     },
     "description": [
-      "SSRG International Journal of Medical Science ( SSRG - IJMS ) is a scholarly double-blind peer-reviewed research publishing Journal.",
-      "SSRG International Journal of Medical Science - IJMS aims at disseminating high-powered research results with the objective of turning research into knowledge in the field of all specialities of clinical, as well as basic medical science (medicine, surgery, ophthalmology, gynaecology and obstetrics, psychiatry, anaesthesia, paediatrics, orthopaedics, microbiology, pathology and laboratory medicine, medical education, research methodology, forensic medicine, medical ethics, community medicine and public health, anatomy, physiology, biochemistry, pharmacology, biophysics , etc). We also consider hypotheses, intersectoral and translational medicine articles. Articles must be of high academic/clinical riguor and may be in the form of original article, review, perspectives, case reports, and letter to the editor or essays.",
+      "SSSL International Journal of Medical Science ( SSSL - IJMS ) is a scholarly double-blind peer-reviewed research publishing Journal.",
+      "SSSL International Journal of Medical Science - IJMS aims at disseminating high-powered research results with the objective of turning research into knowledge in the field of all specialities of clinical, as well as basic medical science (medicine, surgery, ophthalmology, gynaecology and obstetrics, psychiatry, anaesthesia, paediatrics, orthopaedics, microbiology, pathology and laboratory medicine, medical education, research methodology, forensic medicine, medical ethics, community medicine and public health, anatomy, physiology, biochemistry, pharmacology, biophysics , etc). We also consider hypotheses, intersectoral and translational medicine articles. Articles must be of high academic/clinical riguor and may be in the form of original article, review, perspectives, case reports, and letter to the editor or essays.",
       "The scope of the Journal is to publish research that will be of interest to health specialties both in academic and clinical practice. The primary role of IJMS is that of providing a forum for the exchange of scientific information and to promote academic discussion, so essential to scientific progress. It seeks to promote scholarly publishing in medicine and medical sciences. All submitted articles undergo strict review and scrutiny which ensures a journal of retaining high medical standards of publication.",
       "France, China, Austria, Egypt, Bahrain, Singapore, Saudi Arabia, Nepal, Bangladesh, Iran, Nigeria, India, Ethiopia, Bhutan, Indonesia, Iraq, Malaysia, Syria, Macedonia, United Kingdom, Africa, Mexico, Engand, Bosnia, etc.,"
     ],
@@ -1684,10 +1684,10 @@ const journalData = {
   },
   "IJEMS": {
     "code": "IJEMS",
-    "title": "International Journal of Economics and Management Studies",
+    "title": "SSSL International Journal of Economics and Management Studies",
     "category": "Social Science & Humanities",
-    "email": "ijems@internationaljournalssrg.org",
-    "issn": "2393-9125",
+    "email": "ijems@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -1697,11 +1697,11 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Prof. Dr. J. Venkatesh",
+      "name": "Dr.P.Sivakumar",
       "affiliation": "Department of Management Studies Anna University India."
     },
     "description": [
-      "SSRG International Journal of Economics and Management Studies is a double-blind peer-reviewed multidisciplinary journal covering a broad spectrum of topics in economics, management, business and finance which bridges social science communities across disciplines and continents with a view to sharing information and opens a platform for debate with the widest possible audience, researchers, academician and managers. The IJEMS has a particular interest in trans-disciplinary and interdisciplinary approaches to the issues relevant in contemporary world. It serves as a forum for review, reflection and discussion informed by the results of recent and ongoing research. The journal discusses the distinctive disciplinary practices within the sciences of the social and management and examines examples of these practices. In order to define and exemplify disciplinarily, the journal fosters dialogue ranging from the broad and speculative to the microcosmic and empirical.",
+      "SSSL International Journal of Economics and Management Studies is a double-blind peer-reviewed multidisciplinary journal covering a broad spectrum of topics in economics, management, business and finance which bridges social science communities across disciplines and continents with a view to sharing information and opens a platform for debate with the widest possible audience, researchers, academician and managers. The IJEMS has a particular interest in trans-disciplinary and interdisciplinary approaches to the issues relevant in contemporary world. It serves as a forum for review, reflection and discussion informed by the results of recent and ongoing research. The journal discusses the distinctive disciplinary practices within the sciences of the social and management and examines examples of these practices. In order to define and exemplify disciplinarily, the journal fosters dialogue ranging from the broad and speculative to the microcosmic and empirical.",
       "IJEMS is dedicated to increase the depth of the subject across disciplines of economics, agricultural economics, agricultural marketing, development, management, consumer behaviour, sociological studies and so on with the ultimate aim of expanding knowledge of the subject. IJEMS publishes original high-quality papers that contribute to the development of conceptual, theoretical and empirical research. Papers range from empirical studies with practical application, to examinations of theoretical and methodological issues, and reviews of the literature in economics, management, and finance.",
       "Afghanistan, Bangladesh, Bosnia and Herzegovina, Bulgaria, Cameroon, China, Egypt, Ethiopia, France, Georgia, Greece, India, Indonesia, Iran, Iraq, Japan, Jordan, Kuwait, Malaysia, Mexico, Morocco, New Zealand, Nigeria, Oman, Palestine, Peru, Philippines, Poland, Romania, Saudi Arabia, Singapore, South Korea, Somalia, Sri Lanka, Syria, Thailand, Turkey, Uganda, United Arab Emirates (UAE), United Kingdom, United States of America (USA), etc…"
     ],
@@ -1968,10 +1968,10 @@ const journalData = {
   },
   "IJAP": {
     "code": "IJAP",
-    "title": "International Journal of Applied Physics",
+    "title": "SSSL International Journal of Applied Physics",
     "category": "Science & Biology",
-    "email": "ijap@internationaljournalssrg.org",
-    "issn": "2350-0301",
+    "email": "ijap@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "3 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -1981,12 +1981,12 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Prof. Dr. Stephen R. Cotanch",
+      "name": "Dr. P. Sivakumar",
       "affiliation": "Department of Physics North Carolina State University United States of America."
     },
     "description": [
-      "SSRG International Journal of Applied Physics ( SSRG - IJAP ) is a scholarly double-blind peer-reviewed research publishing Journal.",
-      "SSRG International Journal of Applied Physics - IJAP an influential double blind peer reviewed International journal publishing significant new experimental and theoretical results of applied physics research. It is a truly interdisciplinary journal opening a forum for scientists of all related fields, a unique point of the journal discriminating it from other applied physics journals. The journal publishes articles that emphasize understanding of the physics underlying modern technology, but distinguished from technology on the one side and pure physics on the other.",
+      "SSSL International Journal of Applied Physics ( SSSL - IJAP ) is a scholarly double-blind peer-reviewed research publishing Journal.",
+      "SSSL International Journal of Applied Physics - IJAP an influential double blind peer reviewed International journal publishing significant new experimental and theoretical results of applied physics research. It is a truly interdisciplinary journal opening a forum for scientists of all related fields, a unique point of the journal discriminating it from other applied physics journals. The journal publishes articles that emphasize understanding of the physics underlying modern technology, but distinguished from technology on the one side and pure physics on the other.",
       "The journal covering all the fields of applied science investigating the physics of the advanced materials for future applications and also covers the classical physics, chemistry and materials science, including bio-materials, with their engineering aspects like Experimental and theoretical aspects of advanced materials and devices dealing with synthesis or structural chemistry, physical and electronic properties, photonics, engineering applications, and uniquely pertinent measurement or analytical techniques.",
       "Indonesia, Ukraine, Japan, India, Egypt, China, USA, Iraq, Uzbekistan, Nigeria, Indonesia, Geramany, Estonia, Italy, Kazahastan, Romania, Bulgaria, Saudi Arabia, Malaysia, Europe, Brazil, Ukraine, Spain, etc.,"
     ],
@@ -2061,10 +2061,10 @@ const journalData = {
   },
   "IJHSS": {
     "code": "IJHSS",
-    "title": "International Journal of Humanities and Social Science",
+    "title": "SSSL International Journal of Humanities and Social Science",
     "category": "Social Science & Humanities",
-    "email": "ijhss@internationaljournalssrg.org",
-    "issn": "2394-2703",
+    "email": "ijhss@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "6 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -2074,14 +2074,14 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Dr. Kamlesh Singh",
+      "name": "Dr. P. Sivakumar",
       "affiliation": "Department of Humanities & Social Sciences Indian Institute of Technology (IIT) Delhi India."
     },
     "description": [
-      "The SSRG International Journal of Humanities and Social Sciences is a double-blind peer-reviewed, open-access journal published by Seventh Sense Research Group® that publishes research papers across all academic disciplines in the humanities and social sciences.",
+      "The SSSL International Journal of Humanities and Social Sciences is a double-blind peer-reviewed, open-access journal published by Seventh Sense Research Group® that publishes research papers across all academic disciplines in the humanities and social sciences.",
       "The journal aims to promote multidisciplinary and interdisciplinary studies, bridge diverse communities of the humanities and social sciences in the world, provide a platform of academic exchange for scholars and readers from all countries and all regions, promote intellectual development in global humanities and social sciences, and encourage original, theoretical, and empirical research into new areas, new issues, and new subject matters.",
       "Our scope is inclusive and open to theoretical, methodological, quantitative and qualitative scholarship that contributes to the article that speaks to emerging areas of thinking, agenda-setting issues, or grand societal challenge—irrespective of the perspectives where there is a clear relevance to the advancement of the humanities or social sciences. All submissions will be evaluated based on their scientific and methodological validity and robustness of research, and the journal adheres to the highest scientific standards by following a rigorous double-blind peer-review process. Any submission reporting scientifically accurate and valuable research will be considered for publication.",
-      "SSRG-IJHSS publishes original papers, review papers, conceptual frameworks, analytical and simulation models, case studies, empirical research, technical notes, and book reviews.",
+      "SSSL-IJHSS publishes original papers, review papers, conceptual frameworks, analytical and simulation models, case studies, empirical research, technical notes, and book reviews.",
       "Nigeria, Vietnam, China, Indonesia, Egypt, Sri Lanka, India, Jordan, USA, Kenya, Bangladesh, Malaysia, México, Turkey, Afghanistan, Cambodia, Korea, Greece, Saudi Arabia, United Kingdom, Iran, Africa, Australia, Oman, Philippines, Palestine, Ukraine, Israel, Ethiopia, Slovenia etc.,"
     ],
     "topics": [
@@ -2283,10 +2283,10 @@ const journalData = {
   },
   "IJAC": {
     "code": "IJAC",
-    "title": "International Journal of Applied Chemistry",
+    "title": "SSSL International Journal of Applied Chemistry",
     "category": "Science & Biology",
-    "email": "ijac@internationaljournalssrg.org",
-    "issn": "2393-9133",
+    "email": "ijac@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "3 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -2296,11 +2296,11 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "Dr. A. Heidari",
+      "name": "Dr. P. Sivakumar",
       "affiliation": "California South University (CSU) Irvine California USA."
     },
     "description": [
-      "SSRG International Journal of Applied Chemistry ( SSRG - IJAC ) is a scholarly double-blind peer-reviewed research publishing Journal.",
+      "SSSL International Journal of Applied Chemistry ( SSSL - IJAC ) is a scholarly double-blind peer-reviewed research publishing Journal.",
       "IJAC is a Journal with top quality contributions publishes a wide range of outstanding Reviews, Mini reviews, Concepts, Full Papers, and Communications from all areas of chemistry applied to the related fields. IJAC provides an excellent platform for increasing the visibility of applied chemistry as well as for featuring the best research from authors from around the world.",
       "China, Nigeria, India, Argentina, Morocco, Syria, Tanzania, United Arab Emirates, Kenya, Korea, Colombia, Uganda, Srilanka, Ethiopia, Uzbekistan, Ireland, Taiwan, Argentia, Kazahastan, Japan, Bonsonia, Indonesia, Azerbaijan, Georgia, Egypt,.etc,."
     ],
@@ -2392,9 +2392,9 @@ const journalData = {
   "IJIP": {
     "code": "IJIP",
     "title": "International Journal of Innovative Publications",
-    "category": "Engineering & Technology",
-    "email": "ijip@internationaljournalssrg.org",
-    "issn": "N/A",
+    "category": "Engineering Journals",
+    "email": "ijip@internationaljournalSSSL.org",
+    "issn": "Waiting For Approved",
     "frequency": "12 Issue per Year",
     "publisher": "Seventh Sense Research Group®",
     "metrics": {
@@ -2404,8 +2404,8 @@ const journalData = {
       "publicationTime": "30 - 35 Days"
     },
     "editorInChief": {
-      "name": "TBA",
-      "affiliation": "SSRG Editorial Panel"
+      "name": "Dr. P. Sivakumar",
+      "affiliation": "SSSL Editorial Panel"
     },
     "description": [
       "The International Journal of Innovative Publications (IJIP) is a double-blind peer-reviewed, open-access international journal that publishes original research articles, reviews, and short communications in all areas of engineering and technology."
@@ -2417,10 +2417,90 @@ const journalData = {
     ],
     "editors": [
       {
-        "name": "Dr. SSRG Editorial Panel",
+        "name": "Dr. SSSL Editorial Panel",
         "affiliation": "Seventh Sense Research Group"
       }
     ]
+  },
+  "ML": {
+    "code": "ML",
+    "title": "SSSL Journal of Intelligent Machine Learning and IoT Enabled Applications",
+    "category": "Engineering Journals",
+    "email": "editor@jiml-iea.com",
+    "issn": "Waiting For Approved",
+    "frequency": "Bi-Annually (May, Dec)",
+    "publisher": "Scientific Intelli-Press (SIP)",
+    "metrics": {
+      "acceptanceRate": "40%",
+      "firstDecision": "15 Days",
+      "acceptanceTime": "30 Days",
+      "publicationTime": "30 Days"
+    },
+    "editorInChief": {
+      "name": "Dr. P. Sivakumar",
+      "affiliation": "Seventh Sense Research Group"
+    },
+    "description": [
+      "The Journal of Intelligent Machine Learning and IoT Enabled Applications invites contributions on pioneering advancements in machine learning, artificial intelligence, and Internet of Things (IoT) applications. It is published by Scientific Intelli-Press (SIP), biannually in May and December since 2025.",
+      "Authors are encouraged to submit original research showcasing innovations in intelligent algorithms, ML models, IoT-driven data processing, edge and cloud computing, smart sensors, autonomous systems, and real-time data fusion. The journal also welcomes work on performance evaluation of intelligent systems, optimization of ML models for IoT ecosystems, and integrated AI-IoT solutions.",
+      "Our mission is to disseminate cutting-edge knowledge that bridges machine learning theory with IoT-based practical applications, enabling intelligent, responsive, and sustainable next-generation systems."
+    ],
+    "topics": [
+      "Machine learning algorithms and architectures",
+      "Artificial intelligence applications in smart systems",
+      "Internet of Things (IoT) protocols and frameworks",
+      "Edge and cloud computing in IoT ecosystems",
+      "Smart sensors and actuator networks",
+      "Autonomous systems and robotics",
+      "Real-time data fusion and analysis",
+      "Performance evaluation of intelligent systems",
+      "Optimization of ML models for resource-constrained IoT devices",
+      "Integrated AI-IoT solutions for industrial, agricultural, and healthcare applications"
+    ],
+    "editors": [
+      {
+        "name": "Dr. Weiwei Jiang",
+        "affiliation": "Beijing University of Posts and Telecommunications, and Key Laboratory of Universal Wireless Communications, Ministry of Education, Beijing, China."
+      },
+      {
+        "name": "Mrs. V. Sowjanya",
+        "affiliation": "Dept.of Artificial Intelligence and Data Science, Lakireddy Bali Reddy College of Engineering, Mylavaram, NTR Dist., Andhra Pradesh, India."
+      },
+      {
+        "name": "Prof. P. Annadurai",
+        "affiliation": "Department of Computer Science and Engineering, M S Ramaiah University of Applied Sciences, Bengaluru, India."
+      },
+      {
+        "name": "Dr. Ragunthar T",
+        "affiliation": "Department of Computing Technologies, SRM Institute of Science and Technology, Kattankulathur, Chennai, India-603203."
+      },
+      {
+        "name": "Dr. K.S. Sendhil Kumar",
+        "affiliation": "Head, School of Computer Science & Engineering, Vellore Institute of Technology, Vellore, India."
+      }
+    ],
+    "info": {
+      "publisher": "Scientific Intelli-Press (SIP)",
+      "country": "India",
+      "language": "English",
+      "firstYear": "2025",
+      "access": "Open Access",
+      "format": "Online",
+      "responsiblePerson": "Ashok P",
+      "email": "ashokit009@gmail.com",
+      "mobile": "8072438194",
+      "address": "No.59, Kancheepuram Street, Podaturpet, Thiruvallur District, Tamil Nadu - 631208"
+    },
+    "policies": {
+      "privacyStatement": "The names and emails entered on this journal’s website will only be used for the purposes for which they were entered, and they won’t be shared with anyone else or used for any other purposes.",
+      "openAccess": "All articles published in the **Journal of Machine Learning and IoT Enabled Applications** are fully open access, ensuring they are immediately and freely available to read, download, and share. In alignment with our mission to disseminate cutting-edge knowledge that bridges the gap between machine learning theory and practical IoT applications, the author(s) and copyright holder(s) grant to all users a free, irrevocable, worldwide, perpetual right of access to the work. Users are permitted to copy, use, distribute, transmit, and display the work publicly, and to make and distribute derivative works in any digital medium for any responsible purpose, subject to proper attribution of authorship, as well as the right to make small numbers of printed copies for their personal use.\n\n### Copyright and License\n\n1. **Scientific Intelli-Press (SIP)** follows the **CC BY-NC license (Creative Commons Attribution v4.0 International License)** for its open-access publication, the **Journal of Machine Learning and IoT Enabled Applications**. The CC BY license is the most open license available and is considered the industry ‘gold standard’ for open access.\n2. This license allows users to copy and redistribute the material in any medium or format, and to alter, transform, or build upon the material, including for commercial use, provided that the original author is credited.\n3. Copyright on any open-access article in the **Journal of Machine Learning and IoT Enabled Applications** published by **Scientific Intelli-Press (SIP)** is retained by the author(s).\n4. Authors grant **Scientific Intelli-Press (SIP)** a license to publish the article and identify itself as the original publisher. This commitment to open access and author-retained copyright supports our vision of driving advancements that empower sustainable and interconnected global ecosystems.",
+      "conflictsInterest": "### Conflict of Interest Policy\n\nA conflict of interest exists when any association—between authors, reviewers, or editors could compromise, or appear to compromise, the impartial submission, review, editorial decision, or publication of a manuscript. Conflicts may involve individuals or organisations and may be financial or non-financial in nature.\n\n***\n\n### Authors\n\nAuthors must disclose all relationships, affiliations, and activities that could influence or be perceived to influence their manuscript. These may include employment, consultancy roles, research funding, stock ownership, patent licenses, honoraria, advisory positions, or any other potential competing interest.\n\n***\n\n### Reviewers\n\nReviewers must disclose any relationships or activities that could affect their impartial evaluation of a manuscript. If a conflict exists—actual or perceived—they must decline the review. Reviewers must not use the review process to advance personal interests or gain access to unpublished work for their own benefit.\n\nConflicts of interest should be disclosed through the reviewer form provided in the reviewer login portal.\n\n***\n\n### Editors and Journal Staff\n\nEditorial decisions must be made by editors who have no financial, professional, or personal conflicts related to the manuscripts under consideration. Editorial staff involved in the decision-making process must disclose any potential conflicts and recuse themselves from handling affected manuscripts.\n\nInformation obtained through manuscript handling must never be used for personal advantage. Editors submitting their own manuscripts to the journal must delegate all editorial responsibilities for that submission to another qualified editorial staff member and must not participate in related discussions or decisions.",
+      "correctionsRetraction": "When errors are identified in already published papers, the journal will assess the issue and determine the appropriate course of action, consulting the editor(s), author(s), and the authors’ institution(s) when necessary. Author-related errors may be corrected through a corrigendum, while publisher-introduced errors will be addressed through an erratum.\n\nIn cases where misconduct or significant inaccuracies affect the validity of the findings, a retraction or a statement of concern may be required. JIML-IEA follows the COPE Retraction Guidelines for handling such situations.\n\nCOPE guidelines can be accessed here: [https://publicationethics.org/files/cope-retraction-guidelines-v2.pdf](https://publicationethics.org/files/cope-retraction-guidelines-v2.pdf)",
+      "plagiarismPolicy": "Plagiarism refers to the act of presenting another person’s work, ideas, or expressions as one’s own without proper acknowledgment. Self-plagiarism occurs when authors reuse their previously published content—including text, data, figures, or results—without appropriate citation or disclosure. The JIML-IEA journal reviews all submitted manuscripts for plagiarism and takes strict action when detected.\n\nManuscripts with more than **30%** similarity are **immediately rejected**. If the similarity is **below 30%**, authors will be required to revise the manuscript and provide correct citations wherever necessary.\n\n***\n\n### Plagiarism Check\n\nTo ensure originality, JIML-IEA uses **Turnitin** to detect text similarity, duplication, and uncredited use of previously published material.\n\n***\n\n### Understanding Plagiarism\n\nPlagiarism involves using someone else’s words, ideas, or creative expressions without giving proper credit. It can occur in several forms, including:\n* Copying text verbatim from another source.\n* Reusing portions of another author’s work, such as figures, tables, equations, or illustrations that are not common knowledge, without citation.\n* Copying or downloading text, images, diagrams, or other media from the internet without acknowledgment.\n* Adopting sentences or paragraphs from existing publications without referencing the source.\n\nPlagiarism is not only unethical but also a violation of copyright laws.\n\n***\n\n### Self-Plagiarism\n\nSelf-plagiarism refers to reusing a significant portion of one’s own previously published work without proper citation. However, reusing material from one’s prior publications—such as conference papers—**with clear and explicit referencing** is acceptable and does not constitute self-plagiarism. In such cases, quotation marks are not required, but the original source must be appropriately credited.\n\n***\n\n### Accidental or Unintentional Plagiarism\n\nSometimes authors may unknowingly reproduce text or ideas without proper citation. It is the author’s responsibility to understand the difference between quoting, paraphrasing, and summarizing, and to follow correct citation practices to avoid unintentional plagiarism.\n\n***\n\n### Deliberate Plagiarism\n\nDeliberate plagiarism occurs when authors knowingly copy content or ideas without acknowledgment. This includes submitting purchased, borrowed, or copied work as one’s own. Such acts are considered serious ethical violations and will result in strict consequences.",
+      "misconductSanctions": "Concerns related to research ethics or suspected violations of the journal’s publishing ethics-whether raised before or after publication-should be reported directly to the journal. When requested, the identities of those reporting the issue will be kept confidential.\n\nUpon receiving any allegation of misconduct, the editors will initiate a thorough investigation. Authors may be asked to provide supporting documents, data, images, or other relevant materials. Editors may also consult with external experts, and the journal may contact the concerned institutions or organisations to request a formal inquiry.\n\nIf an article is found to violate ethical publishing standards-such as duplicate submission, data fabrication, plagiarism, citation manipulation, or false authorship claims-it will be rejected.\nIf the article has already been accepted and posted as “Online First,” it will be removed from the website and accompanied by a withdrawal notice. Failure by authors to respond to editorial communication after review and provisional acceptance will also be treated as withdrawal.\nIf the article has already been formally published, it will be retracted in accordance with the COPE Retraction Guidelines.\n\nThe journal adheres to the COPE flowcharts ([https://publicationethics.org/guidance/Flowcharts](https://publicationethics.org/guidance/Flowcharts)) for handling all types of misconduct.\n\nDepending on the severity of the violation, the journal may also take the following actions:\n* Ban the authors from submitting to the journal for 1–3 years.\n* Prohibit the authors from serving as reviewers or editors.\n* Report the misconduct to the authors’ institutions, employers, or funding agencies.\n\nMinor unintentional errors by authors may be addressed through a corrigendum, while errors introduced by the publisher will be corrected through an erratum.",
+      "publicationEthics": "All parties engaged in the publication process are expected to adhere to ethical principles that uphold integrity, responsibility, and seriousness. The Journal of Intelligent Machine Learning and IoT Enabled Applications is committed to maintaining high standards of ethical conduct. Any violations by editors, reviewers, or authors will be addressed strictly by the Journal. Our ethical framework aligns with recommendations from Elsevier and the COPE Best Practice Guidelines for Journal Editors.\n\n**The Journal of Intelligent Machine Learning and IoT Enabled Applications is dedicated to enforcing the highest ethical standards in publishing and actively combats publication malpractice. Authors submitting to the Journal affirm that their work is original, has not been published elsewhere, and is not under consideration by any other publication. Authors also guarantee that their submission is free from plagiarism, and they must disclose any potential conflicts of interest or benefits related to their work.**\n\n### Duties of Editors\n\n* **Publication Decisions**: The editor-in-chief has the ultimate responsibility for deciding which articles to publish. This decision is guided by the Journal’s policies and legal requirements, such as libel, copyright infringement, and plagiarism. The editor-in-chief may consult with associate editors or reviewers in making these decisions.\n* **Manuscript Review**: Each manuscript is first assessed by the editorial assistant using professional software to check for originality. Manuscripts passing this check are then forwarded to an associate editor who coordinates a blind peer review with at least two reviewers. These reviewers make recommendations to the editor-in-chief regarding publication, modification, or rejection. Review periods can range from two weeks to three months, with up to five months allowed in exceptional cases.\n* **Disclosure and Conflicts of Interest**: Manuscript reviewers must not use unpublished material from submitted manuscripts for their own research without the authors' explicit written permission.\n* **Fairness**: Manuscripts are evaluated solely on their academic merit, without regard to the author’s race, gender, sexual orientation, religious beliefs, ethnicity, citizenship, or political views.\n* **Confidentiality**: The editor-in-chief, associate editors, and editorial staff must keep information about submitted manuscripts confidential, sharing it only with the corresponding author, reviewers, potential reviewers, other editorial advisers, and the publisher.\n\n### Duties of Reviewers\n\n* **Timeliness**: Reviewers who cannot complete the review within the agreed time frame must inform the associate editor so that the manuscript can be reassigned if necessary.\n* **Confidentiality**: All information regarding manuscripts should be treated as confidential and privileged.\n* **Objectivity**: Reviews should be conducted impartially, avoiding personal criticism of authors. Reviewers should support their assessments with clear and well-founded arguments.\n* **Acknowledgment of Sources**: Reviewers should identify any relevant work that has not been cited by the authors and report any substantial similarity or overlap with other works they are aware of.\n* **Conflict of Interest**: Reviewers must not evaluate manuscripts in which they have a conflict of interest, whether due to competitive, collaborative, or other relationships with the authors or institutions involved.\n\n### Duties of Authors\n\n* **Reporting Standards**: Authors should present an accurate description of their research and discuss its significance objectively. All data should be represented truthfully, with sufficient detail and references. Fraudulent or inaccurate statements are considered unethical.\n* **Data Access and Retention**: Authors may be asked to provide raw data for review and should be prepared to make data publicly accessible if feasible, retaining it for a reasonable time after publication.\n* **Originality and Plagiarism**: Authors must ensure that their work is original. Any use of other works must be properly cited or quoted.\n* **Multiple Publications**: Authors should not publish essentially identical research in multiple journals. Concurrent submission of the same manuscript to different journals is deemed unethical.\n* **Acknowledgment of Sources**: Proper acknowledgment must be given to those who have significantly contributed to the work.\n* **Authorship**: Authorship should be limited to individuals who have made significant contributions to the study’s conception, design, execution, or interpretation. All significant contributors should be listed as co-authors, and those who contributed in other ways should be acknowledged.\n* **Disclosure of Conflicts of Interest**: All authors must disclose any financial or non-financial conflicts of interest that could influence the results or interpretation of their work. All sources of financial support for the project should be disclosed.\n* **Correction of Errors**: If authors find significant errors or inaccuracies in their published work, they must promptly notify the Journal editor or publisher and cooperate in correcting or retracting the paper.\n\n**The Journal of Intelligent Machine Learning and IoT Enabled Applications strictly prohibits plagiarism and treats it as a serious breach of scientific ethics. Any manuscript or published paper found to be plagiarized will be addressed with utmost seriousness. We continually seek advice from our Editorial and Reviewer Boards to uphold publication ethics.**\n\n***\n\n### Retraction Policy\n\nIn cases where plagiarism is detected, the \"Journal of Intelligent Machine Learning and IoT Enabled Applications\" will implement corrective measures based on the nature and extent of the plagiarism. Responsibility for the content of the plagiarized work lies with all listed authors unless the investigation concludes otherwise. The Editorial Board is committed to thoroughly investigating all claims of plagiarism and resolving them swiftly.\n\n**Procedures for Handling Plagiarism in a Published Article:**\n1. A formal notification will be sent to all co-authors, detailing the misconduct.\n2. The authors' respective institutions or departments will be informed of the plagiarism incident.\n3. The authors involved will be prohibited from submitting any future work to the \"Journal of Intelligent Machine Learning and IoT Enabled Applications.\"\n4. The online PDF of the plagiarized article will be removed from the journal's website.\n5. A retraction notice will replace the original article on the journal’s platform.\n6. The journal will take steps to retract the article from any online indexing services where it is listed.\n\n***\n\n### Multiple Submission (Simultaneous Submissions) and Prior Publication\n\nWe kindly remind you that submissions to the \"Journal of Intelligent Machine Learning and IoT Enabled Applications\" must be original works that have not been previously published or are currently under consideration for publication elsewhere. The journal does not permit simultaneous submissions to multiple journals or conferences, as this practice can lead to copyright conflicts, disputes, and inefficient use of editorial and financial resources.\n\nSimultaneous submissions create unnecessary complications, such as duplication of efforts in the review process and potential confusion in citations and indexing. These practices waste valuable time, resources, and publication space, which could be better utilized for other high-quality research.\n\nAuthors who engage in multiple submissions without appropriate notification to the editors or who fail to properly cite their previous work may face disciplinary actions, including but not limited to:\n1. A formal warning regarding the unethical nature of the practice.\n2. A requirement to issue a written apology to the editors.\n3. A suspension from submitting to the \"Journal of Intelligent Machine Learning and IoT Enabled Applications\" for a period of one year.\n\n***\n\n### Authorship and Contributorship\n\nAuthors and contributors fulfill essential roles in the research, writing, and preparation of manuscripts submitted to The Journal of Intelligent Machine Learning and IoT Enabled Applications. Scientific Intelli-Press, as the publisher, assumes that all listed authors have agreed to the content and have given explicit consent to submit the manuscript. Prior to submission, authors are expected to obtain consent from the relevant authorities at their institution or organization. The Journal of Intelligent Machine Learning and IoT Enabled Applications recommends adhering to the following authorship guidelines. Specifically, all authors listed on a manuscript should have contributed in the following ways:\n* Made substantial contributions to the conception or design of the work; the acquisition, analysis, or interpretation of data; or the development of new software used in the work.\n* Drafted the work or revised it critically for significant intellectual content.\n* Provided final approval of the version to be published.\n* Agreed to be accountable for all aspects of the work to ensure that questions related to the accuracy or integrity of any part of the work are properly investigated and resolved.\n\n***\n\n### Diversity and Inclusion Statement\n\nThe Journal of Intelligent Machine Learning and IoT Enabled Applications and Scientific Intelli-Press are committed to fostering an inclusive, diverse, and equitable environment for all contributors and readers. We believe that diversity of perspectives, backgrounds, and experiences strengthens research and enriches the scientific community. To support this mission, we actively encourage submissions from authors of all genders, ethnicities, nationalities, abilities, and backgrounds.\n\n***\n\n### Unethical Research Practices\n\nThe Journal of Intelligent Machine Learning and IoT Enabled Applications and Scientific Intelli-Press hold a zero-tolerance policy toward unethical research practices. Adhering to the highest standards of research integrity is crucial to ensure that the scientific community and the public can trust and build upon published research. Authors are expected to avoid the following unethical practices, which may result in rejection, retraction, or reporting to relevant authorities:\n1. **Plagiarism**: The use of others' work or ideas without proper attribution is strictly prohibited. This includes text recycling, improper paraphrasing, and copying figures or data.\n2. **Data Fabrication and Falsification**: Manipulating or inventing data, results, or methodologies to misrepresent research findings is considered a serious violation of research ethics.\n3. **Duplicate Submission and Redundant Publication**: Manuscripts should not be submitted to more than one journal at the same time or published multiple times without clear justification and approval.\n4. **Improper Authorship Attribution**: All listed authors should meet authorship criteria and have made substantial contributions. Ghost authorship, honorary authorship, and failing to acknowledge significant contributors are considered unethical.\n5. **Conflicts of Interest**: Authors, reviewers, and editors should disclose any financial, personal, or professional conflicts that could affect the integrity of the research and review process.\n6. **Manipulating Citations**: Citation manipulation for the purpose of increasing citations to specific articles or journals, known as citation stacking or padding, is not acceptable.\n7. **Ethical Oversight**: Research involving human subjects, animals, or sensitive data must follow relevant ethical guidelines. Failure to obtain ethical approval or to adhere to ethical standards in handling data and research subjects constitutes a breach of integrity. We are committed to identifying and addressing any unethical practices in submissions to uphold the trustworthiness and integrity of scientific research.\n\n***\n\n### Informed Consent and Participant Privacy\n\nThe Journal of Intelligent Machine Learning and IoT Enabled Applications follows the ethical guidance set by the Scientific Intelli-Press Editors, which acknowledges that all study participants have a right to privacy that must not be violated without informed consent.\n\n**1. Consent to Participate**\nInformed, written consent must be obtained voluntarily from all participants involved in a study before its commencement. If the participant is a minor or considered vulnerable and unable to provide informed consent, a legal guardian is required to give consent. If the participant is deceased, consent may be obtained from the next of kin. Participants must fully understand the study they are engaging in, including any associated risks. Authors must include a statement in the manuscript confirming that consent has been obtained from participants. If verbal consent is obtained instead of written consent, authors should explain why written consent was not feasible, describe the approval process for verbal consent, and outline the methods used to document it.\n\n**2. Consent to Publish**\nParticipants who agree to partake in a study may not necessarily agree to have their identifiable data published. Identifiable data includes, but is not limited to, descriptions, photos, images, videos, names, dates of birth, and biometrical characteristics. Identifiable data should generally be omitted from the manuscript wherever possible. For manuscripts that include such data, authors must obtain written informed consent to publish these details. Consent must be received from the participant (or a legal guardian for minors or next of kin for the deceased) prior to submission. If there is any uncertainty, written consent should seek. Manuscripts containing identifiable images or data must include a statement affirming that permission was obtained to publish this information. If data is anonymized, authors must state that no consent to publish was necessary. Any alterations made to images or data for anonymization purposes should not distort the scientific content.\n\n***\n\n### Appeals and Complaints\n\nThe Journal of Intelligent Machine Learning and IoT Enabled Applications is committed to maintaining a transparent and fair review process. Authors, reviewers, and readers are encouraged to bring forward any appeals or complaints they may have, and these will be addressed in a thorough, unbiased, and respectful manner.\n\n**1. Appeals Process**\nIf an author disagrees with an editorial decision, they may submit a formal appeal. The appeal should include a clear rationale, addressing specific aspects of the decision and providing evidence or further clarification to support the case. Appeals should be submitted in writing to the editorial office and will be reviewed by an editor not involved in the initial decision. The editorial team will carefully re-evaluate the manuscript in light of the appeal and provide a final decision, which is typically binding.\n\n**2. Complaints Process**\nWe welcome complaints related to any aspect of the journal, including the review process, editorial decisions, or ethical concerns. Complaints should be directed to the journal’s editorial office and should include a detailed description of the issue. Upon receipt, the complaint will be reviewed by the editorial team, and, if necessary, escalated to the publisher. We are committed to responding promptly and professionally, with the goal of reaching a fair resolution. We value feedback and are dedicated to improving our processes. Both appeals and complaints are treated with confidentiality and respect for all involved parties.\n\n***\n\n### Conflicts of Interest and Competing Interests\n\nA conflict of interest arises when an individual or entity's personal or self-serving interests conflict with their professional responsibilities, potentially impacting the reliability of academic publications. Such conflicts can be particularly harmful to the integrity of scholarly work. If the Editor-in-Chief suspects a conflict of interest, they should promptly inform the publisher (e.g., if an author on a submitted manuscript is based at the same institution or is working on a competing project). Similarly, if a reviewer recognizes a conflict of interest—such as knowing the author’s identity or being affiliated with the same institution—they should inform the Editor-in-Chief immediately. Authors are responsible for declaring any potential conflicts of interest when submitting their manuscript. This should include all relevant financial or personal connections that could be perceived as influencing the research. Competing interests may include, but are not limited to, sources of funding, financial relationships, employment affiliations, and non-financial interests that could impact the objectivity of the work.\n\n***\n\n### Data Sharing and Reproducibility\n\nAuthors seeking to reproduce a chapter or article from The Journal of Intelligent Machine Learning and IoT Enabled Applications in a future publication, whether for commercial or non-commercial use, should contact Scientific Intelli-Press at the Intellectual Property and Contracts Division. Authors are encouraged to review the Fair Use Policy for further guidance on data sharing and reproduction.\n\n***\n\n### Paid Advertisements\n\nThe Journal of Intelligent Machine Learning and IoT Enabled Applications currently does not accept paid external advertisements for publication.\n\nFor any inquiries, please contact us at info@jiml-iea.com.",
+      "digitalPreservation": "All content published in the *Journal of Intelligent Machine Learning and IoT-Enabled Applications (JIML-IEA)* through the **OJS platform** is securely preserved to ensure long-term accessibility. The journal maintains a robust digital archiving system through its dedicated cloud storage and server backup infrastructure.\n\nThese preservation measures ensure that all published materials remain accessible and usable for future scholars, researchers, and students."
+    }
   }
 };
 
