@@ -1,12 +1,37 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJHSS desc-IJHSS">
+  <title id="title-IJHSS">SSSL International Journal of Humanities and Social Science</title>
+  <desc id="desc-IJHSS">Title-oriented cover image for SSSL International Journal of Humanities and Social Science.</desc>
   <defs>
-    <linearGradient id="grad10" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6bcf7f;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4a90e2;stop-opacity:1" />
+    <linearGradient id="coverGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24664e"/>
+      <stop offset="100%" stop-color="#3e8b94"/>
     </linearGradient>
+    <radialGradient id="glow10" cx="82%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#244a72" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid10" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+    </style>
   </defs>
-  <rect width="400" height="200" fill="url(#grad10)"/>
-  <text x="200" y="60" font-size="28" font-weight="bold" fill="white" text-anchor="middle" font-family="Outfit">IJHSS</text>
-  <text x="200" y="100" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Humanities &amp; Social</text>
-  <text x="200" y="120" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Science</text>
+  <rect width="400" height="200" rx="0" fill="url(#coverGrad10)"/>
+  <rect width="400" height="200" fill="url(#glow10)"/>
+  <rect width="400" height="200" fill="url(#grid10)"/>
+  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
+  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
+  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="32" y="58" class="code">IJHSS</text>
+  <text x="32" y="84" class="title">SSSL International Journal of Humanities</text>
+    <text x="32" y="105" class="title">and Social Science</text>
+  <text x="32" y="140" class="subject">Humanities | Society | Arts</text>
+  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
+  <path d="M260 78h38c10 0 18 8 18 18v48c0-10-8-18-18-18h-38zM316 96c0-10 8-18 18-18h24v66h-24c-10 0-18 8-18 18z" fill="none" stroke="#244a72" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path d="M276 96h22M276 112h20M334 96h14M334 112h14" stroke="#ffffff" opacity="0.58" stroke-width="3"/>
+  
 </svg>

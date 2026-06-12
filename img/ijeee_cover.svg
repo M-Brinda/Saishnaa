@@ -1,12 +1,37 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJEEE desc-IJEEE">
+  <title id="title-IJEEE">SSSL International Journal of Electrical and Electronics Engineering</title>
+  <desc id="desc-IJEEE">Title-oriented cover image for SSSL International Journal of Electrical and Electronics Engineering.</desc>
   <defs>
-    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    <linearGradient id="coverGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07587d"/>
+      <stop offset="100%" stop-color="#1fb7d7"/>
     </linearGradient>
+    <radialGradient id="glow3" cx="82%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#6e49e8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid3" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+    </style>
   </defs>
-  <rect width="400" height="200" fill="url(#grad3)"/>
-  <text x="200" y="60" font-size="28" font-weight="bold" fill="white" text-anchor="middle" font-family="Outfit">IJEEE</text>
-  <text x="200" y="100" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Electrical &amp; Electronics</text>
-  <text x="200" y="120" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Engineering</text>
+  <rect width="400" height="200" rx="0" fill="url(#coverGrad3)"/>
+  <rect width="400" height="200" fill="url(#glow3)"/>
+  <rect width="400" height="200" fill="url(#grid3)"/>
+  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
+  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
+  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="32" y="58" class="code">IJEEE</text>
+  <text x="32" y="84" class="title">SSSL International Journal of Electrical</text>
+    <text x="32" y="105" class="title">and Electronics Engineering</text>
+  <text x="32" y="140" class="subject">Electrical | Electronics | Power Systems</text>
+  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
+  <path d="M274 82h42v36h-42zM316 100h28M294 82V62M294 118v22M274 100h-24" fill="none" stroke="#6e49e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><circle cx="250" cy="100" r="5" fill="#6e49e8" opacity="0.14"/><circle cx="344" cy="100" r="5" fill="#6e49e8" opacity="0.14"/><circle cx="294" cy="62" r="5" fill="#6e49e8" opacity="0.14"/><circle cx="294" cy="140" r="5" fill="#6e49e8" opacity="0.14"/>
+  <g transform="translate(298 24)"><rect width="76" height="28" rx="14" fill="#6d4cff" stroke="#ffffff" stroke-opacity="0.28"/><text x="38" y="18" text-anchor="middle" font-family="Poppins, Arial" font-size="10" font-weight="800" fill="#ffffff">SCOPUS</text></g>
 </svg>

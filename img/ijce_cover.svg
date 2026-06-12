@@ -1,12 +1,37 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJCE desc-IJCE">
+  <title id="title-IJCE">SSSL International Journal of Civil Engineering</title>
+  <desc id="desc-IJCE">Title-oriented cover image for SSSL International Journal of Civil Engineering.</desc>
   <defs>
-    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    <linearGradient id="coverGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7d3c42"/>
+      <stop offset="100%" stop-color="#c77864"/>
     </linearGradient>
+    <radialGradient id="glow4" cx="82%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#6c5b3d" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid4" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+    </style>
   </defs>
-  <rect width="400" height="200" fill="url(#grad4)"/>
-  <text x="200" y="60" font-size="28" font-weight="bold" fill="white" text-anchor="middle" font-family="Outfit">IJCE</text>
-  <text x="200" y="100" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Civil</text>
-  <text x="200" y="120" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Engineering</text>
+  <rect width="400" height="200" rx="0" fill="url(#coverGrad4)"/>
+  <rect width="400" height="200" fill="url(#glow4)"/>
+  <rect width="400" height="200" fill="url(#grid4)"/>
+  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
+  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
+  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="32" y="58" class="code">IJCE</text>
+  <text x="32" y="84" class="title">SSSL International Journal of</text>
+    <text x="32" y="105" class="title">Civil Engineering</text>
+  <text x="32" y="140" class="subject">Civil | Structural | Construction</text>
+  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
+  <path d="M252 132h104M264 132V96M344 132V96M264 96c20-24 60-24 80 0M252 112h104" fill="none" stroke="#6c5b3d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path d="M278 132c8-22 20-35 38-42M330 132c-8-22-20-35-38-42" stroke="#ffffff" opacity="0.58" stroke-width="3"/>
+  
 </svg>

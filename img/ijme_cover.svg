@@ -1,12 +1,37 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJME desc-IJME">
+  <title id="title-IJME">SSSL International Journal of Mechanical Engineering</title>
+  <desc id="desc-IJME">Title-oriented cover image for SSSL International Journal of Mechanical Engineering.</desc>
   <defs>
-    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#30cfd0;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#330867;stop-opacity:1" />
+    <linearGradient id="coverGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c5668"/>
+      <stop offset="100%" stop-color="#2d8b9d"/>
     </linearGradient>
+    <radialGradient id="glow5" cx="82%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#24306f" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid5" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+    </style>
   </defs>
-  <rect width="400" height="200" fill="url(#grad5)"/>
-  <text x="200" y="60" font-size="28" font-weight="bold" fill="white" text-anchor="middle" font-family="Outfit">IJME</text>
-  <text x="200" y="100" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Mechanical</text>
-  <text x="200" y="120" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Engineering</text>
+  <rect width="400" height="200" rx="0" fill="url(#coverGrad5)"/>
+  <rect width="400" height="200" fill="url(#glow5)"/>
+  <rect width="400" height="200" fill="url(#grid5)"/>
+  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
+  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
+  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="32" y="58" class="code">IJME</text>
+  <text x="32" y="84" class="title">SSSL International Journal of</text>
+    <text x="32" y="105" class="title">Mechanical Engineering</text>
+  <text x="32" y="140" class="subject">Mechanical | Manufacturing | Thermodynamics</text>
+  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
+  <circle cx="306" cy="106" r="26" fill="none" stroke="#24306f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><circle cx="306" cy="106" r="9" fill="none" stroke="#24306f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><path d="M306 68v15M306 129v15M268 106h15M329 106h15M279 79l11 11M322 122l11 11M333 79l-11 11M290 122l-11 11" fill="none" stroke="#24306f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  
 </svg>

@@ -1,12 +1,37 @@
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-IJEMS desc-IJEMS">
+  <title id="title-IJEMS">SSSL International Journal of Economics and Management Studies</title>
+  <desc id="desc-IJEMS">Title-oriented cover image for SSSL International Journal of Economics and Management Studies.</desc>
   <defs>
-    <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2e2e78;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#662d91;stop-opacity:1" />
+    <linearGradient id="coverGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f1a5f"/>
+      <stop offset="100%" stop-color="#4d3298"/>
     </linearGradient>
+    <radialGradient id="glow8" cx="82%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#e1b54d" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid8" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .code { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; font-weight: 800; letter-spacing: 1px; fill: #ffffff; }
+      .title { font-family: 'Outfit', 'Segoe UI', Arial, sans-serif; font-size: 15px; font-weight: 800; fill: #ffffff; }
+      .subject { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 10px; font-weight: 700; fill: rgba(255,255,255,0.86); }
+      .meta { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; font-size: 8px; font-weight: 700; fill: rgba(255,255,255,0.72); letter-spacing: 0.5px; }
+    </style>
   </defs>
-  <rect width="400" height="200" fill="url(#grad8)"/>
-  <text x="200" y="60" font-size="28" font-weight="bold" fill="white" text-anchor="middle" font-family="Outfit">IJEMS</text>
-  <text x="200" y="100" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Environmental Management</text>
-  <text x="200" y="120" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="Poppins">Science</text>
+  <rect width="400" height="200" rx="0" fill="url(#coverGrad8)"/>
+  <rect width="400" height="200" fill="url(#glow8)"/>
+  <rect width="400" height="200" fill="url(#grid8)"/>
+  <circle cx="340" cy="45" r="74" fill="#ffffff" opacity="0.08"/>
+  <circle cx="58" cy="172" r="84" fill="#000000" opacity="0.10"/>
+  <rect x="22" y="22" width="356" height="156" rx="18" fill="#ffffff" opacity="0.10" stroke="#ffffff" stroke-opacity="0.22"/>
+  <text x="32" y="58" class="code">IJEMS</text>
+  <text x="32" y="84" class="title">SSSL International Journal of Economics</text>
+    <text x="32" y="105" class="title">and Management Studies</text>
+  <text x="32" y="140" class="subject">Economics | Management | Business</text>
+  <text x="32" y="160" class="meta">OPEN ACCESS JOURNAL</text>
+  <text x="32" y="174" class="meta">VOLUME 1 | ISSUE 1</text>
+  <path d="M260 138h94" fill="none" stroke="#e1b54d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/><rect x="270" y="104" width="16" height="34" rx="3" fill="#e1b54d" opacity="0.14"/><rect x="298" y="84" width="16" height="54" rx="3" fill="#e1b54d" opacity="0.14"/><rect x="326" y="66" width="16" height="72" rx="3" fill="#e1b54d" opacity="0.14"/><path d="M270 96l28-24 20 12 28-30" fill="none" stroke="#e1b54d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+  <g transform="translate(298 24)"><rect width="76" height="28" rx="14" fill="#6d4cff" stroke="#ffffff" stroke-opacity="0.28"/><text x="38" y="18" text-anchor="middle" font-family="Poppins, Arial" font-size="10" font-weight="800" fill="#ffffff">SCOPUS</text></g>
 </svg>
