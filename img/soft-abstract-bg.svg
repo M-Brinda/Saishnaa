@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9fdff"/>
+      <stop offset="0.42" stop-color="#ffffff"/>
+      <stop offset="0.72" stop-color="#eafcff"/>
+      <stop offset="1" stop-color="#efeaff"/>
+    </linearGradient>
+    <radialGradient id="blueGlow" cx="9%" cy="82%" r="44%">
+      <stop offset="0" stop-color="#72b8ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#72b8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="66%" cy="83%" r="40%">
+      <stop offset="0" stop-color="#bff7f4" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#bff7f4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetGlow" cx="96%" cy="82%" r="36%">
+      <stop offset="0" stop-color="#b9a7ff" stop-opacity="0.54"/>
+      <stop offset="1" stop-color="#b9a7ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="4.5" fill="#8bbfff" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#base)"/>
+  <rect width="1920" height="1080" fill="url(#blueGlow)"/>
+  <rect width="1920" height="1080" fill="url(#cyanGlow)"/>
+  <rect width="1920" height="1080" fill="url(#violetGlow)"/>
+
+  <circle cx="1405" cy="-40" r="280" fill="#dff4ff" opacity="0.62"/>
+  <circle cx="1500" cy="142" r="10" fill="#8ec8ff" opacity="0.72"/>
+  <circle cx="1510" cy="328" r="34" fill="#c8cef9" opacity="0.38"/>
+  <circle cx="260" cy="360" r="8" fill="#a8d9ff" opacity="0.55"/>
+  <circle cx="312" cy="458" r="10" fill="#73bdf7" opacity="0.58"/>
+
+  <rect x="-10" y="20" width="210" height="230" fill="url(#dots)" opacity="0.65"/>
+  <rect x="1670" y="280" width="240" height="170" fill="url(#dots)" opacity="0.55"/>
+
+  <g fill="none" stroke="#8fc9ff" stroke-width="2" opacity="0.22">
+    <path d="M1680 590 L1608 625 L1535 590 L1512 508 L1572 438 L1660 452 L1722 514 Z"/>
+    <path d="M382 594 L304 638 L228 596 L242 504 L330 468 L404 520 Z"/>
+    <path d="M1790 165 L1830 142 L1870 164 L1885 208 L1854 248 L1806 246 L1774 204 Z"/>
+  </g>
+
+  <g fill="none" stroke="#b7cdfb" stroke-width="1.4" opacity="0.28">
+    <path d="M-80 880 C210 650 430 740 670 865 C920 996 1140 974 1368 800 C1585 636 1740 590 2020 486"/>
+    <path d="M-60 910 C250 690 440 780 678 900 C918 1024 1144 1000 1380 830 C1596 674 1780 640 2000 560"/>
+    <path d="M-30 942 C280 728 482 818 704 926 C956 1048 1188 1026 1416 858 C1610 716 1780 684 2020 626"/>
+    <path d="M-10 976 C316 764 520 856 740 950 C990 1058 1220 1054 1450 888 C1642 750 1816 730 2020 700"/>
+  </g>
+
+  <path d="M0 840 C260 690 430 744 642 830 C848 914 980 958 1168 876 C1390 780 1538 640 1692 560 C1792 508 1860 488 1920 474 L1920 1080 L0 1080 Z" fill="#85c6ff" opacity="0.23"/>
+  <path d="M0 780 C206 660 430 776 610 870 C820 980 1016 1000 1224 892 C1446 776 1560 724 1715 708 C1810 698 1874 714 1920 728 L1920 1080 L0 1080 Z" fill="#8ff3ed" opacity="0.22"/>
+  <path d="M1520 1080 C1632 840 1715 670 1920 570 L1920 1080 Z" fill="#a190ff" opacity="0.34"/>
+</svg>

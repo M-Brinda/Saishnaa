@@ -1,42 +1,53 @@
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-ijems_cover.svg desc-ijems_cover.svg">
-  <title id="title-ijems_cover.svg">Economics Management topic-oriented journal image</title>
-  <desc id="desc-ijems_cover.svg">Dark technology-style topic image for Economics Management journal card.</desc>
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-j8 desc-j8">
+  <title id="title-j8">Economics and Management journal cover image</title>
+  <desc id="desc-j8">Professional dark subject-specific illustration for Economics and Management academic journal.</desc>
   <defs>
-    <linearGradient id="bg8" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070617"/>
-      <stop offset="48%" stop-color="#231b5f"/>
-      <stop offset="100%" stop-color="#101827"/>
+    <linearGradient id="bg-j8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12061f"/>
+      <stop offset="52%" stop-color="#33205f"/>
+      <stop offset="100%" stop-color="#06182c"/>
     </linearGradient>
-    <radialGradient id="core8" cx="50%" cy="48%" r="48%">
-      <stop offset="0%" stop-color="#ffd34f" stop-opacity="0.45"/>
-      <stop offset="42%" stop-color="#ffd34f" stop-opacity="0.12"/>
+    <radialGradient id="core-j8" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.36"/>
+      <stop offset="46%" stop-color="#a78bfa" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="warm8" cx="14%" cy="72%" r="48%">
-      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.7"/>
+    <radialGradient id="warm-j8" cx="14%" cy="76%" r="46%">
+      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.58"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="mesh8" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
+    <pattern id="mesh-j8" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
     </pattern>
-    <filter id="softGlow8" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="glow-j8" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="900" height="400" fill="url(#bg8)"/>
-  <rect width="900" height="400" fill="url(#warm8)" opacity="0.75"/>
-  <rect width="900" height="400" fill="url(#core8)"/>
-  <rect width="900" height="400" fill="url(#mesh8)"/>
-  <path d="M0 316c190-58 296-48 450-12 160 38 278 35 450-32v128H0z" fill="#000000" opacity="0.35"/>
-  <g opacity="0.58">
-    <circle cx="96" cy="260" r="9" fill="#ff5b27"/><circle cx="145" cy="234" r="7" fill="#ff7a33"/><circle cx="222" cy="286" r="4" fill="#1cc8ff"/>
-    <circle cx="690" cy="222" r="7" fill="#ff5b27"/><circle cx="782" cy="286" r="5" fill="#19c7ff"/><circle cx="610" cy="306" r="4" fill="#ff7a33"/>
+  <rect width="900" height="400" fill="url(#bg-j8)"/>
+  <rect width="900" height="400" fill="url(#warm-j8)" opacity="0.72"/>
+  <rect width="900" height="400" fill="url(#core-j8)"/>
+  <rect width="900" height="400" fill="url(#mesh-j8)"/>
+  <path d="M0 314c176-54 304-48 448-12 162 40 280 36 452-32v130H0z" fill="#000000" opacity="0.36"/>
+  <g opacity="0.56">
+    <circle cx="94" cy="258" r="9" fill="#ff5b27"/>
+    <circle cx="144" cy="232" r="7" fill="#ff7a33"/>
+    <circle cx="224" cy="284" r="4" fill="#1cc8ff"/>
+    <circle cx="690" cy="222" r="7" fill="#ff5b27"/>
+    <circle cx="782" cy="286" r="5" fill="#19c7ff"/>
+    <circle cx="610" cy="306" r="4" fill="#ff7a33"/>
   </g>
-  <g filter="url(#softGlow8)">
-    <path d="M260 300h380" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" opacity="0.76"/><path d="M330 250V160M450 250V104M570 250V66" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="22" opacity="0.72"/><path d="M300 168l104-86 84 46 120-132" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="11" opacity="0.86"/>
+  <g filter="url(#glow-j8)" stroke-linecap="round" stroke-linejoin="round">
+
+      <path d="M300 294h300M330 294v-80M410 294V160M490 294v-118M570 294V120" fill="none" stroke="#a78bfa" stroke-width="18" stroke-linecap="round"/>
+      <path d="M316 146l78 42 76-70 110-24" fill="none" stroke="#38d6ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M548 78l44 14-34 32" fill="none" stroke="#38d6ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="394" cy="188" r="9" fill="#38d6ff"/><circle cx="470" cy="118" r="9" fill="#38d6ff"/>
+    
   </g>
-  <g opacity="0.38" stroke="#ffd34f" stroke-width="2">
-    <path d="M105 322h690"/><path d="M210 350h480"/><path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
+  <g opacity="0.32" stroke="#a78bfa" stroke-width="2" fill="none">
+    <path d="M105 322h690"/>
+    <path d="M210 350h480"/>
+    <path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
   </g>
 </svg>

@@ -1,42 +1,71 @@
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-ijme_cover.svg desc-ijme_cover.svg">
-  <title id="title-ijme_cover.svg">Mechanical Engineering topic-oriented journal image</title>
-  <desc id="desc-ijme_cover.svg">Dark technology-style topic image for Mechanical Engineering journal card.</desc>
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-ijme desc-ijme">
+  <title id="title-ijme">Mechanical Engineering journal cover image</title>
+  <desc id="desc-ijme">Professional dark mechanical engineering illustration with piston, crank, and gear elements.</desc>
   <defs>
-    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#030b18"/>
-      <stop offset="48%" stop-color="#043f53"/>
-      <stop offset="100%" stop-color="#11172a"/>
+    <linearGradient id="bg-ijme" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101018"/>
+      <stop offset="52%" stop-color="#3a2454"/>
+      <stop offset="100%" stop-color="#121a2a"/>
     </linearGradient>
-    <radialGradient id="core5" cx="50%" cy="48%" r="48%">
-      <stop offset="0%" stop-color="#18d2c8" stop-opacity="0.45"/>
-      <stop offset="42%" stop-color="#18d2c8" stop-opacity="0.12"/>
+    <radialGradient id="core-ijme" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#ffb13d" stop-opacity="0.36"/>
+      <stop offset="46%" stop-color="#ff8f2e" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="warm5" cx="14%" cy="72%" r="48%">
-      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.7"/>
+    <radialGradient id="warm-ijme" cx="14%" cy="76%" r="46%">
+      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.58"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="mesh5" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
+    <pattern id="mesh-ijme" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
     </pattern>
-    <filter id="softGlow5" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="glow-ijme" x="-35%" y="-35%" width="170%" height="170%">
       <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
-  <rect width="900" height="400" fill="url(#bg5)"/>
-  <rect width="900" height="400" fill="url(#warm5)" opacity="0.75"/>
-  <rect width="900" height="400" fill="url(#core5)"/>
-  <rect width="900" height="400" fill="url(#mesh5)"/>
-  <path d="M0 316c190-58 296-48 450-12 160 38 278 35 450-32v128H0z" fill="#000000" opacity="0.35"/>
-  <g opacity="0.58">
-    <circle cx="96" cy="260" r="9" fill="#ff5b27"/><circle cx="145" cy="234" r="7" fill="#ff7a33"/><circle cx="222" cy="286" r="4" fill="#1cc8ff"/>
-    <circle cx="690" cy="222" r="7" fill="#ff5b27"/><circle cx="782" cy="286" r="5" fill="#19c7ff"/><circle cx="610" cy="306" r="4" fill="#ff7a33"/>
+
+  <rect width="900" height="400" fill="url(#bg-ijme)"/>
+  <rect width="900" height="400" fill="url(#warm-ijme)" opacity="0.72"/>
+  <rect width="900" height="400" fill="url(#core-ijme)"/>
+  <rect width="900" height="400" fill="url(#mesh-ijme)"/>
+  <path d="M0 314c176-54 304-48 448-12 162 40 280 36 452-32v130H0z" fill="#000000" opacity="0.36"/>
+
+  <g opacity="0.56">
+    <circle cx="94" cy="258" r="9" fill="#ff5b27"/>
+    <circle cx="144" cy="232" r="7" fill="#ff7a33"/>
+    <circle cx="224" cy="284" r="4" fill="#1cc8ff"/>
+    <circle cx="690" cy="222" r="7" fill="#ff5b27"/>
+    <circle cx="782" cy="286" r="5" fill="#19c7ff"/>
+    <circle cx="610" cy="306" r="4" fill="#ff7a33"/>
   </g>
-  <g filter="url(#softGlow5)">
-    <circle cx="450" cy="198" r="86" fill="none" stroke="#18d2c8" stroke-linecap="round" stroke-linejoin="round" stroke-width="11" opacity="0.82"/><circle cx="450" cy="198" r="28" fill="none" stroke="#18d2c8" stroke-linecap="round" stroke-linejoin="round" stroke-width="11" opacity="0.82"/><path d="M450 62v54M450 280v54M314 198h54M532 198h54M352 100l38 38M510 258l38 38M548 100l-38 38M390 258l-38 38" fill="none" stroke="#18d2c8" stroke-linecap="round" stroke-linejoin="round" stroke-width="11" opacity="0.7"/>
+
+  <g filter="url(#glow-ijme)" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="330" y="92" width="124" height="86" rx="18" fill="rgba(255,177,61,0.08)" stroke="#ffb13d" stroke-width="10"/>
+    <path d="M392 178v58" fill="none" stroke="#ffb13d" stroke-width="12"/>
+    <path d="M392 236l86 64" fill="none" stroke="#ffb13d" stroke-width="12"/>
+    <circle cx="392" cy="236" r="18" fill="none" stroke="#ffb13d" stroke-width="9"/>
+    <circle cx="518" cy="300" r="40" fill="none" stroke="#ffb13d" stroke-width="10"/>
+    <circle cx="518" cy="300" r="13" fill="#ffb13d"/>
+
+    <path d="M332 130h-56M454 130h54M392 92V56M392 178v26" fill="none" stroke="#ffb13d" stroke-width="9" opacity="0.66"/>
+    <circle cx="276" cy="130" r="9" fill="#38d6ff"/>
+    <circle cx="508" cy="130" r="9" fill="#38d6ff"/>
+    <circle cx="392" cy="56" r="9" fill="#38d6ff"/>
+
+    <path d="M588 122v28M588 234v30M518 193h30M628 193h30M538 143l22 22M616 221l22 22M638 143l-22 22M560 221l-22 22" fill="none" stroke="#ffb13d" stroke-width="7" opacity="0.72"/>
+    <circle cx="588" cy="193" r="48" fill="none" stroke="#ffb13d" stroke-width="9" opacity="0.88"/>
+    <circle cx="588" cy="193" r="17" fill="none" stroke="#ffb13d" stroke-width="7" opacity="0.72"/>
+
+    <path d="M280 324h340M318 350h250" fill="none" stroke="#ffb13d" stroke-width="8" opacity="0.5"/>
   </g>
-  <g opacity="0.38" stroke="#18d2c8" stroke-width="2">
-    <path d="M105 322h690"/><path d="M210 350h480"/><path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
+
+  <g opacity="0.32" stroke="#ffb13d" stroke-width="2" fill="none">
+    <path d="M105 322h690"/>
+    <path d="M210 350h480"/>
+    <path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
   </g>
 </svg>

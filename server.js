@@ -8,18 +8,18 @@ const PORT = process.env.PORT || 8080;
 
 
 const MIME_TYPES = {
-  ".html": "text/html",
-  ".css": "text/css",
-  ".js": "text/javascript",
+  ".html": "text/html; charset=utf-8",
+  ".css": "text/css; charset=utf-8",
+  ".js": "text/javascript; charset=utf-8",
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
   ".gif": "image/gif",
   ".svg": "image/svg+xml",
-  ".xml": "application/xml",
-  ".json": "application/json",
+  ".xml": "application/xml; charset=utf-8",
+  ".json": "application/json; charset=utf-8",
   ".ico": "image/x-icon",
-  ".txt": "text/plain",
+  ".txt": "text/plain; charset=utf-8",
 };
 
 function fetchHtml(urlStr, callback) {
@@ -64,7 +64,7 @@ const server = http.createServer((req, res) => {
     const code = parsedUrl.searchParams.get("code");
     const page = parsedUrl.searchParams.get("page");
     if (!code || !page) {
-      res.writeHead(400, { "Content-Type": "application/json" });
+      res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ error: "Missing parameters" }));
       return;
     }
@@ -72,7 +72,7 @@ const server = http.createServer((req, res) => {
     const targetUrl = `https://internationaljournalssrg.org/${code}/archive_details?page=${page}`;
     fetchHtml(targetUrl, (err, html) => {
       if (err) {
-        res.writeHead(500, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ error: err.message }));
         return;
       }
@@ -110,10 +110,10 @@ const server = http.createServer((req, res) => {
             papers.push({ id, section, paperId, title: paperTitle, authors });
           }
         }
-        res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ title, papers }));
       } catch (ex) {
-        res.writeHead(500, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ error: "Failed to parse content: " + ex.message }));
       }
     });
@@ -124,7 +124,7 @@ const server = http.createServer((req, res) => {
     const code = parsedUrl.searchParams.get("code");
     const id = parsedUrl.searchParams.get("id");
     if (!code || !id) {
-      res.writeHead(400, { "Content-Type": "application/json" });
+      res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ error: "Missing parameters" }));
       return;
     }
@@ -132,7 +132,7 @@ const server = http.createServer((req, res) => {
     const targetUrl = `https://internationaljournalssrg.org/${code}/paper-details?Id=${id}`;
     fetchHtml(targetUrl, (err, html) => {
       if (err) {
-        res.writeHead(500, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ error: err.message }));
         return;
       }
@@ -192,10 +192,10 @@ const server = http.createServer((req, res) => {
         const metaMatch = html.match(/<small style="font-size:13px">([\s\S]*?)<\/small>/i);
         const metaText = metaMatch ? metaMatch[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim() : "";
 
-        res.writeHead(200, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+        res.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ title, authors, pdfUrl, citation, abstract, keywords, references: referencesHtml, metaText }));
       } catch (ex) {
-        res.writeHead(500, { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" });
+        res.writeHead(500, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ error: "Failed to parse content: " + ex.message }));
       }
     });

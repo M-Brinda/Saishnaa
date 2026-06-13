@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container-fluid px-md-4">
           <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3 text-white" href="index.html" style="white-space: nowrap;">
             <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto; animation: float 4s ease-in-out infinite;" />
-            <span class="fw-bold fs-5 text-white" style="font-family: Outfit, sans-serif;">Saishnaa</span>
+            <span class="fw-bold fs-5 text-white" style="font-family: Outfit, sans-serif;">Saishnaa Software Solution Limited</span>
           </a>
 
           <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="outline: none; box-shadow: none;">
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="row g-4">
             
             <div class="col-lg-4 mb-4 mb-lg-0 text-start">
-              <h4 class="fw-bold mb-4" style="font-family: Outfit, sans-serif;">Saishnaa IT Solutions</h4>
+              <h4 class="fw-bold mb-4" style="font-family: Outfit, sans-serif;">Saishnaa Software Solution Limited</h4>
               <p class="opacity-75" style="font-size: 0.95rem; line-height: 1.7;">
                 Innovative technology solutions tailored to your business needs. Let's build the future together.
               </p>
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="row align-items-center" style="font-size: 0.9rem;">
             <div class="col-md-6 text-center text-md-start opacity-75 mb-3 mb-md-0">
-              <p class="mb-0">&copy; ${new Date().getFullYear()} Saishnaa IT Solutions. All rights reserved.</p>
+              <p class="mb-0">&copy; ${new Date().getFullYear()} Saishnaa Software Solution Limited. All rights reserved.</p>
             </div>
             <div class="col-md-6 text-center text-md-end d-flex justify-content-center justify-content-md-end gap-3">
               <a href="privacy.html" class="text-white opacity-75 nav-link-hover">Privacy Policy</a>

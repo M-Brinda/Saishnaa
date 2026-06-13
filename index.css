@@ -15,6 +15,9 @@
   --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --success-color: #00cc88;
   --warning-color: #ffcc00;
+  --hero-network-bg:
+    linear-gradient(rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.14)),
+    url("img/soft-abstract-bg.svg");
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(255, 255, 255, 0.2);
@@ -224,6 +227,37 @@ a {
   box-shadow: 0 20px 40px rgba(77, 30, 163, 0.12);
 }
 
+.project-tag {
+  appearance: none;
+  background: rgba(77, 30, 163, 0.1);
+  border: 1px solid rgba(77, 30, 163, 0.28);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(77, 30, 163, 0.08);
+  color: var(--main-color);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  min-height: 32px;
+  padding: 9px 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.project-tag:hover,
+.project-tag:focus-visible,
+.project-tag.active {
+  background: linear-gradient(135deg, var(--main-color), #6a11cb);
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(77, 30, 163, 0.28);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.project-tag:focus-visible {
+  outline: 3px solid rgba(156, 107, 255, 0.32);
+  outline-offset: 2px;
+}
+
 /* Floating Shapes Background */
 .floating-shapes {
   position: absolute;
@@ -308,11 +342,11 @@ a {
 
 /* Hero Section Enhancements from live site */
 .hero {
-  background: linear-gradient(135deg, rgba(181, 157, 230, 0.945), rgba(152, 241, 182, 0.8)), url('img/1.jpg') !important;
+  background: var(--hero-network-bg) !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
-  color: white;
+  color: #1f2452;
   text-align: center;
   padding: 180px 20px;
   position: relative;
@@ -332,15 +366,24 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(206, 232, 255, 0.22));
   z-index: 0;
+}
+
+.hero.text-white,
+.hero .text-white,
+.hero h1,
+.hero p {
+  color: #1f2452 !important;
 }
 
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 20px;
-  text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-shadow: 0 8px 22px rgba(255,255,255,0.85);
   position: relative;
   z-index: 1;
   animation: fadeInDown 0.8s both, pulse 2s infinite 1s;
@@ -350,7 +393,7 @@ a {
   font-size: 1.5rem;
   max-width: 700px;
   margin: 0 auto 30px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-shadow: 0 4px 16px rgba(255,255,255,0.78);
   position: relative;
   z-index: 1;
   animation: fadeInUp 1s 0.3s both;

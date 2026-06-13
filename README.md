@@ -1,16 +1,51 @@
-# React + Vite
+# Saishnaa Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the Saishnaa Software Solution Limited website and academic journals portal.
 
-Currently, two official plugins are available:
+It is not a React/Vite application. The current project is built with plain HTML, CSS, and JavaScript, with a small Node/Vercel API layer for journal archive and paper-detail lookups.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Structure
 
-## React Compiler
+- `index.html` - Main/about page.
+- `index.css` - Shared site styling.
+- `our-services.html`, `training-courses.html`, `our-projects.html`, `pricing.html`, `careers.html`, `contact-us.html` - Company website pages.
+- `journals.html` / `academic-journals.html` - Academic journals listing page.
+- `journal-details.html` - Dynamic journal detail page driven by a `code` query parameter.
+- `archive-details.html` - Issue archive page that loads article lists from the API.
+- `paper-details.html` - Article detail page that loads paper metadata from the API.
+- `js/components.js` - Shared navbar, footer, and newsletter UI injection.
+- `js/chatbot.js` - Floating Sai Assistant chatbot.
+- `js/journal-data.js` - Journal detail database.
+- `js/global-guidelines.js` - Shared publication ethics, author, editor, and reviewer guidelines.
+- `api/archive.js` - Vercel serverless endpoint for issue archive data.
+- `api/paper.js` - Vercel serverless endpoint for paper detail data.
+- `server.js` - Local development server and local API equivalent.
+- `vercel.json` - Vercel clean URL rewrites.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local Development
 
-## Expanding the ESLint configuration
+Start the local server:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+node server.js
+```
+
+Then open:
+
+```text
+http://localhost:8080/
+```
+
+If port `8080` is already in use, the server automatically tries the next port.
+
+## Journal Flow
+
+1. The user opens `journals.html`.
+2. Selecting a journal opens `journal-details.html?code=IJCSE` or another journal code.
+3. `journal-details.html` reads journal information from `js/journal-data.js`.
+4. Archive links open `archive-details.html`, which calls `/api/archive`.
+5. Paper links open `paper-details.html`, which calls `/api/paper`.
+
+## Encoding
+
+Source files should be saved as UTF-8. The local Node server sends UTF-8 charsets for text assets so symbols such as smart quotes, bullets, rupee signs, and registered trademarks render correctly.

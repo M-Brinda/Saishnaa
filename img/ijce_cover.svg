@@ -1,42 +1,53 @@
-<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-ijce_cover.svg desc-ijce_cover.svg">
-  <title id="title-ijce_cover.svg">Civil Engineering topic-oriented journal image</title>
-  <desc id="desc-ijce_cover.svg">Dark technology-style topic image for Civil Engineering journal card.</desc>
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-j4 desc-j4">
+  <title id="title-j4">Civil Engineering journal cover image</title>
+  <desc id="desc-j4">Professional dark subject-specific illustration for Civil Engineering academic journal.</desc>
   <defs>
-    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070611"/>
-      <stop offset="48%" stop-color="#1d2556"/>
-      <stop offset="100%" stop-color="#101827"/>
+    <linearGradient id="bg-j4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1022"/>
+      <stop offset="52%" stop-color="#23345d"/>
+      <stop offset="100%" stop-color="#08101f"/>
     </linearGradient>
-    <radialGradient id="core4" cx="50%" cy="48%" r="48%">
-      <stop offset="0%" stop-color="#ffd34f" stop-opacity="0.45"/>
-      <stop offset="42%" stop-color="#ffd34f" stop-opacity="0.12"/>
+    <radialGradient id="core-j4" cx="50%" cy="44%" r="52%">
+      <stop offset="0%" stop-color="#f2c94c" stop-opacity="0.36"/>
+      <stop offset="46%" stop-color="#f2c94c" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="warm4" cx="14%" cy="72%" r="48%">
-      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.7"/>
+    <radialGradient id="warm-j4" cx="14%" cy="76%" r="46%">
+      <stop offset="0%" stop-color="#ff6b24" stop-opacity="0.58"/>
       <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="mesh4" width="34" height="34" patternUnits="userSpaceOnUse">
-      <path d="M34 0H0V34" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
+    <pattern id="mesh-j4" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#43d4ff" stroke-opacity="0.05" stroke-width="1"/>
     </pattern>
-    <filter id="softGlow4" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="glow-j4" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect width="900" height="400" fill="url(#bg4)"/>
-  <rect width="900" height="400" fill="url(#warm4)" opacity="0.75"/>
-  <rect width="900" height="400" fill="url(#core4)"/>
-  <rect width="900" height="400" fill="url(#mesh4)"/>
-  <path d="M0 316c190-58 296-48 450-12 160 38 278 35 450-32v128H0z" fill="#000000" opacity="0.35"/>
-  <g opacity="0.58">
-    <circle cx="96" cy="260" r="9" fill="#ff5b27"/><circle cx="145" cy="234" r="7" fill="#ff7a33"/><circle cx="222" cy="286" r="4" fill="#1cc8ff"/>
-    <circle cx="690" cy="222" r="7" fill="#ff5b27"/><circle cx="782" cy="286" r="5" fill="#19c7ff"/><circle cx="610" cy="306" r="4" fill="#ff7a33"/>
+  <rect width="900" height="400" fill="url(#bg-j4)"/>
+  <rect width="900" height="400" fill="url(#warm-j4)" opacity="0.72"/>
+  <rect width="900" height="400" fill="url(#core-j4)"/>
+  <rect width="900" height="400" fill="url(#mesh-j4)"/>
+  <path d="M0 314c176-54 304-48 448-12 162 40 280 36 452-32v130H0z" fill="#000000" opacity="0.36"/>
+  <g opacity="0.56">
+    <circle cx="94" cy="258" r="9" fill="#ff5b27"/>
+    <circle cx="144" cy="232" r="7" fill="#ff7a33"/>
+    <circle cx="224" cy="284" r="4" fill="#1cc8ff"/>
+    <circle cx="690" cy="222" r="7" fill="#ff5b27"/>
+    <circle cx="782" cy="286" r="5" fill="#19c7ff"/>
+    <circle cx="610" cy="306" r="4" fill="#ff7a33"/>
   </g>
-  <g filter="url(#softGlow4)">
-    <path d="M250 274h400M298 274V174M602 274V174M298 174c84-88 220-88 304 0M250 222h400" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" opacity="0.82"/><path d="M365 274c34-92 82-144 154-174M535 274c-34-92-82-144-154-174" fill="none" stroke="#ffd34f" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" opacity="0.58"/>
+  <g filter="url(#glow-j4)" stroke-linecap="round" stroke-linejoin="round">
+
+      <path d="M284 264h332M318 264V180M582 264V180M318 180h264" fill="none" stroke="#f2c94c" stroke-width="11" stroke-linecap="round"/>
+      <path d="M326 180c44-70 204-70 248 0M376 180c18-42 130-42 148 0" fill="none" stroke="#f2c94c" stroke-width="7" stroke-linecap="round" opacity="0.76"/>
+      <path d="M344 264l38-84M450 264V180M556 264l-38-84" fill="none" stroke="#f2c94c" stroke-width="6" opacity="0.58"/>
+      <path d="M278 300h344M332 326h236" fill="none" stroke="#f2c94c" stroke-width="8" stroke-linecap="round" opacity="0.52"/>
+    
   </g>
-  <g opacity="0.38" stroke="#ffd34f" stroke-width="2">
-    <path d="M105 322h690"/><path d="M210 350h480"/><path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
+  <g opacity="0.32" stroke="#f2c94c" stroke-width="2" fill="none">
+    <path d="M105 322h690"/>
+    <path d="M210 350h480"/>
+    <path d="M268 322l-58 28M420 322l-70 28M560 322l62 28M696 322l78 28"/>
   </g>
 </svg>

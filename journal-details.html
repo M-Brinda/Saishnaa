@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags (Dynamically updated via JS) -->
-  <title>Journal Details | Saishnaa Software Solutions</title>
+  <title>Journal Details | Saishnaa Software Solution Limited</title>
   <meta name="description" content="Detailed guidelines, scope, and editorial board for SSRG academic journals." />
 
   <!-- CDNs & Web Fonts -->
@@ -846,7 +846,7 @@
               </div>
               <div
                 style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
-                <i id="hero-indexing-icon" class="fas fa-graduation-cap me-2 text-warning"></i> <span id="hero-indexing-val">Scopus Indexed</span>
+                <i id="hero-indexing-icon" class="fas fa-graduation-cap me-2 text-warning"></i> <span id="hero-indexing-val">All Content Indexed</span>
               </div>
             </div>
 
@@ -2180,12 +2180,12 @@
       document.getElementById("hero-freq-val").textContent = freqText;
 
       // Dynamic indexing status assignment
-      const isScopus = code === "IJCSE" || code === "IJECE" || code === "IJEEE" || code === "IJEMS";
+      const premiumApcJournal = code === "IJCSE" || code === "IJECE" || code === "IJEEE" || code === "IJEMS";
       const indexingEl = document.getElementById("hero-indexing-val");
       const indexingIcon = document.getElementById("hero-indexing-icon");
       if (indexingEl && indexingIcon) {
-        indexingEl.textContent = isScopus ? "Scopus Indexed" : "Peer Reviewed";
-        indexingIcon.className = isScopus ? "fas fa-graduation-cap me-2 text-warning" : "fas fa-award me-2 text-warning";
+        indexingEl.textContent = "All Content Indexed";
+        indexingIcon.className = "fas fa-graduation-cap me-2 text-warning";
       }
 
       // Populate Sidebar Journal Info Block
@@ -2444,8 +2444,6 @@
       indexingContainer.innerHTML = "";
 
       const indexList = ["Crossref", "Google Scholar", "Semantic Scholar", "Scilit", "WorldCat", "Turnitin"];
-      if (isScopus) indexList.unshift("Scopus");
-
       indexList.forEach(item => {
         const badge = document.createElement("div");
         badge.className = "badge-card";
@@ -2457,7 +2455,7 @@
       });
 
       // 5. APC & FEES
-      if (isScopus) {
+      if (premiumApcJournal) {
         document.getElementById("apc-international-val").textContent = "$150 USD";
         document.getElementById("paypal-apc-amount").value = 150;
       } else {

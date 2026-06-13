@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Premium Q&A mappings
       if (text.includes("service") || text.includes("what do you do") || text.includes("offer")) {
-        botReply = "Saishnaa Software Solutions provides premium, full-cycle technology consulting. Our key offerings encompass bespoke Enterprise Web Platforms, high-performance Mobile Applications (iOS & Android), custom Artificial Intelligence & Machine Learning deployments, secure Cloud Migration, comprehensive Cybersecurity audits, and pixel-perfect UI/UX engineering. We specialize in building fast, scalable systems.";
+        botReply = "Saishnaa Software Solution Limited provides premium, full-cycle technology consulting. Our key offerings encompass bespoke Enterprise Web Platforms, high-performance Mobile Applications (iOS & Android), custom Artificial Intelligence & Machine Learning deployments, secure Cloud Migration, comprehensive Cybersecurity audits, and pixel-perfect UI/UX engineering. We specialize in building fast, scalable systems.";
         addMessage("bot", botReply);
         setTimeout(() => {
           addMessage("bot", "Would you like me to take you to our full Services catalog? Click below!");
@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const chipsEl = document.getElementById("chatbot-chips-el");
         if (chipsEl) chipsEl.style.display = "none !important";
       } else if (text.includes("hello") || text.includes("hi") || text.includes("hey")) {
-        botReply = "Greetings! Welcome to Saishnaa Software Solutions. I am Sai, your dedicated Technology Consultant. How may I assist you with your digital transformation, custom software architecture, or career goals today?";
+        botReply = "Greetings! Welcome to Saishnaa Software Solution Limited. I am Sai, your dedicated Technology Consultant. How may I assist you with your digital transformation, custom software architecture, or career goals today?";
         addMessage("bot", botReply);
       } else {
         botReply = "Thank you for sharing your message. I have successfully logged your query in our local database. To speak directly with our executive consultants or secure a customized quote, please type 'Book Consultation', email us at saishnaa@gmail.com, or send an instant WhatsApp query to +91 9790155384!";

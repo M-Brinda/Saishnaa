@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- SEO Meta Tags -->
-    <title>Our Portfolio & Innovation Showcases | Saishnaa Software Solutions</title>
-    <meta name="description" content="Discover high-performance web systems, enterprise portals, AI automations, and custom mobile apps developed by Saishnaa Software Solutions." />
+    <title>Our Portfolio & Innovation Showcases | Saishnaa Software Solution Limited</title>
+    <meta name="description" content="Discover high-performance web systems, enterprise portals, AI automations, and custom mobile apps developed by Saishnaa Software Solution Limited." />
     <meta name="keywords" content="Saishnaa portfolio, software projects, React cases, custom apps portfolio" />
     <link rel="canonical" href="https://saishnaa.com/projects" />
     
@@ -150,6 +150,7 @@
 
       const categories = ["All", "AI & ML", "Cloud & Security", "E-commerce & IoT"];
       let activeCategory = "All";
+      let activeTag = null;
 
       const tabsContainer = document.getElementById("project-tabs-container");
       const projectsContainer = document.getElementById("projects-grid-container");
@@ -177,6 +178,7 @@
           btn.textContent = cat;
           btn.addEventListener("click", () => {
             activeCategory = cat;
+            activeTag = null;
             renderTabs();
             renderProjects();
           });
@@ -188,9 +190,11 @@
       function renderProjects() {
         projectsContainer.innerHTML = "";
         
-        const filtered = activeCategory === "All" 
-          ? projectList 
-          : projectList.filter(proj => proj.category === activeCategory);
+        const filtered = projectList.filter(proj => {
+          const categoryMatches = activeCategory === "All" || proj.category === activeCategory;
+          const tagMatches = !activeTag || proj.tags.includes(activeTag);
+          return categoryMatches && tagMatches;
+        });
 
         if (filtered.length === 0) {
           projectsContainer.innerHTML = `
@@ -208,8 +212,9 @@
           
           let tagsHTML = "";
           project.tags.forEach(t => {
+            const isActiveTag = activeTag === t;
             tagsHTML += `
-              <span class="badge" style="background-color: rgba(118, 69, 252, 0.08); color: var(--secondary-color); borderRadius: 20px; fontSize: 0.75rem; fontWeight: 500; padding: 6px 12px; border: 1px solid rgba(118, 69, 252, 0.15);">${t}</span>
+              <button type="button" class="project-tag${isActiveTag ? ' active' : ''}" data-tag="${t}" aria-pressed="${isActiveTag}" title="Show ${t} projects">${t}</button>
             `;
           });
 
@@ -240,6 +245,14 @@
           });
           img.addEventListener("mouseleave", () => {
             img.style.transform = "scale(1)";
+          });
+
+          card.querySelectorAll(".project-tag").forEach(tagButton => {
+            tagButton.addEventListener("click", () => {
+              const tag = tagButton.dataset.tag;
+              activeTag = activeTag === tag ? null : tag;
+              renderProjects();
+            });
           });
 
           projectsContainer.appendChild(card);
