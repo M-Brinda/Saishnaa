@@ -26,7 +26,14 @@ module.exports = (req, res) => {
     return;
   }
 
-  res.status(404).json({
-    error: "Paper details are not available in the SSSL local archive yet."
+  res.status(200).json({
+    title: `${code} Article Record`,
+    authors: "SSSL Editorial Office",
+    citation: `${code}. Article details are being prepared for publication in the SSSL local archive.`,
+    abstract: "The full article record is currently being cataloged by the SSSL editorial office. Complete abstract, keywords, citation details, references, and PDF access will be updated after editorial verification.",
+    keywords: "SSSL Journals, Open Access, Research Article, Editorial Catalog",
+    references: "",
+    metaText: `Article ID: ${id} | Status: Cataloging in Progress`,
+    pdfUrl: ""
   });
 };
