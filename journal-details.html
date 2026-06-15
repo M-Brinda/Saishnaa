@@ -8,7 +8,7 @@
 
   <!-- SEO Meta Tags (Dynamically updated via JS) -->
   <title>Journal Details | Saishnaa Software Solution Limited</title>
-  <meta name="description" content="Detailed guidelines, scope, and editorial board for SSRG academic journals." />
+  <meta name="description" content="Detailed guidelines, scope, and editorial board for SSSL academic journals." />
 
   <!-- CDNs & Web Fonts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -267,22 +267,110 @@
 
     /* Guidelines submission box */
     .submission-box {
-      background: linear-gradient(135deg, #153e68 0%, #0d2847 100%);
-      border-radius: 20px;
-      color: #fff;
-      padding: 35px;
+      align-items: center;
+      background: linear-gradient(135deg, #174d7a 0%, #102e50 100%);
+      border: 0;
+      border-radius: 18px;
+      box-shadow: 0 18px 38px rgba(16, 46, 80, 0.18);
+      display: grid;
+      gap: 34px;
+      grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
       margin-bottom: 35px;
-      box-shadow: 0 10px 30px rgba(13, 40, 71, 0.25);
-      position: relative;
-      overflow: hidden;
+      padding: 34px;
     }
 
-    .submission-box::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 80% 20%, rgba(106, 202, 231, 0.15) 0%, rgba(106, 202, 231, 0) 60%);
-      pointer-events: none;
+    .submission-box p,
+    .submission-box li {
+      text-align: left;
+      hyphens: none;
+    }
+
+    .submission-copy-panel,
+    .submission-email-panel {
+      border-radius: 14px;
+    }
+
+    .submission-copy-panel {
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: flex-start;
+      padding: 0;
+    }
+
+    .submission-copy-panel h5 {
+      color: #ffc107;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      line-height: 1.25;
+    }
+
+    .submission-copy-panel p {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.55;
+      margin: 0;
+      max-width: 360px;
+    }
+
+    .submission-icon-badge {
+      align-items: center;
+      background: transparent;
+      border-radius: 0;
+      color: #ffc107;
+      display: inline-flex;
+      font-size: 1.45rem;
+      height: auto;
+      justify-content: center;
+      width: auto;
+    }
+
+    .submission-email-panel {
+      align-items: flex-start;
+      background: transparent;
+      border: 0;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+      min-width: 0;
+      padding: 0;
+    }
+
+    .submission-email-label {
+      display: none;
+    }
+
+    .submission-email-value {
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0;
+      overflow-wrap: anywhere;
+      text-align: left;
+    }
+
+    .submission-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 991px) {
+      .submission-box {
+        gap: 24px;
+        grid-template-columns: 1fr;
+      }
+
+      .submission-copy-panel p {
+        max-width: none;
+      }
     }
 
     .guideline-item {
@@ -392,58 +480,72 @@
       color: #153e68;
     }
 
-    /* Editorial timeline step formatting */
+    /* Editorial workflow form cards */
     .editorial-timeline {
-      position: relative;
-      padding-left: 30px;
-      margin-top: 20px;
-    }
-
-    .editorial-timeline::before {
-      content: '';
-      position: absolute;
-      left: 9px;
-      top: 5px;
-      bottom: 5px;
-      width: 2px;
-      background: rgba(77, 30, 163, 0.15);
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
     }
 
     .timeline-step {
-      position: relative;
-      margin-bottom: 25px;
+      display: flex;
+      gap: 11px;
+      padding: 11px 13px;
+      border: 1px solid rgba(77, 30, 163, 0.1);
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ffffff 0%, #fbfaff 100%);
+      box-shadow: 0 3px 10px rgba(77, 30, 163, 0.035);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .timeline-step::before {
-      content: attr(data-step);
-      position: absolute;
-      left: -30px;
-      top: 2px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--main-color), #7645fc);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      display: flex;
+    .timeline-step:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 7px 16px rgba(77, 30, 163, 0.07);
+      border-color: rgba(77, 30, 163, 0.2);
+    }
+
+    .timeline-step-badge {
       align-items: center;
+      background: linear-gradient(135deg, var(--main-color), #7645fc);
+      border-radius: 14px;
+      color: #fff;
+      display: inline-flex;
+      flex: 0 0 30px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      height: 30px;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(77, 30, 163, 0.2);
+      box-shadow: 0 4px 10px rgba(77, 30, 163, 0.18);
+      width: 30px;
+    }
+
+    .timeline-step-body {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .timeline-step-label {
+      color: var(--main-color);
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+      text-transform: uppercase;
     }
 
     .timeline-step-title {
       font-family: 'Outfit', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.86rem;
       color: #1a1a2e;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .timeline-step-desc {
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       color: #555;
-      line-height: 1.5;
+      line-height: 1.42;
     }
 
     /* Paper card styling for current issue */
@@ -560,6 +662,10 @@
       #right-widgets-sidebar {
         margin-top: 30px;
       }
+
+      .timeline-step {
+        padding: 10px 11px;
+      }
     }
 
     /* Right Sidebar Widgets & Ring Chart */
@@ -672,28 +778,28 @@
                   Submissions</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#privacy-statement"
                   onclick="setActiveTab('privacy-statement')"><i class="fas fa-user-shield me-2 text-primary"></i>
-                  Privacy Statement</a></li>
+                  Privacy and Data Use Statement</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#open-access"
-                  onclick="setActiveTab('open-access')"><i class="fas fa-lock-open me-2 text-primary"></i> Open Access
-                  Policy</a></li>
+                  onclick="setActiveTab('open-access')"><i class="fas fa-lock-open me-2 text-primary"></i> Open Access,
+                  Licensing and Copyright</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#conflicts-interest"
                   onclick="setActiveTab('conflicts-interest')"><i class="fas fa-handshake-slash me-2 text-primary"></i>
-                  Conflicts of Interest</a></li>
+                  Conflict of Interest Disclosure</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#corrections-retraction"
                   onclick="setActiveTab('corrections-retraction')"><i class="fas fa-tools me-2 text-primary"></i>
-                  Corrections and Retraction</a></li>
+                  Corrections and Retractions</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#plagiarism-policy"
                   onclick="setActiveTab('plagiarism-policy')"><i class="fas fa-copy me-2 text-primary"></i> Plagiarism
-                  Policy</a></li>
+                  Screening Policy</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#misconduct-sanctions"
                   onclick="setActiveTab('misconduct-sanctions')"><i
-                    class="fas fa-exclamation-triangle me-2 text-primary"></i> Misconduct and Sanctions</a></li>
+                    class="fas fa-exclamation-triangle me-2 text-primary"></i> Research Misconduct and Sanctions</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#publication-ethics"
                   onclick="setActiveTab('publication-ethics')"><i class="fas fa-balance-scale me-2 text-primary"></i>
-                  Publication Ethics</a></li>
+                  Publication Ethics and Integrity</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#digital-preservation"
                   onclick="setActiveTab('digital-preservation')"><i class="fas fa-server me-2 text-primary"></i> Digital
-                  Preservation</a></li>
+                  Preservation and Archiving</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -736,12 +842,12 @@
                   Guidelines for Editors</a></li>
               <li><a class="dropdown-item py-2 px-3 fw-medium text-dark" href="#guidelines-reviewer"
                   onclick="setActiveTab('guidelines-reviewer')"><i class="fas fa-user-check me-2 text-primary"></i>
-                  Guidelines for Reviewer</a></li>
+                  Guidelines for Reviewers</a></li>
             </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#announcements"
-              onclick="setActiveTab('announcements')">Announcements</a>
+              onclick="setActiveTab('announcements')">Journal Announcements</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white d-none" href="#apc-payment" onclick="setActiveTab('apc-payment')">Contact Us</a>
@@ -815,7 +921,7 @@
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mb-2">
               <span class="badge text-dark fw-bold px-3 py-2 rounded-5" id="hero-category-badge"
                 style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #ffe25d, #ffc928) !important; box-shadow: 0 7px 18px rgba(255,209,64,0.25); min-width: 220px;">
-                <i class="fas fa-users me-1"></i> Peer Reviewed Journal
+                <i class="fas fa-users me-1"></i> Peer-Reviewed Journal
               </span>
               <span class="badge text-white fw-bold px-3 py-2 rounded-5" id="hero-pub-model-badge"
                 style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #0fc7ca, #0aa7b7) !important; box-shadow: 0 7px 18px rgba(0,173,181,0.22); min-width: 160px;">
@@ -838,15 +944,15 @@
             <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mb-4">
               <div
                 style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
-                <i class="fas fa-brain me-2 text-warning"></i> Online ISSN: <span id="hero-issn-val">Waiting For Approved</span>
+                <i class="fas fa-brain me-2 text-warning"></i> Online ISSN: <span id="hero-issn-val">Pending Approval</span>
               </div>
               <div
                 style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
-                <i class="fas fa-calendar-alt me-2 text-warning"></i> Frequency: <span id="hero-freq-val">12 Issue per Year</span>
+                <i class="fas fa-calendar-alt me-2 text-warning"></i> Frequency: <span id="hero-freq-val">12 Issues per Year</span>
               </div>
               <div
                 style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
-                <i id="hero-indexing-icon" class="fas fa-graduation-cap me-2 text-warning"></i> <span id="hero-indexing-val">All Content Indexed</span>
+                <i id="hero-indexing-icon" class="fas fa-graduation-cap me-2 text-warning"></i> <span id="hero-indexing-val">Indexed Open-Access Content</span>
               </div>
             </div>
 
@@ -856,7 +962,7 @@
                 style="font-size: clamp(0.96rem, 1.7vw, 1.12rem); transition: all 0.3s; padding: 16px 42px; background: linear-gradient(135deg, #ffe25d, #ffc928); border-color: #ffd140; box-shadow: 0 12px 24px rgba(255,209,64,0.24);" onmouseover="this.style.transform='translateY(-2px)';"
                 onmouseout="this.style.transform='translateY(0)';"
                 onclick="setTimeout(() => { document.querySelector('[data-tab=&quot;paper-submission&quot;]').click(); }, 100);">
-                <i class="fas fa-paper-plane me-2"></i>Submit your manuscripts
+                <i class="fas fa-paper-plane me-2"></i>Submit Your Manuscript
               </a>
             </div>
           </div>
@@ -936,58 +1042,58 @@
               </li>
               <li class="sidebar-item" data-tab="privacy-statement">
                 <a href="#privacy-statement">
-                  <i class="fas fa-user-shield"></i> Privacy Statement
+                  <i class="fas fa-user-shield"></i> Privacy and Data Use Statement
                 </a>
               </li>
               <li class="sidebar-item" data-tab="open-access">
                 <a href="#open-access">
-                  <i class="fas fa-lock-open"></i> Open Access Policy
+                  <i class="fas fa-lock-open"></i> Open Access, Licensing and Copyright
                 </a>
               </li>
               <li class="sidebar-item" data-tab="conflicts-interest">
                 <a href="#conflicts-interest">
-                  <i class="fas fa-handshake-slash"></i> Conflicts of Interest
+                  <i class="fas fa-handshake-slash"></i> Conflict of Interest Disclosure
                 </a>
               </li>
               <li class="sidebar-item" data-tab="corrections-retraction">
                 <a href="#corrections-retraction">
-                  <i class="fas fa-tools"></i> Corrections & Retraction
+                  <i class="fas fa-tools"></i> Corrections and Retractions
                 </a>
               </li>
               <li class="sidebar-item" data-tab="plagiarism-policy">
                 <a href="#plagiarism-policy">
-                  <i class="fas fa-copy"></i> Plagiarism Policy
+                  <i class="fas fa-copy"></i> Plagiarism Screening Policy
                 </a>
               </li>
               <li class="sidebar-item" data-tab="misconduct-sanctions">
                 <a href="#misconduct-sanctions">
-                  <i class="fas fa-exclamation-triangle"></i> Misconduct & Sanctions
+                  <i class="fas fa-exclamation-triangle"></i> Research Misconduct and Sanctions
                 </a>
               </li>
               <li class="sidebar-item" data-tab="publication-ethics">
                 <a href="#publication-ethics">
-                  <i class="fas fa-balance-scale"></i> Publication Ethics
+                  <i class="fas fa-balance-scale"></i> Publication Ethics and Integrity
                 </a>
               </li>
               <li class="sidebar-item" data-tab="digital-preservation">
                 <a href="#digital-preservation">
-                  <i class="fas fa-server"></i> Digital Preservation
+                  <i class="fas fa-server"></i> Digital Preservation and Archiving
                 </a>
               </li>
               <li class="sidebar-item" data-tab="announcements">
                 <a href="#announcements">
-                  <i class="fas fa-bullhorn"></i> Announcements
+                  <i class="fas fa-bullhorn"></i> Journal Announcements
                 </a>
               </li>
 
               <li class="sidebar-item border-top mt-2 pt-2">
                 <a href="#" id="sidebar-copyright-btn" download>
-                  <i class="fas fa-file-signature"></i> Copyright template
+                  <i class="fas fa-file-signature"></i> Copyright Agreement
                 </a>
               </li>
               <li class="sidebar-item">
                 <a href="#" id="sidebar-paper-btn" download>
-                  <i class="fas fa-file-word"></i> Paper template
+                  <i class="fas fa-file-word"></i> Manuscript Template
                 </a>
               </li>
               <li class="mt-3 pt-2 border-top">
@@ -1112,18 +1218,20 @@
             </h3>
 
             <!-- submission instructions email callout -->
-            <div
-              class="submission-box d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4">
-              <div>
-                <h5 class="fw-bold mb-2 text-warning"><i class="fas fa-paper-plane me-2"></i>Submit Your Paper</h5>
-                <p class="mb-0 opacity-90 small lh-base" style="max-width: 500px;">
-                  Send your manuscript as a Microsoft Word attachment (.doc or .docx) directly to the submission mail
-                  box. Please ensure you add this address to your contacts to ensure smooth communication.
+            <div class="submission-box">
+              <div class="submission-copy-panel">
+                <div class="d-flex align-items-center gap-3">
+                  <span class="submission-icon-badge"><i class="fas fa-paper-plane"></i></span>
+                  <h5 class="fw-bold mb-0">Submit Your Paper</h5>
+                </div>
+                <p>
+                  Authors should submit manuscripts as Microsoft Word attachments in .doc or .docx format to the official journal submission mailbox. Please add the submission email address to your contacts to support smooth editorial communication throughout submission, review, and publication.
                 </p>
               </div>
-              <div class="text-md-end flex-shrink-0">
-                <div class="fw-bold fs-5 mb-2" id="submission-email-text">email@address.org</div>
-                <div class="d-flex gap-2 justify-content-md-end">
+              <div class="submission-email-panel">
+                <div class="submission-email-label">Official Submission Email</div>
+                <div class="submission-email-value" id="submission-email-text">email@address.org</div>
+                <div class="submission-actions">
                   <button class="btn btn-warning fw-bold px-3 py-2 rounded-5 text-dark" id="btn-submit-mail"
                     style="font-size:0.85rem;">
                     <i class="fas fa-envelope me-1"></i> Send Email
@@ -1148,8 +1256,8 @@
             <div>
               <h5 class="fw-bold mb-3 text-secondary" style="font-family:'Outfit',sans-serif;">Templates & Agreement
                 Forms</h5>
-              <p class="text-muted small mb-4">Please download the required manuscript format and copyright agreement.
-                These forms must be completed and submitted along with your paper.</p>
+              <p class="text-muted small mb-4">Authors are requested to download the required manuscript template and copyright agreement form. 
+                The completed forms must be submitted along with the manuscript during the submission process.</p>
 
               <div class="download-card">
                 <div class="d-flex align-items-center gap-3">
@@ -1281,7 +1389,7 @@
           <!-- 8. PUBLICATION ETHICS -->
           <div class="content-card" id="tab-publication-ethics">
             <h3 class="section-heading-inner">
-              <i class="fas fa-balance-scale text-primary"></i> Publication Ethics
+              <i class="fas fa-balance-scale text-primary"></i> Publication Ethics and Integrity
             </h3>
             <p class="text-muted mb-4" id="publication-ethics-intro">Ethical standards exist to ensure high-quality
               scientific publications, public
@@ -1312,20 +1420,21 @@
             <h3 class="section-heading-inner">
               <i class="fas fa-user-edit text-primary"></i> Guidelines for Editors
             </h3>
-            <p class="text-muted mb-4">The core 11-step editorial office workflow outlining paper review assignments,
-              EIC evaluations, and AI confidentiality guidelines.</p>
+            <p class="text-muted mb-4">An 11-step editorial workflow covering manuscript assignment, Editor-in-Chief
+              assessment, reviewer coordination, decisions, and AI confidentiality requirements.</p>
             <div class="editorial-timeline" id="editorsWorkflowTimeline">
               <!-- Injected via JS -->
             </div>
           </div>
 
-          <!-- 11. GUIDELINES FOR REVIEWER -->
+          <!-- 11. GUIDELINES FOR REVIEWERS -->
           <div class="content-card" id="tab-guidelines-reviewer">
             <h3 class="section-heading-inner">
-              <i class="fas fa-user-check text-primary"></i> Guidelines for Reviewer
+              <i class="fas fa-user-check text-primary"></i> Guidelines for Reviewers
             </h3>
-            <p class="text-muted mb-4">Detailed technical guide for invited peer-reviewers. Learn how to skim-read, spot
-              major flaws, write section reviews, and format final recommendations.</p>
+            <p class="text-muted mb-4">Professional guidance for invited peer reviewers, covering initial assessment,
+              major flaw detection, section-by-section review, report structure, recommendations, and confidentiality
+              expectations.</p>
             <div class="accordion" id="reviewersGuidelinesAccordion">
               <!-- Injected via JS -->
             </div>
@@ -1378,9 +1487,8 @@
                     </li>
                   </ul>
                   <div class="d-grid mt-4">
-                    <a href="https://internationaljournalssrg.org/IJCSE/sbi-i-collect.html" id="sbi-collect-btn"
-                      target="_blank" class="btn btn-purple py-3 rounded-5 fw-bold fs-6">
-                      <i class="fas fa-external-link-alt me-2"></i> Pay via State Bank Collect Portal
+                    <a href="contact-us.html" id="sbi-collect-btn" class="btn btn-purple py-3 rounded-5 fw-bold fs-6">
+                      <i class="fas fa-envelope me-2"></i> Request Official Payment Details
                     </a>
                   </div>
                 </div>
@@ -1450,7 +1558,7 @@
           <!-- 13. PRIVACY STATEMENT -->
           <div class="content-card" id="tab-privacy-statement">
             <h3 class="section-heading-inner">
-              <i class="fas fa-user-shield text-primary"></i> Privacy Statement
+              <i class="fas fa-user-shield text-primary"></i> Privacy and Data Use Statement
             </h3>
             <div id="privacy-statement-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1460,7 +1568,7 @@
           <!-- 14. OPEN ACCESS POLICY -->
           <div class="content-card" id="tab-open-access">
             <h3 class="section-heading-inner">
-              <i class="fas fa-lock-open text-primary"></i> Open Access Policy, Licensing and Copyright
+              <i class="fas fa-lock-open text-primary"></i> Open Access, Licensing and Copyright
             </h3>
             <div id="open-access-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1470,7 +1578,7 @@
           <!-- 15. CONFLICTS OF INTEREST -->
           <div class="content-card" id="tab-conflicts-interest">
             <h3 class="section-heading-inner">
-              <i class="fas fa-handshake-slash text-primary"></i> Conflicts of Interest
+              <i class="fas fa-handshake-slash text-primary"></i> Conflict of Interest Disclosure
             </h3>
             <div id="conflicts-interest-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1480,7 +1588,7 @@
           <!-- 16. CORRECTIONS & RETRACTION -->
           <div class="content-card" id="tab-corrections-retraction">
             <h3 class="section-heading-inner">
-              <i class="fas fa-tools text-primary"></i> Corrections and Retraction
+              <i class="fas fa-tools text-primary"></i> Corrections and Retractions
             </h3>
             <div id="corrections-retraction-content" class="lh-lg text-justify"
               style="color: #444; font-size: 0.95rem;">
@@ -1491,7 +1599,7 @@
           <!-- 17. PLAGIARISM POLICY -->
           <div class="content-card" id="tab-plagiarism-policy">
             <h3 class="section-heading-inner">
-              <i class="fas fa-copy text-primary"></i> Plagiarism Policy
+              <i class="fas fa-copy text-primary"></i> Plagiarism Screening Policy
             </h3>
             <div id="plagiarism-policy-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1501,7 +1609,7 @@
           <!-- 18. MISCONDUCT & SANCTIONS -->
           <div class="content-card" id="tab-misconduct-sanctions">
             <h3 class="section-heading-inner">
-              <i class="fas fa-exclamation-triangle text-primary"></i> Misconduct and Sanctions
+              <i class="fas fa-exclamation-triangle text-primary"></i> Research Misconduct and Sanctions
             </h3>
             <div id="misconduct-sanctions-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1511,7 +1619,7 @@
           <!-- 19. DIGITAL PRESERVATION -->
           <div class="content-card" id="tab-digital-preservation">
             <h3 class="section-heading-inner">
-              <i class="fas fa-server text-primary"></i> Digital Preservation
+              <i class="fas fa-server text-primary"></i> Digital Preservation and Archiving
             </h3>
             <div id="digital-preservation-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1521,7 +1629,7 @@
           <!-- 20. ANNOUNCEMENTS -->
           <div class="content-card" id="tab-announcements">
             <h3 class="section-heading-inner">
-              <i class="fas fa-bullhorn text-primary"></i> Announcements
+              <i class="fas fa-bullhorn text-primary"></i> Journal Announcements
             </h3>
             <div id="announcements-content" class="lh-lg text-justify" style="color: #444; font-size: 0.95rem;">
               <!-- Injected via JS -->
@@ -1587,12 +1695,6 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="py-2 fw-semibold">2025</td>
-                      <td class="py-2" id="metrics-rec-2025">35</td>
-                      <td class="py-2" id="metrics-pub-2025">12</td>
-                      <td class="py-2 fw-bold text-success" id="metrics-rate-2025">34%</td>
-                    </tr>
                     <tr class="table-light">
                       <td class="py-2 fw-semibold">2026</td>
                       <td class="py-2" id="metrics-rec-2026">10</td>
@@ -1962,67 +2064,67 @@
       "IJCSE": {
         tagline: "Advancing Innovation in Computing",
         domain: "Technical",
-        bannerImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJECE": {
         tagline: "Bridging Worlds through Advanced Communication",
         domain: "Electronics & Communication",
-        bannerImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJEEE": {
         tagline: "Powering the Future with Electrical Ingenuity",
         domain: "Electrical & Electronics",
-        bannerImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJCE": {
         tagline: "Constructing Sustainable Infrastructures",
         domain: "Civil Engineering",
-        bannerImage: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJME": {
         tagline: "Engineering Motion, Force, and Robotics",
         domain: "Mechanical Engineering",
-        bannerImage: "https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJAES": {
         tagline: "Sustainable Science for Global Growth",
         domain: "Agriculture & Environment",
-        bannerImage: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJMS": {
         tagline: "Pioneering Insights in Medical & Health Sciences",
         domain: "Medical & Health Science",
-        bannerImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJEMS": {
         tagline: "Analyzing Economic Forces & Strategic Management",
         domain: "Economics & Management",
-        bannerImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJAP": {
         tagline: "Deciphering the Laws of Matter and Energy",
         domain: "Applied Physics",
-        bannerImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJHSS": {
         tagline: "Exploring Human Culture, Behavior, and Society",
         domain: "Humanities & Social Science",
-        bannerImage: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJAC": {
         tagline: "Synthesizing Innovation through Molecular Chemistry",
         domain: "Applied Chemistry",
-        bannerImage: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "IJIP": {
         tagline: "Fostering Creative Minds & Multidisciplinary Ideas",
         domain: "Multidisciplinary",
-        bannerImage: "https://images.unsplash.com/photo-1456428746267-a1756408f782?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       },
       "ML": {
         tagline: "Unleashing the Potential of Intelligent Systems & IoT",
         domain: "Machine Learning & IoT",
-        bannerImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80"
+        bannerImage: ""
       }
     };
 
@@ -2042,7 +2144,6 @@
             authors: "S.M. Mustafa Nawaz, K. Maharajan",
             section: "Research Article",
             externalId: "83",
-            pdfUrl: "https://jiml-iea.com/index.php/ml/article/view/83/24"
           },
           {
             id: "ML-V2I2P102",
@@ -2050,7 +2151,6 @@
             authors: "K. B. Manikandan, T Narasimha Rao, Velpula Nagi Reddy",
             section: "Research Article",
             externalId: "84",
-            pdfUrl: "https://jiml-iea.com/index.php/ml/article/view/84/26"
           },
           {
             id: "ML-V2I2P103",
@@ -2058,7 +2158,6 @@
             authors: "A. Jayanthi, Vidhya V, Aravindh Raj B R, S. Karthika",
             section: "Research Article",
             externalId: "85",
-            pdfUrl: "https://jiml-iea.com/index.php/ml/article/view/85/27"
           },
           {
             id: "ML-V2I2P104",
@@ -2066,7 +2165,6 @@
             authors: "S. Sageengrana, Maharajan M S, D. Devi",
             section: "Research Article",
             externalId: "86",
-            pdfUrl: "https://jiml-iea.com/index.php/ml/article/view/86/28"
           },
           {
             id: "ML-V2I2P105",
@@ -2074,7 +2172,6 @@
             authors: "N. Yuvaraj, D. Udaya Suriya Rajkumar",
             section: "Research Article",
             externalId: "87",
-            pdfUrl: "https://jiml-iea.com/index.php/ml/article/view/87/29"
           },
           {
             id: "ML-V2I2P106",
@@ -2082,7 +2179,6 @@
             authors: "S. Prasath, K. S. Mohanasathiya, V. K. Narendira Kumar",
             section: "Research Article",
             externalId: "88",
-            pdfUrl: "https://jiml-iea.com/index.php/ml/article/view/88/30"
           }
         ];
       }
@@ -2172,11 +2268,11 @@
         domain: "Academic Research"
       };
 
-      const issnText = currentJournal.issn === "Waiting For Approved" ? "Pending" : currentJournal.issn;
+      const issnText = currentJournal.issn === "Pending Approval" ? "Pending Approval" : currentJournal.issn;
       document.getElementById("hero-issn-val").textContent = issnText;
       
       // Dynamic frequency assignment based on currentJournal database value
-      const freqText = currentJournal.frequency || "12 Issue per Year";
+      const freqText = currentJournal.frequency || "12 Issues per Year";
       document.getElementById("hero-freq-val").textContent = freqText;
 
       // Dynamic indexing status assignment
@@ -2184,22 +2280,22 @@
       const indexingEl = document.getElementById("hero-indexing-val");
       const indexingIcon = document.getElementById("hero-indexing-icon");
       if (indexingEl && indexingIcon) {
-        indexingEl.textContent = "All Content Indexed";
+        indexingEl.textContent = "Indexed Open-Access Content";
         indexingIcon.className = "fas fa-graduation-cap me-2 text-warning";
       }
 
       // Populate Sidebar Journal Info Block
       const info = currentJournal.info || {
-        publisher: currentJournal.publisher || "Seventh Sense Research Group®",
+        publisher: currentJournal.publisher || "Saishnaa Software Solution Limited",
         country: "India",
         language: "English",
-        firstYear: "2014",
+        firstYear: "2026",
         access: "Open Access",
         format: "Online",
-        responsiblePerson: "SSRG Editorial Panel",
+        responsiblePerson: "SSSL Editorial Panel",
         email: currentJournal.email,
         mobile: "N/A",
-        address: "Seventh Sense Research Group, India"
+        address: "Saishnaa Software Solution Limited, India"
       };
 
       document.getElementById("info-publisher").textContent = info.publisher;
@@ -2222,10 +2318,10 @@
           return res.text();
         })
         .then(svgText => {
-          const issnVal = currentJournal.issn || "Waiting For Approved";
+          const issnVal = currentJournal.issn || "Pending Approval";
           
           let metaText = "";
-          if (issnVal && issnVal !== "Waiting For Approved") {
+          if (issnVal && issnVal !== "Pending Approval") {
             metaText = `ISSN: ${issnVal}`;
           }
           
@@ -2293,7 +2389,7 @@
         { val: "30 Days", lbl: "Acceptance after Review", icon: "fa-check-double text-warning" },
         { val: "30 Days", lbl: "Publication after Acceptance", icon: "fa-upload text-info" },
         { val: currentJournal.frequency, lbl: "Publication Frequency", icon: "fa-calendar-alt text-purple" },
-        { val: currentJournal.issn === "Waiting For Approved" ? "Pending" : currentJournal.issn, lbl: "E-ISSN Number", icon: "fa-fingerprint text-danger" },
+        { val: currentJournal.issn === "Pending Approval" ? "Pending Approval" : currentJournal.issn, lbl: "E-ISSN Number", icon: "fa-fingerprint text-danger" },
         { val: currentJournal.category, lbl: "Journal Subjects", icon: "fa-book text-secondary" },
         { val: currentJournal.metrics.acceptanceRate || "20%", lbl: "Acceptance Rate", icon: "fa-chart-pie text-success" }
       ];
@@ -2319,17 +2415,11 @@
         document.getElementById("cfp-vol-val").textContent = "2";
         document.getElementById("cfp-issue-val").textContent = "2";
         document.getElementById("cfp-date-val").textContent = "December 2026";
-        document.getElementById("metrics-rec-2025").textContent = "35";
-        document.getElementById("metrics-pub-2025").textContent = "12";
-        document.getElementById("metrics-rate-2025").textContent = "34%";
         document.getElementById("metrics-rec-2026").textContent = "10";
       } else {
         document.getElementById("cfp-vol-val").textContent = "13";
         document.getElementById("cfp-issue-val").textContent = "5";
         document.getElementById("cfp-date-val").textContent = "December 2026";
-        document.getElementById("metrics-rec-2025").textContent = "120";
-        document.getElementById("metrics-pub-2025").textContent = "24";
-        document.getElementById("metrics-rate-2025").textContent = currentJournal.metrics.acceptanceRate || "20%";
         document.getElementById("metrics-rec-2026").textContent = "45";
       }
 
@@ -2404,13 +2494,20 @@
       document.getElementById("submission-email-text").textContent = currentJournal.email;
 
       const guidelines = [
-        "Important Items when submitting a manuscript: Submissions by anyone other than one of the authors will not be accepted. The submitting author takes responsibility for the paper during submission and peer review.",
-        "Manuscripts submitted to this journal will be deemed as they have not been published and are not under consideration for publication elsewhere.",
-        "Submit your paper in Microsoft Word format (.doc or .docx) directly as an email attachment.",
-        "Submitting the paper in multiple journals is an offence. Please do not submit the same paper to more than one journal.",
-        "Once the paper is accepted, it cannot be withdrawn at any cost.",
-        "Please strictly follow publication ethics, regulation and avoid plagiarism or copied materials.",
-        "Strictly follow the official SSSL Journals Paper Template when preparing your final manuscript."
+        "Authors are advised to carefully read and follow the manuscript preparation guidelines before submitting their paper to SSSL Journals.",
+
+        "Submissions will be accepted only when submitted by one of the authors of the manuscript. The submitting author is fully responsible for the paper throughout the submission, review, and publication process.",
+        "All manuscripts submitted to the journal are considered original works. The submitted manuscript must not have been previously published and must not be under consideration for publication elsewhere.",
+
+        "Authors should submit their manuscript in Microsoft Word format (.doc or .docx) as an email attachment to the official submission mailbox.",
+
+        "Submitting the same manuscript to more than one journal at the same time is considered a serious publication ethics violation. Authors are strictly requested not to submit the same paper to multiple journals.",
+
+        "Once a manuscript is accepted for publication, withdrawal of the paper will not be permitted under any circumstances.",
+
+        "Authors must strictly follow publication ethics, journal regulations, and academic integrity standards. Manuscripts should be free from plagiarism, copied content, or any unethical publication practices.",
+
+        "The final manuscript must be prepared strictly according to the official SSSL Journals Paper Template before publication.",
       ];
 
       const guidelinesContainer = document.getElementById("preparation-guidelines-list");
@@ -2426,8 +2523,8 @@
       });
 
       // Set downloads URLs
-      const paperUrl = `https://internationaljournalssrg.org/public/assets/images/${currentJournal.code}/${currentJournal.code}_paper.doc`;
-      const copyrightUrl = `https://internationaljournalssrg.org/public/assets/images/${currentJournal.code}/${currentJournal.code}_copyright.docx`;
+      const paperUrl = `templates/${currentJournal.code}_paper.doc`;
+      const copyrightUrl = `templates/${currentJournal.code}_copyright.docx`;
 
       document.getElementById("template-paper-btn").href = paperUrl;
       document.getElementById("template-copyright-btn").href = copyrightUrl;
@@ -2476,9 +2573,9 @@
         pCard.className = "paper-card";
 
         const hrefLink = p.pdfUrl || `paper-details.html?code=${currentJournal.code}&id=${p.externalId}`;
-        const targetAttr = p.pdfUrl ? 'target="_blank"' : '';
-        const linkText = p.pdfUrl ? 'View PDF' : 'View Details';
-        const iconType = p.pdfUrl ? 'fa-file-pdf text-danger' : 'fa-file-alt text-primary';
+        const targetAttr = "";
+        const linkText = "View Details";
+        const iconType = "fa-file-alt text-primary";
 
         pCard.innerHTML = `
             <div class="paper-title">${p.title}</div>
@@ -2487,7 +2584,7 @@
               <span class="badge bg-light text-dark border px-3 py-2 rounded-5 fw-bold" style="font-size:0.75rem;"><i class="fas ${iconType} me-1"></i> ${p.section}</span>
               <span class="small text-muted fw-semibold">${p.id}</span>
               <a href="${hrefLink}" ${targetAttr} class="btn btn-purple py-2 px-4 rounded-5" style="font-size:0.78rem;">
-                <i class="fas ${p.pdfUrl ? 'fa-file-pdf' : 'fa-file-alt'} me-1"></i> ${linkText}
+                <i class="fas fa-file-alt me-1"></i> ${linkText}
               </a>
             </div>
           `;
@@ -2496,17 +2593,11 @@
         scopeIssueContainer.appendChild(pCard);
       });
 
-      // 7. ARCHIVES (Volumes 13 to 7)
+      // 7. ARCHIVES (starting from 2026)
       const archivesContainer = document.getElementById("archivesAccordion");
       archivesContainer.innerHTML = "";
       const years = [
-        { year: "2026", vol: 13, maxIssue: 5 },
-        { year: "2025", vol: 12, maxIssue: 12 },
-        { year: "2024", vol: 11, maxIssue: 12 },
-        { year: "2023", vol: 10, maxIssue: 12 },
-        { year: "2022", vol: 9, maxIssue: 12 },
-        { year: "2021", vol: 8, maxIssue: 12 },
-        { year: "2020", vol: 7, maxIssue: 12 }
+        { year: "2026", vol: 1, maxIssue: 5 }
       ];
 
       years.forEach((y, idx) => {
@@ -2588,15 +2679,18 @@
       globalGuidelinesData.editorialWorkflow.forEach(item => {
         const stepDiv = document.createElement("div");
         stepDiv.className = "timeline-step";
-        stepDiv.setAttribute("data-step", item.step);
         stepDiv.innerHTML = `
+          <div class="timeline-step-badge">${item.step}</div>
+          <div class="timeline-step-body">
+            <div class="timeline-step-label">Editorial workflow step</div>
             <div class="timeline-step-title">${item.title}</div>
             <div class="timeline-step-desc">${item.description}</div>
+          </div>
           `;
         editorsTimelineContainer.appendChild(stepDiv);
       });
 
-      // 11. GUIDELINES FOR REVIEWER
+      // 11. GUIDELINES FOR REVIEWERS
       const reviewerGuidelinesContainer = document.getElementById("reviewersGuidelinesAccordion");
       reviewerGuidelinesContainer.innerHTML = "";
       globalGuidelinesData.reviewerGuidelines.forEach((item, idx) => {
@@ -2618,7 +2712,7 @@
       });
 
       // 12. MODE OF PAYMENT FOR APC
-      document.getElementById("sbi-collect-btn").href = `https://internationaljournalssrg.org/${currentJournal.code}/sbi-i-collect.html`;
+      document.getElementById("sbi-collect-btn").href = `contact-us.html`;
 
       // PayPal checkout simulation
       const payBtn = document.getElementById("paypal-sim-checkout-btn");
@@ -2647,39 +2741,39 @@
       const journalTitle = currentJournal.title;
       const journalEmail = currentJournal.email;
 
-      // Privacy Statement
-      const privacyText = policies.privacyStatement || `The names and email addresses entered in this journal site will be used exclusively for the stated purposes of this journal and will not be made available for any other purpose or to any other party.`;
+      // Privacy and Data Use Statement
+      const privacyText = policies.privacyStatement || `Names, email addresses, and other contact details submitted through this journal portal are used only for editorial communication, manuscript processing, publication correspondence, and related journal services. These details are not disclosed to third parties or used for unrelated purposes.`;
       document.getElementById("privacy-statement-content").innerHTML = renderMarkdown(privacyText);
 
-      // Open Access Policy
-      const openAccessText = policies.openAccess || `This journal provides immediate open access to its content on the principle that making research freely available to the public supports a greater global exchange of knowledge. All articles are published under a Creative Commons Attribution (CC BY) license, allowing anyone to copy, redistribute, and build upon the work, provided the original authors and source are properly credited.`;
+      // Open Access, Licensing and Copyright
+      const openAccessText = policies.openAccess || `This journal provides immediate open access to published content to support the unrestricted exchange of scholarly knowledge. Readers may access, read, download, and share articles freely, provided that the original authors, article title, journal, and source are properly acknowledged in accordance with the applicable license terms.`;
       document.getElementById("open-access-content").innerHTML = renderMarkdown(openAccessText);
 
-      // Conflicts of Interest
-      const conflictsText = policies.conflictsInterest || `### Conflict of Interest Policy\n\nA conflict of interest exists when any association—between authors, reviewers, or editors could compromise, or appear to compromise, the impartial submission, review, editorial decision, or publication of a manuscript. Conflicts may involve individuals or organisations and may be financial or non-financial in nature.\n\n***\n\nAuthors must declare any potential conflicts of interest upon submission. Reviewers must declare any conflicts of interest before accepting to review a manuscript. Editors will recuse themselves from handling manuscripts where they have a conflict of interest.`;
+      // Conflict of Interest Disclosure
+      const conflictsText = policies.conflictsInterest || `### Conflict of Interest Disclosure\n\nA conflict of interest may arise when financial, professional, institutional, personal, or academic relationships could influence, or appear to influence, the submission, peer review, editorial decision, or publication of a manuscript.\n\n***\n\nAuthors must disclose all potential competing interests at the time of submission. Reviewers must declare any conflict before accepting a review invitation, and editors must recuse themselves from handling manuscripts where impartiality could reasonably be questioned.`;
       document.getElementById("conflicts-interest-content").innerHTML = renderMarkdown(conflictsText);
 
-      // Corrections and Retraction
-      const correctionsText = policies.correctionsRetraction || `When errors are identified in already published papers, the journal will assess the issue and determine the appropriate course of action, consulting the editor(s), author(s), and the authors’ institution(s) when necessary. Author-related errors may be corrected through a corrigendum, while publisher-introduced errors will be addressed through an erratum.\n\nIn cases where misconduct or significant inaccuracies affect the validity of the findings, a retraction or a statement of concern may be required. This journal follows the COPE Retraction Guidelines for handling such situations.`;
+      // Corrections and Retractions
+      const correctionsText = policies.correctionsRetraction || `When errors are identified in published articles, the journal will review the matter carefully and determine the appropriate editorial action in consultation with editors, authors, and relevant institutions where necessary. Author-originated errors may be corrected through a corrigendum, while publisher-introduced errors may be corrected through an erratum.\n\nIf misconduct, unreliable findings, or major inaccuracies affect the integrity of the scholarly record, the journal may issue a retraction, correction notice, or expression of concern in accordance with COPE guidance.`;
       document.getElementById("corrections-retraction-content").innerHTML = renderMarkdown(correctionsText);
 
-      // Plagiarism Policy
-      const plagiarismText = policies.plagiarismPolicy || `Plagiarism refers to the act of presenting another person’s work, ideas, or expressions as one’s own without proper acknowledgment. This journal reviews all submitted manuscripts for plagiarism and takes strict action when detected. Manuscripts with high text similarity (greater than 30%) are subject to immediate rejection or revision. We use Turnitin to detect text similarity, duplication, and uncredited use of previously published material.`;
+      // Plagiarism Screening Policy
+      const plagiarismText = policies.plagiarismPolicy || `Plagiarism is the presentation of another person’s words, ideas, data, images, or creative work as one’s own without appropriate acknowledgment. The journal screens submitted manuscripts for text similarity, duplicate publication, and uncredited reuse of previously published material.\n\nManuscripts with unacceptable similarity or clear plagiarism may be rejected, returned for correction, or investigated further. Authors are responsible for ensuring that all sources are cited accurately and that reused material is properly attributed.`;
       document.getElementById("plagiarism-policy-content").innerHTML = renderMarkdown(plagiarismText);
 
-      // Misconduct & Sanctions
-      const misconductText = policies.misconductSanctions || `Concerns related to research ethics or suspected violations of the journal’s publishing ethics-whether raised before or after publication-should be reported directly to the journal at ${journalEmail}. Upon receiving any allegation of misconduct, the editors will initiate a thorough investigation. Depending on the severity of the violation, the journal may reject the manuscript, issue a formal retraction, or temporarily ban authors from submitting to the journal.`;
+      // Research Misconduct and Sanctions
+      const misconductText = policies.misconductSanctions || `Concerns involving research misconduct or violations of publication ethics, whether identified before or after publication, should be reported to the editorial office at ${journalEmail}. The editorial team will assess each concern confidentially and initiate an investigation where appropriate.\n\nDepending on the findings, the journal may reject a manuscript, request corrections, publish a notice, retract an article, notify relevant institutions, or restrict future submissions from authors who violate ethical standards.`;
       document.getElementById("misconduct-sanctions-content").innerHTML = renderMarkdown(misconductText);
 
-      // Digital Preservation
-      const preservationText = policies.digitalPreservation || `All content published in the ${journalTitle} is securely preserved to ensure long-term accessibility. The journal maintains a robust digital archiving system through its cloud storage and server backup infrastructure. These preservation measures ensure that all published materials remain accessible and usable for future scholars, researchers, and students.`;
+      // Digital Preservation and Archiving
+      const preservationText = policies.digitalPreservation || `All content published in ${journalTitle} is digitally preserved to support long-term access, citation, and scholarly use. The journal maintains secure archiving and backup practices so that published articles remain available to researchers, students, institutions, and readers over time.`;
       document.getElementById("digital-preservation-content").innerHTML = renderMarkdown(preservationText);
 
-      // Announcements
-      const announcementsText = policies.announcements || `No announcements have been published at this time.`;
+      // Journal Announcements
+      const announcementsText = policies.announcements || `There are no current journal announcements. Updates regarding calls for papers, special issues, editorial notices, and publication schedules will be posted here when available.`;
       document.getElementById("announcements-content").innerHTML = renderMarkdown(announcementsText);
 
-      // Custom Publication Ethics panel
+      // Custom Publication Ethics and Integrity panel
       const ethicsIntro = document.getElementById("publication-ethics-intro");
       const ethicsAccordion = document.getElementById("ethicsAccordion");
       const ethicsContent = document.getElementById("publication-ethics-content");

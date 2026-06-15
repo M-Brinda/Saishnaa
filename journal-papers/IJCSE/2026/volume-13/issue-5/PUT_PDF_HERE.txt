@@ -1,0 +1,8 @@
+Place Volume 13 Issue 5 PDF files here.
+
+Example file name:
+IJCSE-V13I5P101.pdf
+
+Use this path in paper data:
+journal-papers/IJCSE/2026/volume-13/issue-5/IJCSE-V13I5P101.pdf
+

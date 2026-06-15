@@ -2,6 +2,11 @@ process.chdir(__dirname);
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const {
+  getManualIssue,
+  getManualPaper,
+  mergeManualPapers
+} = require("./journal-data-manual/manual-articles");
 
 
 const PORT = process.env.PORT || 8080;
@@ -19,6 +24,7 @@ const MIME_TYPES = {
   ".xml": "application/xml; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".ico": "image/x-icon",
+  ".pdf": "application/pdf",
   ".txt": "text/plain; charset=utf-8",
 };
 
@@ -70,8 +76,14 @@ const server = http.createServer((req, res) => {
     }
 
     const targetUrl = `https://internationaljournalssrg.org/${code}/archive_details?page=${page}`;
+    const manualIssue = getManualIssue(code, page);
     fetchHtml(targetUrl, (err, html) => {
       if (err) {
+        if (manualIssue) {
+          res.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+          res.end(JSON.stringify(manualIssue));
+          return;
+        }
         res.writeHead(500, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ error: err.message }));
         return;
@@ -110,6 +122,10 @@ const server = http.createServer((req, res) => {
             papers.push({ id, section, paperId, title: paperTitle, authors });
           }
         }
+        if (manualIssue) {
+          title = title || manualIssue.title;
+          papers.splice(0, papers.length, ...mergeManualPapers(papers, manualIssue.papers));
+        }
         res.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
         res.end(JSON.stringify({ title, papers }));
       } catch (ex) {
@@ -126,6 +142,13 @@ const server = http.createServer((req, res) => {
     if (!code || !id) {
       res.writeHead(400, { "Content-Type": "application/json; charset=utf-8" });
       res.end(JSON.stringify({ error: "Missing parameters" }));
+      return;
+    }
+
+    const manualPaper = getManualPaper(code, id);
+    if (manualPaper) {
+      res.writeHead(200, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+      res.end(JSON.stringify(manualPaper));
       return;
     }
 

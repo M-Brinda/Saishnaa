@@ -154,109 +154,277 @@
 
       /* ===== Journal Hero Identity ===== */
       .journal-hero {
-        background:
-          radial-gradient(circle at 15% 20%, rgba(156, 107, 255, 0.28), transparent 28%),
-          radial-gradient(circle at 85% 25%, rgba(106, 202, 231, 0.22), transparent 30%),
-          linear-gradient(135deg, #f8fbff 0%, #eef2ff 54%, #f7fbff 100%);
-        color: #24245c;
-        min-height: 48vh;
+        background: var(--hero-network-bg);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        color: #1f2452;
+        min-height: 40vh;
         overflow: hidden;
-        padding: 150px 20px 90px;
+        padding: 170px 20px 135px;
         position: relative;
+        text-align: center;
       }
       .journal-hero::before {
         content: "";
         position: absolute;
         inset: 0;
-        background-image:
-          linear-gradient(rgba(77, 30, 163, 0.055) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(77, 30, 163, 0.055) 1px, transparent 1px);
-        background-size: 44px 44px;
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.72), transparent 84%);
+        background:
+          radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0) 36%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(206, 232, 255, 0.22));
+        z-index: 0;
       }
-      .journal-hero-card {
-        background: rgba(255, 255, 255, 0.82);
-        border: 1px solid rgba(77, 30, 163, 0.12);
-        border-radius: 24px;
-        box-shadow: 0 24px 70px rgba(77, 30, 163, 0.16);
+      .journal-hero::after {
+        display: none;
+      }
+      .journal-hero-grid {
+        display: block;
         margin: 0 auto;
-        max-width: 980px;
-        padding: 34px;
+        max-width: 760px;
         position: relative;
+        z-index: 1;
       }
       .journal-brand-lockup {
         align-items: center;
         display: inline-flex;
-        gap: 14px;
-        justify-content: center;
-        margin-bottom: 22px;
+        gap: 12px;
+        justify-content: flex-start;
+        margin-bottom: 18px;
       }
       .journal-brand-mark {
         align-items: center;
-        background: linear-gradient(135deg, #4d1ea3, #7645fc);
-        border-radius: 18px;
-        box-shadow: 0 12px 30px rgba(77, 30, 163, 0.24);
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 14px;
+        box-shadow: 0 12px 26px rgba(9, 8, 38, 0.2);
         display: inline-flex;
-        height: 64px;
+        height: 52px;
         justify-content: center;
-        padding: 10px;
-        width: 64px;
+        padding: 9px;
+        width: 52px;
       }
       .journal-brand-mark img {
-        height: 42px;
+        height: 34px;
         width: auto;
       }
       .journal-brand-text {
         text-align: left;
       }
       .journal-brand-text strong {
-        color: #241e68;
+        color: #fff;
         display: block;
         font-family: "Outfit", sans-serif;
-        font-size: 1rem;
-        letter-spacing: 0.08em;
+        font-size: 0.82rem;
+        letter-spacing: 0.07em;
         text-transform: uppercase;
       }
       .journal-brand-text span {
-        color: #6b6b86;
+        color: rgba(255, 255, 255, 0.74);
         display: block;
-        font-size: 0.88rem;
+        font-size: 0.78rem;
         font-weight: 600;
         margin-top: 2px;
       }
-      .journal-hero h1 {
-        color: #292766;
-        font-family: "Outfit", sans-serif;
-        font-size: clamp(2.45rem, 6vw, 4.9rem);
+      .journal-brand-lockup.light .journal-brand-text strong {
+        color: #2f176d;
         font-weight: 800;
-        line-height: 0.98;
-        margin-bottom: 20px;
+      }
+      .journal-brand-lockup.light .journal-brand-text span {
+        color: #5f6472;
+        font-weight: 700;
+      }
+      .journal-hero .journal-brand-lockup {
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+      .journal-hero h1 {
+        color: #1f2452;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2.35rem, 4vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.12;
+        margin: 0 auto 16px;
+        max-width: 720px;
+        text-shadow: 0 8px 22px rgba(255, 255, 255, 0.86);
       }
       .journal-hero-copy {
-        color: #4d4d6f;
-        font-size: 1.05rem;
-        line-height: 1.75;
+        color: #1f2452;
+        font-size: 1.12rem;
+        line-height: 1.5;
         margin: 0 auto;
-        max-width: 760px;
+        max-width: 680px;
+        text-shadow: 0 4px 16px rgba(255, 255, 255, 0.78);
       }
       .journal-hero-copy strong {
-        color: #4d1ea3;
+        color: #1f2452;
       }
       .journal-proof-chip {
         align-items: center;
-        background: #fff;
-        border: 1px solid rgba(77, 30, 163, 0.13);
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(77, 30, 163, 0.08);
-        color: #312b75;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        color: #fff;
         display: inline-flex;
-        font-size: 0.84rem;
+        font-size: 0.76rem;
         font-weight: 700;
-        gap: 8px;
-        padding: 11px 16px;
+        gap: 7px;
+        padding: 9px 12px;
       }
       .journal-proof-chip i {
+        color: #6acae7;
+      }
+      .journal-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+      .journal-hero-action {
+        align-items: center;
+        border-radius: 9px;
+        display: inline-flex;
+        font-size: 0.9rem;
+        font-weight: 800;
+        gap: 8px;
+        padding: 11px 16px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .journal-hero-action.primary {
+        background: #fff;
         color: #4d1ea3;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+      }
+      .journal-hero-action.secondary {
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+      .journal-hero-action:hover {
+        transform: translateY(-2px);
+      }
+      .journal-hero-panel {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+        padding: 22px;
+      }
+      .journal-stat {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 14px 0;
+      }
+      .journal-stat:first-child {
+        padding-top: 0;
+      }
+      .journal-stat:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .journal-stat strong {
+        color: #fff;
+        display: block;
+        font-family: "Outfit", sans-serif;
+        font-size: 1.55rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+      .journal-stat span {
+        color: rgba(255, 255, 255, 0.72);
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-top: 6px;
+      }
+      @media (max-width: 991px) {
+        .journal-hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .journal-brand-lockup,
+        .journal-hero-actions {
+          justify-content: center;
+        }
+        .journal-hero-copy,
+        .journal-hero h1 {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      @media (max-width: 576px) {
+        .journal-hero {
+          min-height: 34vh;
+          padding: 130px 16px 82px;
+        }
+      }
+
+      .journal-catalog-section {
+        background:
+          radial-gradient(circle at 8% 8%, rgba(106, 202, 231, 0.18), transparent 28%),
+          radial-gradient(circle at 92% 0%, rgba(156, 107, 255, 0.16), transparent 30%),
+          linear-gradient(180deg, #f8fbff 0%, #f4f5f8 100%);
+      }
+      .journal-catalog-intro {
+        margin: 0 auto 34px;
+        max-width: 780px;
+      }
+      .journal-catalog-kicker {
+        color: #4d1ea3;
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .journal-catalog-title {
+        color: #1f2452;
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        font-weight: 800;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+      .journal-catalog-copy {
+        color: #555d72;
+        font-size: 0.98rem;
+        line-height: 1.7;
+        margin: 0 auto;
+        max-width: 640px;
+      }
+      .journal-tools-panel {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(77, 30, 163, 0.1);
+        border-radius: 18px;
+        box-shadow: 0 18px 45px rgba(77, 30, 163, 0.08);
+        margin-bottom: 34px;
+        padding: 20px;
+      }
+      .journal-stat-card {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(77, 30, 163, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(77, 30, 163, 0.07);
+        min-height: 92px;
+        padding: 18px;
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .journal-stat-card:hover {
+        box-shadow: 0 18px 42px rgba(77, 30, 163, 0.12);
+        transform: translateY(-3px);
+      }
+      .journal-stat-card strong {
+        display: block;
+        font-family: "Outfit", sans-serif;
+        font-size: 1.7rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+      .journal-stat-card span {
+        color: #6b7280;
+        display: block;
+        font-size: 0.76rem;
+        font-weight: 700;
+        margin-top: 8px;
       }
 
       /* ===== Journal Cards ===== */
@@ -486,84 +654,75 @@
       <div class="page-fade-in">
 
         <!-- Hero Section -->
-        <section class="journal-hero d-flex flex-column justify-content-center align-items-center text-center">
-          <div class="container" style="position: relative; z-index: 1;">
-            <div class="journal-hero-card animate__animated animate__fadeInDown">
-              <div class="journal-brand-lockup">
+        <section class="journal-hero d-flex flex-column justify-content-center">
+          <div class="container">
+            <div class="journal-hero-grid animate__animated animate__fadeIn">
+              <div class="journal-brand-lockup light">
                 <div class="journal-brand-mark">
                   <img src="img/sai.png" alt="Saishnaa Logo" />
-                </div>
-                <div class="journal-brand-text">
-                  <strong>SSSL Open Access Journals</strong>
-                  <span>Saishnaa Software Solution Limited</span>
-                </div>
-              </div>
-              <h1>Academic Journals Portal</h1>
-              <p class="journal-hero-copy">
-                Saishnaa partners with <strong>SSSL International Journals</strong>, a premier open-access publishing platform with content-indexed, peer-reviewed journals across engineering, science, medicine, and humanities.
-              </p>
-              <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
-                <div class="journal-proof-chip"><i class="fas fa-award"></i>All Content Indexed</div>
-                <div class="journal-proof-chip"><i class="fas fa-book-open"></i>Open Access</div>
-                <div class="journal-proof-chip"><i class="fas fa-globe"></i>Global Reach</div>
-                <div class="journal-proof-chip"><i class="fas fa-bolt"></i>Fast Review</div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Journals Catalog -->
-        <section class="py-5" style="background-color: #f4f5f8;">
-          <div class="container py-4">
-            <div class="text-center mb-5">
-              <div class="journal-brand-lockup mb-3">
-                <div class="journal-brand-mark" style="height: 54px; width: 54px; border-radius: 16px;">
-                  <img src="img/sai.png" alt="Saishnaa Logo" style="height: 34px;" />
                 </div>
                 <div class="journal-brand-text">
                   <strong>SSSL International Journals</strong>
                   <span>Browse indexed open-access publications</span>
                 </div>
               </div>
-              <p class="text-muted" style="font-size: 0.9rem;">Click any journal to view its full content within this page, or open it in a new tab.</p>
+              <h1>Academic Journals</h1>
+              <p class="journal-hero-copy">
+                Browse peer-reviewed open-access journals across engineering, science, medicine, and humanities.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Journals Catalog -->
+        <section class="journal-catalog-section py-5" id="journals-catalog">
+          <div class="container py-4">
+            <div class="journal-catalog-intro text-center">
+              <span class="journal-catalog-kicker">Research Library</span>
+              <h2 class="journal-catalog-title">Explore Open-Access Journals</h2>
+              <p class="journal-catalog-copy">
+                Search by journal title, subject, or research area, then open a journal profile to view details or submit a paper.
+              </p>
             </div>
 
             <!-- Search + Filter -->
-            <div class="row g-3 justify-content-between mb-5 align-items-center">
-              <div class="col-lg-5 col-md-6">
-                <div class="search-wrap">
-                  <i class="fas fa-search"></i>
-                  <input type="text" id="journal-search-input" placeholder="Search journals by name, subject…" />
+            <div class="journal-tools-panel">
+              <div class="row g-3 justify-content-between align-items-center">
+                <div class="col-lg-5 col-md-6">
+                  <div class="search-wrap">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="journal-search-input" placeholder="Search journals by name, subject..." />
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-6 col-md-6 d-flex justify-content-md-end justify-content-center flex-wrap gap-2 mt-3 mt-md-0" id="journal-category-tabs">
-                <!-- Rendered by JS -->
+                <div class="col-lg-7 col-md-6 d-flex justify-content-md-end justify-content-center flex-wrap gap-2 mt-3 mt-md-0" id="journal-category-tabs">
+                  <!-- Rendered by JS -->
+                </div>
               </div>
             </div>
 
             <!-- Stats bar -->
             <div class="row g-3 mb-5" id="journals-stats-bar">
               <div class="col-6 col-md-3">
-                <div class="text-center p-3 rounded-3" style="background:#fff; box-shadow: 0 2px 12px rgba(77,30,163,0.07);">
-                  <div style="font-size:1.6rem; font-weight:800; color:#4d1ea3; font-family:'Outfit',sans-serif;" id="stat-total">0</div>
-                  <div style="font-size:0.75rem; color:#888; font-weight:600;">Total Journals</div>
+                <div class="journal-stat-card">
+                  <strong style="color:#4d1ea3;" id="stat-total">0</strong>
+                  <span>Total Journals</span>
                 </div>
               </div>
               <div class="col-6 col-md-3">
-                <div class="text-center p-3 rounded-3" style="background:#fff; box-shadow: 0 2px 12px rgba(77,30,163,0.07);">
-                  <div style="font-size:1.6rem; font-weight:800; color:#22c55e; font-family:'Outfit',sans-serif;" id="stat-indexed">0</div>
-                  <div style="font-size:0.75rem; color:#888; font-weight:600;">All Content Indexed</div>
+                <div class="journal-stat-card">
+                  <strong style="color:#22c55e;" id="stat-indexed">0</strong>
+                  <span>Indexed Open-Access Content</span>
                 </div>
               </div>
               <div class="col-6 col-md-3">
-                <div class="text-center p-3 rounded-3" style="background:#fff; box-shadow: 0 2px 12px rgba(77,30,163,0.07);">
-                  <div style="font-size:1.6rem; font-weight:800; color:#f59e0b; font-family:'Outfit',sans-serif;">Fast</div>
-                  <div style="font-size:0.75rem; color:#888; font-weight:600;">Peer Review</div>
+                <div class="journal-stat-card">
+                  <strong style="color:#f59e0b;">Fast</strong>
+                  <span>Peer Review</span>
                 </div>
               </div>
               <div class="col-6 col-md-3">
-                <div class="text-center p-3 rounded-3" style="background:#fff; box-shadow: 0 2px 12px rgba(77,30,163,0.07);">
-                  <div style="font-size:1.6rem; font-weight:800; color:#3b82f6; font-family:'Outfit',sans-serif;">Free</div>
-                  <div style="font-size:0.75rem; color:#888; font-weight:600;">Open Access</div>
+                <div class="journal-stat-card">
+                  <strong style="color:#3b82f6;">Free</strong>
+                  <span>Open Access</span>
                 </div>
               </div>
             </div>
@@ -589,126 +748,126 @@
     <script src="js/journal-data.js"></script>
     <script src="js/chatbot.js"></script>
     <script>
-      // ===== SSRG JOURNALS DATA =====
+      // ===== SSSL JOURNALS DATA =====
       const journalsList = [
         {
           code: "IJCSE",
           title: "SSSL International Journal of Computer Science and Engineering",
           category: "Engineering Journals",
-          email: "ijcse@internationaljournalssrg.org",
+          email: "ijcse@internationaljournalsssl.org",
           banner: "img/ijcse_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJCSE/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJCSE/submit-article.html",
+          viewUrl: "journal-details.html?code=IJCSE",
+          submitUrl: "journal-details.html?code=IJCSE#tab-paper-submission",
           tags: ["Computer Science", "Software Engineering", "AI"]
         },
         {
           code: "IJECE",
           title: "SSSL International Journal of Electronics and Communication Engineering",
           category: "Engineering Journals",
-          email: "ijece@internationaljournalssrg.org",
+          email: "ijece@internationaljournalsssl.org",
           banner: "img/ijece_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJECE/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJECE/submit-article.html",
+          viewUrl: "journal-details.html?code=IJECE",
+          submitUrl: "journal-details.html?code=IJECE#tab-paper-submission",
           tags: ["Electronics", "Communication", "Signal Processing"]
         },
         {
           code: "IJEEE",
           title: "SSSL International Journal of Electrical and Electronics Engineering",
           category: "Engineering Journals",
-          email: "ijeee@internationaljournalssrg.org",
+          email: "ijeee@internationaljournalsssl.org",
           banner: "img/ijeee_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJEEE/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJEEE/submit-article.html",
+          viewUrl: "journal-details.html?code=IJEEE",
+          submitUrl: "journal-details.html?code=IJEEE#tab-paper-submission",
           tags: ["Electrical", "Electronics", "Power Systems"]
         },
         {
           code: "IJCE",
           title: "SSSL International Journal of Civil Engineering",
           category: "Engineering Journals",
-          email: "ijce@internationaljournalssrg.org",
+          email: "ijce@internationaljournalsssl.org",
           banner: "img/ijce_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJCE/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJCE/submit-article.html",
+          viewUrl: "journal-details.html?code=IJCE",
+          submitUrl: "journal-details.html?code=IJCE#tab-paper-submission",
           tags: ["Civil Engineering", "Structural", "Construction"]
         },
         {
           code: "IJME",
           title: "SSSL International Journal of Mechanical Engineering",
           category: "Engineering Journals",
-          email: "ijme@internationaljournalssrg.org",
+          email: "ijme@internationaljournalsssl.org",
           banner: "img/ijme_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJME/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJME/submit-article.html",
+          viewUrl: "journal-details.html?code=IJME",
+          submitUrl: "journal-details.html?code=IJME#tab-paper-submission",
           tags: ["Mechanical", "Thermodynamics", "Manufacturing"]
         },
         {
           code: "IJAES",
           title: "SSSL International Journal of Agriculture & Environmental Science",
           category: "Science & Biology",
-          email: "ijaes@internationaljournalssrg.org",
+          email: "ijaes@internationaljournalsssl.org",
           banner: "img/ijaes_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJAES/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJAES/submit-article.html",
+          viewUrl: "journal-details.html?code=IJAES",
+          submitUrl: "journal-details.html?code=IJAES#tab-paper-submission",
           tags: ["Agriculture", "Environmental Science", "Biology"]
         },
         {
           code: "IJMS",
           title: "SSSL International Journal of Medical Science",
           category: "Medical & Health",
-          email: "ijms@internationaljournalssrg.org",
+          email: "ijms@internationaljournalsssl.org",
           banner: "img/ijms_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJMS/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJMS/submit-article.html",
+          viewUrl: "journal-details.html?code=IJMS",
+          submitUrl: "journal-details.html?code=IJMS#tab-paper-submission",
           tags: ["Medical Science", "Health", "Clinical Research"]
         },
         {
           code: "IJEMS",
           title: "SSSL International Journal of Economics and Management Studies",
           category: "Social Science & Humanities",
-          email: "ijems@internationaljournalssrg.org",
+          email: "ijems@internationaljournalsssl.org",
           banner: "img/ijems_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJEMS/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJEMS/submit-article.html",
+          viewUrl: "journal-details.html?code=IJEMS",
+          submitUrl: "journal-details.html?code=IJEMS#tab-paper-submission",
           tags: ["Economics", "Management", "Business"]
         },
         {
           code: "IJAP",
           title: "SSSL International Journal of Applied Physics",
           category: "Science & Biology",
-          email: "ijap@internationaljournalssrg.org",
+          email: "ijap@internationaljournalsssl.org",
           banner: "img/ijap_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJAP/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJAP/submit-article.html",
+          viewUrl: "journal-details.html?code=IJAP",
+          submitUrl: "journal-details.html?code=IJAP#tab-paper-submission",
           tags: ["Physics", "Applied Science", "Research"]
         },
         {
           code: "IJHSS",
           title: "SSSL International Journal of Humanities and Social Science",
           category: "Social Science & Humanities",
-          email: "ijhss@internationaljournalssrg.org",
+          email: "ijhss@internationaljournalsssl.org",
           banner: "img/ijhss_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJHSS/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJHSS/submit-article.html",
+          viewUrl: "journal-details.html?code=IJHSS",
+          submitUrl: "journal-details.html?code=IJHSS#tab-paper-submission",
           tags: ["Humanities", "Social Science", "Arts"]
         },
         {
           code: "IJAC",
           title: "SSSL International Journal of Applied Chemistry",
           category: "Science & Biology",
-          email: "ijac@internationaljournalssrg.org",
+          email: "ijac@internationaljournalsssl.org",
           banner: "img/ijac_cover.svg",
-          viewUrl: "https://internationaljournalssrg.org/IJAC/index.html",
-          submitUrl: "https://internationaljournalssrg.org/IJAC/submit-article.html",
+          viewUrl: "journal-details.html?code=IJAC",
+          submitUrl: "journal-details.html?code=IJAC#tab-paper-submission",
           tags: ["Chemistry", "Applied Science", "Materials"]
         },
         {
           code: "ML",
           title: "SSSL Journal of Intelligent Machine Learning and IoT Enabled Applications",
           category: "Engineering Journals",
-          email: "editor@jiml-iea.com",
+          email: "ml@internationaljournalsssl.org",
           banner: "img/ml_cover.svg",
-          viewUrl: "https://jiml-iea.com/index.php/ml",
-          submitUrl: "https://jiml-iea.com/index.php/ml/about/submissions",
+          viewUrl: "journal-details.html?code=ML",
+          submitUrl: "journal-details.html?code=ML#tab-paper-submission",
           tags: ["Machine Learning", "IoT", "Artificial Intelligence"]
         }
       ];
@@ -810,10 +969,10 @@
               .then(svgText => {
                 // Get dynamic values from journalData
                 const journalDb = (typeof journalData !== "undefined" && journalData[j.code]) ? journalData[j.code] : {};
-                const issnVal = journalDb.issn || "Waiting For Approved";
+                const issnVal = journalDb.issn || "Pending Approval";
                 
                 let metaText = "";
-                if (issnVal && issnVal !== "Waiting For Approved") {
+                if (issnVal && issnVal !== "Pending Approval") {
                   metaText = `ISSN: ${issnVal}`;
                 }
                 
@@ -827,7 +986,7 @@
               })
               .catch(err => {
                 console.error("Card cover dynamic loading error:", err);
-                imgEl.style.backgroundImage = `url('https://via.placeholder.com/400x120/4d1ea3/fff?text=${j.code}')`;
+                imgEl.style.backgroundImage = `url('img/saishnaa_logo.png?code=${j.code}')`;
               });
           }
         });

@@ -11,6 +11,34 @@ document.addEventListener("DOMContentLoaded", () => {
   let chatState = "idle"; // idle, asking_email
   let messages = [];
 
+  const botIcon = `
+    <svg class="chatbot-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5V3" />
+      <circle cx="12" cy="3" r="1" />
+      <rect x="5" y="8" width="14" height="10" rx="4" />
+      <path d="M8 8V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1" />
+      <circle cx="9" cy="13" r="1.2" />
+      <circle cx="15" cy="13" r="1.2" />
+      <path d="M9.5 16h5" />
+      <path d="M5 12H3" />
+      <path d="M21 12h-2" />
+    </svg>
+  `;
+
+  const closeIcon = `
+    <svg class="chatbot-icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  `;
+
+  const sendIcon = `
+    <svg class="chatbot-icon-svg chatbot-send-svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m22 2-7 20-4-9-9-4Z" />
+      <path d="M22 2 11 13" />
+    </svg>
+  `;
+
   const defaultMessages = [
     {
       id: 1,
@@ -45,14 +73,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderChatbot() {
     chatbotWrapper.innerHTML = `
       <div class="chatbot-toggle" id="chatbot-toggle-btn">
-        <i data-lucide="${isOpen ? 'x' : 'message-square'}" style="width: 26px; height: 26px;"></i>
+        ${isOpen
+          ? closeIcon
+          : `<span class="chatbot-bot-logo chatbot-bot-logo-toggle" aria-hidden="true">${botIcon}</span>`}
         ${unread ? '<div class="chatbot-pulse" id="chatbot-pulse-dot"></div>' : ''}
       </div>
 
-      <div class="chatbot-window glass-panel d-flex flex-column" id="chatbot-window-el" style="display: ${isOpen ? 'flex' : 'none !important'};">
+      <div class="chatbot-window glass-panel ${isOpen ? 'is-open' : ''}" id="chatbot-window-el">
         <div class="chatbot-header">
           <div class="d-flex align-items-center gap-2">
-            <img src="img/sai.png" alt="Bot Avatar" style="width: 32px; height: 32px; animation: float 3s infinite;" />
+            <span class="chatbot-bot-logo chatbot-bot-logo-header" aria-hidden="true">
+              ${botIcon}
+            </span>
             <div class="text-white text-start">
               <h6 class="mb-0 fw-bold" style="font-size: 0.95rem;">Sai Assistant</h6>
               <small class="opacity-75 d-flex align-items-center gap-1">
@@ -61,14 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
               </small>
             </div>
           </div>
-          <i data-lucide="x" class="text-white-50" id="chatbot-close-x" style="cursor: pointer; width: 20px; height: 20px;"></i>
+          <button type="button" class="chatbot-close" id="chatbot-close-x" aria-label="Close chat">
+            ${closeIcon}
+          </button>
         </div>
 
         <div class="chatbot-messages" id="chatbot-messages-container">
           <!-- Messages will be injected here -->
         </div>
 
-        <div class="chatbot-chips" id="chatbot-chips-el" style="display: ${chatState === 'asking_email' ? 'none !important' : 'flex'};">
+        <div class="chatbot-chips" id="chatbot-chips-el" style="display: ${chatState === 'asking_email' ? 'none' : 'flex'};">
           <div class="chatbot-chip" data-text="What services do you offer?">🛠️ Services Catalog</div>
           <div class="chatbot-chip" data-text="What are your pricing plans?">💰 Pricing Tiers</div>
           <div class="chatbot-chip" data-text="Tell me about your academy courses">🎓 Academy Courses</div>
@@ -80,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="chatbot-input-container">
           <input type="text" class="chatbot-input" id="chatbot-input-el" placeholder="${chatState === 'asking_email' ? 'Type your email here...' : 'Type your message...'}" />
           <button class="chatbot-send" id="chatbot-send-btn">
-            <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+            ${sendIcon}
           </button>
         </div>
       </div>
@@ -183,12 +217,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (windowEl) {
       if (isOpen) {
-        windowEl.style.display = "flex";
+        windowEl.classList.add("is-open");
         windowEl.style.animation = "chatbotOpen 0.4s var(--cubic-bezier) forwards";
         if (pulseDot) pulseDot.style.display = "none";
         scrollToBottom();
       } else {
-        windowEl.style.display = "none !important";
+        windowEl.classList.remove("is-open");
         windowEl.style.animation = "";
       }
     }
@@ -196,7 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update Lucide icon in toggle button
     if (toggleBtn) {
       toggleBtn.innerHTML = `
-        <i data-lucide="${isOpen ? 'x' : 'message-square'}" style="width: 26px; height: 26px;"></i>
+        ${isOpen
+          ? closeIcon
+          : `<span class="chatbot-bot-logo chatbot-bot-logo-toggle" aria-hidden="true">${botIcon}</span>`}
       `;
       if (window.lucide && typeof window.lucide.createIcons === "function") {
         window.lucide.createIcons();
@@ -264,7 +300,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const inputEl = document.getElementById("chatbot-input-el");
           if (inputEl) inputEl.placeholder = "Type your message...";
           const chipsEl = document.getElementById("chatbot-chips-el");
-          if (chipsEl) chipsEl.style.display = "flex";
+          if (chipsEl) chipsEl.style.setProperty("display", "flex");
         } else {
           botReply = "Hmm, that doesn't look like a valid email address. Could you please double-check and enter a correct email? (e.g. name@company.com)";
         }
@@ -304,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const inputEl = document.getElementById("chatbot-input-el");
         if (inputEl) inputEl.placeholder = "Type your email here...";
         const chipsEl = document.getElementById("chatbot-chips-el");
-        if (chipsEl) chipsEl.style.display = "none !important";
+        if (chipsEl) chipsEl.style.setProperty("display", "none", "important");
       } else if (text.includes("hello") || text.includes("hi") || text.includes("hey")) {
         botReply = "Greetings! Welcome to Saishnaa Software Solution Limited. I am Sai, your dedicated Technology Consultant. How may I assist you with your digital transformation, custom software architecture, or career goals today?";
         addMessage("bot", botReply);

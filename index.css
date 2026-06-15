@@ -121,6 +121,22 @@ a {
 }
 
 /* Typography Enhancements */
+main p,
+main li,
+main .card-text {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+main .text-center p,
+main .text-center li,
+.hero p,
+.courses-hero p,
+.journal-hero-copy {
+  text-align: center;
+}
+
 .section-title {
   color: var(--main-color);
   font-weight: 700;
@@ -399,6 +415,26 @@ a {
   animation: fadeInUp 1s 0.3s both;
 }
 
+.courses-hero {
+  background: var(--hero-network-bg) !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  background-size: cover !important;
+  color: #1f2452 !important;
+}
+
+.courses-hero::before {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(206, 232, 255, 0.22));
+}
+
+.courses-hero h1,
+.courses-hero p {
+  color: #1f2452 !important;
+  text-shadow: 0 8px 22px rgba(255,255,255,0.85);
+}
+
 /* Floating particles effect */
 .particle {
   position: absolute;
@@ -664,6 +700,92 @@ a {
   box-shadow: 0 12px 30px rgba(77, 30, 163, 0.6);
 }
 
+.chatbot-bot-logo {
+  align-items: center;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #1f6fe5;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+.chatbot-icon-svg {
+  display: block;
+  fill: none;
+  height: 24px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 24px;
+}
+
+.chatbot-bot-logo::after {
+  background: #3ce6c7;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  bottom: 6px;
+  content: "";
+  height: 8px;
+  position: absolute;
+  right: 7px;
+  width: 8px;
+}
+
+.chatbot-bot-logo-toggle {
+  height: 46px;
+  width: 46px;
+}
+
+.chatbot-bot-logo-toggle .chatbot-icon-svg {
+  height: 30px;
+  width: 30px;
+}
+
+.chatbot-bot-logo-header {
+  height: 34px;
+  width: 34px;
+}
+
+.chatbot-bot-logo-header .chatbot-icon-svg {
+  height: 22px;
+  width: 22px;
+}
+
+.chatbot-bot-logo-header::after {
+  bottom: 3px;
+  height: 7px;
+  right: 4px;
+  width: 7px;
+}
+
+.chatbot-close {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+  width: 32px;
+}
+
+.chatbot-close .chatbot-icon-svg {
+  height: 20px;
+  width: 20px;
+}
+
+.chatbot-close:hover {
+  color: #fff;
+  transform: scale(1.08);
+}
+
 .chatbot-pulse {
   position: absolute;
   top: 0;
@@ -680,7 +802,7 @@ a {
   width: 380px;
   height: 520px;
   border-radius: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
@@ -689,6 +811,10 @@ a {
   right: 0;
   transform-origin: bottom right;
   animation: chatbotOpen 0.4s var(--cubic-bezier) forwards;
+}
+
+.chatbot-window.is-open {
+  display: flex;
 }
 
 @keyframes chatbotOpen {
@@ -811,6 +937,11 @@ a {
   justify-content: center;
   padding: 6px;
   transition: transform 0.2s ease;
+}
+
+.chatbot-send-svg {
+  height: 18px;
+  width: 18px;
 }
 
 .chatbot-send:hover {
