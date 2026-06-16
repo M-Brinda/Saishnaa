@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <nav class="navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled navbar-blur' : ''}" style="z-index: 1100;">
         <div class="container-fluid px-md-4">
           <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3 text-white" href="index.html" style="white-space: nowrap;">
-            <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto; animation: float 4s ease-in-out infinite;" />
-            <span class="fw-bold fs-5 text-white" style="font-family: Outfit, sans-serif;">Saishnaa Software Solution Limited</span>
+            <img src="img/sai.png" alt="Saishnaa Logo" style="height: 32px; width: auto; animation: float 4s ease-in-out infinite;" />
+            <span class="fw-bold text-white" style="font-family: Outfit, sans-serif; font-size: 0.98rem;">Saishnaa Software Solution Limited</span>
           </a>
 
           <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="outline: none; box-shadow: none;">
