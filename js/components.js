@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="index.html" class="nav-link text-white">About</a>
               </li>
               <li class="nav-item">
-                <a href="services.html" class="nav-link text-white">Services</a>
+                <a href="our-services.html" class="nav-link text-white">Services</a>
               </li>
               <li class="nav-item">
-                <a href="courses.html" class="nav-link text-white">Courses</a>
+                <a href="training-courses.html" class="nav-link text-white">Courses</a>
               </li>
               <li class="nav-item">
-                <a href="projects.html" class="nav-link text-white">Projects</a>
+                <a href="our-projects.html" class="nav-link text-white">Projects</a>
               </li>
               <li class="nav-item">
                 <a href="journals.html" class="nav-link text-white">Journals</a>
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="careers.html" class="nav-link text-white">Careers</a>
               </li>
               <li class="nav-item">
-                <a href="contact.html" class="nav-link text-white">Contact</a>
+                <a href="contact-us.html" class="nav-link text-white">Contact</a>
               </li>
             </ul>
           </div>
@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
               </h5>
               <ul class="list-unstyled opacity-75 d-flex flex-column gap-2" style="font-size: 0.95rem;">
                 <li><a href="index.html" class="text-white nav-link-hover">About Us</a></li>
-                <li><a href="services.html" class="text-white nav-link-hover">Services</a></li>
-                <li><a href="courses.html" class="text-white nav-link-hover">Courses & Academy</a></li>
-                <li><a href="projects.html" class="text-white nav-link-hover">Projects</a></li>
+                <li><a href="our-services.html" class="text-white nav-link-hover">Services</a></li>
+                <li><a href="training-courses.html" class="text-white nav-link-hover">Courses & Academy</a></li>
+                <li><a href="our-projects.html" class="text-white nav-link-hover">Projects</a></li>
                 <li><a href="journals.html" class="text-white nav-link-hover">Academic Journals</a></li>
                 <li><a href="pricing.html" class="text-white nav-link-hover">Pricing</a></li>
                 <li><a href="careers.html" class="text-white nav-link-hover">Careers</a></li>

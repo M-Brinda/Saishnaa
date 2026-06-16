@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.textContent = "Go to Services";
         btn.addEventListener("click", () => {
           isOpen = false;
-          window.location.href = "services.html";
+          window.location.href = "our-services.html";
         });
         bubble.appendChild(btn);
       }
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.textContent = "Go to Courses";
         btn.addEventListener("click", () => {
           isOpen = false;
-          window.location.href = "courses.html";
+          window.location.href = "training-courses.html";
         });
         bubble.appendChild(btn);
       }
