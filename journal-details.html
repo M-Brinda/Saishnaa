@@ -17,15 +17,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css?v=20260617-chat-clean" />
 
   <style>
     /* Layout structure */
     .details-wrapper {
       min-height: 100vh;
       background-color: #f7f9fc;
-      padding-top: 100px;
-      padding-bottom: 60px;
+      padding-top: 90px;
+      padding-bottom: 44px;
     }
 
     /* Sidebar Menu - Compacted for 14 items */
@@ -101,11 +101,11 @@
     /* Content blocks */
     .content-card {
       background: #fff;
-      border-radius: 20px;
+      border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
       border: 1px solid rgba(77, 30, 163, 0.05);
-      padding: 40px;
-      margin-bottom: 30px;
+      padding: 30px;
+      margin-bottom: 24px;
       display: none;
       animation: cardFadeIn 0.4s ease forwards;
     }
@@ -130,8 +130,8 @@
     .metric-box {
       background: linear-gradient(135deg, #ffffff 0%, #fbfaff 100%);
       border: 1px solid rgba(77, 30, 163, 0.06);
-      border-radius: 16px;
-      padding: 20px;
+      border-radius: 14px;
+      padding: 16px;
       text-align: center;
       transition: all 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
@@ -145,7 +145,7 @@
 
     .metric-val {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--main-color);
       margin-bottom: 4px;
@@ -651,7 +651,7 @@
       }
 
       .details-wrapper {
-        padding-top: 90px;
+        padding-top: 82px;
       }
 
       .eic-card {
@@ -737,13 +737,16 @@
 <body>
   <!-- Custom Horizontal Journal Navigation Bar (OJS style) -->
   <nav class="navbar navbar-expand-lg fixed-top" id="journal-navbar"
-    style="background-color: var(--main-color); z-index: 1100; box-shadow: 0 4px 18px rgba(0,0,0,0.1); padding: 15px 0; transition: all 0.4s ease;">
+    style="background-color: var(--main-color); z-index: 1100; box-shadow: 0 4px 18px rgba(0,0,0,0.1); padding: 10px 0; transition: all 0.4s ease;">
     <div class="container-fluid px-md-4">
       <!-- Brand / Journal Title -->
       <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3 text-white" href="journals.html"
         style="white-space: nowrap;">
-        <img src="img/sai.png" alt="Saishnaa Logo" style="height: 40px; width: auto;" />
-        <span class="fw-bold fs-5 text-white" style="font-family: Outfit, sans-serif;"
+        <span style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1;">
+          <img src="img/sai.png" alt="Saishnaa Logo" style="height: 30px; width: auto;" />
+          <span style="font-family: Outfit, sans-serif; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.18em; color: #d8bcff; margin-top: 2px; text-shadow: 0 1px 8px rgba(255,255,255,0.32);">SSSL</span>
+        </span>
+        <span class="fw-bold fs-6 text-white" style="font-family: Outfit, sans-serif;"
           id="nav-journal-code">JOURNAL</span>
       </a>
 
@@ -863,7 +866,7 @@
     <div class="container page-fade-in">
 
       <!-- Breadcrumb Navigation -->
-      <nav aria-label="breadcrumb" class="mb-4">
+      <nav aria-label="breadcrumb" class="mb-3">
         <ol class="breadcrumb" style="font-size: 0.88rem; font-weight: 500;">
           <li class="breadcrumb-item"><a href="index.html" style="color: var(--main-color);">Home</a></li>
           <li class="breadcrumb-item"><a href="journals.html" style="color: var(--main-color);">Journals</a></li>
@@ -873,17 +876,17 @@
 
       <!-- Dynamic Page Hero -->
       <div
-        class="p-4 p-md-5 mb-5 rounded-4 text-white position-relative overflow-hidden animate__animated animate__fadeIn"
+        class="p-3 p-md-4 mb-4 rounded-4 text-white position-relative overflow-hidden animate__animated animate__fadeIn"
         id="hero-banner-container" style="
           background: radial-gradient(circle at 12% 15%, rgba(116, 77, 255, 0.55), transparent 28%),
             linear-gradient(135deg, #5226b4 0%, #1e216f 46%, #0b2b58 100%);
           box-shadow: 0 18px 45px rgba(22, 20, 86, 0.28);
           border: 2px solid rgba(255,255,255,0.28);
           border-radius: 28px !important;
-          min-height: 355px;
+          min-height: 285px;
         ">
         <!-- Dotted network globe outline on the right side of the card -->
-        <svg class="position-absolute" style="right: -72px; top: 50%; transform: translateY(-50%); width: 410px; height: 410px; opacity: 0.18; z-index: 1; pointer-events: none; color: #fff;" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+        <svg class="position-absolute" style="right: -46px; top: 50%; transform: translateY(-50%); width: 315px; height: 315px; opacity: 0.16; z-index: 1; pointer-events: none; color: #fff;" viewBox="0 0 100 100" fill="none" stroke="currentColor">
           <circle cx="50" cy="50" r="45" stroke-width="0.3" stroke-dasharray="1 1"/>
           <ellipse cx="50" cy="50" rx="45" ry="15" stroke-width="0.3" stroke-dasharray="1 1"/>
           <ellipse cx="50" cy="50" rx="45" ry="30" stroke-width="0.3" stroke-dasharray="1 1"/>
@@ -920,38 +923,38 @@
           <div class="col-12 text-center text-md-start">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mb-2">
               <span class="badge text-dark fw-bold px-3 py-2 rounded-5" id="hero-category-badge"
-                style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #ffe25d, #ffc928) !important; box-shadow: 0 7px 18px rgba(255,209,64,0.25); min-width: 220px;">
+                style="font-size: 0.74rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #ffe25d, #ffc928) !important; box-shadow: 0 7px 18px rgba(255,209,64,0.25); min-width: 185px;">
                 <i class="fas fa-users me-1"></i> Peer-Reviewed Journal
               </span>
               <span class="badge text-white fw-bold px-3 py-2 rounded-5" id="hero-pub-model-badge"
-                style="font-size: 0.82rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #0fc7ca, #0aa7b7) !important; box-shadow: 0 7px 18px rgba(0,173,181,0.22); min-width: 160px;">
+                style="font-size: 0.74rem; letter-spacing: 0.4px; text-transform: uppercase; background: linear-gradient(135deg, #0fc7ca, #0aa7b7) !important; box-shadow: 0 7px 18px rgba(0,173,181,0.22); min-width: 135px;">
                 <i class="fas fa-unlock me-1"></i> Open Access
               </span>
             </div>
             <h1 class="display-6 fw-bold mb-2" id="hero-journal-title"
-              style="font-family: Outfit, sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,0.34); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.12; letter-spacing: 0;">
+              style="font-family: Outfit, sans-serif; text-shadow: 0 2px 10px rgba(0,0,0,0.34); font-size: clamp(1.55rem, 3vw, 2.55rem); line-height: 1.12; letter-spacing: 0;">
               Loading Journal Title...
             </h1>
             <p class="fs-6 opacity-90 mb-2 fw-semibold" id="hero-journal-tagline"
-              style="font-family: Outfit, sans-serif; font-style: italic; color: rgba(255,255,255,0.86); font-size: clamp(1rem, 2vw, 1.35rem);">
+              style="font-family: Outfit, sans-serif; font-style: italic; color: rgba(255,255,255,0.86); font-size: clamp(0.9rem, 1.35vw, 1.05rem);">
               Loading tagline...
             </p>
             <p class="fs-6 opacity-95 mb-4 fw-bold" id="hero-journal-eic"
-              style="font-family: Outfit, sans-serif; color: #ffd140; font-size: clamp(1rem, 2vw, 1.3rem);">
+              style="font-family: Outfit, sans-serif; color: #ffd140; font-size: clamp(0.9rem, 1.35vw, 1.05rem);">
               Editor-in-Chief: Loading...
             </p>
 
-            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-3 mb-4">
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mb-3">
               <div
-                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; padding: 10px 15px; font-size: clamp(0.78rem, 1.1vw, 0.9rem); font-weight: 700; backdrop-filter: blur(6px);">
                 <i class="fas fa-brain me-2 text-warning"></i> Online ISSN: <span id="hero-issn-val">Pending Approval</span>
               </div>
               <div
-                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; padding: 10px 15px; font-size: clamp(0.78rem, 1.1vw, 0.9rem); font-weight: 700; backdrop-filter: blur(6px);">
                 <i class="fas fa-calendar-alt me-2 text-warning"></i> Frequency: <span id="hero-freq-val">12 Issues per Year</span>
               </div>
               <div
-                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 14px; padding: 14px 20px; font-size: clamp(0.86rem, 1.5vw, 1.02rem); font-weight: 700; backdrop-filter: blur(6px);">
+                style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.22); border-radius: 12px; padding: 10px 15px; font-size: clamp(0.78rem, 1.1vw, 0.9rem); font-weight: 700; backdrop-filter: blur(6px);">
                 <i id="hero-indexing-icon" class="fas fa-graduation-cap me-2 text-warning"></i> <span id="hero-indexing-val">Indexed Open-Access Content</span>
               </div>
             </div>
@@ -959,7 +962,7 @@
             <div>
               <a href="#guidelines-authors" id="hero-submit-btn"
                 class="btn btn-warning fw-bold text-dark px-4 py-2.5 rounded-5 shadow-sm"
-                style="font-size: clamp(0.96rem, 1.7vw, 1.12rem); transition: all 0.3s; padding: 16px 42px; background: linear-gradient(135deg, #ffe25d, #ffc928); border-color: #ffd140; box-shadow: 0 12px 24px rgba(255,209,64,0.24);" onmouseover="this.style.transform='translateY(-2px)';"
+                style="font-size: clamp(0.86rem, 1.25vw, 0.98rem); transition: all 0.3s; padding: 12px 30px; background: linear-gradient(135deg, #ffe25d, #ffc928); border-color: #ffd140; box-shadow: 0 12px 24px rgba(255,209,64,0.24);" onmouseover="this.style.transform='translateY(-2px)';"
                 onmouseout="this.style.transform='translateY(0)';"
                 onclick="setTimeout(() => { document.querySelector('[data-tab=&quot;paper-submission&quot;]').click(); }, 100);">
                 <i class="fas fa-paper-plane me-2"></i>Submit Your Manuscript
@@ -1760,8 +1763,8 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/components.js?v=20260616-mini"></script>
-  <script src="js/chatbot.js?v=20260616-mini"></script>
+  <script src="js/components.js?v=20260617-light-sssl"></script>
+  <script src="js/chatbot.js?v=20260617-chat-journals"></script>
   <script src="js/journal-data.js"></script>
   <script src="js/global-guidelines.js"></script>
 
@@ -2847,7 +2850,7 @@
             navbar.style.backgroundColor = "rgba(77, 30, 163, 0.97)";
           } else {
             navbar.classList.remove("scrolled", "navbar-blur");
-            navbar.style.padding = "15px 0";
+            navbar.style.padding = "10px 0";
             navbar.style.backgroundColor = "var(--main-color)";
           }
         }

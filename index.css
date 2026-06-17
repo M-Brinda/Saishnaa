@@ -799,9 +799,10 @@ main .text-center li,
 }
 
 .chatbot-window {
-  width: 380px;
-  height: 520px;
-  border-radius: 20px;
+  width: min(420px, calc(100vw - 32px));
+  height: min(620px, calc(100vh - 120px));
+  min-height: 520px;
+  border-radius: 18px;
   display: none;
   flex-direction: column;
   overflow: hidden;
@@ -835,7 +836,7 @@ main .text-center li,
     var(--secondary-color)
   );
   color: white;
-  padding: 16px 20px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -843,20 +844,21 @@ main .text-center li,
 
 .chatbot-messages {
   flex-grow: 1;
-  padding: 20px;
+  padding: 16px;
   overflow-y: auto;
   background-color: #f7f8fa;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .chatbot-bubble {
-  max-width: 80%;
-  padding: 10px 16px;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  max-width: 92%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .chatbot-bubble.bot {
@@ -876,10 +878,12 @@ main .text-center li,
 
 .chatbot-chips {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 8px;
-  padding: 10px 16px;
+  flex-wrap: wrap;
+  overflow-x: visible;
+  overflow-y: auto;
+  gap: 7px;
+  max-height: 118px;
+  padding: 10px 14px;
   background-color: #f7f8fa;
   border-top: 1px solid rgba(0, 0, 0, 0.03);
   scrollbar-width: none; /* Hide scrollbar for Firefox */
@@ -891,17 +895,20 @@ main .text-center li,
 }
 
 .chatbot-chip {
-  flex: 0 0 auto; /* Keep full size without shrinking */
+  flex: 1 1 calc(50% - 8px);
   background-color: white;
   color: var(--main-color);
   border: 1px solid rgba(77, 30, 163, 0.15);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 0.8rem;
+  border-radius: 999px;
+  min-width: 142px;
+  padding: 7px 10px;
+  font-size: 0.74rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
-  white-space: nowrap; /* Prevent inner text wrap */
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
 }
 
 .chatbot-chip:hover {
@@ -985,10 +992,15 @@ main .text-center li,
   }
 
   .chatbot-window {
-    width: calc(100vw - 40px);
+    width: calc(100vw - 32px);
     right: -10px;
-    height: 70vh; /* Scale height based on viewport to avoid toolbars cut-off */
-    max-height: 500px;
+    height: min(74vh, 610px);
+    min-height: 500px;
+    max-height: none;
     bottom: 75px;
+  }
+
+  .chatbot-chip {
+    flex-basis: 100%;
   }
 }

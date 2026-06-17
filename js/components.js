@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <nav class="navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled navbar-blur' : ''}" style="z-index: 1100;">
         <div class="container-fluid px-md-4">
           <a class="navbar-brand d-flex align-items-center gap-2 me-auto ps-3 text-white" href="index.html" style="white-space: nowrap;">
-            <img src="img/sai.png" alt="Saishnaa Logo" style="height: 32px; width: auto; animation: float 4s ease-in-out infinite;" />
+            <span style="display: inline-flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1;">
+              <img src="img/sai.png" alt="Saishnaa Logo" style="height: 30px; width: auto;" />
+              <span style="font-family: Outfit, sans-serif; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.18em; color: #d8bcff; margin-top: 2px; text-shadow: 0 1px 8px rgba(255,255,255,0.32);">SSSL</span>
+            </span>
             <span class="fw-bold text-white" style="font-family: Outfit, sans-serif; font-size: 0.98rem;">Saishnaa Software Solution Limited</span>
           </a>
 

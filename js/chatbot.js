@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: 1,
       sender: "bot",
-      text: "Hello! I am Sai, your Saishnaa IT Assistant. 👋",
+      text: "Hello! I am Sai, your Saishnaa IT Assistant.",
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     },
     {
@@ -103,12 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div class="chatbot-chips" id="chatbot-chips-el" style="display: ${chatState === 'asking_email' ? 'none' : 'flex'};">
-          <div class="chatbot-chip" data-text="What services do you offer?">🛠️ Services Catalog</div>
-          <div class="chatbot-chip" data-text="What are your pricing plans?">💰 Pricing Tiers</div>
-          <div class="chatbot-chip" data-text="Tell me about your academy courses">🎓 Academy Courses</div>
-          <div class="chatbot-chip" data-text="Are there career openings?">💼 Career Openings</div>
-          <div class="chatbot-chip" data-text="Can I view your journals?">📚 Journals Portal</div>
-          <div class="chatbot-chip" data-text="Book a consultation">📞 Book Free Consultation</div>
+          <div class="chatbot-chip" data-text="What services do you offer?">Services Catalog</div>
+          <div class="chatbot-chip" data-text="What are your pricing plans?">Pricing Tiers</div>
+          <div class="chatbot-chip" data-text="Tell me about your academy courses">Academy Courses</div>
+          <div class="chatbot-chip" data-text="Are there career openings?">Career Openings</div>
+          <div class="chatbot-chip" data-text="Can I view your journals?">Journals Portal</div>
+          <div class="chatbot-chip" data-text="Show journal details">Journal Details</div>
+          <div class="chatbot-chip" data-text="Book a consultation">Book Consultation</div>
         </div>
 
         <div class="chatbot-input-container">
@@ -150,6 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("chatbot-messages-container");
     if (!container) return;
 
+    const appendActionButton = (bubble, label, href) => {
+      const btn = document.createElement("button");
+      btn.className = "btn btn-sm btn-purple mt-2 text-white w-100";
+      btn.style.fontSize = "0.75rem";
+      btn.style.padding = "7px 8px";
+      btn.textContent = label;
+      btn.addEventListener("click", () => {
+        isOpen = false;
+        window.location.href = href;
+      });
+      bubble.appendChild(btn);
+    };
+
     container.innerHTML = "";
     messages.forEach((msg) => {
       const bubble = document.createElement("div");
@@ -163,42 +177,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Embed special action buttons in specific messages
       if (msg.text.includes("full Services catalog?")) {
-        const btn = document.createElement("button");
-        btn.className = "btn btn-sm btn-purple mt-2 text-white w-100";
-        btn.style.fontSize = "0.75rem";
-        btn.style.padding = "6px";
-        btn.textContent = "Go to Services";
-        btn.addEventListener("click", () => {
-          isOpen = false;
-          window.location.href = "our-services.html";
-        });
-        bubble.appendChild(btn);
+        appendActionButton(bubble, "Go to Services", "our-services.html");
       }
 
       if (msg.text.includes("latest academic research and publications?")) {
-        const btn = document.createElement("button");
-        btn.className = "btn btn-sm btn-purple mt-2 text-white w-100";
-        btn.style.fontSize = "0.75rem";
-        btn.style.padding = "6px";
-        btn.textContent = "Go to Journals";
-        btn.addEventListener("click", () => {
-          isOpen = false;
-          window.location.href = "journals.html";
-        });
-        bubble.appendChild(btn);
+        appendActionButton(bubble, "Browse Journals", "journals.html");
+        appendActionButton(bubble, "Open Journal Details", "journal-details.html?code=IJCSE");
+      }
+
+      if (msg.text.includes("open a journal detail page")) {
+        appendActionButton(bubble, "IJCSE Details", "journal-details.html?code=IJCSE");
+        appendActionButton(bubble, "Browse All Journals", "journals.html");
       }
 
       if (msg.text.includes("full Learning Academy Courses page?")) {
-        const btn = document.createElement("button");
-        btn.className = "btn btn-sm btn-purple mt-2 text-white w-100";
-        btn.style.fontSize = "0.75rem";
-        btn.style.padding = "6px";
-        btn.textContent = "Go to Courses";
-        btn.addEventListener("click", () => {
-          isOpen = false;
-          window.location.href = "training-courses.html";
-        });
-        bubble.appendChild(btn);
+        appendActionButton(bubble, "Go to Courses", "training-courses.html");
       }
 
       container.appendChild(bubble);
@@ -322,10 +315,10 @@ document.addEventListener("DOMContentLoaded", () => {
         botReply = "Saishnaa is a hub of technological innovation, and we are actively seeking exceptional talent to join our team. We currently have active openings for Software Engineers (React, Node, Python), UI/UX Experience Designers, Agile Product Leads, and DevOps specialists. To apply for a role, please email your credentials and resume to saishnaa@gmail.com, or send a message directly to our talent acquisition team via WhatsApp at +91 9790155384!";
         addMessage("bot", botReply);
       } else if (text.includes("journal") || text.includes("paper") || text.includes("research") || text.includes("publication") || text.includes("article")) {
-        botReply = "At Saishnaa, we actively contribute to state-of-the-art technological progress. Our dedicated R&D division regularly publishes academic papers, technical journals, and architectural whitepapers focusing on AI models, high-concurrency cloud systems, and responsive web paradigms.";
+        botReply = "SSSL International Journals includes open-access journal profiles for engineering, science, medicine, management, humanities, and AI/IoT research. Each journal detail page includes Aim & Scope, Editorial Board, Paper Submission, Indexing, APC, Current Issue, Archives, Ethics, and Author Guidelines.";
         addMessage("bot", botReply);
         setTimeout(() => {
-          addMessage("bot", "Would you like to browse our latest academic research and publications?");
+          addMessage("bot", "Would you like to browse all journals or open a journal detail page?");
         }, 600);
       } else if (text.includes("course") || text.includes("academy") || text.includes("scratch") || text.includes("bootcamp") || text.includes("class") || text.includes("learn")) {
         botReply = "Saishnaa Learning Academy offers premium, certified computer training and professional coding bootcamps. 🎓 For children aged 6 to 15, we provide our highly acclaimed *Kids Scratch Coding Academy* (mitigating drag-and-drop code blocks for arcade games and logic). For graduates and professionals, we offer accelerated placement-focused Bootcamps in *MERN Full Stack Development*, *Python & AI Foundations*, and *Advanced Java Enterprise MVC Systems*. We also have 23 other specialized government-certified IT and Tally programs!";

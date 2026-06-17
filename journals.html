@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css?v=20260617-journal-soft-hero" />
+    <link rel="stylesheet" href="index.css?v=20260617-chat-clean" />
 
     <style>
       /* ===== Journal Viewer Overlay ===== */
@@ -187,7 +187,7 @@
       .journal-brand-lockup {
         align-items: center;
         display: inline-flex;
-        gap: 12px;
+        gap: 14px;
         justify-content: flex-start;
         margin-bottom: 12px;
       }
@@ -197,14 +197,26 @@
         border-radius: 12px;
         box-shadow: 0 10px 22px rgba(9, 8, 38, 0.16);
         display: inline-flex;
-        height: 44px;
+        flex-direction: column;
+        height: 58px;
         justify-content: center;
-        padding: 8px;
-        width: 44px;
+        line-height: 1;
+        padding: 6px 12px;
+        width: 118px;
       }
       .journal-brand-mark img {
-        height: 28px;
+        height: auto;
+        max-height: 36px;
+        max-width: 96px;
         width: auto;
+      }
+      .journal-brand-logo-text {
+        color: #9b67ff;
+        font-family: "Outfit", sans-serif;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        margin-top: 2px;
       }
       .journal-brand-text {
         text-align: left;
@@ -234,7 +246,7 @@
       }
       .journal-hero .journal-brand-lockup {
         justify-content: center;
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         animation: fadeInDown 0.75s both;
       }
       .journal-hero h1 {
@@ -353,6 +365,21 @@
         }
       }
       @media (max-width: 576px) {
+        .journal-brand-lockup {
+          flex-direction: column;
+          gap: 8px;
+        }
+        .journal-brand-text {
+          text-align: center;
+        }
+        .journal-brand-mark {
+          height: 52px;
+          width: 108px;
+        }
+        .journal-brand-mark img {
+          max-height: 40px;
+          max-width: 88px;
+        }
         .journal-hero {
           min-height: 56vh;
           padding: 96px 16px 54px;
@@ -669,6 +696,7 @@
               <div class="journal-brand-lockup light">
                 <div class="journal-brand-mark">
                   <img src="img/sai.png" alt="Saishnaa Logo" />
+                  <span class="journal-brand-logo-text">SSSL</span>
                 </div>
                 <div class="journal-brand-text">
                   <strong>SSSL International Journals</strong>
@@ -753,9 +781,9 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/components.js?v=20260616-compact"></script>
+    <script src="js/components.js?v=20260617-light-sssl"></script>
     <script src="js/journal-data.js"></script>
-    <script src="js/chatbot.js?v=20260616-compact"></script>
+    <script src="js/chatbot.js?v=20260617-chat-journals"></script>
     <script>
       // ===== SSSL JOURNALS DATA =====
       const journalsList = [
