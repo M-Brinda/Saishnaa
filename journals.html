@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css?v=20260617-journal-soft-hero" />
 
     <style>
       /* ===== Journal Viewer Overlay ===== */
@@ -152,26 +152,6 @@
         display: flex;
       }
 
-      /* Keep the journals page visually compact at browser 100% zoom. */
-      .navbar {
-        padding: 5px 0 !important;
-      }
-      .navbar.scrolled,
-      .navbar-blur {
-        padding: 4px 0 !important;
-      }
-      .navbar-brand img {
-        height: 27px !important;
-      }
-      .navbar-brand span {
-        font-size: 0.86rem !important;
-      }
-      .nav-link {
-        font-size: 0.76rem !important;
-        margin: 0 4px !important;
-        padding: 5px 9px !important;
-      }
-
       /* ===== Journal Hero Identity ===== */
       .journal-hero {
         background: var(--hero-network-bg);
@@ -179,9 +159,9 @@
         background-position: center;
         background-size: cover;
         color: #1f2452;
-        min-height: 19vh;
+        min-height: 52vh;
         overflow: hidden;
-        padding: 64px 20px 30px;
+        padding: 118px 20px 64px;
         position: relative;
         text-align: center;
       }
@@ -190,8 +170,8 @@
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0) 36%),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(206, 232, 255, 0.22));
+          radial-gradient(circle at 50% 24%, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.18) 38%, rgba(206, 232, 255, 0.22) 100%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(198, 231, 255, 0.25));
         z-index: 0;
       }
       .journal-hero::after {
@@ -200,7 +180,7 @@
       .journal-hero-grid {
         display: block;
         margin: 0 auto;
-        max-width: 700px;
+        max-width: 860px;
         position: relative;
         z-index: 1;
       }
@@ -217,13 +197,13 @@
         border-radius: 12px;
         box-shadow: 0 10px 22px rgba(9, 8, 38, 0.16);
         display: inline-flex;
-        height: 32px;
+        height: 44px;
         justify-content: center;
         padding: 8px;
-        width: 32px;
+        width: 44px;
       }
       .journal-brand-mark img {
-        height: 20px;
+        height: 28px;
         width: auto;
       }
       .journal-brand-text {
@@ -233,14 +213,14 @@
         color: #fff;
         display: block;
         font-family: "Outfit", sans-serif;
-        font-size: 0.66rem;
+        font-size: 0.74rem;
         letter-spacing: 0.07em;
         text-transform: uppercase;
       }
       .journal-brand-text span {
         color: rgba(255, 255, 255, 0.74);
         display: block;
-        font-size: 0.66rem;
+        font-size: 0.72rem;
         font-weight: 600;
         margin-top: 2px;
       }
@@ -254,25 +234,28 @@
       }
       .journal-hero .journal-brand-lockup {
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
+        animation: fadeInDown 0.75s both;
       }
       .journal-hero h1 {
         color: #1f2452;
         font-family: "Outfit", sans-serif;
-        font-size: clamp(1.42rem, 2vw, 2rem);
+        font-size: clamp(1.9rem, 3vw, 2.75rem);
         font-weight: 800;
-        line-height: 1.12;
-        margin: 0 auto 8px;
-        max-width: 720px;
-        text-shadow: 0 8px 22px rgba(255, 255, 255, 0.86);
+        line-height: 1.05;
+        margin: 0 auto 18px;
+        max-width: 860px;
+        text-shadow: 0 10px 20px rgba(31, 36, 82, 0.18), 0 2px 0 rgba(255, 255, 255, 0.7);
+        animation: fadeInDown 0.8s both, pulse 2s infinite 1s;
       }
       .journal-hero-copy {
         color: #1f2452;
-        font-size: 0.78rem;
-        line-height: 1.4;
+        font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+        line-height: 1.42;
         margin: 0 auto;
-        max-width: 680px;
-        text-shadow: 0 4px 16px rgba(255, 255, 255, 0.78);
+        max-width: 760px;
+        text-shadow: 0 4px 16px rgba(255, 255, 255, 0.82);
+        animation: fadeInUp 1s 0.3s both;
       }
       .journal-hero-copy strong {
         color: #1f2452;
@@ -371,8 +354,8 @@
       }
       @media (max-width: 576px) {
         .journal-hero {
-          min-height: 22vh;
-          padding: 62px 16px 30px;
+          min-height: 56vh;
+          padding: 96px 16px 54px;
         }
       }
 
@@ -381,39 +364,38 @@
           radial-gradient(circle at 8% 8%, rgba(106, 202, 231, 0.18), transparent 28%),
           radial-gradient(circle at 92% 0%, rgba(156, 107, 255, 0.16), transparent 30%),
           linear-gradient(180deg, #f8fbff 0%, #f4f5f8 100%);
-        padding-bottom: 1.1rem !important;
-        padding-top: 1.15rem !important;
+        padding-bottom: 2.4rem !important;
+        padding-top: 2.4rem !important;
       }
       .journal-catalog-section > .container {
-        max-width: 1038px;
-        padding-bottom: 0.25rem !important;
-        padding-top: 0.25rem !important;
+        padding-bottom: 0.75rem !important;
+        padding-top: 0.75rem !important;
       }
       .journal-catalog-intro {
-        margin: 0 auto 14px;
-        max-width: 700px;
+        margin: 0 auto 24px;
+        max-width: 780px;
       }
       .journal-catalog-kicker {
         color: #4d1ea3;
         display: block;
-        font-size: 0.56rem;
+        font-size: 0.7rem;
         font-weight: 800;
         letter-spacing: 0.12em;
-        margin-bottom: 5px;
+        margin-bottom: 6px;
         text-transform: uppercase;
       }
       .journal-catalog-title {
         color: #1f2452;
         font-family: "Outfit", sans-serif;
-        font-size: clamp(1.25rem, 1.75vw, 1.7rem);
+        font-size: clamp(1.65rem, 2.35vw, 2.25rem);
         font-weight: 800;
         line-height: 1.12;
-        margin-bottom: 6px;
+        margin-bottom: 8px;
       }
       .journal-catalog-copy {
         color: #555d72;
-        font-size: 0.72rem;
-        line-height: 1.45;
+        font-size: 0.88rem;
+        line-height: 1.55;
         margin: 0 auto;
         max-width: 640px;
       }
@@ -422,23 +404,16 @@
         border: 1px solid rgba(77, 30, 163, 0.1);
         border-radius: 14px;
         box-shadow: 0 14px 34px rgba(77, 30, 163, 0.07);
-        margin-bottom: 12px;
-        padding: 8px 10px;
-      }
-      #journals-stats-bar {
-        margin-bottom: 1.35rem !important;
-      }
-      #journals-grid-container {
-        --bs-gutter-x: 1.25rem;
-        --bs-gutter-y: 1.25rem;
+        margin-bottom: 24px;
+        padding: 14px;
       }
       .journal-stat-card {
         background: rgba(255, 255, 255, 0.92);
         border: 1px solid rgba(77, 30, 163, 0.08);
         border-radius: 12px;
         box-shadow: 0 10px 24px rgba(77, 30, 163, 0.06);
-        min-height: 50px;
-        padding: 8px;
+        min-height: 72px;
+        padding: 12px;
         text-align: center;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
@@ -449,14 +424,14 @@
       .journal-stat-card strong {
         display: block;
         font-family: "Outfit", sans-serif;
-        font-size: 1rem;
+        font-size: 1.35rem;
         font-weight: 800;
         line-height: 1;
       }
       .journal-stat-card span {
         color: #6b7280;
         display: block;
-        font-size: 0.56rem;
+        font-size: 0.68rem;
         font-weight: 700;
         margin-top: 5px;
       }
@@ -481,7 +456,7 @@
         border-color: rgba(77,30,163,0.25);
       }
       .journal-card .card-banner {
-        height: 90px;
+        height: 138px;
         overflow: hidden;
         background: linear-gradient(135deg, #0f172a 0%, #2d1b4e 100%);
         position: relative;
@@ -516,7 +491,7 @@
         opacity: 1;
       }
       .journal-card .card-body-inner {
-        padding: 10px;
+        padding: 14px;
         display: flex;
         flex-direction: column;
         flex: 1;
@@ -524,9 +499,9 @@
       .journal-card h6 {
         font-weight: 800;
         color: #0f172a;
-        font-size: 0.7rem;
-        line-height: 1.35;
-        margin-bottom: 6px;
+        font-size: 0.86rem;
+        line-height: 1.38;
+        margin-bottom: 7px;
         font-family: 'Outfit', sans-serif;
         letter-spacing: -0.3px;
       }
@@ -534,19 +509,19 @@
         display: inline-block;
         background: linear-gradient(135deg, rgba(77,30,163,0.1), rgba(99,102,241,0.08));
         color: #4d1ea3;
-        font-size: 0.54rem;
+        font-size: 0.64rem;
         font-weight: 700;
-        padding: 2px 8px;
+        padding: 3px 9px;
         border-radius: 20px;
         border: 1.5px solid rgba(77,30,163,0.2);
-        margin-bottom: 7px;
+        margin-bottom: 8px;
         letter-spacing: 0.6px;
         text-transform: uppercase;
       }
       .journal-card .email-line {
-        font-size: 0.58rem;
+        font-size: 0.7rem;
         color: #666;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         line-height: 1.5;
       }
       .journal-card .email-line a {
@@ -571,8 +546,8 @@
         color: #fff;
         border: none;
         border-radius: 50px;
-        padding: 5px 8px;
-        font-size: 0.58rem;
+        padding: 7px 10px;
+        font-size: 0.7rem;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.2s;
@@ -591,8 +566,8 @@
         color: #4d1ea3;
         border: 1.5px solid rgba(77,30,163,0.2);
         border-radius: 50px;
-        padding: 5px 8px;
-        font-size: 0.58rem;
+        padding: 7px 10px;
+        font-size: 0.7rem;
         font-weight: 700;
         cursor: pointer;
         transition: all 0.2s;
@@ -614,8 +589,8 @@
         background: #fff;
         color: #4d1ea3;
         border-radius: 50px;
-        padding: 4px 10px;
-        font-size: 0.58rem;
+        padding: 6px 14px;
+        font-size: 0.72rem;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s;
@@ -635,15 +610,15 @@
         background: #fff;
         display: flex;
         align-items: center;
-        padding: 0 12px;
+        padding: 0 14px;
         box-shadow: 0 2px 12px rgba(77,30,163,0.06);
       }
       .search-wrap input {
         border: none;
         outline: none;
         box-shadow: none;
-        padding: 7px 0;
-        font-size: 0.66rem;
+        padding: 10px 0;
+        font-size: 0.8rem;
         background: transparent;
         flex: 1;
         color: #1a1a2e;
@@ -778,9 +753,9 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/components.js?v=20260616-mini"></script>
+    <script src="js/components.js?v=20260616-compact"></script>
     <script src="js/journal-data.js"></script>
-    <script src="js/chatbot.js?v=20260616-mini"></script>
+    <script src="js/chatbot.js?v=20260616-compact"></script>
     <script>
       // ===== SSSL JOURNALS DATA =====
       const journalsList = [
